@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
+import Votelist from "./pages/Newslist/Votelist";
+import Cooperationform from "./pages/Newslist/Cooperationform";
 import Products from "./pages/Products/Products";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
@@ -29,7 +31,13 @@ function App() {
         </Route>
         <Route path="/newslist" exact>
           <Newslist />
-        </Route>
+          </Route>
+          <Route path="/Cooperationform" exact>
+          <Cooperationform />
+          </Route>
+          <Route path="/Votelist" exact>
+          <Votelist />
+          </Route>
         <Route path="/products" exact>
           <Products />
         </Route>

@@ -5,11 +5,17 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
+import { Link } from "react-router-dom";
 
+
+
+// pages
+
+import Breadcrumb from "./Breadcrumb";
 
 const Newslist = () => {
 // bunner圖片三張輪播 拿掉左右箭頭及下方三個長方形
-// 放breadcrumb 進入
+
   return (
     <main>
     <Carousel>
@@ -44,17 +50,17 @@ const Newslist = () => {
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel> 
-<div className="container" position-sticky>
 
-    <div style={{ minHeight: " calc(100vh - 86px - 308px) " } }>最新消息 放麵包屑</div>
-    </div>
+{/*  放breadcrumb 進入 */}
 
-<div>首頁分隔線</div>
+<Breadcrumb />
+
+
 
 <div className="container">
 <Row xs={1} md={3} className="g-3">
 
-{/* 順序問題 */}
+{/* 3*3的主餐投票 react bootstrap card  列出1-9順序 目前都只能一個 */}
   {Array.from({ length: 3 }).map((_, idx) => (
     <Col>
       <Card>
@@ -66,41 +72,18 @@ const Newslist = () => {
             lead-in to additional content. This content is a little bit longer.
           </Card.Text>
         </Card.Body>
+        
       </Card>
     </Col>
+     
     
   ))}
 </Row>
 
 </div>
 
-<div>首頁分隔線</div>
-<div className="container" position-sticky>
 
-<Form  style={{ width: 900 }} >
-
-  <Form.Group className="mb-3"  controlId="formBasicEmail">
-    <Form.Label>Email address</Form.Label>
-    <Form.Control type="email" placeholder="Enter email" />
-    <Form.Text className="text-muted">
-      We'll never share your email with anyone else.
-    </Form.Text>
-  </Form.Group>
-
-  <Form.Group className="mb-3" controlId="formBasicPassword">
-    <Form.Label>Password</Form.Label>
-    <Form.Control type="password" placeholder="Password" />
-  </Form.Group>
-  <Form.Group className="mb-3" controlId="formBasicCheckbox">
-    <Form.Check type="checkbox" label="Check me out" />
-  </Form.Group>
-  <Button variant="primary" type="submit">
-    Submit
-  </Button>
-</Form>
-</div>
-
-<div>首頁分隔線</div>
+<br></br>
 <div className="container">
 <div className="row row-cols-1 row-cols-md-3 g-4">
   <div className="col">
@@ -118,6 +101,9 @@ const Newslist = () => {
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text fs-6">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <Link to="/Votelist" className="nav-link">
+        Votelist
+              </Link>
       </div>
     </div>
   </div>
@@ -127,6 +113,9 @@ const Newslist = () => {
       <div className="card-body">
         <h5 className="card-title">Card title</h5>
         <p className="card-text fs-6">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        <Link to="/Cooperationform" className="nav-link">
+        Cooperationform
+              </Link>
       </div>
     </div>
   </div>
@@ -137,7 +126,7 @@ const Newslist = () => {
 </div>
 
 
-<div> 000</div>
+<br></br>
 
     </main>
   );
