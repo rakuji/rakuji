@@ -15,11 +15,16 @@ import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 
+//麵包屑  //安裝套件==> npm i react-router-config@5.1.1
+import Breadcrumb from "./components/Breadcrumb";
+import Box from "./pages/Recipes/Box";
+
 function App() {
 
   return (
     <div className="App">
       <Nav />
+      <Breadcrumb />
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -38,6 +43,9 @@ function App() {
         </Route>
         <Route path="/recipes" exact>
           <Recipes />
+        </Route>
+        <Route path="/recipes/box" exact>
+          <Box />
         </Route>
         <Route path="/store" exact>
           <Store />

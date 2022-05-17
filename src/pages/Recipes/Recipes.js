@@ -1,9 +1,15 @@
-import React from 'react'
-
+import React from "react";
+import { Link } from "react-router-dom";
 const Recipes = () => {
   return (
-    <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>創意食譜</div>
-  )
-}
+    <>
+      <div className="nav-item" style={{padding:"100px"}}>
+        <Link to="/recipes/box" >
+          日式唐揚炸雞
+        </Link>
+      </div>
+    </>
+  );
+};
 
-export default Recipes
+export default Recipes;
