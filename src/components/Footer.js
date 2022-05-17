@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 function Footer() {
   return (
@@ -6,7 +7,7 @@ function Footer() {
       <div className="container py-5">
         <div className="row">
           <div className="col-3">
-            <img src={require("../image/footer_logo.png")} alt="" />
+            <img src={require("../images/footer_logo.png")} alt="" />
           </div>
 
           <div className="col-3">

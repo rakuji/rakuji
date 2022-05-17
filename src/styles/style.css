@@ -1,3 +1,5 @@
+/* 全站都會使用的共同樣式 */
+
 *{
   margin: 0;
   padding: 0;
@@ -6,54 +8,5 @@
 
 body {
   font-family: "Roboto", sans-serif;
-}
-
-.logo img {
-  width: 140px;
-  height: 70px;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: #58c2dd;
-}
-
-.iconify {
-  font-size: 24px;
-  color: #dc710d;
-}
-
-nav .btn {
-  color: #dc710d;
-  border-color: #dc710d;
-  border-radius: 30px;
-}
-
-ul {
-  margin: 0 auto;
-}
-
-main {
-  min-height: calc(100vh - 86px - 308px);
-}
-
-footer {
-  background-color: #85B327;
-
-}
-
-footer img{
-  height: 149px;
-  width: 170px;
-}
-
-footer a,footer span,footer p{
-  font-size: 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-footer i{
-  font-size: 24px;
-  margin-right: 10px;
 }
 

@@ -1,15 +1,40 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./style.css";
+import $ from 'jquery'
 
 function Nav() {
+
+  useEffect(() => {
+
+    $("#navclose").hide()
+
+    var myCollapsible = document.getElementById('navbarSupportedContent')
+    myCollapsible.addEventListener('hide.bs.collapse', function () {
+      $("#navclose").hide();
+      $("#navopen").show();
+    })
+
+    var myCollapsible = document.getElementById('navbarSupportedContent')
+    myCollapsible.addEventListener('show.bs.collapse', function () {
+      $("#navclose").show();
+      $("#navopen").hide();
+    })
+
+  }, [])
+
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
         {/* Logo */}
+
         <div className="logo">
-          <a className="navbar-brand" href="#">
-            <img src={require("../image/logo_color_row.png")} alt="" />
-          </a>
+          <Link to="/" className="navbar-brand">
+            <img src={require("../images/logo_color_row.png")} alt="" />
+          </Link>
         </div>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -19,39 +44,42 @@ function Nav() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          {/* <span className="navbar-toggler-icon"></span> */}
+          <i id="navopen" className="fa-solid fa-bars"></i>
+          <i id="navclose" className="fa-regular fa-circle-xmark"></i>
+
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/about" className="nav-link">
                 關於我們
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/newslist" className="nav-link">
                 最新消息
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/products" className="nav-link">
                 餐點列表
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/booking" className="nav-link">
                 線上訂位
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/recipes" className="nav-link">
                 創意食譜
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/store" className="nav-link">
                 門市資訊
-              </a>
+              </Link>
             </li>
           </ul>
           {/* 按鈕區 */}
