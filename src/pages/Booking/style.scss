@@ -1,0 +1,26 @@
+input[type="date"] {
+    background-image: none;
+    padding-right: 0.75rem;
+}
+
+.booking-time {
+
+    display: flex;
+    // justify-content:space-between;
+    // align-items: center;
+    flex-wrap: wrap;
+
+    button {
+        border: 1px solid #58C2DD;
+        border-radius: 100px;
+        background-color: transparent;
+        padding: 10px 50px;
+        margin-bottom: 20px;
+
+        &:focus {
+            background-color: #58C2DD;
+            color: #fff;
+        }
+    }
+
+}

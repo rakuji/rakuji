@@ -1,0 +1,26 @@
+input[type="date"] {
+  background-image: none;
+  padding-right: 0.75rem;
+}
+
+.booking-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.booking-time button {
+  border: 1px solid #58C2DD;
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 10px 50px;
+  margin-bottom: 20px;
+}
+
+.booking-time button:focus {
+  background-color: #58C2DD;
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
