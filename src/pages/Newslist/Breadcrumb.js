@@ -8,7 +8,7 @@ class BreadcrumbComponent extends Component {
     return (
       <div class="container">
         <Breadcrumb>
-          <Breadcrumb.Item href="/Home">首頁</Breadcrumb.Item>
+          <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
           <Breadcrumb.Item href="/Newslist">最新消息</Breadcrumb.Item>
           {/* <Breadcrumb.Item active>Shoes</Breadcrumb.Item> */}
         </Breadcrumb>        
