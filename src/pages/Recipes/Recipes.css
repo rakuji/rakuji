@@ -125,6 +125,10 @@
 
 }
 
+.RecipesPage {
+    margin: 0 50%;
+}
+
 
 @media screen and (max-width:576px) {
     .RecipesClassButtonAll {
@@ -195,5 +199,9 @@
 
     .RecipesLookButton {
         margin: 0px 0px 0px 20px;
+    }
+
+    .RecipesPage {
+        margin: 0 36%;
     }
 }

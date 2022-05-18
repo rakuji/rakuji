@@ -181,7 +181,10 @@ const Recipes = () => {
                 alt="日式唐揚炸雞"
               />
               <div className="card-body">
-                <p className="card-text h6"><img className="Boximg"/>日式唐揚炸雞</p>
+                <p className="card-text h6">
+                  <img className="Boximg" />
+                  日式唐揚炸雞
+                </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
                 <button className=" RecipesLookButton">
                   <Link to="/recipes/box">查看</Link>
@@ -195,7 +198,10 @@ const Recipes = () => {
                 alt="日式唐揚炸雞"
               />
               <div className="card-body">
-                <p className="card-text h6"><img className="Boximg"/>日式唐揚炸雞</p>
+                <p className="card-text h6">
+                  <img className="Boximg" />
+                  日式唐揚炸雞
+                </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
                 <button className=" RecipesLookButton" id="">
                   <Link to="/recipes/box">查看</Link>
@@ -209,7 +215,10 @@ const Recipes = () => {
                 alt="日式唐揚炸雞"
               />
               <div className="card-body">
-                <p className="card-text h6"><img className="Boximg"/>日式唐揚炸雞</p>
+                <p className="card-text h6">
+                  <img className="Boximg" />
+                  日式唐揚炸雞
+                </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
                 <button className=" RecipesLookButton" id="">
                   <Link to="/recipes/box">查看</Link>
@@ -223,7 +232,10 @@ const Recipes = () => {
                 alt="日式唐揚炸雞"
               />
               <div className="card-body">
-                <p className="card-text h6"><img className="Boximg"/>日式唐揚炸雞</p>
+                <p className="card-text h6">
+                  <img className="Boximg" />
+                  日式唐揚炸雞
+                </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
                 <button className=" RecipesLookButton" id="">
                   <Link to="/recipes/box">查看</Link>
@@ -232,7 +244,27 @@ const Recipes = () => {
             </div>
           </div>
         </div>
+        
       </div>
+      <nav aria-label="Page navigation example " className="RecipesPage">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              1
+            </a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
