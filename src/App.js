@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 
 // pages
 import Home from "./pages/Home/Home";
+// import Contact from "./pages/About/contact";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
 import Products from "./pages/Products/Products";
@@ -24,7 +25,7 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/about" exact>
+        <Route path="/About" exact>
           <About />
         </Route>
         <Route path="/newslist" exact>
