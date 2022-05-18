@@ -1,0 +1,199 @@
+.Recipesbackground {
+    background-image: url(./image/BG.png);
+    background-size: 1300px;
+    background-position: 200px -60px;
+    background-repeat: no-repeat;
+}
+
+.RecipesSearchDiv {
+    padding: 0px;
+    margin: 27px 10px 0px 15px;
+
+}
+
+.RecipesSearchText {
+    margin: 9px 15px 0px 10px;
+
+}
+
+.RecipesSearchButton {
+    width: 140px;
+    height: 30px;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    background: #58C2DD;
+    margin: 3px 0px 0px 30px;
+}
+
+.RecipesLookButton {
+    width: 140px;
+    height: 30px;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    background: #58C2DD;
+}
+
+.RecipesLookButton:hover {
+    width: 140px;
+    height: 30px;
+    border: 1px solid #58C2DD;
+    color: #000;
+    border-radius: 50px;
+    background: white;
+}
+
+.RecipesSearchButton:hover {
+    width: 140px;
+    height: 30px;
+    border: 1px solid #58C2DD;
+    color: #000;
+    border-radius: 50px;
+    background: white;
+    margin: 3px 0px 0px 30px;
+}
+
+.RecipesSearchInput {
+    padding: 10px;
+    width: 280px;
+    height: 35px;
+    border-radius: 10px;
+    border: solid 1px #58C2DD;
+    margin: 0px 10px 0px 10px;
+}
+
+.RecipesClassButton {
+    width: 173px;
+    height: 34px;
+    border: 1px solid #58C2DD;
+    border-radius: 50px;
+    background: #fff;
+    padding: 0px;
+    margin: 10px 0px 10px 30px;
+}
+
+.RecipesClassButton:hover {
+    color: #FFF;
+    border-radius: 50px;
+    background: #58C2DD;
+
+}
+
+.RecipesLogoDiv {
+    max-width: 263px;
+    max-height: 151px;
+    margin: 0px 0px 0px -150px;
+}
+
+.RecipesLogoauto {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.phoneDiv {
+    padding: 50px 100px;
+}
+
+.RecipesClassButtonAllOn {
+    display: none;
+}
+
+.RecipesSearchButtonNameAll {
+    width: 244px;
+}
+
+.RecipesSearchBoxCardAll {
+    max-width: 1000px;
+}
+
+.RecipesSearchBoxCard {
+    border: none;
+    max-width: 230px;
+    margin: 10px 0px 30px 20px;
+
+}
+
+.RecipesLookButton {
+    margin: 0px 0px 0px 20px;
+}
+
+.Boximg {
+    content: url('./image/Maskgroup.png');
+
+}
+
+
+@media screen and (max-width:576px) {
+    .RecipesClassButtonAll {
+        display: none;
+    }
+
+    .Recipesbackground {
+        display: none;
+    }
+
+    .RecipesClassButtonAllOn {
+        display: contents;
+    }
+
+    .RecipesClassButton {
+        width: 62px;
+        height: 34px;
+        font-size: 12px;
+        border: 1px solid #58C2DD;
+        border-radius: 50px;
+        background: none;
+        padding: 0px;
+        margin: 0px 0px 20px 13px;
+
+    }
+
+    .phoneDiv {
+        padding: 10px 40px;
+    }
+
+    .RecipesLogoDiv {
+        min-width: 300px;
+        min-height: 155px;
+        margin: 0px 0px 0px 20px;
+    }
+
+    .RecipesSearchName {
+        margin: 0px 0px 0px 30px;
+
+    }
+
+    .RecipesSearchInput {
+        padding: 10px;
+        margin: 0px 0px 15px -15px;
+        width: 280px;
+    }
+
+    .RecipesSearchText {
+        display: none;
+    }
+
+    .RecipesSearchButton {
+        margin: 0 62px 20px;
+    }
+
+    .RecipesSearchButtonNameRwd {
+        padding: 5px 16px 5px 34px;
+
+    }
+
+    .RecipesSearchButtonNameAll {
+        width: 280px;
+    }
+
+    .RecipesSearchBoxCardAll {
+        margin: 0px 0px 0px 50px;
+    }
+
+    .RecipesLookButton {
+        margin: 0px 0px 0px 20px;
+    }
+}

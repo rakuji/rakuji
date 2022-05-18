@@ -13,11 +13,12 @@ import Newslist from "./pages/Newslist/Newslist";
 import Products from "./pages/Products/Products";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
+import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
 
 //麵包屑  //安裝套件==> npm i react-router-config@5.1.1
 import Breadcrumb from "./components/Breadcrumb";
-import Box from "./pages/Recipes/Box";
+
 
 function App() {
 

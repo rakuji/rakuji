@@ -11,13 +11,4 @@ body {
 }
 
 
-.px1140{
- 
-  margin: 35px 0px 0;
-  
-}
-@media screen and (max-width:576px){
-.px1140{
-  display: none;
-}
-}
+

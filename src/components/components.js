@@ -1,9 +1,13 @@
 // /src/components.js
 
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { matchRoutes } from 'react-router-config';
 import routes from './routes';
+import "./style.css";
+import React, { useEffect } from "react";
+import "./style.css";
+import $ from 'jquery'
+
 
 
 
@@ -15,18 +19,18 @@ function Breadcrumb  ({ locationPath, onMatchedRoutes }) {
     }
   
     return (
-      <nav aria-label="breadcrumb "  >
-        <ol className="breadcrumb px1140">
+      <nav aria-label="breadcrumb   "  >
+        <ol className="breadcrumb px1140 ">
           {matchedRoutes.map((matchRoute, i) => {
             const { path, breadcrumbName } = matchRoute.route;
             const isActive = path === locationPath;
   
             return isActive ? (
-              <li key={i} className="breadcrumb-item active" aria-current="page">
+              <li key={i} className="breadcrumb-item active " aria-current="page">
                 {breadcrumbName}
               </li>
             ) : (
-              <li key={i} className="breadcrumb-item" aria-current="page">
+              <li key={i} className="breadcrumb-item " aria-current="page">
                 <Link to={path}>{breadcrumbName} </Link>
               </li>
             );

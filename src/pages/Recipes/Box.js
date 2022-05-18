@@ -58,7 +58,7 @@ const Box = () => {
               <div className="col-7 avatar">
                 <img
                   className="container"
-                  src={require("./image/日式唐楊雞.jpg")}
+                  src={require("./image/00001.jpg")}
                   alt=""
                 />
               </div>

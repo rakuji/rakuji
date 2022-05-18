@@ -8,6 +8,21 @@ nav .logo img {
 .navbar-light .navbar-nav .nav-link {
   color: #58c2dd;
 }
+.breadcrumb .breadcrumb-item .active{
+  color: #58c2dd;
+
+}
+
+.px1140{
+ 
+  margin: 35px 0px 0;
+  
+}
+@media screen and (max-width:576px){
+.px1140{
+  display: none;
+}
+}
 
 nav .iconify {
   font-size: 24px;
