@@ -48,18 +48,16 @@ const Newslist = () => {
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+         
 
           </div>
           {/* 2 */}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00001.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">樂時町年末同樂會</h5>
-                <p className="card-text fs-6">年末開心情!!!慰勞一整年的辛苦 來樂時町點套餐，飲料讓你免費喝!!!</p>
+                <p className="card-text fs-6">年末開心情!!!慰勞一整年的辛苦來樂時町點套餐，飲料讓你免費喝!!!</p>
                 <Link to="/Votelist" className="nav-link">
                   Votelist
                 </Link>
@@ -69,7 +67,7 @@ const Newslist = () => {
           {/* 3 */}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00002.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">票選料理之王</h5>
                 <p className="card-text fs-6">選出你的料理天菜，投票抽大獎</p>
@@ -82,7 +80,7 @@ const Newslist = () => {
           {/* ˋ4 */}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00003.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">前程似錦</h5>
                 <p className="card-text fs-6">樂食町與您一同慶祝畢業，同桌每人皆享有甜品</p>
@@ -92,7 +90,7 @@ const Newslist = () => {
           {/* 5 */}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00004.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">端午特別優惠</h5>
                 <p className="card-text fs-6">來店點節慶套餐，享特殊優惠。</p>
@@ -102,7 +100,7 @@ const Newslist = () => {
           {/* 6 */}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00005.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">慶祝母親節</h5>
                 <p className="card-text fs-6">帶媽媽一同慶祝，同桌享有88折優惠 </p>
@@ -112,27 +110,27 @@ const Newslist = () => {
           {/* 7 */}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00006.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">生日壽星</h5>
                 <p className="card-text fs-6">生日壽星，同桌享有88折優惠</p>
               </div>
             </div>
           </div>
-          {/* 8 */}
+          {/* 8 照片失真要換*/}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00007.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title">食品認證</h5>
                 <p className="card-text fs-6">樂食町各項產品皆有通過食品認證，請安心享用!</p>
               </div>
             </div>
           </div>
-          {/* 9 */}
+          {/* 9 照片失真要換*/}
           <div className="col">
             <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
+              <img src={require("./00008.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h5 className="card-title" >會員限定</h5>
                 <p className="card-text fs-6">加入樂食町會員，獲得第一手訊息及優惠方案</p>
