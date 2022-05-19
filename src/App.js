@@ -15,6 +15,7 @@ import Products from "./pages/Products/Products";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
 
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path="/store" exact>
           <Store />
+        </Route>
+        <Route path="/contact" exact>
+          <Contact />
         </Route>
       </Switch>
       <Footer />

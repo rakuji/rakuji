@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 function Footer() {
@@ -46,9 +47,9 @@ function Footer() {
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <Link to="/Contact" className="p-0">
                   聯絡我們
-                </a>
+                </Link>
               </li>
               <li className="nav-item mb-2">
                 <a href="#" className="p-0">
