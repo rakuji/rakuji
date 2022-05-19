@@ -12,7 +12,7 @@ const Booking_information = () => {
   }
 
 
-  console.log(word.length)
+  // console.log(word.length)
 
 
 
@@ -74,18 +74,7 @@ const Booking_information = () => {
                 <input name="sex" id="other" type="radio" className="me-2" />
                 <label htmlFor="other">其他</label>
               </div>
-
-
             </div>
-
-
-
-
-
-
-
-
-
           </div>
 
           <label htmlFor="">訂位人手機號碼</label>
@@ -110,7 +99,7 @@ const Booking_information = () => {
 
           <div className="form-check mb-4">
             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-            <label className="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" htmlFor="flexCheckDefault">
               同會員資料
             </label>
           </div>

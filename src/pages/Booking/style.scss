@@ -132,7 +132,8 @@ span#booking_introduction {
   .booking_store_information {
     width: 50vw;
 
-    .booking_information,.store_information{
+    .booking_information,
+    .store_information {
       display: flex;
       justify-content: center;
     }
@@ -147,18 +148,22 @@ span#booking_introduction {
 
   }
 
+  button {
 
-  .next_page {
-    color: #fff;
-    text-decoration: none;
+    &.products_page {
+      background-color: #58c2dd;
+      color: #fff;
+    }
+
+    &.home_page {
+      background-color: transparent;
+      color: #58c2dd;
+    }
+
     border: 1px solid #58c2dd;
     border-radius: 100px;
-    // padding: 10px 50px;
-    width: 200px;
+    width: 145px;
     height: 50px;
-    margin-bottom: 20px;
-    background-color: #58c2dd;
   }
-
 
 }

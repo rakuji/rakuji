@@ -108,7 +108,8 @@ span#booking_introduction {
   width: 50vw;
 }
 
-.booking_finish .booking_store_information .booking_information, .booking_finish .booking_store_information .store_information {
+.booking_finish .booking_store_information .booking_information,
+.booking_finish .booking_store_information .store_information {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -125,14 +126,20 @@ span#booking_introduction {
   list-style-type: none;
 }
 
-.booking_finish .next_page {
-  color: #fff;
-  text-decoration: none;
+.booking_finish button {
   border: 1px solid #58c2dd;
   border-radius: 100px;
-  width: 200px;
+  width: 145px;
   height: 50px;
-  margin-bottom: 20px;
+}
+
+.booking_finish button.products_page {
   background-color: #58c2dd;
+  color: #fff;
+}
+
+.booking_finish button.home_page {
+  background-color: transparent;
+  color: #58c2dd;
 }
 /*# sourceMappingURL=style.css.map */

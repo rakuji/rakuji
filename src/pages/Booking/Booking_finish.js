@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 const Booking_finish = () => {
   return (
     <>
-      <div id="carouselExampleCaptions" class="carousel slide booking_finish_banner" data-bs-ride="carousel">
+      <div id="carouselExampleCaptions" className="carousel slide booking_finish_banner" data-bs-ride="carousel">
 
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src={require("./images/carousel/images.jpg")} class="d-block w-100" alt="..." />
-
-          </div>
-          <div class="carousel-item">
-            <img src={require("./images/carousel/images_1.jpg")} class="d-block w-100" alt="..." />
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={require("./images/carousel/images.jpg")} className="d-block w-100" alt="..." />
 
           </div>
-          <div class="carousel-item">
-            <img src={require("./images/carousel/images_2.jpg")} class="d-block w-100" alt="..." />
+          <div className="carousel-item">
+            <img src={require("./images/carousel/images_1.jpg")} className="d-block w-100" alt="..." />
+
+          </div>
+          <div className="carousel-item">
+            <img src={require("./images/carousel/images_2.jpg")} className="d-block w-100" alt="..." />
 
           </div>
         </div>
@@ -55,7 +55,7 @@ const Booking_finish = () => {
                   <h3>店家資訊</h3>
                   <div className="d-flex align-items-center my-3">
                     <div className='me-3 col-1'>
-                      <i class="fa-solid fa-house-chimney"></i>
+                      <i className="fa-solid fa-house-chimney"></i>
                     </div>
                     <div className='col-11'>
                       <p className='mb-0'>高雄左營店</p>
@@ -74,7 +74,7 @@ const Booking_finish = () => {
 
                   <div className="d-flex align-items-center my-3">
                     <div className='me-3 col-1'>
-                      <i class="fa-solid fa-phone"></i>
+                      <i className="fa-solid fa-phone"></i>
                     </div>
                     <div className='col-11'>
                       <p className='mb-0'>07-963-5566</p>
@@ -100,11 +100,11 @@ const Booking_finish = () => {
 
           <div className="d-flex justify-content-center">
             <Link to="/products">
-              <button className="next_page my-4 mx-3">瀏覽餐點</button>
-            </Link>
+              <button className="products_page my-4 mx-3">瀏覽餐點</button>
+            </Link> 
 
             <Link to="/">
-              <button className="next_page my-4 mx-3">回到首頁</button>
+              <button className="home_page my-4 mx-3">回到首頁</button>
             </Link>
           </div>
 
