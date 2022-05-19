@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import "./Newslist.css"
+
 
 
 // pages
@@ -13,6 +15,7 @@ const Newslist = () => {
 
   return (
     <main>
+
       <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner" >
           <div className="carousel-item active" data-bs-interval="3000">
@@ -40,15 +43,17 @@ const Newslist = () => {
 
 
       <div className="container">
-        <div className="row row-cols-1 row-cols-md-3 g-4">
+      {/* 內容物藍色區 右邊多出 需置中或移除藍色 */}
+        <div className="row row-cols-1 row-cols-md-3 g-4 ">
           {/* 1 */}
           <div className="col">
-            <img src={require("./firstpic.png")} className="card-img-top" alt="..." width="250px" height="370px" />
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+          {/* <div className="card" > */}
 
+            <img src={require("./firstpic.png")} className="card-img-top" alt="..." width="250px" height="370px" />
+         
+            <br />
+            <br />
+            {/* </div> */}
 
           </div>
           {/* 2  圖片文字可以連結到Votelist */}
@@ -58,7 +63,7 @@ const Newslist = () => {
               <div className="card-body">
                 <h3 className="card-title">樂時町年末同樂會</h3>
                 <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-text fs-5">年末開心情!!!慰勞一整年的辛苦來樂時町點套餐，飲料讓你免費喝!!!</p>
+                <p className="card-text fs-5">年末開心情!!!慰勞一整年的辛苦!來樂時町享用套餐吧!</p>
          
               </div>
             </div>
@@ -71,14 +76,14 @@ const Newslist = () => {
                 <h3 className="card-title">票選料理之王</h3>
                 <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
                 <p className="card-text fs-5">選出你的料理天菜，投票抽大獎!</p>
-                <Link to="/Votelist" className="nav-link">
+                <Link to="/Votelist" className="">
                   Votelist
                 </Link>
        
               </div>
             </div>
           </div>
-          {/* ˋ4 */}
+          {/* ˋ4 */}  
           <div className="col">
             <div className="card">
               <img src={require("./00003.png")} className="card-img-top" alt="..." />
@@ -86,6 +91,7 @@ const Newslist = () => {
                 <h3 className="card-title">前程似錦</h3>
                 <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
                 <p className="card-text fs-5">樂食町與您一同慶祝畢業，同桌每人皆享有甜品!</p>
+    
               </div>
             </div>
           </div>
@@ -148,7 +154,7 @@ const Newslist = () => {
       {/* 10 照片失真要換*/}
       <div className="col">
             <div className="card">
-              <img src={require("./00010.png")} className="card-img-top" alt="..." />
+              <img src={require("./00009.png")} className="card-img-top" alt="..." />
               <div className="card-body">
                 <h3 className="card-title" >人才招募</h3>
                 <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
@@ -159,12 +165,12 @@ const Newslist = () => {
                 {/* 11 照片失真要換*/}
                 <div className="col">
             <div className="card">
-            <a href="/Cooperationform"><img src={require("./00011.png")} className="card-img-top" alt="..." /></a>
+            <a href="/Cooperationform"><img src={require("./00010.png")} className="card-img-top" alt="..." /></a>
               <div className="card-body">
                 <h3 className="card-title" >異業合作</h3>
                 <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
                 <p className="card-text fs-5">歡迎將您的想法填入表單，將與您聯繫!!</p>
-                <Link to="/Cooperationform" className="nav-link">
+                <Link to="/Cooperationform" className="">
                   Cooperationform
                 </Link>
               </div>
