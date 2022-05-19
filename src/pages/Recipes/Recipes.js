@@ -5,7 +5,7 @@ import "./Recipes.css";
 const Recipes = () => {
   return (
     <>
-      <div className="nav-item container phoneDiv Recipesbackground">
+      <div className="nav-item container phoneDiv ">
         <div className="row  ">
           <div className="col RecipesLogoDiv ">
             <img
@@ -186,9 +186,9 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <button className=" RecipesLookButton">
-                  <Link to="/recipes/box">查看</Link>
-                </button>
+                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
+                  查看
+                </button></Link>
               </div>
             </div>
             <div className="card RecipesSearchBoxCard">
@@ -203,9 +203,9 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <button className=" RecipesLookButton" id="">
-                  <Link to="/recipes/box">查看</Link>
-                </button>
+                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
+                  查看
+                </button></Link>
               </div>
             </div>
             <div className="card RecipesSearchBoxCard">
@@ -220,9 +220,9 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <button className=" RecipesLookButton" id="">
-                  <Link to="/recipes/box">查看</Link>
-                </button>
+                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
+                  查看
+                </button></Link>
               </div>
             </div>
             <div className="card RecipesSearchBoxCard">
@@ -237,9 +237,9 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <button className=" RecipesLookButton" id="">
-                  <Link to="/recipes/box">查看</Link>
-                </button>
+                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
+                  查看
+                </button></Link>
               </div>
             </div>
           </div>

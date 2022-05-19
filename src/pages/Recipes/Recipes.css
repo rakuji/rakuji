@@ -16,15 +16,7 @@
 
 }
 
-.RecipesSearchButton {
-    width: 140px;
-    height: 30px;
-    border: none;
-    color: white;
-    border-radius: 50px;
-    background: #58C2DD;
-    margin: 3px 0px 0px 30px;
-}
+
 
 .RecipesLookButton {
     width: 140px;
@@ -44,6 +36,16 @@
     background: white;
 }
 
+.RecipesSearchButton {
+    width: 140px;
+    height: 30px;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    background: #58C2DD;
+
+}
+
 .RecipesSearchButton:hover {
     width: 140px;
     height: 30px;
@@ -51,7 +53,7 @@
     color: #000;
     border-radius: 50px;
     background: white;
-    margin: 3px 0px 0px 30px;
+
 }
 
 .RecipesSearchInput {
@@ -122,12 +124,39 @@
 
 .Boximg {
     content: url('./image/Maskgroup.png');
-
 }
 
 .RecipesPage {
     margin: 0 50%;
 }
+
+
+.RecipesTimetopbox {
+    max-width: 150px;
+    background: #58C2DD;
+}
+
+.RecipesTimebottombox {
+    max-width: 150px;
+    max-height: 60px;
+    border: solid #58C2DD 1px;
+}
+
+.RecipesTimeSvg {
+    stroke: #58C2DD;
+    fill: white;
+}
+
+.RecipesTimeSvgLine {
+    stroke-width: 5px;
+    stroke: #58C2DD;
+    fill: white;
+}
+
+.RecipesOn {
+    display: none;
+}
+
 
 
 @media screen and (max-width:576px) {
@@ -140,7 +169,7 @@
     }
 
     .RecipesClassButtonAllOn {
-        display: contents;
+        display: block;
     }
 
     .RecipesClassButton {
@@ -204,4 +233,27 @@
     .RecipesPage {
         margin: 0 36%;
     }
+
+    .RecipesOff {
+        display: none;
+    }
+
+    .RecipesOn {
+        display: block;
+    }
+
+    .BoxRwdimg {
+        content: url('./image/Maskgroup.png');
+    }
+
+    .RecipesTimetopbox {
+        max-width: 80px;
+        background: #58C2DD;
+    }
+
+    .RecipesTimebottombox {
+        max-width: 80px;
+        border: solid #58C2DD 1px;
+    }
+
 }
