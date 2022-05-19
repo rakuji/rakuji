@@ -111,6 +111,54 @@ span#booking_introduction {
       height: 50px;
     }
   }
+}
+
+// Booking_finish
+
+.booking_finish_banner {
+  .carousel-item {
+    height: 300px;
+  }
+}
+
+
+
+.booking_finish {
+
+  .booking_check {
+    font-size: 2rem;
+  }
+
+  .booking_store_information {
+    width: 50vw;
+
+    .booking_information,.store_information{
+      display: flex;
+      justify-content: center;
+    }
+
+    ul {
+      padding-left: 0;
+
+      li {
+        list-style-type: none;
+      }
+    }
+
+  }
+
+
+  .next_page {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #58c2dd;
+    border-radius: 100px;
+    // padding: 10px 50px;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #58c2dd;
+  }
 
 
 }

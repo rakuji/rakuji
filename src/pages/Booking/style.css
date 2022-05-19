@@ -95,4 +95,44 @@ span#booking_introduction {
   background-color: #58c2dd;
   color: #fff;
 }
+
+.booking_finish_banner .carousel-item {
+  height: 300px;
+}
+
+.booking_finish .booking_check {
+  font-size: 2rem;
+}
+
+.booking_finish .booking_store_information {
+  width: 50vw;
+}
+
+.booking_finish .booking_store_information .booking_information, .booking_finish .booking_store_information .store_information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.booking_finish .booking_store_information ul {
+  padding-left: 0;
+}
+
+.booking_finish .booking_store_information ul li {
+  list-style-type: none;
+}
+
+.booking_finish .next_page {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #58c2dd;
+}
 /*# sourceMappingURL=style.css.map */

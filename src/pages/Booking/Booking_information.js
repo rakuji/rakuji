@@ -31,7 +31,7 @@ const Booking_information = () => {
           <div className="booking_confirm_card sticky-top">
             <img src={require("./images/er2.jpg")} alt="" />
             <div className="d-flex align-items-center my-3">
-              <i className="fa-solid fa-location-dot mx-2"></i>
+            <i className="fa-solid fa-house-chimney mx-2"></i>
               <h3 className="">高雄左營店</h3>
             </div>
             <hr />
@@ -108,9 +108,9 @@ const Booking_information = () => {
 
           </div>
 
-          <div class="form-check mb-4">
+          <div className="form-check mb-4">
             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label className="form-check-label" for="flexCheckDefault">
               同會員資料
             </label>
           </div>

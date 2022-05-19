@@ -83,9 +83,9 @@ const Booking = () => {
         <div className="col-6">
           <label htmlFor="">分店</label>
           <select className="form-select" aria-label="Default select example">
-            <option selected>請選擇分店</option>
-            {store.map((v) => {
-              return <option value={v}>{v}</option>;
+            <option>請選擇分店</option>
+            {store.map((v,i) => {
+              return <option key={i} value={v}>{v}</option>;
             })}
           </select>
         </div>
@@ -100,8 +100,8 @@ const Booking = () => {
                 aria-label="Default select example"
                 onChange={selectHandlerAdult}
               >
-                {totalPeoplesAdult.map((v) => {
-                  return <option value={v}>{`${v}位大人`}</option>;
+                {totalPeoplesAdult.map((v,i) => {
+                  return <option key={i} value={v}>{`${v}位大人`}</option>;
                 })}
               </select>
             </div>
@@ -112,8 +112,8 @@ const Booking = () => {
                 aria-label="Default select example"
                 onChange={selectHandlerKid}
               >
-                {totalPeoplesKid.map((v) => {
-                  return <option value={v}>{`${v}位小孩`}</option>;
+                {totalPeoplesKid.map((v,i) => {
+                  return <option key={i} value={v}>{`${v}位小孩`}</option>;
                 })}
               </select>
             </div>
@@ -155,8 +155,8 @@ const Booking = () => {
         <hr className="my-3" />
         {/* <div id="msgbox"></div> */}
         <div className="booking-time">
-          {booking_time_noon.map((d) => {
-            return <button className="me-3">{d}</button>;
+          {booking_time_noon.map((d,i) => {
+            return <button key={i} className="me-3">{d}</button>;
           })}
         </div>
         <hr />
