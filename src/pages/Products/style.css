@@ -58,8 +58,13 @@
           align-items: center;
 }
 
+.products a {
+  text-decoration: none;
+  color: #000;
+}
+
 .products .product_card {
-  width: 230px;
+  width: 250px;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 10px;
@@ -74,7 +79,7 @@
 
 .products .product_card .imageContainer {
   overflow: hidden;
-  width: 230px;
+  width: 250px;
   height: 230px;
 }
 

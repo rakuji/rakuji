@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const category = [
@@ -12,7 +13,7 @@ const Products = () => {
     "副產品",
   ];
 
-  const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,13];
+  const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
   let deg = 0;
   const price_search = () => {
@@ -56,26 +57,27 @@ const Products = () => {
       <div className="row">
         <div className="col-2 product_category_aside">
           <div className="sticky-top">
-
-          {category.map((v, i) => {
-            return (
-              <button key={i} className="product_category">
-                {v}
-              </button>
-            );
-          })}
+            {category.map((v, i) => {
+              return (
+                <button key={i} className="product_category">
+                  {v}
+                </button>
+              );
+            })}
           </div>
         </div>
         <div className="col-10 products">
           {products.map((v, i) => {
             return (
               <div className="product_card">
-                <div className="imageContainer mb-2">
-                  <img
-                    src={require("./images/MB-006裝蒜牛五花飯.jpg")}
-                    alt=""
-                  />
-                </div>
+                <Link to="/products/product_detail">
+                  <div className="imageContainer mb-2">
+                    <img
+                      src={require("./images/MB-006裝蒜牛五花飯.jpg")}
+                      alt=""
+                    />
+                  </div>
+                </Link>
                 <div className="product_card_info">
                   <p className="mb-2">裝蒜牛五花飯</p>
                   <p className="mb-2">NT150</p>
