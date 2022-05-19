@@ -15,6 +15,7 @@ import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 import Booking_information from "./pages/Booking/Booking_information";
+import Booking_finish from "./pages/Booking/Booking_finish";
 
 function App() {
 
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path="/booking/booking_information" exact>
           <Booking_information />
+        </Route>
+        <Route path="/booking/booking_information/booking_finish" exact>
+          <Booking_finish />
         </Route>
         <Route path="/recipes" exact>
           <Recipes />

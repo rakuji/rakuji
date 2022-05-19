@@ -1,8 +1,3 @@
-input[type="date"] {
-  background-image: none;
-  padding-right: 0.75rem;
-}
-
 .booking-time {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,7 +25,7 @@ span#booking_introduction {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.next_page {
+.booking .next_page {
   color: #fff;
   text-decoration: none;
   border: 1px solid #58c2dd;
@@ -41,36 +36,63 @@ span#booking_introduction {
   background-color: #58c2dd;
 }
 
-section {
+.booking_confirm_card {
   border: 1px solid #d9d9d9;
   border-radius: 5px;
   padding: 0;
 }
 
-section img {
+.booking_confirm_card img {
   width: 100%;
 }
 
-section h3 {
+.booking_confirm_card h3 {
   margin-bottom: 0;
 }
 
-section i {
+.booking_confirm_card i {
   color: #dc710d;
 }
 
-section p {
+.booking_confirm_card p {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-section hr {
+.booking_confirm_card hr {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-#booking_section.row > * {
+#booking_section .booking_confirm {
   padding-left: 0;
   padding-right: 0;
+}
+
+#booking_section .booking_information {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+#booking_section .booking_information .word_length {
+  font-size: 12px;
+  color: #AFAFAF;
+}
+
+#booking_section .booking_information button {
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 100%;
+  height: 50px;
+}
+
+#booking_section .booking_information button.last_page {
+  background-color: transparent;
+  color: #58c2dd;
+}
+
+#booking_section .booking_information button.next_page {
+  background-color: #58c2dd;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
