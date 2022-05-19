@@ -48,32 +48,33 @@ const Newslist = () => {
             <br></br>
             <br></br>
             <br></br>
-         
+
 
           </div>
-          {/* 2 */}
+          {/* 2  圖片文字可以連結到Votelist */}
           <div className="col">
-            <div className="card">
-              <img src={require("./00001.png")} className="card-img-top" alt="..." />
+            <div className="card" >
+              <img src={require("./00001.png")} className="card-img-top" alt="..."  />
               <div className="card-body">
-                <h5 className="card-title">樂時町年末同樂會</h5>
-                <p className="card-text fs-6">年末開心情!!!慰勞一整年的辛苦來樂時町點套餐，飲料讓你免費喝!!!</p>
-                <Link to="/Votelist" className="nav-link">
-                  Votelist
-                </Link>
+                <h3 className="card-title">樂時町年末同樂會</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">年末開心情!!!慰勞一整年的辛苦來樂時町點套餐，飲料讓你免費喝!!!</p>
+         
               </div>
             </div>
           </div>
           {/* 3 */}
           <div className="col">
             <div className="card">
-              <img src={require("./00002.png")} className="card-img-top" alt="..." />
+            <a href="/Votelist"><img src={require("./00002.png")} className="card-img-top" alt="..." /></a>
               <div className="card-body">
-                <h5 className="card-title">票選料理之王</h5>
-                <p className="card-text fs-6">選出你的料理天菜，投票抽大獎</p>
-                <Link to="/Cooperationform" className="nav-link">
-                  Cooperationform
+                <h3 className="card-title">票選料理之王</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">選出你的料理天菜，投票抽大獎!</p>
+                <Link to="/Votelist" className="nav-link">
+                  Votelist
                 </Link>
+       
               </div>
             </div>
           </div>
@@ -82,8 +83,9 @@ const Newslist = () => {
             <div className="card">
               <img src={require("./00003.png")} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">前程似錦</h5>
-                <p className="card-text fs-6">樂食町與您一同慶祝畢業，同桌每人皆享有甜品</p>
+                <h3 className="card-title">前程似錦</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">樂食町與您一同慶祝畢業，同桌每人皆享有甜品!</p>
               </div>
             </div>
           </div>
@@ -92,8 +94,9 @@ const Newslist = () => {
             <div className="card">
               <img src={require("./00004.png")} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">端午特別優惠</h5>
-                <p className="card-text fs-6">來店點節慶套餐，享特殊優惠。</p>
+                <h3 className="card-title">端午特別優惠</h3>               
+                 <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">來店點節慶套餐，享特殊優惠!</p>
               </div>
             </div>
           </div>
@@ -102,8 +105,9 @@ const Newslist = () => {
             <div className="card">
               <img src={require("./00005.png")} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">慶祝母親節</h5>
-                <p className="card-text fs-6">帶媽媽一同慶祝，同桌享有88折優惠 </p>
+                <h3 className="card-title">慶祝母親節</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">帶媽媽一同慶祝，同桌享有88折優惠!</p>
               </div>
             </div>
           </div>
@@ -112,8 +116,9 @@ const Newslist = () => {
             <div className="card">
               <img src={require("./00006.png")} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">生日壽星</h5>
-                <p className="card-text fs-6">生日壽星，同桌享有88折優惠</p>
+                <h3 className="card-title">生日壽星</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">生日壽星，同桌享有88折優惠!</p>
               </div>
             </div>
           </div>
@@ -122,8 +127,9 @@ const Newslist = () => {
             <div className="card">
               <img src={require("./00007.png")} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">食品認證</h5>
-                <p className="card-text fs-6">樂食町各項產品皆有通過食品認證，請安心享用!</p>
+                <h3 className="card-title">食品認證</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">樂食町各項產品皆有通過食品認證，請安心享用!</p>
               </div>
             </div>
           </div>
@@ -132,12 +138,38 @@ const Newslist = () => {
             <div className="card">
               <img src={require("./00008.png")} className="card-img-top" alt="..." />
               <div className="card-body">
-                <h5 className="card-title" >會員限定</h5>
-                <p className="card-text fs-6">加入樂食町會員，獲得第一手訊息及優惠方案</p>
+                <h3 className="card-title">會員限定</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">加入樂食町會員，獲得第一手訊息及優惠方案!</p>
               </div>
             </div>
           </div>
 
+      {/* 10 照片失真要換*/}
+      <div className="col">
+            <div className="card">
+              <img src={require("./00010.png")} className="card-img-top" alt="..." />
+              <div className="card-body">
+                <h3 className="card-title" >人才招募</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">加入樂食町家族，讓我們一同成長!!</p>
+              </div>
+            </div>
+          </div>
+                {/* 11 照片失真要換*/}
+                <div className="col">
+            <div className="card">
+            <a href="/Cooperationform"><img src={require("./00011.png")} className="card-img-top" alt="..." /></a>
+              <div className="card-body">
+                <h3 className="card-title" >異業合作</h3>
+                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-5">歡迎將您的想法填入表單，將與您聯繫!!</p>
+                <Link to="/Cooperationform" className="nav-link">
+                  Cooperationform
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
