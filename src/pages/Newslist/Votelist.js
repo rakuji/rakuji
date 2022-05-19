@@ -1,24 +1,25 @@
 import React from "react";
 import "./Newslist.css"
 
+import Breadcrumb from "./Breadcrumb";
 
 
 const Votelist = () => {
-  // bunner圖片三張輪播 拿掉左右箭頭及下方三個長方形
+  // bunner圖片三張輪播 拿掉左右箭頭及下方三個長方形 react bootstrap
 
   return (
-
+    
     <main>
+      <Breadcrumb>
+          <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
+          <Breadcrumb.Item href="/Newslist">最新消息</Breadcrumb.Item>
+          {/* 麵包屑製作問題 */}
+          {/* <Breadcrumb.Item active href="/Votelist">選出你的天菜</Breadcrumb.Item> */}
+        </Breadcrumb>        
       <div className="container">
-
         <div className="col">
 
-
-
-
-          <br></br>
           <div className="carousel-inner" >
-
             <div className="" width="18rem;">
               <img src={require("./001.png")}
                 width="100%" height="100%"
@@ -46,17 +47,13 @@ const Votelist = () => {
                 活動結果公佈：2022年07月18日前於活動頁公佈得獎者。</li>
             </ul>
             <div className="card-body">
-
             </div>
           </div>
 
         </div>
       </div>
-      <br />
 
       <div className="container">
-
-
         <div className="row row-cols-1 row-cols-md-4 g-4">
           <div className="col">
             <div className="card">

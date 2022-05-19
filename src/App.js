@@ -29,7 +29,7 @@ function App() {
         <Route path="/about" exact>
           <About />
         </Route>
-        <Route path="/newslist" exact>
+        <Route path="/Newslist" exact>
           <Newslist />
           </Route>
           <Route path="/Cooperationform" exact>
