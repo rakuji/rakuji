@@ -1,0 +1,118 @@
+.srarch_bar .price_search {
+  border: 1px solid #58c2dd;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #58c2dd;
+  padding: 0.35rem 0.75rem;
+}
+
+.srarch_bar .product_search .form-control {
+  width: 100%;
+  border-color: #58c2dd;
+}
+
+.srarch_bar .product_search button {
+  background-color: #58c2dd;
+  border-color: #58c2dd;
+}
+
+.srarch_bar .product_search button i {
+  color: #fff;
+}
+
+.product_category_aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.product_category_aside button {
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  background-color: transparent;
+  width: 180px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.product_category_aside button:focus {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products .product_card {
+  width: 230px;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+
+.products .product_card:hover img {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.products .product_card .imageContainer {
+  overflow: hidden;
+  width: 230px;
+  height: 230px;
+}
+
+.products .product_card .imageContainer img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.products .product_card .product_card_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.products .product_card .product_card_info button {
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  background-color: #58c2dd;
+  width: 70px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.products .product_card .product_card_info button i {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
