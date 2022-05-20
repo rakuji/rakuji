@@ -6,7 +6,7 @@ function Footer() {
     <footer>
       <div className="container py-5">
         <div className="row">
-          <div className="col-3">
+          <div className="col-3 cccc">
             <img src={require("../images/footer_logo.png")} alt="" />
           </div>
 

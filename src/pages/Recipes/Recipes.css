@@ -1,9 +1,24 @@
-body {
-    background-image: url(./image/BG.png);
-    background-size: 1400px;
-    background-position: 50% -23%;
-    background-repeat: no-repeat;
+.RecipesText {
+    color: #58C2DD;
+
+
 }
+
+.RecipesIngredientsText {
+    border-bottom: 2px dashed #58C2DD;
+
+    max-width: 80px;
+    margin: 0px 0px 15px 30%;
+    padding: 0px 0px 10px 0px;
+}
+
+.RecipesStepText {
+    border-bottom: 2px dashed #58C2DD;
+    max-width: 100px;
+    margin: 0px 0px 15px 46%;
+    padding: 0px 0px 10px 0px;
+}
+
 
 .RecipesSearchDiv {
     padding: 0px;
@@ -16,6 +31,15 @@ body {
 
 }
 
+.RecipesIngredientsBorder {
+    color: rgb(133, 133, 133);
+    border-bottom: 2px dashed #ccc;
+    margin: 0px 0px 0px 0px;
+}
+
+.RecipesIngredients {
+    margin: 15px 0px 0px 5px;
+}
 
 
 .RecipesLookButton {
@@ -163,10 +187,6 @@ body {
 @media screen and (max-width:576px) {
     .RecipesClassButtonAll {
         display: none;
-    }
-
-    body {
-        background-image: none;
     }
 
     .RecipesClassButtonAllOn {

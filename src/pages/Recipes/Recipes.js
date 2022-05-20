@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Recipes.css";
+import "../../components/background.css";
+
 
 const Recipes = () => {
   return (

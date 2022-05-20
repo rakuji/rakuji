@@ -25,6 +25,7 @@ function App() {
   return (
     <div className="App">
       <Nav />
+
       <Breadcrumb />
       <Switch>
         <Route path="/" exact>
@@ -53,6 +54,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
+
     </div>
   );
 }

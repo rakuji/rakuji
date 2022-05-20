@@ -8,20 +8,22 @@ nav .logo img {
 .navbar-light .navbar-nav .nav-link {
   color: #58c2dd;
 }
-.breadcrumb .breadcrumb-item .active{
+
+.breadcrumb .breadcrumb-item .active {
   color: #58c2dd;
 
 }
 
-.px1140{
- 
+.px1140 {
+
   margin: 35px 0px 0;
-  
+
 }
-@media screen and (max-width:576px){
-.px1140{
-  display: none;
-}
+
+@media screen and (max-width:576px) {
+  .px1140 {
+    display: none;
+  }
 }
 
 nav .iconify {
@@ -42,14 +44,16 @@ nav ul {
 /* navbar mobile */
 
 
-.navbar-light .navbar-toggler{
+.navbar-light .navbar-toggler {
   border-color: transparent;
 }
-.navbar-toggler:focus{
+
+.navbar-toggler:focus {
   box-shadow: none;
 }
 
-nav #navopen,nav #navclose{
+nav #navopen,
+nav #navclose {
   color: #dc710d;
   transition: 5s;
 }
@@ -80,6 +84,12 @@ footer i {
   margin-right: 10px;
 }
 
-p{
+p {
   font-size: 66px;
+}
+
+@media screen and (max-width:576px) {
+  .cccc {
+    display: none;
+  }
 }

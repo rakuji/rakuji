@@ -5,7 +5,7 @@ function Box() {
   return (
     <>
       <div className="container p-3 mb-2  text-dar ">
-        <div className="container row p-3 mb-2 bg-info text-dark">
+        <div className="container row p-3 mb-2  text-dark">
           <div className="p-3 mb-2 bg-body text-dar RecipesOff">
             <h3
               style={{ padding: "0px 20px", margin: "0px -2px" }}
@@ -69,13 +69,13 @@ function Box() {
                   <div className="d-flex row row-cols-3">
                     <div className="1">
                       <div className="RecipesTimetopbox ">
-                      <div className="card RecipesImgKcal RecipesTimetopbox"   >
-                        <img
-                          src={require("./image/time.png")}
-                          className="card-img-top"
-                          alt="kacl"                          
-                        />
-                      </div>
+                        <div className="card RecipesImgKcal RecipesTimetopbox">
+                          <img
+                            src={require("./image/time.png")}
+                            className="card-img-top"
+                            alt="kacl"
+                          />
+                        </div>
                         {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
@@ -106,13 +106,13 @@ function Box() {
                     </div>
                     <div className="2">
                       <div className="RecipesTimetopbox ">
-                      <div className="card RecipesImgKcal RecipesTimetopbox"   >
-                        <img
-                          src={require("./image/kacl.png")}
-                          className="card-img-top"
-                          alt="kacl"                          
-                        />
-                      </div>
+                        <div className="card RecipesImgKcal RecipesTimetopbox">
+                          <img
+                            src={require("./image/kacl.png")}
+                            className="card-img-top"
+                            alt="kacl"
+                          />
+                        </div>
                         {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
@@ -133,13 +133,13 @@ function Box() {
                     </div>
                     <div className="3">
                       <div className="RecipesTimetopbox ">
-                      <div className="card RecipesImgKcal RecipesTimetopbox"   >
-                        <img
-                          src={require("./image/kacls.png")}
-                          className="card-img-top"
-                          alt="kacl"                          
-                        />
-                      </div>
+                        <div className="card RecipesImgKcal RecipesTimetopbox">
+                          <img
+                            src={require("./image/kacls.png")}
+                            className="card-img-top"
+                            alt="kacl"
+                          />
+                        </div>
                         {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
@@ -160,7 +160,7 @@ function Box() {
             </div>
           </div>
 
-          <div className="p-3 mb-2 bg-body text-dar RecipesOn">
+          <div className="p-3 mb-2  text-dar RecipesOn">
             <div
               style={{ padding: "5px" }}
               className="d-flex flex-row text-center "
@@ -198,13 +198,13 @@ function Box() {
                   <div className="col">
                     <div>
                       <div className="RecipesTimetopbox ">
-                      <div className="card RecipesImgKcal "   >
-                        <img
-                          src={require("./image/time.png")}
-                          className="card-img-top"
-                          alt="kacl"                          
-                        />
-                      </div>
+                        <div className="card RecipesImgKcal ">
+                          <img
+                            src={require("./image/time.png")}
+                            className="card-img-top"
+                            alt="kacl"
+                          />
+                        </div>
                         {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
@@ -237,11 +237,11 @@ function Box() {
 
                   <div className="col ">
                     <div className="RecipesTimetopbox ">
-                      <div className="card RecipesImgKcal "   >
+                      <div className="card RecipesImgKcal ">
                         <img
                           src={require("./image/kacl.png")}
                           className="card-img-top"
-                          alt="kacl"                          
+                          alt="kacl"
                         />
                       </div>
                       {/* <circle
@@ -262,11 +262,11 @@ function Box() {
                   </div>
                   <div className="col">
                     <div className="RecipesTimetopbox ">
-                    <div className="card RecipesImgKcal "   >
+                      <div className="card RecipesImgKcal ">
                         <img
                           src={require("./image/kacls.png")}
                           className="card-img-top"
-                          alt="kacl"                          
+                          alt="kacl"
                         />
                       </div>
                       {/* <canvas
@@ -286,15 +286,68 @@ function Box() {
               </div>
             </div>
           </div>
-          <div className="p-3 mb-2 bg-body text-dar">
-            <div className="d-flex flex-row"></div>
+          <div className="p-3 mb-2 nav   ">
+            <div className="col-3 container ">
+              <div className="text-center container">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText">
+                  食材
+                </h5>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">雞腿肉</h6>
+                <h6>600g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">麵粉</h6>
+                <h6>200g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">水</h6>
+                <h6>10g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">油</h6>
+                <h6>200g</h6>
+              </div>
+            </div>
+            <svg className="col-2 ">
+              <g stroke="#58C2DD" stroke-width="3" style={{ fill: "#ccc" }}>
+                <line x1="50%" y1="0" x2="50%" y2="85%" />
+              </g>
+            </svg>
 
-            <div className="d-flex flex-row"></div>
+            <div className=" col-3  container ">
+              <div className="text-center container">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText">
+                  調味料
+                </h5>
+              </div>
+              <div className="nav RecipesIngredientsBorder  ">
+                <h6 className=" col ">砂糖</h6>
+                <h6>20g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">醬油</h6>
+                <h6>10g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">胡椒粉</h6>
+                <h6>5g</h6>
+              </div>
+            </div>
           </div>
-          <div className="p-3 mb-2 bg-body text-dar"></div>
-          <div className="p-3 mb-2 bg-body text-dar"></div>
-          <div className="p-3 mb-2 bg-body text-dar"></div>
-          <div className="p-3 mb-2 bg-body text-dar"></div>
+          <div className="p-3 mb-2  text-dar">
+            <div className="text-center container">
+              <h5 className="RecipesText fw-bold RecipesStepText">料理步驟</h5>
+            </div>
+            <div className="nav RecipesIngredientsBorder col-6 ">
+                <h6 className="col-1 RecipesText fs-2 fw-bold">1</h6>
+                <h6 className="RecipesIngredients">將雞腿肉切成小塊</h6>
+              </div>
+          </div>
+          <div className="p-3 mb-2 bg-info text-dar"></div>
+          <div className="p-3 mb-2 bg-info text-dar"></div>
+          <div className="p-3 mb-2 bg-info text-dar"></div>
         </div>
       </div>
     </>
