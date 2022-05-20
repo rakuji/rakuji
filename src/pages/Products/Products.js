@@ -69,11 +69,11 @@ const Products = () => {
         <div className="col-10 products">
           {products.map((v, i) => {
             return (
-              <div className="product_card">
+              <div key={i} className="product_card">
                 <Link to="/products/product_detail">
                   <div className="imageContainer mb-2">
                     <img
-                      src={require("./images/MB-006裝蒜牛五花飯.jpg")}
+                      src={require("./images/主餐/MB-006裝蒜牛五花飯_s.jpg")}
                       alt=""
                     />
                   </div>

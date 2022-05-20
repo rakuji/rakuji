@@ -73,9 +73,37 @@ const Booking = () => {
   // react-datepicker
   const [startDate, setStartDate] = useState(new Date());
 
+  const [endDate, setEndDate] = useState(new Date())
+
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>線上訂位</div>
     <div className="container booking">
+
+      <div>
+        <DatePicker
+          className="form-select"
+          selected={startDate}
+          dateFormat="yyyy/MM/dd"
+          minDate={new Date()}
+          onChange={(date) => setStartDate(date)}
+        />
+        <DatePicker
+          className="form-select"
+          selected={endDate}
+          dateFormat="yyyy/MM/dd"
+          minDate={startDate}
+          onChange={(date) => setEndDate(date)}
+        />
+      </div>
+
+
+
+
+
+
+
+
+
       <div className="row">
         <h3>線上訂位</h3>
       </div>
@@ -84,7 +112,7 @@ const Booking = () => {
           <label htmlFor="">分店</label>
           <select className="form-select" aria-label="Default select example">
             <option>請選擇分店</option>
-            {store.map((v,i) => {
+            {store.map((v, i) => {
               return <option key={i} value={v}>{v}</option>;
             })}
           </select>
@@ -100,7 +128,7 @@ const Booking = () => {
                 aria-label="Default select example"
                 onChange={selectHandlerAdult}
               >
-                {totalPeoplesAdult.map((v,i) => {
+                {totalPeoplesAdult.map((v, i) => {
                   return <option key={i} value={v}>{`${v}位大人`}</option>;
                 })}
               </select>
@@ -112,7 +140,7 @@ const Booking = () => {
                 aria-label="Default select example"
                 onChange={selectHandlerKid}
               >
-                {totalPeoplesKid.map((v,i) => {
+                {totalPeoplesKid.map((v, i) => {
                   return <option key={i} value={v}>{`${v}位小孩`}</option>;
                 })}
               </select>
@@ -155,7 +183,7 @@ const Booking = () => {
         <hr className="my-3" />
         {/* <div id="msgbox"></div> */}
         <div className="booking-time">
-          {booking_time_noon.map((d,i) => {
+          {booking_time_noon.map((d, i) => {
             return <button key={i} className="me-3">{d}</button>;
           })}
         </div>

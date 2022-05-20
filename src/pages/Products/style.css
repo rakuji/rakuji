@@ -50,9 +50,6 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -70,6 +67,7 @@
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 40px;
+  margin-right: 19px;
 }
 
 .products .product_card:hover img {
@@ -119,5 +117,22 @@
 
 .products .product_card .product_card_info button i {
   color: #fff;
+}
+
+.product_detail .product_img {
+  background-color: #000;
+  padding: 80px 0px 0px 80px;
+}
+
+.product_detail .product_img .imageContainer {
+  overflow: hidden;
+  width: 460px;
+  height: 500px;
+}
+
+.product_detail .product_info {
+  background-color: antiquewhite;
+  height: 500px;
+  padding-top: 80px;
 }
 /*# sourceMappingURL=style.css.map */
