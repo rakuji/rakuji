@@ -19,7 +19,6 @@ const Votelist = () => {
       <div className="container">
         <div className="col">
 
-          <div className="carousel-inner" >
             <div className="" width="18rem;">
               <img src={require("./001.png")}
                 width="100%" height="100%"
@@ -51,7 +50,6 @@ const Votelist = () => {
           </div>
 
         </div>
-      </div>
 
       <div className="container">
         <div className="row row-cols-1 row-cols-md-4 g-4">
