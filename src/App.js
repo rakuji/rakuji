@@ -16,9 +16,10 @@ import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 import Contact from "./pages/Contact/Contact";
+import Votelist from "./pages/Newslist/Votelist";
+import Cooperationform from "./pages/Newslist/Cooperationform";
 
 function App() {
-
   return (
     <div className="App">
       <Nav />
@@ -31,6 +32,12 @@ function App() {
         </Route>
         <Route path="/newslist" exact>
           <Newslist />
+        </Route>
+        <Route path="/Cooperationform" exact>
+          <Cooperationform />
+        </Route>
+        <Route path="/Votelist" exact>
+          <Votelist />
         </Route>
         <Route path="/products" exact>
           <Products />
