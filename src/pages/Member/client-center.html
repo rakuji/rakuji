@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client-center</title>
+    <!-- bootstrap -->
+    <!-- 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- 5.0.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/my-login.css"> -->
+    <!-- <link rel="stylesheet" href="./css/flex.css"> -->
+    <!-- css reset -->
+    <link rel="stylesheet" href="/src/pages/client/css/reset.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Potta+One&family=Yuji+Mai&display=swap"
+        rel="stylesheet">
+
+    <!-- style -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        body.my-login-page {
+            background-color: #fff;
+            /*要喚回白色*/
+            background-image: url(/src/image/BG-signup.png);
+            background-size: 960px auto;
+            background-repeat: repeat-y;
+            background-position: center;
+            font-size: 14px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        header {
+            background-image: url(/src/image/banner/header.png);
+            background-size: 100vw auto;
+            /* width: 100vw; */
+            height: 20vw;
+            /* background-image: linear-gradient(#aaa, #000); */
+            background-position: top center;
+            background-repeat: no-repeat;
+        }
+
+        main {
+            display: flex;
+            min-height: calc(100vh - 30vh);
+            max-width: 960px;
+
+            justify-content: center;
+
+        }
+
+        main>article {
+            flex: 1;
+        }
+
+        main>aside {
+            flex: 0 0 20vw;
+            background: rgb(255, 255, 255);
+        }
+
+
+        header,
+        footer,
+        article,
+        aside {
+            padding: 1em;
+        }
+
+        footer {
+            background: yellowgreen;
+            height: 20vh;
+        }
+
+        .breadcrumb {
+            height: 20px;
+            margin: 10px;
+            background-color: #fff;
+        }
+
+        .btn-custom {
+            background-color: #58C2DD;
+            color: #fff;
+            /* border-radius: 50%; */
+        }
+
+        .btn-custom:hover {
+            color: #fff;
+            background-color: #53acc2;
+        }
+
+
+        .align {
+            /* justify-content: center; */
+            text-align: center;
+            color: #a9a9a9;
+        }
+
+        .star {
+            color: red;
+        }
+
+        .m-title img {
+            width: 50%;
+
+        }
+
+        span>.hy-link {
+            color: #58C2DD;
+        }
+
+        .pic-dox {
+            background-image: url(/src/image/icon/pic.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 24px auto;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border: 1px solid #C4C4C4;
+
+        }
+
+        .text-control {
+            font-weight: bolder;
+            /* font-weight: 900;     */
+
+        }
+
+        figure img {
+            max-width: 100%;
+        }
+
+        .circle {
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: #53acc2;
+            overflow: hidden;
+        }
+
+        .p-control {
+            /* background-image: none; */
+            width: 250px;
+        }
+
+        .list-1 {}
+    </style>
+</head>
+
+<body class="my-login-page">
+    <header>header</header>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#index">首頁</a></li>
+            <li class="breadcrumb-item"><a href="#">會員管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">會員個人資料</li>
+        </ol>
+    </nav>
+    <main>
+        <!-- aside -->
+        <aside class="m-3">
+            <div class="form-group ">
+                <!-- <div class="pic-dox"></div> -->
+                <div class="card" style="width: 18rem;">
+                    
+                        <div class="m-3 pl-5">
+                           
+                                <div class="circle box ">
+
+                                    <!-- <figure class="circle"> -->
+                                    <img src="/src/image/account/account-1.jpg" class=" p-control" alt="...">
+                                    <!-- </figure> -->
+                                </div>
+                            
+                        </div>
+
+                        <div class="card-body ">
+                            <!-- <h5 class="card-title">Card title</h5> -->
+                            <div class="justify-content-center text-sm-center m-3">
+                                <p class="card-text">Coupons: 2張</p>
+                            </div>
+                        </div>
+                   
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item m-3">
+                            <div class="mb-2">
+                                <span class="text-control ">日期</span>
+                            </div>
+                            <div class=" pt-2">
+                                <img src="/src/image/account/Date.png" alt="">
+                                <br>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item m-3">
+                            <span class="text-control">您的餐點喜好</span>
+                            <div class="ml-4 pt-2">
+                                <img src="/src/image/account/A.png" alt="">
+                                黃金豬排丼飯<br>
+                                <img src="/src/image/account/B.png" alt="">
+                                可樂餅<br>
+                                <img src="/src/image/account/C.png" alt="">
+                                烤鮭魚蘿蔔味增湯<br>
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- <input type="file" id="pic" class="" name="pic" value="" required autofocus> -->
+            </div>
+        </aside>
+        <article>
+            <div class="card fat">
+                <div class="card-body">
+                    <!-- <div class="tag_page">tag_page</div> -->
+                    <!-- tab -->
+                    <nav class="nav nav-pills flex-column flex-sm-row">
+                        <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page"
+                            href="./client-center.html">會員個人資料</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" href="./order-list.html"
+                            target="_self">訂單交易紀錄</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" href="./coupon-list.html"
+                            target="_self">優惠資料紀錄</a>
+
+                    </nav>
+                    <br>
+
+                    <!-- 表單 -->
+                    <form method="POST" class="my-login-validation" novalidate="">
+
+                        <div class="form-group">
+                            <label for="a">姓名</label>
+                            <input id="Name" type="text" class="form-control" name="Name" value="吳建凡" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sex">性別</label>
+                            <input id="sex" type="text" class="form-control" name="sex" value="男" disabled>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="__">職業</label>
+                            <input id="__" type="text" class="form-control" name="__d" value="工程師" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">出生年月日</label>
+                            <input id="" type="text" class="form-control" name="" value="1983-03-10" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">居住縣市</label>
+                            <input id="" type="text" class="form-control" name="" value="彰化縣" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">居住地址</label>
+                            <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">子嗣</label>
+                            <input id="" type="text" class="form-control" name="" value="有小孩" disabled>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="number">手機號碼</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" value="0912479060" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">修改密碼</label>
+                            <input type="password" class="form-control" id="password" name="password" value="aaaaaaaaaa"
+                                disabled><br>
+                        </div>
+
+                        <br> <!-- 斷行 -->
+                        <div class="row form-group  g-3">
+                            <div class="col-sm-5">
+                                <button type="submit" class="btn btn-block btn-custom ">
+                                    修改
+                                </button>
+                            </div>
+                            <div class="col-sm-5">
+
+                                <button type="submit" class="btn btn-block btn-danger">
+                                    取消
+                            </div>
+                        </div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            </div>
+        </article>
+    </main>
+    <footer>footer</footer>
+</body>
+
+</html>
