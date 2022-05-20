@@ -17,7 +17,7 @@ import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
 
 //麵包屑  //安裝套件==> npm i react-router-config@5.1.1
-import Breadcrumb from "./components/Breadcrumb";
+import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 
 
 function App() {

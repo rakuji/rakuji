@@ -1,0 +1,10 @@
+.test a {
+    text-decoration: none;
+    color: #58c2dd;
+}
+
+.test a:hover {
+    opacity: 3;
+    color: #000;
+    transition: 0.3s;
+}

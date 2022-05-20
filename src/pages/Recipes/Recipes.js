@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Recipes.css";
 import "../../components/background.css";
 
-
 const Recipes = () => {
   return (
     <>
@@ -140,8 +139,8 @@ const Recipes = () => {
         </Link> */}
       </div>
 
-      <div className="container nav ">
-        <div className="col-2 RecipesClassButtonAll ">
+      <div className="container nav">
+        <div className=" RecipesClassButtonAll ">
           <div>
             <button className=" RecipesClassButton " id="">
               全部食譜
@@ -174,9 +173,9 @@ const Recipes = () => {
           </div>
         </div>
 
-        <div className="nav ">
-          <div className="row RecipesSearchBoxCardAll">
-            <div className="card RecipesSearchBoxCard ">
+        <div className="">
+          <div className="RecipesSearchBoxCardAll">
+            <div className="RecipesSearchBoxCard ">
               <img
                 src={require("./image/00001.jpg")}
                 className="card-img-top"
@@ -188,9 +187,11 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
-                  查看
-                </button></Link>
+                <Link to="/recipes/box">
+                  <button className=" RecipesLookButton" id="">
+                    查看
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="card RecipesSearchBoxCard">
@@ -205,9 +206,11 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
-                  查看
-                </button></Link>
+                <Link to="/recipes/box">
+                  <button className=" RecipesLookButton" id="">
+                    查看
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="card RecipesSearchBoxCard">
@@ -222,9 +225,11 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
-                  查看
-                </button></Link>
+                <Link to="/recipes/box">
+                  <button className=" RecipesLookButton" id="">
+                    查看
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="card RecipesSearchBoxCard">
@@ -239,14 +244,15 @@ const Recipes = () => {
                   日式唐揚炸雞
                 </p>
                 <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box"><button className=" RecipesLookButton" id="">
-                  查看
-                </button></Link>
+                <Link to="/recipes/box">
+                  <button className=" RecipesLookButton" id="">
+                    查看
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        
       </div>
       <nav aria-label="Page navigation example " className="RecipesPage">
         <ul class="pagination">
