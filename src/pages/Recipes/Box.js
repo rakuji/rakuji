@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Box() {
   return (
     <>
-      <div className="container p-3 mb-2  text-dar  bg-info">
+      <div className="container p-3 mb-2  text-dar ">
         <div className="container row p-3 mb-2 bg-info text-dark">
           <div className="p-3 mb-2 bg-body text-dar RecipesOff">
             <h3
@@ -69,7 +69,14 @@ function Box() {
                   <div className="d-flex row row-cols-3">
                     <div className="1">
                       <div className="RecipesTimetopbox ">
-                        <svg width="100%" height="70">
+                      <div className="card RecipesImgKcal RecipesTimetopbox"   >
+                        <img
+                          src={require("./image/time.png")}
+                          className="card-img-top"
+                          alt="kacl"                          
+                        />
+                      </div>
+                        {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
                             cx="50%"
@@ -90,7 +97,7 @@ function Box() {
                             x2="65%"
                             y2="70%"
                           />
-                        </svg>
+                        </svg> */}
                       </div>
                       <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
                         <br />
@@ -99,7 +106,14 @@ function Box() {
                     </div>
                     <div className="2">
                       <div className="RecipesTimetopbox ">
-                        <svg width="100%" height="70">
+                      <div className="card RecipesImgKcal RecipesTimetopbox"   >
+                        <img
+                          src={require("./image/kacl.png")}
+                          className="card-img-top"
+                          alt="kacl"                          
+                        />
+                      </div>
+                        {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
                             cx="50%"
@@ -109,7 +123,7 @@ function Box() {
                           <text className="RecipesTimeSvg" x="35%" y="60%">
                             KCAL
                           </text>
-                        </svg>
+                        </svg> */}
                       </div>
                       <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
                         <h7>1人份</h7>
@@ -119,16 +133,23 @@ function Box() {
                     </div>
                     <div className="3">
                       <div className="RecipesTimetopbox ">
-                        <svg width="100%" height="70">
+                      <div className="card RecipesImgKcal RecipesTimetopbox"   >
+                        <img
+                          src={require("./image/kacls.png")}
+                          className="card-img-top"
+                          alt="kacl"                          
+                        />
+                      </div>
+                        {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
                             cx="50%"
                             cy="50%"
                             r="30%"
                           />
-                        </svg>
+                        </svg> */}
                       </div>
-                      <div className="bg-body  RecipesTimebottombox rounded-bottom border-2 ">
+                      <div className="  RecipesTimebottombox rounded-bottom border-2 ">
                         <br />
                         <h7>4人份</h7>
                       </div>
@@ -177,7 +198,14 @@ function Box() {
                   <div className="col">
                     <div>
                       <div className="RecipesTimetopbox ">
-                        <svg width="100%" height="70">
+                      <div className="card RecipesImgKcal "   >
+                        <img
+                          src={require("./image/time.png")}
+                          className="card-img-top"
+                          alt="kacl"                          
+                        />
+                      </div>
+                        {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
                             cx="50%"
@@ -198,7 +226,7 @@ function Box() {
                             x2="65%"
                             y2="70%"
                           />
-                        </svg>
+                        </svg> */}
                       </div>
                       <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
                         <br />
@@ -207,19 +235,24 @@ function Box() {
                     </div>
                   </div>
 
-                  <div className="col">
-                    <div className="RecipesTimetopbox">
-                      <svg width="100%" height="70">
-                        <circle
+                  <div className="col ">
+                    <div className="RecipesTimetopbox ">
+                      <div className="card RecipesImgKcal "   >
+                        <img
+                          src={require("./image/kacl.png")}
+                          className="card-img-top"
+                          alt="kacl"                          
+                        />
+                      </div>
+                      {/* <circle
                           className="RecipesTimeSvg"
                           cx="50%"
                           cy="50%"
                           r="30%"
-                        />
-                        <text className="RecipesTimeSvg" x="20%" y="55%">
+                        /> */}
+                      {/* <text className="RecipesTimeSvg" x="20%" y="55%">
                           KCAL
-                        </text>
-                      </svg>
+                        </text> */}
                     </div>
                     <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
                       <h7>1人份</h7>
@@ -229,12 +262,19 @@ function Box() {
                   </div>
                   <div className="col">
                     <div className="RecipesTimetopbox ">
-                      <canvas
+                    <div className="card RecipesImgKcal "   >
+                        <img
+                          src={require("./image/kacls.png")}
+                          className="card-img-top"
+                          alt="kacl"                          
+                        />
+                      </div>
+                      {/* <canvas
                         id="time"
                         width={55}
                         height={60}
                         style={{ border: "1px solid #ccc" }}
-                      ></canvas>
+                      ></canvas> */}
                     </div>
                     <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
                       <br />
@@ -257,34 +297,8 @@ function Box() {
           <div className="p-3 mb-2 bg-body text-dar"></div>
         </div>
       </div>
-      
     </>
   );
 }
-
-
-
-const doFirst = () => {
-  // 先跟HTML 畫面產生關聯
-  
-  let canvas = document.getElementById("time");
-  let context = canvas.getContext("2d");
-
-  context.fillStyle = "red";
-  context.strokeStyle = "red";
-  context.linewidth = 5;
-
-  context.moveTo(0, 30);
-  context.lineTo(0, 30);
-  context.lineTo(10, 50);
-  context.lineTo(30, 40);
-  context.closePath();
-
-  context.stroke();
-
-};
-
-
-
 
 export default Box;

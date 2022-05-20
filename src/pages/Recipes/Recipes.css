@@ -1,7 +1,7 @@
-.Recipesbackground {
+body {
     background-image: url(./image/BG.png);
-    background-size: 1300px;
-    background-position: 200px -60px;
+    background-size: 1400px;
+    background-position: 50% -23%;
     background-repeat: no-repeat;
 }
 
@@ -142,20 +142,21 @@
     border: solid #58C2DD 1px;
 }
 
-.RecipesTimeSvg {
+/* .RecipesTimeSvg {
     stroke: #58C2DD;
     fill: white;
-}
+} */
 
-.RecipesTimeSvgLine {
+/* .RecipesTimeSvgLine {
     stroke-width: 5px;
     stroke: #58C2DD;
     fill: white;
-}
+} */
 
 .RecipesOn {
     display: none;
 }
+
 
 
 
@@ -164,8 +165,8 @@
         display: none;
     }
 
-    .Recipesbackground {
-        display: none;
+    body {
+        background-image: none;
     }
 
     .RecipesClassButtonAllOn {
@@ -254,6 +255,12 @@
     .RecipesTimebottombox {
         max-width: 80px;
         border: solid #58C2DD 1px;
+    }
+
+    .RecipesImgKcal {
+        background: #58C2DD;
+        height: 70px;
+
     }
 
 }
