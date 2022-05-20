@@ -5,7 +5,7 @@ import "./Contact.css";
 const Contact = () => {
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>關於我們</div>
-    <div className="container shadow p-3 mb-5 bg-white rounded d-grid gap-3 my-5">
+    <div className="container shadow p-3 mb-5 bg-white rounded d-grid gap-3 my-5 px-5">
       <div className="row justify-content-center">
         <div className="col">
           <h2>聯絡我們</h2>
