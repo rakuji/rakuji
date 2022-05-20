@@ -1,7 +1,17 @@
 import React from "react";
+import { Form, Col, Button, Row, Container, Image } from "react-bootstrap";
+import "./Home.css";
 
 const Home = () => {
-  return <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>首頁</div>;
+  return (
+ <Container>
+   <Row></Row>
+   <Row></Row>
+   <Row></Row>
+   <Row></Row>
+   <Row></Row>
+ </Container>
+  );
 };
 
 export default Home;
