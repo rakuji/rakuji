@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Cooperationform.css";
@@ -30,7 +30,7 @@ const Cooperationform = () => {
       </div>
       {/* </div> */}
 
-      <Form style={{}} className="container   , block">
+      <Form style={{  }} className="container   , block">
         <Form.Label className="fs-1">商家聯絡資料</Form.Label>
         <br></br>
         <Form.Label className="fs-6">2022/12/56 - 2022/12/56</Form.Label>
@@ -87,11 +87,12 @@ const Cooperationform = () => {
           送出
         </Button>
       </Form>
-      <br></br>
+<br></br>
       <button className="d-block , mx-auto " alt="...">
         icon回上一頁
       </button>
       <br></br>
+
     </main>
   );
 };

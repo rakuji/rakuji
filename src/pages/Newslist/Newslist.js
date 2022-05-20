@@ -1,55 +1,24 @@
-import React from "react";
+import React   from "react";
 
 import { Link } from "react-router-dom";
 
 import "./Newslist.css";
+import Carousel_g from "../../components/Carousel/Carousel_g";
 
 // pages
+// import Carousel from "react-bootstrap/Carousel";
 
 import Breadcrumb from "./Breadcrumb";
 
 const Newslist = () => {
-  // bunner圖片三張輪播 拿掉左右箭頭及下方三個長方形 圖片寫死
+  // bunner圖片三張輪播 拿掉左右箭頭及下方三個長方形 圖片寫死 有時會動有時不會
 
   return (
     <main>
-      <div
-        id="carouselExampleSlidesOnly"
-        className="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active" data-bs-interval="3000">
-            <img
-              src={require("./bunner001.png")}
-              width="1440px"
-              className="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div className="carousel-item " data-bs-interval="3000">
-            <img
-              src={require("./bunner001.png")}
-              width="1440px"
-              className="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div className="carousel-item " data-bs-interval="3000">
-            <img
-              src={require("./bunner001.png")}
-              width="1440px"
-              className="d-block w-100"
-              alt="..."
-            />
-          </div>
-        </div>
-      </div>
+      <Carousel_g />
 
       {/*  放breadcrumb 進入 顏色修改 */}
-
       <Breadcrumb />
-
       <div className="container">
         {/* 內容物藍色區 右邊多出 需置中或移除藍色 */}
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
@@ -104,7 +73,6 @@ const Newslist = () => {
                 <Link to="/Votelist" className="">
                   Votelist
                 </Link>
-            
               </div>
             </div>
           </div>
@@ -249,7 +217,6 @@ const Newslist = () => {
           </div>
         </div>
       </div>
-
       <br></br>
     </main>
   );

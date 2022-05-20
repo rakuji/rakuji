@@ -73,7 +73,7 @@ function Footer() {
                 <span>追蹤我們</span>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <a href="#" className="p-0" >
                   <i className="fa-brands fa-facebook"></i>
                 </a>
                 <a href="#" className="p-0">
@@ -82,7 +82,7 @@ function Footer() {
                 <a href="#" className="p-0">
                   <i className="fa-brands fa-line"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="#" className="p-0" >
                   <i className="fa-brands fa-youtube"></i>
                 </a>
               </li>
