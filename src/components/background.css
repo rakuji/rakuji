@@ -2,7 +2,7 @@ body {
     background-size: 1400px;
     background-position: 45% 0%;
     background-repeat: no-repeat;
-    background-image: url('../../src/pages/Recipes/image/BG.png');
+    background-image: url('../images/BG.png');
 }
 
 @media screen and (max-width:576px) {
