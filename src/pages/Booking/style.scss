@@ -21,6 +21,11 @@
     // padding: 10px 50px;
     margin-bottom: 20px;
 
+    &.active{
+      background-color: #58c2dd;
+      color: #fff;
+    }
+
     &:focus {
       background-color: #58c2dd;
       color: #fff;

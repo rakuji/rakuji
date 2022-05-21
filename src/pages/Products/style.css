@@ -39,6 +39,11 @@
   margin-bottom: 10px;
 }
 
+.product_category_aside button.active {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
 .product_category_aside button:focus {
   background-color: #58c2dd;
   color: #fff;
@@ -50,6 +55,9 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -61,13 +69,11 @@
 }
 
 .products .product_card {
-  width: 250px;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 40px;
-  margin-right: 19px;
 }
 
 .products .product_card:hover img {
@@ -119,20 +125,28 @@
   color: #fff;
 }
 
-.product_detail .product_img {
-  background-color: #000;
-  padding: 80px 0px 0px 80px;
+.product_detail .product_img_container {
+  padding-top: 80px;
+  padding-left: 100px;
+  padding-right: 0;
 }
 
-.product_detail .product_img .imageContainer {
+.product_detail .product_img_container .product_img {
   overflow: hidden;
   width: 460px;
-  height: 500px;
+  height: 460px;
 }
 
 .product_detail .product_info {
-  background-color: antiquewhite;
   height: 500px;
   padding-top: 80px;
+  padding-right: 100px;
+  padding-left: 0;
+}
+
+.product_detail .product_info .product_counts button {
+  background-color: #58c2dd;
+  color: #fff;
+  border-color: #58c2dd;
 }
 /*# sourceMappingURL=style.css.map */

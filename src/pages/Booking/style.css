@@ -15,6 +15,11 @@
   margin-bottom: 20px;
 }
 
+.booking-time button.active {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
 .booking-time button:focus {
   background-color: #58c2dd;
   color: #fff;

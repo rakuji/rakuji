@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import gsap from "gsap";
+import $ from "jquery"
 
 const Products = () => {
   const category = [
@@ -23,6 +25,34 @@ const Products = () => {
       "price_search"
     ).style.transform = `rotate(${deg}deg)`;
   };
+
+  useEffect(()=>{
+    $(".category_buttons button:first-child").attr("class","active")
+
+    $(".category_buttons button").click(function(){
+      $(this).attr("class","active")
+    })
+  },[])
+
+
+
+
+  // useEffect(() => {
+  //   gsap.timeline().from(".product_card", {
+  //     duration: 1,
+  //     opacity: 0,
+  //     delay: 1,
+  //     stagger: 0.1,
+  //   });
+  // }, []);
+
+  useEffect(() => {
+    document.getElementsByClassName("product_card").onclick = (event) => {
+      // event.stopPropagation();
+      console.log(87878787);
+    };
+  }, []);
+
 
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>餐點列表</div>
@@ -56,7 +86,7 @@ const Products = () => {
 
       <div className="row">
         <div className="col-2 product_category_aside">
-          <div className="sticky-top">
+          <div className="sticky-top category_buttons">
             {category.map((v, i) => {
               return (
                 <button key={i} className="product_category">
@@ -77,14 +107,14 @@ const Products = () => {
                       alt=""
                     />
                   </div>
+                  <div className="product_card_info">
+                    <p className="mb-2">裝蒜牛五花飯</p>
+                    <p className="mb-2">NT150</p>
+                    <button id="cart_icon">
+                      <i className="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
                 </Link>
-                <div className="product_card_info">
-                  <p className="mb-2">裝蒜牛五花飯</p>
-                  <p className="mb-2">NT150</p>
-                  <button>
-                    <i className="fa-solid fa-cart-shopping"></i>
-                  </button>
-                </div>
               </div>
             );
           })}

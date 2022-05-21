@@ -72,38 +72,10 @@ const Booking = () => {
 
   // react-datepicker
   const [startDate, setStartDate] = useState(new Date());
-
-  const [endDate, setEndDate] = useState(new Date())
-
+  
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>線上訂位</div>
     <div className="container booking">
-
-      <div>
-        <DatePicker
-          className="form-select"
-          selected={startDate}
-          dateFormat="yyyy/MM/dd"
-          minDate={new Date()}
-          onChange={(date) => setStartDate(date)}
-        />
-        <DatePicker
-          className="form-select"
-          selected={endDate}
-          dateFormat="yyyy/MM/dd"
-          minDate={startDate}
-          onChange={(date) => setEndDate(date)}
-        />
-      </div>
-
-
-
-
-
-
-
-
-
       <div className="row">
         <h3>線上訂位</h3>
       </div>
