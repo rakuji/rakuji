@@ -16,11 +16,11 @@ html,body {
 
 body.my-login-page {
 	background-color: #fff;  /*要喚回白色*/
-	background-image: url(/src/image/BG-signup.png);
+	background-image: url(../../../images/BG-signup.png);
 	background-size: 960px auto;
 	background-repeat: repeat-y;
 	background-position: center;
-	font-size: 14px;
+	/* font-size: 14px; */
 	font-family: 'Noto Sans TC', sans-serif;
 }
 	
@@ -110,7 +110,7 @@ span>.hy-link{
 }
 
 .pic-dox{
-	background-image: url(/src/image/icon/pic.png) ;
+	background-image: url(../../../images/icon/pic.png) ;	
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 24px auto ;
