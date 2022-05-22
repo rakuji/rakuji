@@ -2,17 +2,17 @@ import React from "react";
 
 import "./aboutStore.css";
 import MyBreadcrumb from "./myComponents/MyBreadcrumb";
-import Carousel_g from "./myComponents/Carousel_g";
+import MyCarousel from "./myComponents/MyCarousel";
 
 const About = () => {
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>關於我們</div>
     <>
-      <Carousel_g/>
+      <MyCarousel/>
       <div class="bg">
         <div class="container">
-          <MyBreadcrumb nav="關於我們"/>
-          {/* ABOUT圖片  */}
+          <MyBreadcrumb nav="關於我們" navlink="/about" location="123"/>
+        {/* ABOUT圖片  */}
         <div class="row justify-content-center pageTitleImg">
           <div class="col-4">
             <img src={require("./images/pageTitleAbout.png")} class="img-fluid" alt="關於我們" />

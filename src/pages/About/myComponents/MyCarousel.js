@@ -1,27 +1,35 @@
-import React from 'react';
+import React  from "react";
+import Carousel from "react-bootstrap/Carousel";
+// 需安裝套件 及更改照片
 
-import "../aboutStore.css";
+function MyCarousel() {
+  return (
+    <>
+      <Carousel controls={false} indicators={false}>
+        <Carousel.Item interval={2000}>
+          <img
+            className="d-block w-100"
+            src={require("../images/slider01.png")}
+            alt="First adada"
+          />
+        </Carousel.Item>
+        <Carousel.Item interval={2000}>
+          <img
+            className="d-block w-100"
+            src={require("../images/slider02.jpg")}
+            alt="Second slide"
+          />
+        </Carousel.Item>
+        <Carousel.Item interval={2000}>
+          <img
+            className="d-block w-100"
+            src={require("../images/slider03.jpg")}
+            alt="Third slide"
+          />
+        </Carousel.Item>
+      </Carousel>
+    </>
+  );
+}
 
-const MyCarousel = () => {
-    return (
-        <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src={require("../images/slider01.png")} class="d-block w-100" alt="slider-1" />
-                </div>
-                <div class="carousel-item " data-bs-interval="3000">
-                    <img src={require("../images/slider02.jpg")} class="d-block w-100" alt="slider-2" />
-                </div>
-                <div class="carousel-item " data-bs-interval="3000">
-                    <img src={require("../images/slider03.jpg")} class="d-block w-100" alt="slider-3" />
-                </div>
-            </div>
-        </div>
-        
-    )
-  }
-  
-  export default MyCarousel
+export default MyCarousel;

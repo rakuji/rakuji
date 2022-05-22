@@ -11,7 +11,7 @@ const MyBreadcrumb = (props) => {
           <Link to="/">首頁</Link>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          <Link to="/">{props.nav}</Link>
+          <Link to={props.navlink}>{props.nav}</Link>
         </li>
         <li class="breadcrumb-item  active" aria-current="page">
           {props.location}
