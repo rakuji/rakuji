@@ -156,7 +156,7 @@ const Booking = () => {
         {/* <div id="msgbox"></div> */}
         <div className="booking-time">
           {booking_time_noon.map((d, i) => {
-            return <button key={i} className="me-3">{d}</button>;
+            return <button key={i} >{d}</button>;
           })}
         </div>
         <hr />

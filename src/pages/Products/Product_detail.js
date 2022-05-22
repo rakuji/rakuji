@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+  import React, { useState } from 'react'
 import { GlassMagnifier } from "react-image-magnifiers";
 
 const Product_detail = () => {
 
   const [count, setCount] = useState(1)
+
+  console.log(count)
 
   return (
     <div className='container product_detail pb-5'>
@@ -29,22 +31,22 @@ const Product_detail = () => {
             NT150
           </h1>
 
-          <div class="input-group mb-4 product_counts">
-            <button class="btn btn-primary" type="button" onClick={() => {
+          <div className="input-group mb-4 product_counts">
+            <button className="btn btn-primary" type="button" onClick={() => {
               if (count >= 2) {
                 setCount(count - 1)
               }
             }}>
-              <i class="fa-solid fa-minus"></i>
+              <i className="fa-solid fa-minus"></i>
             </button>
 
-            <input type="text" class="form-control text-center" min="1" value={count} />
+            <input type="text" className="form-control text-center" min="1" onChange={e=>setCount(parseInt(e.target.value))} value={count}/>
 
-            <button class="btn btn-primary rounded-end" type="button" onClick={() => { setCount(count + 1) }}>
-              <i class="fa-solid fa-plus"></i>
+            <button className="btn btn-primary rounded-end" type="button" onClick={() => { setCount(count + 1) }}>
+              <i className="fa-solid fa-plus"></i>
             </button>
 
-            <button class="btn btn-outline-primary d-none d-md-block ms-1 rounded fw-bold border-2" type="button"> 加入購物車 </button>
+            <button className="btn btn-outline-primary d-none d-md-block ms-1 rounded fw-bold border-2 add_cart" type="button"> 加入購物車 </button>
           </div>
         </div>
       </div>

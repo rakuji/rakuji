@@ -15,7 +15,7 @@ const Products = () => {
     "副產品",
   ];
 
-  const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
   let deg = 0;
   const price_search = () => {
@@ -26,13 +26,20 @@ const Products = () => {
     ).style.transform = `rotate(${deg}deg)`;
   };
 
-  useEffect(()=>{
-    $(".category_buttons button:first-child").attr("class","active")
 
-    $(".category_buttons button").click(function(){
-      $(this).attr("class","active")
+  useEffect(() => {
+    $("#category_buttons button:first-child").attr("id", "active")
+  })
+
+
+  useEffect(() => {
+
+
+    $("#category_buttons button").click(function () {
+      $("#category_buttons button").removeAttr("id")
+      $(this).attr("id", "active")
     })
-  },[])
+  }, [])
 
 
 
@@ -86,7 +93,7 @@ const Products = () => {
 
       <div className="row">
         <div className="col-2 product_category_aside">
-          <div className="sticky-top category_buttons">
+          <div className="sticky-top" id="category_buttons">
             {category.map((v, i) => {
               return (
                 <button key={i} className="product_category">
@@ -99,22 +106,27 @@ const Products = () => {
         <div className="col-10 products">
           {products.map((v, i) => {
             return (
-              <div key={i} className="product_card">
-                <Link to="/products/product_detail">
-                  <div className="imageContainer mb-2">
-                    <img
-                      src={require("./images/主餐/MB-006裝蒜牛五花飯_s.jpg")}
-                      alt=""
-                    />
-                  </div>
-                  <div className="product_card_info">
-                    <p className="mb-2">裝蒜牛五花飯</p>
-                    <p className="mb-2">NT150</p>
-                    <button id="cart_icon">
-                      <i className="fa-solid fa-cart-shopping"></i>
-                    </button>
-                  </div>
-                </Link>
+
+              <div key={i} className="product_container">
+
+                <div key={i} className="product_card">
+                  <Link to="/products/product_detail">
+                    <div className="imageContainer mb-2">
+                      <img
+                        src={require("./images/主餐/MB-006裝蒜牛五花飯_s.jpg")}
+                        alt=""
+                      />
+                    </div>
+                    <div className="product_card_info">
+                      <p className="mb-2">裝蒜牛五花飯</p>
+                      <p className="mb-2">NT150</p>
+                      <button id="cart_icon">
+                        <i className="fa-solid fa-cart-shopping"></i>
+                      </button>
+                    </div>
+                  </Link>
+                </div>
+
               </div>
             );
           })}
