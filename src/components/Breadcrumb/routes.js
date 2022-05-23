@@ -14,21 +14,21 @@ const routes = [
   {
     path: '/booking',
     component: Booking,
-    breadcrumbName: '最新消息'
+    breadcrumbName: '線上訂位 '
   },
   // -----------------------------------------------------------
 
   {
     path: '/newslist',
     component: Newslist,
-    breadcrumbName: '餐點列表'
+    breadcrumbName: '最新消息'
   },
   // -----------------------------------------------------------
 
   {
     path: '/products',
     component: Products,
-    breadcrumbName: '線上訂位'
+    breadcrumbName: '餐點列表'
   },
   // -----------------------------------------------------------
 

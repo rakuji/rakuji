@@ -139,42 +139,44 @@ const Recipes = () => {
         </Link> */}
       </div>
 
-      <div className="container nav">
-        <div className=" RecipesClassButtonAll ">
-          <div>
-            <button className=" RecipesClassButton " id="">
-              全部食譜
-            </button>
-          </div>
-          <div>
-            <button className=" RecipesClassButton " id="">
-              主食
-            </button>
-          </div>
-          <div>
-            <button className=" RecipesClassButton " id="">
-              前菜
-            </button>
-          </div>
-          <div>
-            <button className=" RecipesClassButton " id="">
-              湯品
-            </button>
-          </div>
-          <div>
-            <button className=" RecipesClassButton " id="">
-              飲品
-            </button>
-          </div>
-          <div>
-            <button className=" RecipesClassButton " id="">
-              甜點
-            </button>
+      <div className="container nav ">
+        <div className="row RecipesClassButtonAll ">
+          <div className="col">
+            <div>
+              <button className=" RecipesClassButton " id="">
+                全部食譜
+              </button>
+            </div>
+            <div>
+              <button className=" RecipesClassButton " id="">
+                主食
+              </button>
+            </div>
+            <div>
+              <button className=" RecipesClassButton " id="">
+                前菜
+              </button>
+            </div>
+            <div>
+              <button className=" RecipesClassButton " id="">
+                湯品
+              </button>
+            </div>
+            <div>
+              <button className=" RecipesClassButton " id="">
+                飲品
+              </button>
+            </div>
+            <div>
+              <button className=" RecipesClassButton " id="">
+                甜點
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="">
-          <div className="RecipesSearchBoxCardAll">
+        <div className=" col row">
+          <div className="RecipesSearchBoxCardAll col">
             <div className="RecipesSearchBoxCard ">
               <img
                 src={require("./image/00001.jpg")}
@@ -194,7 +196,9 @@ const Recipes = () => {
                 </Link>
               </div>
             </div>
-            <div className="card RecipesSearchBoxCard">
+          </div>
+          <div className="RecipesSearchBoxCardAll col">
+            <div className="RecipesSearchBoxCard ">
               <img
                 src={require("./image/00001.jpg")}
                 className="card-img-top"
@@ -213,7 +217,9 @@ const Recipes = () => {
                 </Link>
               </div>
             </div>
-            <div className="card RecipesSearchBoxCard">
+          </div>
+          <div className="RecipesSearchBoxCardAll col">
+            <div className="RecipesSearchBoxCard ">
               <img
                 src={require("./image/00001.jpg")}
                 className="card-img-top"
@@ -232,7 +238,9 @@ const Recipes = () => {
                 </Link>
               </div>
             </div>
-            <div className="card RecipesSearchBoxCard">
+          </div>
+          <div className="RecipesSearchBoxCardAll col">
+            <div className="RecipesSearchBoxCard ">
               <img
                 src={require("./image/00001.jpg")}
                 className="card-img-top"
@@ -253,6 +261,8 @@ const Recipes = () => {
             </div>
           </div>
         </div>
+
+        <div className=""></div>
       </div>
       <nav aria-label="Page navigation example " className="RecipesPage">
         <ul class="pagination">
