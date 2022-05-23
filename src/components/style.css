@@ -14,17 +14,7 @@ nav .logo img {
 
 }
 
-.px1140 {
 
-  margin: 35px 0px 0;
-
-}
-
-@media screen and (max-width:576px) {
-  .px1140 {
-    display: none;
-  }
-}
 
 nav .iconify {
   font-size: 24px;
@@ -88,8 +78,16 @@ p {
   font-size: 66px;
 }
 
-@media screen and (max-width:576px) {
-  .cccc {
+.bbbb {
+  display: none;
+}
+
+@media screen and (max-width:768px) {
+  .aaaa {
     display: none;
+  }
+
+  .bbbb {
+    display: block;
   }
 }

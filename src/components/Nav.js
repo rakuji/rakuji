@@ -30,7 +30,7 @@ function Nav() {
         {/* Logo */}
 
         <div className="logo">
-          <Link to="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand ">
             <img src={require("../images/logo_color_row.png")} alt="" />
           </Link>
         </div>

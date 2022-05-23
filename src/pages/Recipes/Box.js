@@ -169,7 +169,7 @@ function Box() {
             <div className="">
               <div className="col- avatar ">
                 <img
-                  className="container"
+                  className="container "
                   src={require("./image/00001.jpg")}
                   alt=""
                 />
@@ -286,7 +286,7 @@ function Box() {
               </div>
             </div>
           </div>
-          <div className="p-3 mb-2 nav   ">
+          <div className="p-3 mb-2 nav RecipesOff  ">
             <div className="col-3 container ">
               <div className="text-center container">
                 <h5 className="RecipesText fw-bold RecipesIngredientsText">
@@ -303,7 +303,7 @@ function Box() {
               </div>
               <div className="nav RecipesIngredientsBorder">
                 <h6 className=" col">水</h6>
-                <h6>10g</h6>
+                <h6>100g</h6>
               </div>
               <div className="nav RecipesIngredientsBorder">
                 <h6 className=" col">油</h6>
@@ -336,18 +336,325 @@ function Box() {
               </div>
             </div>
           </div>
-          <div className="p-3 mb-2  text-dar">
+          <div className="p-3 mb-2 nav RecipesOn  ">
+            <div className="col-12 container ">
+              <div className="text-center ">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText">
+                  食材
+                </h5>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">雞腿肉</h6>
+                <h6>600g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">麵粉</h6>
+                <h6>200g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">水</h6>
+                <h6>100g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">油</h6>
+                <h6>200g</h6>
+              </div>
+            </div>
+
+            <div className="col-12 container ">
+              <div className="text-center ">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText">
+                  調味料
+                </h5>
+              </div>
+              <div className="nav RecipesIngredientsBorder  ">
+                <h6 className=" col ">砂糖</h6>
+                <h6>20g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">醬油</h6>
+                <h6>10g</h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className=" col">胡椒粉</h6>
+                <h6>5g</h6>
+              </div>
+            </div>
+          </div>
+          <div className="p-3 mb-2  text-dar container row RecipesOff">
             <div className="text-center container">
               <h5 className="RecipesText fw-bold RecipesStepText">料理步驟</h5>
             </div>
-            <div className="nav RecipesIngredientsBorder col-6 ">
-                <h6 className="col-1 RecipesText fs-2 fw-bold">1</h6>
-                <h6 className="RecipesIngredients">將雞腿肉切成小塊</h6>
+            <div className="row justify-content-center">
+              <div className="nav RecipesIngredientsBorder col-7 ">
+                <h6 className="RecipesText fs-2 fw-bold ">1</h6>
+                <h6 className="RecipesIngredients col-10">
+                  砂糖、醬油混合後，將雞腿肉切成小塊放入攪拌，靜置15分鐘等待入味
+                </h6>
               </div>
+              <div className="nav RecipesIngredientsBorder col-7 ">
+                <h6 className="RecipesText fs-2 fw-bold ">2</h6>
+                <h6 className="RecipesIngredients col-10">
+                  將油倒入鍋中加熱，油鍋預先加熱備用。再將麵粉和水混合攪拌均勻後，將醃好的雞肉塊放入麵液內。
+                </h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder col-7 ">
+                <h6 className="RecipesText fs-2 fw-bold ">3</h6>
+                <h6 className="RecipesIngredients col-10">
+                  將裹好麵衣的雞肉塊從鍋面滑入油鍋內，最後就能將炸好的雞肉塊撈起瀝油擺盤。
+                </h6>
+              </div>
+            </div>
           </div>
-          <div className="p-3 mb-2 bg-info text-dar"></div>
-          <div className="p-3 mb-2 bg-info text-dar"></div>
-          <div className="p-3 mb-2 bg-info text-dar"></div>
+
+          <div className="p-3 mb-2 nav RecipesOn  ">
+            <div className="col-12 container ">
+              <div className="text-center ">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText">
+                  料理步驟
+                </h5>
+              </div>
+              <div className="nav RecipesIngredientsBorder  ">
+                <h6 className="RecipesText fs-2 fw-bold ">1</h6>
+                <h6 className="RecipesIngredients col-10">
+                  砂糖、醬油混合後，將雞腿肉切成小塊放入攪拌，靜置15分鐘等待入味
+                </h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className="RecipesText fs-2 fw-bold ">2</h6>
+                <h6 className="RecipesIngredients col-10">
+                  將油倒入鍋中加熱，油鍋預先加熱備用。再將麵粉和水混合攪拌均勻後，將醃好的雞肉塊放入麵液內。
+                </h6>
+              </div>
+              <div className="nav RecipesIngredientsBorder">
+                <h6 className="RecipesText fs-2 fw-bold ">3</h6>
+                <h6 className="RecipesIngredients col-10">
+                  將裹好麵衣的雞肉塊從鍋面滑入油鍋內，最後就能將炸好的雞肉塊撈起瀝油擺盤。
+                </h6>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3 mb-2  text-dar container row RecipesOff">
+            <div className="text-center container ">
+              <h5 className="RecipesText fw-bold RecipesStepText">營養成分</h5>
+            </div>
+            <div className="row  container  ">
+              <div className="col-2 fw-bold RecipesNutrientLeftBox">
+                蛋白質(g)
+              </div>
+              <div className="col-1 fw-bold RecipesNutrientRightBox">12.0</div>
+              <div className="col-2 fw-bold RecipesNutrientLeftBox">
+                蛋白質(g)
+              </div>
+              <div className="col-1 fw-bold RecipesNutrientRightBox">12.3</div>
+              <div className="col-2 fw-bold RecipesNutrientLeftBox">
+                蛋白質(g)
+              </div>
+              <div className="col-1 fw-bold RecipesNutrientRightBox">12.5</div>
+              <div className="col-2 fw-bold RecipesNutrientLeftBox">
+                蛋白質(g)
+              </div>
+              <div className="col-1 fw-bold RecipesNutrientRightBox">12.7</div>
+            </div>
+          </div>
+
+          <div className="p-3 mb-2 nav RecipesOn">
+            <div className="col container ">
+              <div className="text-center ">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText">
+                  營養成分
+                </h5>
+              </div>
+              <div className="row  container  ">
+                <div className="col-8 fw-bold RecipesNutrientLeftBox">
+                  蛋白質(g)
+                </div>
+                <div className="col-4 fw-bold RecipesNutrientRightBox">
+                  12.0
+                </div>
+                <div className="col-8 fw-bold RecipesNutrientLeftBox">
+                  蛋白質(g)
+                </div>
+                <div className="col-4 fw-bold RecipesNutrientRightBox">
+                  12.3
+                </div>
+                <div className="col-8 fw-bold RecipesNutrientLeftBox">
+                  蛋白質(g)
+                </div>
+                <div className="col-4 fw-bold RecipesNutrientRightBox">
+                  12.5
+                </div>
+                <div className="col-8 fw-bold RecipesNutrientLeftBox">
+                  蛋白質(g)
+                </div>
+                <div className="col-4 fw-bold RecipesNutrientRightBox">
+                  12.7
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="p-3 mb-2  text-dar container row RecipesOff">
+            <div className="text-center container ">
+              <h5 className="RecipesText fw-bold RecipesStepText"></h5>
+            </div>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/YvwkK_OqYdQ"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div className="p-3 mb-2 text-dar container RecipesOn">
+            <div className="container ">
+              <div className="text-center ">
+                <h5 className="RecipesText fw-bold RecipesIngredientsText"></h5>
+              </div>
+            </div>
+            <div className="row">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YvwkK_OqYdQ"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div className="p-3 mb-2  text-dar container row RecipesOff">
+            <div>推薦店內菜單</div>
+
+            <div className=" col row">
+              <div className="RecipesSearchBoxCardAll col">
+                <div className="RecipesSearchBoxCard ">
+                  <img
+                    src={require("./image/00001.jpg")}
+                    className="card-img-top"
+                    alt="日式唐揚炸雞"
+                  />
+                  <div className="card-body">
+                    <p className="card-text h6">
+                      <img className="Boximg" />
+                      日式唐揚炸雞
+                    </p>
+                    <p className="card-text h6">瀏覽次數:65,535次</p>
+                    <Link to="/recipes/box">
+                      <button className=" RecipesLookButton" id="">
+                        查看
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="RecipesSearchBoxCardAll col">
+                <div className="RecipesSearchBoxCard ">
+                  <img
+                    src={require("./image/00001.jpg")}
+                    className="card-img-top"
+                    alt="日式唐揚炸雞"
+                  />
+                  <div className="card-body">
+                    <p className="card-text h6">
+                      <img className="Boximg" />
+                      日式唐揚炸雞
+                    </p>
+                    <p className="card-text h6">瀏覽次數:65,535次</p>
+                    <Link to="/recipes/box">
+                      <button className=" RecipesLookButton" id="">
+                        查看
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="RecipesSearchBoxCardAll col">
+                <div className="RecipesSearchBoxCard ">
+                  <img
+                    src={require("./image/00001.jpg")}
+                    className="card-img-top"
+                    alt="日式唐揚炸雞"
+                  />
+                  <div className="card-body">
+                    <p className="card-text h6">
+                      <img className="Boximg" />
+                      日式唐揚炸雞
+                    </p>
+                    <p className="card-text h6">瀏覽次數:65,535次</p>
+                    <Link to="/recipes/box">
+                      <button className=" RecipesLookButton" id="">
+                        查看
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="RecipesSearchBoxCardAll col">
+                <div className="RecipesSearchBoxCard ">
+                  <img
+                    src={require("./image/00001.jpg")}
+                    className="card-img-top"
+                    alt="日式唐揚炸雞"
+                  />
+                  <div className="card-body">
+                    <p className="card-text h6">
+                      <img className="Boximg" />
+                      日式唐揚炸雞
+                    </p>
+                    <p className="card-text h6">瀏覽次數:65,535次</p>
+                    <Link to="/recipes/box">
+                      <button className=" RecipesLookButton" id="">
+                        查看
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3 mb-2 text-dar container RecipesOn nav">
+            <div>推薦店內菜單</div>
+
+            <div className="col row ">
+              <div className="col-6 text-center">
+                <img
+                  src={require("./image/00001.jpg")}
+                  className="card-img-top"
+                  alt="日式唐揚炸雞"
+                />
+                <p className="card-text h6 ">日式唐揚炸雞</p>
+                <p className="card-text h6 ">NT150</p>
+                <div className="">
+                  <Link to="/recipes/box">
+                    <button className=" RecipesLookButton2" id="">
+                      購買
+                    </button>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-6 text-center">
+                <img
+                  src={require("./image/00001.jpg")}
+                  className="card-img-top"
+                  alt="日式唐揚炸雞"
+                />
+                <p className="card-text h6 ">日式唐揚炸雞</p>
+                <p className="card-text h6 ">NT150</p>
+                <div className="">
+                  <Link to="/recipes/box">
+                    <button className=" RecipesLookButton2" id="">
+                      購買
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

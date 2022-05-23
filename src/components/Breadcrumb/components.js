@@ -5,7 +5,7 @@ import { matchRoutes } from 'react-router-config';
 import routes from './routes';
 import "./test.css";
 import React, { useEffect } from "react";
-import $ from 'jquery'
+
 
 
 

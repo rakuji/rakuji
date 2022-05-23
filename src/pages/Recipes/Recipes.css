@@ -34,11 +34,11 @@
 .RecipesIngredientsBorder {
     color: rgb(133, 133, 133);
     border-bottom: 2px dashed #ccc;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 10px 0px;
 }
 
 .RecipesIngredients {
-    margin: 15px 0px 0px 5px;
+    margin: 15px 0px 20px 5px;
 }
 
 
@@ -49,6 +49,30 @@
     color: white;
     border-radius: 50px;
     background: #58C2DD;
+}
+
+.RecipesLookButton2 {
+    width: 70px;
+    height: 100%;
+    border: none;
+    color: white;
+    border-radius: 50px;
+    background: #58C2DD;
+}
+
+
+.RecipesNutrientLeftBox {
+    background-color: #eee;
+    border: 2px solid #eee;
+    padding: 10px;
+    color: #797979;
+}
+
+.RecipesNutrientRightBox {
+    padding: 10px;
+    border: 2px solid #eee;
+    background-color: white;
+    color: #797979;
 }
 
 .RecipesLookButton:hover {
@@ -67,6 +91,7 @@
     color: white;
     border-radius: 50px;
     background: #58C2DD;
+
 
 }
 
@@ -277,6 +302,11 @@
     .RecipesImgKcal {
         background: #58C2DD;
         height: 70px;
+
+    }
+
+    .RecipesStepText {
+        border-bottom: 2px dashed #58C2DD;
 
     }
 
