@@ -13,9 +13,9 @@ const Product_detail = () => {
         <div className="col-6 product_img_container d-flex justify-content-center align-items-center">
           <GlassMagnifier
             className='product_img'
-            imageSrc={require("./images/主餐//MB-006裝蒜牛五花飯_s.jpg")}
+            imageSrc={require("./images/maindish//MB-006裝蒜牛五花飯_s.jpg")}
             imageAlt="Example"
-            largeImageSrc={require("./images/主餐//MB-006裝蒜牛五花飯_s.jpg")} // Optional
+            largeImageSrc={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")} // Optional
             magnifierSize="35%"
             magnifierBorderSize={5}
             magnifierBorderColor="rgba(255, 255, 255, .5)"
