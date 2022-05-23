@@ -1,9 +1,8 @@
 import React from "react";
-import "./css/my-login.css"
-import "./css/reset.css"
+import "./css/my-login.css";
+import "./css/reset.css";
 
-
-function CouponList() {
+function OrderList() {
     return (
         <body class="my-login-page">
             <header>header</header>
@@ -15,21 +14,13 @@ function CouponList() {
                 </ol>
             </nav>
             <main>
-
                 <aside class="m-3">
                     <div class="form-group ">
-
                         <div class="card " style="width: 18rem;">
-
                             <div class="m-3 pl-5">
-
                                 <div class="circle box ">
-
-
-                                    <img src="/src/image/account/account-1.jpg" class=" p-control" alt="..." />
-
+                                    <img src="../../src/image/account/account-1.jpg" class=" p-control" alt="..." />
                                 </div>
-
                             </div>
                             <div class="card-body ">
 
@@ -68,30 +59,21 @@ function CouponList() {
                 <article>
                     <div class="card fat">
                         <div class="card-body">
+
                             <nav class="nav nav-pills flex-column flex-sm-row">
-                                <a class="flex-sm-fill text-sm-center nav-link " aria-current="page"
+                                <a class="flex-sm-fill text-sm-center nav-link" aria-current="page"
                                     href="./client-center.html">會員個人資料</a>
-                                <a class="flex-sm-fill text-sm-center nav-link" href="./order-list.html"
+                                <a class="flex-sm-fill text-sm-center nav-link active" href="./order-list.html"
                                     target="_self">訂單交易紀錄</a>
-                                <a class="flex-sm-fill text-sm-center nav-link active" href="./coupon-list.html"
+                                <a class="flex-sm-fill text-sm-center nav-link" href="./coupon-list.html"
                                     target="_self">優惠資料紀錄</a>
 
                             </nav>
                             <br />
 
                             <form method="POST" class="my-login-validation" novalidate="">
-                                <div class="m-3">
-                                    未使用
-                                </div>
                                 <figure class="list-1">
-                                    <img src="/src/image/account/coupon.png" alt="" />
-                                </figure>
-                                <hr />
-                                <div class="m-3">
-                                    已使用
-                                </div>
-                                <figure class="list-1">
-                                    <img src="/src/image/account/coupon(used).png" alt="" />
+                                    <img src="/src/image/account/list-1.png" alt="" />
                                 </figure>
                             </form>
                         </div>
@@ -99,7 +81,5 @@ function CouponList() {
                 </article>
             </main>
         </body>
-    )
-}
 
-export default CouponList;
+export default OrderList;

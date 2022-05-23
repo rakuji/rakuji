@@ -20,7 +20,6 @@ import Signup from "./pages/Member/Signup";
 import Registration from "./pages/Member/Registration";
 import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
-import OrderList from "./pages/Member/OrderList";
 
 
 function App() {
@@ -65,9 +64,7 @@ function App() {
         <Route path="/CouponList" exact>
           <CouponList />
         </Route>
-        <Route path="/OrderList" exact>
-          <OrderList />
-        </Route>
+
         
       </Switch>
       <Footer />

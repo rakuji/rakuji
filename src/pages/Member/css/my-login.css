@@ -18,9 +18,9 @@ body {
 body.my-login-page {
 	background-color: #fff;
 	/*要喚回白色*/
-	<<<<<<< HEAD background-image: url(../image/BG-signup.png);
-	=======background-image: url(../../../images/BG-signup.png);
-	>>>>>>>f1e47a6ebb9ec893fbd26b35d45b5b22b451ec0b background-size: 960px auto;
+	/* background-image: url(../image/BG-signup.png); */
+	background-image: url(../../../images/BG-signup.png);
+	background-size: 960px auto;
 	background-repeat: repeat-y;
 	background-position: center;
 	/* font-size: 14px; */
