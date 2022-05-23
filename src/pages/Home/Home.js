@@ -11,6 +11,7 @@ import {
 import "./Home.css";
 import { Link } from "react-router-dom";
 
+//圖片
 import pic01 from "./pic/pic01.png";
 import pic02 from "./pic/pic02.png";
 import pic03 from "./pic/pic03.png";
