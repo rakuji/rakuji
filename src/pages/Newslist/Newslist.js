@@ -18,12 +18,10 @@ const Newslist = () => {
       <Carousel_g />
 
       {/*  放breadcrumb 進入 顏色修改 */}
-      <div className="container container col-6">
       <Breadcrumb />
+      <div className="container">
         {/* 內容物藍色區 右邊多出 需置中或移除藍色 */}
-        <div id="list" className="row row-cols-1 row-cols-md-3 g-4 
-        ">
-
+        <div className="row row-cols-1 row-cols-md-3 g-4 ">
           {/* 1 */}
           <div className="col">
             {/* <div className="card" > */}
@@ -214,14 +212,12 @@ const Newslist = () => {
                 <Link to="/Cooperationform" className="">
                   Cooperationform
                 </Link>
-                
               </div>
             </div>
           </div>
         </div>
       </div>
       <br></br>
-      
     </main>
   );
 };
