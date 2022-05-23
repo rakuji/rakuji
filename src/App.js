@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
+
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -14,6 +15,8 @@ import Products from "./pages/Products/Products";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
+import Login from "./pages/Member/Login";
+import Signup from "./pages/Member/Signup";
 
 function App() {
 
@@ -41,6 +44,12 @@ function App() {
         </Route>
         <Route path="/store" exact>
           <Store />
+        </Route>
+        <Route path="/login" exact>
+          <Login />
+        </Route>
+        <Route path="/signup" exact>
+          <Signup />
         </Route>
       </Switch>
       <Footer />
