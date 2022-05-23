@@ -2,13 +2,12 @@ import React from "react";
 import "./css/my-login.css"
 import "./css/reset.css"
 
-
 function ClientCenter() {
     return (
 
         <div className="my-login-page">
             <div>header</div>
-            <nav aria-label="breadcrumb">
+            <nav ariaLabel="breadcrumb">
 
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item"><a href="#index">首頁</a></li>
@@ -17,8 +16,8 @@ function ClientCenter() {
                 </ol>
             </nav>
             <main className="d-flex justify-content-center">
-                <aside className="m-3">
-                    <div className="form-group">
+                <aside className="m-3 ">
+                    <div className="">
                         <div className="card" style={{ width: "18rem" }}>
 
                             {/* 大頭照 */}
@@ -29,7 +28,7 @@ function ClientCenter() {
                                 </div>
                             </div>
                             <div className="card-body">
-                                <div className="text-sm-center m-3">
+                                <div className=" m-3">
                                     <p className="card-text">Coupons: 2張</p>
                                 </div>
                             </div>
@@ -37,7 +36,7 @@ function ClientCenter() {
 
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item m-3">
-                                    <span className="text-control">您的餐點喜好</span>
+                                    <span className="">您的餐點喜好</span>
                                     <div className="ml-4 pt-2">
 
                                         <img src={require("../../images/account/A.png")} />
