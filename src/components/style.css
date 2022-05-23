@@ -90,4 +90,11 @@ p {
   .bbbb {
     display: block;
   }
+
+  footer a {
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: underline;
+  }
+
 }

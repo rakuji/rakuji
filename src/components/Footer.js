@@ -95,12 +95,15 @@ function Footer() {
         </div>
       </div>
 
-      <div className="container py-5 bbbb">
+      <div className="container py-3 bbbb">
         <div className="text-center">
           <div className="col-12">
             <ul className="nav flex-column">
               <li className="nav-item mb-2">
-                <span className="p-0">營業時間：11:00~21:30</span>
+                <span className="p-0">營業時間</span>
+              </li>
+              <li className="nav-item mb-2">
+                <span className="p-0">11:00~21:30</span>
               </li>
               <li className="nav-item mb-2">
                 <span className="p-0">電話：(07)963-5566</span>
@@ -113,58 +116,51 @@ function Footer() {
                 <span className="p-0">高雄市左營區文守路196號</span>
               </li>
             </ul>
-          </div>
-
-          <div className="col-12">
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
+            <ul className="nav  row align-items-center ">
+              <li className="nav-item ">
                 <div style={{ visibility: "hidden" }}>#</div>
               </li>
-
-              <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+              <li className="nav-item col-4">
+                <a href="#" className="p-0 cccc">
                   人才招募
                 </a>
               </li>
-              <li className="nav-item mb-2">
+              <li className="nav-item col-4">
                 <a href="#" className="p-0">
                   聯絡我們
                 </a>
               </li>
-              <li className="nav-item mb-2">
+              <li className="nav-item col-4">
                 <a href="#" className="p-0">
                   隱私權聲明
                 </a>
               </li>
             </ul>
-          </div>
+            <ul className="nav  row align-items-center">
+              <li className="nav-item  ">
+                <div style={{ visibility: "hidden" }}>#</div>
+                <li className="nav-item row align-items-center">
+                <a href="#" className="p-0 col-2">
 
-          <div className="col-12">
-            <ul className="nav flex-column">
-              <li className="nav-item mb-2">
-                <div style={{ visibility: "hidden" }}>#</div>
-              </li>
-              <li className="nav-item mb-2">
-                <div style={{ visibility: "hidden" }}>#</div>
-              </li>
-              <li className="nav-item mb-2">
-                <div style={{ visibility: "hidden" }}>#</div>
-              </li>
-
-              <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                </a>
+                <a href="#" className="p-0 col-2">
                   <i className="fa-brands fa-facebook"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="#" className="p-0 col-2">
                   <i className="fa-brands fa-instagram"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="#" className="p-0 col-2">
                   <i className="fa-brands fa-line"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="#" className="p-0 col-2">
                   <i className="fa-brands fa-youtube"></i>
                 </a>
+                <a href="#" className="p-0 col-2">
+                  
+                </a>
               </li>
+              </li>
+
             </ul>
           </div>
         </div>
