@@ -6,7 +6,7 @@ import "./css/reset.css"
 function ClientCenter() {
     return (
 
-        <div className="my-login-page container row">
+        <div className="my-login-page">
             <header>header</header>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
@@ -42,7 +42,7 @@ function ClientCenter() {
 
                             <ul className="list-group list-group-flush">
 
-                                <li className="list-group-item m-3">
+                                {/* <li className="list-group-item m-3">
                                     <div className="mb-2">
                                         <span className="text-control ">日期</span>
                                     </div>
@@ -50,7 +50,7 @@ function ClientCenter() {
                                         <img src="/src/image/account/Date.png" alt="" />
                                         <br />
                                     </div>
-                                </li>
+                                </li> */}
 
                                 <li className="list-group-item m-3">
                                     <span className="text-control">您的餐點喜好</span>

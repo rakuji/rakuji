@@ -5,54 +5,54 @@ import "./css/reset.css"
 
 function CouponList() {
     return (
-        <body class="my-login-page">
+        <div className="my-login-page">
             <header>header</header>
             <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#index">首頁</a></li>
-                    <li class="breadcrumb-item"><a href="#">會員管理</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">會員個人資料</li>
+                <ol className="breadcrumb">
+                    <li className="breadcrumb-item"><a href="#index">首頁</a></li>
+                    <li className="breadcrumb-item"><a href="#">會員管理</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">會員個人資料</li>
                 </ol>
             </nav>
-            <main>
+            <main className="d-flex justify-content-center">
 
-                <aside class="m-3">
-                    <div class="form-group ">
+                <aside className="m-3">
+                    <div className="form-group ">
 
-                        <div class="card " style="width: 18rem;">
+                        <div className="card " style={{width: "18rem"}}>
 
-                            <div class="m-3 pl-5">
+                            <div className="m-3 pl-5">
 
-                                <div class="circle box ">
+                                <div className="circle box ">
 
 
-                                    <img src="/src/image/account/account-1.jpg" class=" p-control" alt="..." />
+                                    <img src="/src/image/account/account-1.jpg" className=" p-control" alt="..." />
 
                                 </div>
 
                             </div>
-                            <div class="card-body ">
+                            <div className="card-body ">
 
-                                <div class="justify-content-center text-sm-center m-3">
-                                    <p class="card-text">Coupons: 2張</p>
+                                <div className="justify-content-center text-sm-center m-3">
+                                    <p className="card-text">Coupons: 2張</p>
                                 </div>
                             </div>
 
-                            <ul class="list-group list-group-flush">
+                            <ul className="list-group list-group-flush">
 
-                                <li class="list-group-item m-3">
-                                    <div class="mb-2">
-                                        <span class="text-control ">日期</span>
+                                <li className="list-group-item m-3">
+                                    <div className="mb-2">
+                                        <span className="text-control ">日期</span>
                                     </div>
-                                    <div class=" pt-2">
+                                    <div className=" pt-2">
                                         <img src="/src/image/account/Date.png" alt="" />
                                         <br />
                                     </div>
                                 </li>
 
-                                <li class="list-group-item m-3">
-                                    <span class="text-control">您的餐點喜好</span>
-                                    <div class="ml-4 pt-2">
+                                <li className="list-group-item m-3">
+                                    <span className="text-control">您的餐點喜好</span>
+                                    <div className="ml-4 pt-2">
                                         <img src="/src/image/account/A.png" alt="" />
                                         黃金豬排丼飯<br />
                                         <img src="/src/image/account/B.png" alt="" />
@@ -65,32 +65,32 @@ function CouponList() {
                         </div>
                     </div>
                 </aside>
-                <article>
-                    <div class="card fat">
-                        <div class="card-body">
-                            <nav class="nav nav-pills flex-column flex-sm-row">
-                                <a class="flex-sm-fill text-sm-center nav-link " aria-current="page"
+                <article className="m-3">
+                    <div className="card fat">
+                        <div className="card-body">
+                            <nav className="nav nav-pills flex-column flex-sm-row">
+                                <a className="flex-sm-fill text-sm-center nav-link " aria-current="page"
                                     href="./client-center.html">會員個人資料</a>
-                                <a class="flex-sm-fill text-sm-center nav-link" href="./order-list.html"
+                                <a className="flex-sm-fill text-sm-center nav-link" href="./order-list.html"
                                     target="_self">訂單交易紀錄</a>
-                                <a class="flex-sm-fill text-sm-center nav-link active" href="./coupon-list.html"
+                                <a className="flex-sm-fill text-sm-center nav-link active" href="./coupon-list.html"
                                     target="_self">優惠資料紀錄</a>
 
                             </nav>
                             <br />
 
-                            <form method="POST" class="my-login-validation" novalidate="">
-                                <div class="m-3">
+                            <form method="POST" className="my-login-validation" novalidate="">
+                                <div className="m-3">
                                     未使用
                                 </div>
-                                <figure class="list-1">
+                                <figure className="list-1">
                                     <img src="/src/image/account/coupon.png" alt="" />
                                 </figure>
                                 <hr />
-                                <div class="m-3">
+                                <div className="m-3">
                                     已使用
                                 </div>
-                                <figure class="list-1">
+                                <figure className="list-1">
                                     <img src="/src/image/account/coupon(used).png" alt="" />
                                 </figure>
                             </form>
@@ -98,7 +98,7 @@ function CouponList() {
                     </div>
                 </article>
             </main>
-        </body>
+        </div>
     )
 }
 
