@@ -72,7 +72,7 @@ const Booking = () => {
 
   // react-datepicker
   const [startDate, setStartDate] = useState(new Date());
-  
+
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>線上訂位</div>
     <div className="container booking">
@@ -155,11 +155,17 @@ const Booking = () => {
         <hr className="my-3" />
         {/* <div id="msgbox"></div> */}
         <div className="booking-time">
+
           {booking_time_noon.map((d, i) => {
-            return <button key={i} >{d}</button>;
+            return (
+              <div className="button_container">
+                <button key={i} >{d}</button>
+              </div>)
           })}
+
+
         </div>
-        <hr />
+        <hr className="my-3"/>
       </div>
       <div className="booking-instruction">
         <p>【線上訂位說明】</p>

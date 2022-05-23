@@ -1,0 +1,25 @@
+tbody {
+  border-color: brown;
+}
+
+.cart_items {
+  border-color: aqua;
+}
+
+.cart_items td {
+  vertical-align: middle;
+  border-color: brown;
+}
+
+.img_container {
+  border: 1px solid #fff;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.img_container img {
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */

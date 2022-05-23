@@ -1,0 +1,34 @@
+// Cart.js
+
+
+tbody{
+    border-color: brown;
+}
+
+.cart_items {
+
+
+    border-color: aqua;
+
+    td {
+        vertical-align: middle;
+        border-color: brown;
+        
+    }
+
+
+}
+
+
+
+.img_container {
+    border: 1px solid #fff;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+}

@@ -113,7 +113,7 @@ const Products = () => {
                   <Link to="/products/product_detail">
                     <div className="imageContainer mb-2">
                       <img
-                        src={require("./images/主餐/MB-006裝蒜牛五花飯_s.jpg")}
+                        src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
                         alt=""
                       />
                     </div>
