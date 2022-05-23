@@ -6,7 +6,7 @@ import "./css/reset.css"
 function ClientCenter() {
     return (
 
-        <div className="my-login-page">
+        <div className="my-login-page container row">
             <header>header</header>
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
@@ -15,7 +15,7 @@ function ClientCenter() {
                     <li className="breadcrumb-item active" aria-current="page">會員個人資料</li>
                 </ol>
             </nav>
-            <main>
+            <main className="d-flex justify-content-center">
                 <aside className="m-3">
                     <div className="form-group ">
 
