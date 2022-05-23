@@ -9,21 +9,21 @@ function Carousel_g() {
         <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
-            src={require("./bunner001.png")}
+            src={require("./slider01.png")}
             alt="First adada"
           />
         </Carousel.Item>
         <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
-            src={require("./bunner001.png")}
+            src={require("./slider02.png")}
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item interval={2000}>
           <img
             className="d-block w-100"
-            src={require("./bunner001.png")}
+            src={require("./slider03.png")}
             alt="Third slide"
           />
         </Carousel.Item>
