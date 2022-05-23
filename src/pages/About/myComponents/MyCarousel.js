@@ -2,7 +2,7 @@ import React  from "react";
 import Carousel from "react-bootstrap/Carousel";
 // 需安裝套件 及更改照片
 
-function MyCarousel() {
+let MyCarousel = function () {
   return (
     <>
       <Carousel controls={false} indicators={false}>
@@ -10,7 +10,7 @@ function MyCarousel() {
           <img
             className="d-block w-100"
             src={require("../images/slider01.png")}
-            alt="First adada"
+            alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item interval={2000}>
