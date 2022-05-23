@@ -10,7 +10,7 @@ function Signup() {
                     <div class="row justify-content-md-center h-100">
                         <div class="card-wrapper">
                             <div class="brand">
-                                <img src={require("./image/logo/logo_color_login.png")} />
+                                <img src={require("../../images/logo/logo_color_login.png")} />
                             </div>
                             <div class="card fat">
                                 <div class="card-body">

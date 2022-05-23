@@ -17,6 +17,11 @@ import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 import Login from "./pages/Member/Login";
 import Signup from "./pages/Member/Signup";
+import Registration from "./pages/Member/Registration";
+import ClientCenter from "./pages/Member/ClientCenter";
+import CouponList from "./pages/Member/CouponList";
+import OrderList from "./pages/Member/OrderList";
+
 
 function App() {
 
@@ -45,12 +50,25 @@ function App() {
         <Route path="/store" exact>
           <Store />
         </Route>
-        <Route path="/login" exact>
+        <Route path="/Login" exact>
           <Login />
         </Route>
-        <Route path="/signup" exact>
+        <Route path="/Signup" exact>
           <Signup />
         </Route>
+        <Route path="/Registration" exact>
+          <Registration />
+        </Route>
+        <Route path="/ClientCenter" exact>
+          <ClientCenter />
+        </Route>
+        <Route path="/CouponList" exact>
+          <CouponList />
+        </Route>
+        <Route path="/OrderList" exact>
+          <OrderList />
+        </Route>
+        
       </Switch>
       <Footer />
     </div>
