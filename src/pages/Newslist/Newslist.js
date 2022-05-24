@@ -14,13 +14,13 @@ const Newslist = () => {
   // bunner圖片三張輪播 拿掉左右箭頭及下方三個長方形 圖片寫死 有時會動有時不會
 
   return (
-    <main>
+    <main >
       <Carousel_g />
 
       {/*  放breadcrumb 顏色修改 第三個畫面更新 */}
       <Breadcrumb />
       {/* 動全部card的寬 */}
-      <div className="container  col-10">
+      <div className="container  col-10  d-flex justify-content-center">
 
         <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
             {/* 1 */}
