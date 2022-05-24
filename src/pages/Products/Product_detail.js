@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+  import React, { useState } from 'react'
 import { GlassMagnifier } from "react-image-magnifiers";
 
 const Product_detail = () => {
