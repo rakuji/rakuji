@@ -1,0 +1,43 @@
+.card {
+    max-height:70vh;
+    margin-top: 14px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+
+}
+/* 最新消息 的圖片 */
+.card1{
+    margin-top: 35px;
+    border-style: none;
+  
+}    
+.card-content{
+    margin-top: 0;
+    margin-bottom: 0px;
+    
+
+}
+.col{
+    padding-left:14px ;
+    padding-right:14px ;
+    padding-top:5px ;
+    padding-bottom:5px ;
+
+}
+
+body {
+    background-size: 1840px ;
+    background-position: 40% 41%;
+    background-repeat: no-repeat;
+    background-image: url('./BG.png');
+}
+
+@media screen and (max-width:576px) {
+
+
+    body {
+        background-image: none;
+    }
+}

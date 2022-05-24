@@ -1,5 +1,8 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Recipes.css";
+
+
 
 function Box() {
   return (
@@ -157,9 +160,13 @@ function Box() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>    
           </div>
-
+          <Link to="/recipes" >
+            <h5 className="RecipesOn  RecipesText">
+              <img src={require("./image/circle.png")}></img>返回列表
+            </h5>
+          </Link>
           <div className="p-3 mb-2  text-dar RecipesOn">
             <div
               style={{ padding: "5px" }}

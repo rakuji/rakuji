@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
+import Votelist from "./pages/Newslist/Votelist";
+import Cooperationform from "./pages/Newslist/Cooperationform";
 import Products from "./pages/Products/Products";
 import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
@@ -27,7 +29,6 @@ function App() {
   return (
     <div className="App">
       <Nav />
-
       <Breadcrumb />
       <Switch>
         <Route path="/" exact>
@@ -36,15 +37,21 @@ function App() {
         <Route path="/about" exact>
           <About />
         </Route>
-        <Route path="/newslist" exact>
+        <Route path="/Newslist" exact>
           <Newslist />
+        </Route>
+        <Route path="/Newslist/Cooperationform" exact>
+          <Cooperationform />
+        </Route>
+        <Route path="/Newslist/Votelist" exact>
+          <Votelist />
         </Route>
         <Route path="/products" exact>
           <Products />
         </Route>
         <Route path="/products/product_detail" exact>
-            <Product_detail />
-          </Route>
+          <Product_detail />
+        </Route>
         <Route path="/cart" exact>
           <Cart />
         </Route>
