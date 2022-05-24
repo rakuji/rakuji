@@ -1,11 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import "./Recipes.css";
 import "../../components/background.css";
+import $ from "jquery";
 
 const Recipes = () => {
+  const recipesArray = ["全部食譜", "主食", "前菜", "湯品", "飲品", "甜點"];
+
+  useEffect(() => {
+    $("#recipesArray_buttons button:first-child").attr("id", "active");
+  });
+
+  useEffect(() => {
+    $("#recipesArray_buttons button").click(function () {
+      $("#recipesArray_buttons button").removeAttr("id");
+      $(this).attr("id", "active");
+    });
+  }, []);
+
   return (
     <>
+      <div className="col-2 ">
+        <div className="sticky-top" id="recipesArray_buttons">
+          {recipesArray.map((v, i) => {
+            return (
+              <button key={i} className="product_category">
+                {v}
+              </button>
+            );
+          })}
+        </div>
+      </div>
       <div className="nav-item container phoneDiv ">
         <div className="row  ">
           <div className="col RecipesLogoDiv ">
