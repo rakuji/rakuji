@@ -18,7 +18,7 @@ const Store = () => {
           <MyBreadcrumb nav="門市資訊" navlink="/store" location="123"/>
           {/* SHOPS圖片  */}
           <div className="d-flex justify-content-center pageTitleImg">
-            <img src={require("../About/images/pageTitleShops.png")} className="img-fluid" alt="門市資訊" />
+            <img src={require("../About/images/pageTitleshops.png")} className="img-fluid" alt="門市資訊" />
           </div>
           {/* 門市區域按鈕 */}
           <div className="d-flex justify-content-around areaBtns">

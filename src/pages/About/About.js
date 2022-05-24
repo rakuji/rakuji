@@ -15,7 +15,7 @@ const About = () => {
         {/* ABOUT圖片  */}
         <div className="row justify-content-center pageTitleImg">
           <div className="col-4">
-            <img src={require("./images/pageTitleShops.png")} className="img-fluid" alt="關於我們" />
+            <img src={require("./images/pageTitleshops.png")} className="img-fluid" alt="關於我們" />
           </div>
         </div>
         {/* 樂物語圖片 */}
