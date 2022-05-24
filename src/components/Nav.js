@@ -30,7 +30,7 @@ function Nav() {
         {/* Logo */}
 
         <div className="logo">
-          <Link to="/" className="navbar-brand ">
+          <Link to="/" className="navbar-brand">
             <img src={require("../images/logo_color_row.png")} alt="" />
           </Link>
         </div>
@@ -84,7 +84,10 @@ function Nav() {
           </ul>
           {/* 按鈕區 */}
           <div>
-            <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
+            <Link to="/cart">
+              <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
+            </Link>
+
             <button type="button" className="btn mx-2">
               登入/註冊
             </button>

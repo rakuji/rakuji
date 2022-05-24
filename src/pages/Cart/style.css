@@ -1,0 +1,69 @@
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-style: none;
+    text-align: center;
+}
+
+table thead {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+table tbody {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+table tbody .cart_items td {
+    vertical-align: middle;
+}
+
+table tbody .img_container {
+    border: 1px solid #fff;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+table tbody .img_container img {
+    width: 100%;
+}
+
+.checkarea p {
+    margin-bottom: 0;
+}
+
+.checkarea .quantity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.checkarea .price {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.checkarea .go_check {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #58c2dd;
+    border-radius: 100px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #58c2dd;
+}
+
+/*# sourceMappingURL=style.css.map */

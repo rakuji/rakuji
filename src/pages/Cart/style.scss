@@ -1,0 +1,72 @@
+// Cart.js
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-style: none;
+  text-align: center;
+}
+
+table {
+  thead {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+  }
+
+  tbody {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+
+    .cart_items {
+      td {
+        vertical-align: middle;
+      }
+    }
+
+    .img_container {
+      border: 1px solid #fff;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto; //水平置中
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.checkarea {
+
+    p{
+        margin-bottom: 0;
+        
+    }
+
+
+  .quantity {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .go_check {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #58c2dd;
+    border-radius: 100px;
+    // padding: 10px 50px;
+    // width: 200px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: #58c2dd;
+  }
+}

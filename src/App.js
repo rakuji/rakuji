@@ -11,7 +11,11 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
 import Products from "./pages/Products/Products";
+import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
+import Booking_information from "./pages/Booking/Booking_information";
+import Booking_finish from "./pages/Booking/Booking_finish";
+import Cart from "./pages/Cart/Cart";
 import Recipes from "./pages/Recipes/Recipes";
 import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
@@ -19,9 +23,7 @@ import Store from "./pages/Store/Store";
 //麵包屑  //安裝套件==> npm i react-router-config@5.1.1
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 
-
 function App() {
-
   return (
     <div className="App">
       <Nav />
@@ -40,8 +42,20 @@ function App() {
         <Route path="/products" exact>
           <Products />
         </Route>
+        <Route path="/products/product_detail" exact>
+            <Product_detail />
+          </Route>
+        <Route path="/cart" exact>
+          <Cart />
+        </Route>
         <Route path="/booking" exact>
           <Booking />
+        </Route>
+        <Route path="/booking/booking_information" exact>
+          <Booking_information />
+        </Route>
+        <Route path="/booking/booking_information/booking_finish" exact>
+          <Booking_finish />
         </Route>
         <Route path="/recipes" exact>
           <Recipes />
@@ -54,7 +68,6 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-
     </div>
   );
 }
