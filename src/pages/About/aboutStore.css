@@ -1,23 +1,23 @@
-a{
+a {
   text-decoration: none;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
 }
-.areaBtns{
+.areaBtns {
   margin-bottom: 2em;
 }
-.backTop{
+.backTop {
   width: 130px;
-  margin: 1em auto;
+  margin: 2em auto;
 }
-.backTop div{
-  color:#58C2DD;
+.backTop div {
+  color: #58c2dd;
   display: inline-block;
 }
-.backTop img{
+.backTop img {
   width: 20px;
-} 
+}
 .breadcrumb {
   margin: 10px;
   font-size: 1em;

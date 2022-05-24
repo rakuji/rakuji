@@ -1,8 +1,7 @@
 import React from "react";
-import IconBacktop from "../images/icon_backTop.svg"
+import IconBacktop from "./icon_backTop.svg"
 
-
-import "../aboutStore.css";
+import "./MyBackTop.css";
 
 const MyBackTop = () => {
     return(

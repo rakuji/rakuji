@@ -1,0 +1,11 @@
+.backTop {
+    width: 130px;
+    margin: 2em auto;
+  }
+  .backTop div {
+    color: #58c2dd;
+    display: inline-block;
+  }
+  .backTop img {
+    width: 20px;
+  }

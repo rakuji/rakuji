@@ -3,6 +3,7 @@ import React from "react";
 import "./aboutStore.css";
 import MyBreadcrumb from "./myComponents/MyBreadcrumb";
 import MyCarousel from "./myComponents/MyCarousel";
+import MyBackTop from "../../components/MyBackTop/MyBackTop";
 
 const About = () => {
   return (
@@ -126,6 +127,7 @@ const About = () => {
             </div>
           </div>
         </section>
+        <MyBackTop/>
         </div>
       </div>
     </>
