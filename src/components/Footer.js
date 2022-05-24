@@ -99,11 +99,11 @@ function Footer() {
         <div className="text-center">
           <div className="col-12">
             <ul className="nav flex-column">
-              <li className="nav-item mb-2">
+              <li className="nav-item ">
                 <span className="p-0">營業時間</span>
               </li>
-              <li className="nav-item mb-2">
-                <span className="p-0">11:00~21:30</span>
+              <li className="nav-item mb-3">
+                <span className="fs-5">11:00~21:30</span>
               </li>
               <li className="nav-item mb-2">
                 <span className="p-0">電話：(07)963-5566</span>
