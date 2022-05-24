@@ -1,21 +1,14 @@
 import React from "react";
 import "./css/my-login.css"
 import "./css/reset.css"
+import { Row } from "bootstrap"
+
 
 function ClientCenter() {
     return (
 
         <div className="my-login-page">
-            <div>header</div>
-            <nav ariaLabel="breadcrumb">
-211212
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="#index">首頁</a></li>
-                    <li className="breadcrumb-item"><a href="#">會員管理</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">會員個人資料</li>
-                </ol>
-            </nav>
-            <main className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center">
                 <aside className="m-3 ">
                     <div className="">
                         <div className="card" style={{ width: "18rem" }}>
@@ -23,8 +16,7 @@ function ClientCenter() {
                             {/* 大頭照 */}
                             <div className="d-flex">
                                 <div className="justify-content-center text-center ">
-                                    123
-                                    <div className="avatar">123</div>
+                                    <div className="avatar"></div>
                                 </div>
                             </div>
                             <div className="card-body">
@@ -49,22 +41,22 @@ function ClientCenter() {
                                 </li>
 
                             </ul>
-                            <nav className="nav nav-pills flex-column flex-sm-column">
-                                <a className="flex-sm-fill text-sm-center nav-link active" aria-current="page"
-                                    href="./client-center.html">會員個人資料</a>
-                                <a className="flex-sm-fill text-sm-center nav-link" href="./order-list.html"
-                                    target="_self">訂單交易紀錄</a>
-                                <a className="flex-sm-fill text-sm-center nav-link" href="./coupon-list.html"
-                                    target="_self">優惠資料紀錄</a>
 
-                            </nav>
                         </div>
                     </div>
                 </aside>
                 <article className="m-3">
                     <div className="card fat">
                         <div className="card-body">
+                            <nav className="nav nav-pills flex">
+                                <a className="flex-sm-fill text-sm-center nav-link active" aria-current="page"
+                                    href="./ClientCenter">會員個人資料</a>
+                                <a className="flex-sm-fill text-sm-center nav-link" href="./OrderList"
+                                    target="_self">訂單交易紀錄</a>
+                                <a className="flex-sm-fill text-sm-center nav-link" href="./CouponList"
+                                    target="_self">優惠資料紀錄</a>
 
+                            </nav>
                             <br />
 
                             <form method="POST" className="my-login-validation" noValidate="">
@@ -134,7 +126,7 @@ function ClientCenter() {
                         </div>
                     </div>
                 </article>
-            </main>
+            </div>
         </div>
     )
 };
