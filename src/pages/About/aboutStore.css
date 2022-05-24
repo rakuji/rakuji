@@ -1,33 +1,41 @@
-a{
+a {
   text-decoration: none;
 }
-a:hover{
+
+a:hover {
   text-decoration: underline;
 }
-.areaBtns{
+
+.areaBtns {
   margin-bottom: 2em;
 }
-.backTop{
+
+.backTop {
   width: 130px;
   margin: 1em auto;
 }
-.backTop div{
-  color:#58C2DD;
+
+.backTop div {
+  color: #58C2DD;
   display: inline-block;
 }
-.backTop img{
+
+.backTop img {
   width: 20px;
-} 
+}
+
 .breadcrumb {
   margin: 10px;
   font-size: 1em;
 }
+
 .bg {
   background-image: url("./images/BG.png");
   background-repeat: no-repeat;
   max-width: 1440px;
   margin: 0 auto;
 }
+
 .carousel {
   height: 300px;
   overflow: hidden;
@@ -40,45 +48,70 @@ a:hover{
   border-radius: 5px;
   margin: 10px auto;
 }
+
 iframe {
   width: 100%;
   height: 400px;
 }
+
 img {
   object-fit: cover;
 }
+
 img.about {
   margin: 5px 0;
   object-fit: cover;
   width: 100%;
   height: auto;
 }
+
 .mapFrame {
   border: 1px solid #58c2dd;
   border-radius: 5px;
   margin: 0;
 }
+
 .mapQuery {
   padding: 0;
   align-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
 }
+
 .myBtn {
   width: 130px;
   height: 44px;
-  border: 1px solid #4b9ad5;
+  border: 1px solid #58c2dd;
   border-radius: 50px;
   background-color: white;
-  color: #4b9ad5;
+  color: #58c2dd;
   font-size: 20px;
   text-align: center;
   vertical-align: middle;
 }
 
+.myBtn2 button {
+  width: 130px;
+  height: 44px;
+  border: 1px solid #58c2dd;
+  border-radius: 50px;
+  background-color: white;
+  color: #58c2dd;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+
+}
+
+.myBtn button#active {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
 .shopList {
   margin-top: 1.5em;
 }
+
 p.about {
   font-size: 20px;
 }
@@ -87,6 +120,7 @@ p.about {
   font-size: 20px;
   color: #dc710d;
 }
+
 .cardBody {
   font-size: 1em;
 }
@@ -94,6 +128,7 @@ p.about {
 .pageTitleImg {
   margin-bottom: 2em;
 }
+
 .row {
   margin-bottom: 1em;
 }
@@ -106,28 +141,34 @@ section {
   .carousel {
     height: 150px;
   }
+
   .myBtn {
     height: 30px;
     font-size: 16px;
   }
 }
+
 @media screen and (max-width: 768px) {
   .myBtn {
     height: 24px;
     font-size: 12px;
   }
 }
+
 @media screen and (max-width: 576px) {
   .carousel {
     display: none;
   }
+
   .breadcrumb {
     display: none;
   }
+
   .myBtn {
     height: 24px;
     font-size: 8px;
   }
+
   p.about {
     font-size: 16px;
   }

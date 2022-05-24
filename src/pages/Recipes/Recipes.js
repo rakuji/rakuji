@@ -31,6 +31,7 @@ const Recipes = () => {
             ></img>
           </div>
           <div className="RecipesClassButtonAllOn">
+          
             <div className="btn-group">
               <div>
                 <button className=" RecipesClassButton " id="">
@@ -155,7 +156,7 @@ const Recipes = () => {
       </div>
 
       <div className="container nav ">
-        <div className="col-2 RecipesClassButton">
+        <div className="col-2 RecipesClassButton RecipesClassButtonAll">
           <div className="" id="recipesArray_buttons">
             {recipesArray.map((v, i) => {
               return (
