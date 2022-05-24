@@ -21,17 +21,6 @@ const Recipes = () => {
 
   return (
     <>
-      <div className="col-2 ">
-        <div className="sticky-top" id="recipesArray_buttons">
-          {recipesArray.map((v, i) => {
-            return (
-              <button key={i} className="product_category">
-                {v}
-              </button>
-            );
-          })}
-        </div>
-      </div>
       <div className="nav-item container phoneDiv ">
         <div className="row  ">
           <div className="col RecipesLogoDiv ">
@@ -166,38 +155,15 @@ const Recipes = () => {
       </div>
 
       <div className="container nav ">
-        <div className="row RecipesClassButtonAll ">
-          <div className="col">
-            <div>
-              <button className=" RecipesClassButton " id="">
-                全部食譜
-              </button>
-            </div>
-            <div>
-              <button className=" RecipesClassButton " id="">
-                主食
-              </button>
-            </div>
-            <div>
-              <button className=" RecipesClassButton " id="">
-                前菜
-              </button>
-            </div>
-            <div>
-              <button className=" RecipesClassButton " id="">
-                湯品
-              </button>
-            </div>
-            <div>
-              <button className=" RecipesClassButton " id="">
-                飲品
-              </button>
-            </div>
-            <div>
-              <button className=" RecipesClassButton " id="">
-                甜點
-              </button>
-            </div>
+        <div className="col-2 RecipesClassButton">
+          <div className="" id="recipesArray_buttons">
+            {recipesArray.map((v, i) => {
+              return (
+                <button key={i} className="">
+                  {v}
+                </button>
+              );
+            })}
           </div>
         </div>
 
