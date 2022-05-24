@@ -84,12 +84,16 @@
 .products .product_container .product_card .imageContainer {
   overflow: hidden;
   width: 100%;
+  height: 230px;
 }
 
 .products .product_container .product_card .imageContainer img {
   width: 100%;
+  height: 100%;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .products .product_container .product_card .product_card_info {

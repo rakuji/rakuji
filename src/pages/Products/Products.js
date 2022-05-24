@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import gsap from "gsap";
 import $ from "jquery"
 
+import products from './data/products.json'
+
 const Products = () => {
   const category = [
     "全部商品",
@@ -15,7 +17,7 @@ const Products = () => {
     "副產品",
   ];
 
-  const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+  // const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
   let deg = 0;
   const price_search = () => {
@@ -44,14 +46,14 @@ const Products = () => {
 
 
 
-  // useEffect(() => {
-  //   gsap.timeline().from(".product_card", {
-  //     duration: 1,
-  //     opacity: 0,
-  //     delay: 1,
-  //     stagger: 0.1,
-  //   });
-  // }, []);
+  useEffect(() => {
+    gsap.timeline().from(".product_card", {
+      duration: 1,
+      opacity: 0,
+      delay: 1,
+      stagger: 0.1,
+    });
+  }, []);
 
   useEffect(() => {
     document.getElementsByClassName("product_card").onclick = (event) => {
@@ -109,17 +111,18 @@ const Products = () => {
 
               <div key={i} className="product_container">
 
-                <div key={i} className="product_card">
-                  <Link to="/products/product_detail">
+                <div className="product_card">
+                  <Link to={`/products/product_detail/${v.id}`}>
                     <div className="imageContainer mb-2">
                       <img
-                        src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
+                        // src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
+                        src={require(`${v.picture}`)}
                         alt=""
                       />
                     </div>
                     <div className="product_card_info">
-                      <p className="mb-2">裝蒜牛五花飯</p>
-                      <p className="mb-2">NT150</p>
+                      <p className="mb-2">{v.name}</p>
+                      <p className="mb-2">NT{v.price}</p>
                       <button id="cart_icon">
                         <i className="fa-solid fa-cart-shopping"></i>
                       </button>

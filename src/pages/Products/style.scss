@@ -91,11 +91,13 @@
       overflow: hidden;
       width: 100%;
       // width: 250px;
-      // height: 230px;
+      height: 230px;
 
       img {
         width: 100%;
+        height: 100%;
         transition: all 0.3s ease;
+        object-fit: cover;
       }
     }
 

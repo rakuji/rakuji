@@ -1,0 +1,396 @@
+[
+    {
+      "id": "1",
+      "picture": "./images/maindish/MB-001黃金豬排丼飯.jpeg",
+      "name": "黃金豬排丼飯",
+      "price": 150,
+      "category":"maindish",
+      "introduction":"從小豬離乳後餵食添加益生菌、海草菁與備長炭的飼料，活菌可增加豬隻免疫力、海草菁增添肉質甜度，備長炭減少豬腥味，豬隻健康飼料中不需添加抗生素與其他動物類藥品，以低溫人道屠宰，保留自然鮮甜度與Q嫩口感，且無腥味肉質"
+
+    },
+    {
+      "id": "2",
+      "picture": "./images/maindish/MB-002唐揚雞歐姆蛋咖喱飯.jpeg",
+      "name": "唐揚雞歐姆蛋咖喱飯",
+      "price": 130,
+      "category":"maindish",
+      "introduction":"咖哩是使用多種蔬菜水果熬製出來的，也是日籍主廚的拿手料理之一，不用出國就能吃到甘甜濃郁且不膩口的日式咖哩，採用當季蔬果像是南瓜、蘋果、香蕉等下去打成泥再搭配日式咖哩熬煮，吃起來不僅有濃濃的蔬果甜味，加上微微咖哩香料氣息更是絕配，不僅大人喜歡，完全不辣的味蕾連小朋友都超愛!"
+    },
+    {
+      "id": "3",
+      "picture": "./images/maindish/MB-003天婦羅丼.jpg",
+      "name": "天婦羅丼",
+      "price": 180,
+      "category":"maindish",
+      "introduction":"炸蝦採用白蝦搭配酥脆麵衣，吃起來既有白蝦的Q彈鮮美，沾附咖哩醬更多了一股濃郁甜美的味蕾，讓人一口接一口停不下來!"
+    },
+    {
+      "id": "4",
+      "picture": "./images/maindish/MB-004文青花魚飯.jpg",
+      "name": "文青花魚飯",
+      "price": 150,
+      "category":"maindish",
+      "introduction":"店內同樣人氣不俗的鹽烤文青花魚飯份量也很大，若不想在一餐內吃得太油，健康程度最高的白肉魚類便是你最佳的選擇，大方給上兩片厚實文青花魚 ，在調味上不過份渲染，盡量保持原有風味，享用的過程中可以清楚感受到魚肉本身的鹹香與多汁，搭配Q彈的白飯，喜歡海鮮的饕客非常值得試試。"
+    },
+    {
+      "id": "5",
+      "picture": "./images/maindish/MB-005親子丼.jpg",
+      "name": "親子丼",
+      "price": 110,
+      "category":"maindish",
+      "introduction":"以創業至今嚴守的秘傳醬汁熬煮雞肉，結合膨軟濃稠半熟蛋製成的老店親子丼"
+    },
+    {
+      "id": "6",
+      "picture": "./images/maindish/MB-006裝蒜牛五花飯.jpg",
+      "name": "裝蒜牛五花飯",
+      "price": 160,
+      "category":"maindish",
+      "introduction":"喜歡吃牛肉的你千萬別錯過這道「裝蒜牛五花」，用心地使用新鮮的炸蒜片進行調味，與牛五花的油花、肉汁相當班配，與「寶島燒豚飯」相同，肉片堆成小山般的份量十分誘人，牛肉特有的香氣與溏心蛋濃郁的蛋香更是絕配，想來點風味濃郁的特色便當，這份「裝蒜牛五花」相信你會愛上！"
+    },
+    {
+      "id": "7",
+      "picture": "./images/maindish/MB-007熔岩唐揚雞飯.jpg",
+      "name": "熔岩唐揚雞飯",
+      "price": 130,
+      "category":"maindish",
+      "introduction":"丼飯店必點之一的「唐揚雞」，【慢丼作】同樣相當拿手，將新鮮醃製後的雞肉裹粉油炸，大口咬下金黃酥脆的麵衣，還聽的見清脆過癮的回響，仔細看唐揚雞的橫切面，還能看見雞汁汨汨流出，最後淋上的黃芥末醬酸甜滋味交雜，整體風味非常棒，喜歡唐揚雞料理的朋友可別錯過！"
+    },
+    {
+      "id": "8",
+      "picture": "./images/maindish/MB-008寶島燒豚飯.jpg",
+      "name": "寶島燒豚飯",
+      "price": 120,
+      "category":"maindish",
+      "introduction":"燒肉片厚度足夠、醬汁充足讓肉片上的油花看起來更加誘人，仔細觀察還能看到烤網的痕跡，肉片份量也給的非常有誠意，小小的肉山光是看過去相信肉食控們早已口水直流，且燒肉油脂比例恰到好處、口感軟嫩又不會乾柴，搭配特色醬汁烘烤過，鹹甜交織的美味讓人欲罷不能，溏心蛋與酸白菜等配菜也讓整體的風味層次不會過份單薄，綜合來說是個CP值相當高的明星選項！"
+    },
+    {
+      "id": "9",
+      "picture": "./images/maindish/MB-009月見海鮮丼.jpg",
+      "name": "月見海鮮丼",
+      "price": 170,
+      "category":"maindish",
+      "introduction":"炙燒海鮮內就有2種魚各2片、天使紅蝦、干貝、星鰻、玉子燒，裡頭的旗魚新鮮度不錯但油脂略少一些，於是炙燒起來感覺好像少了點油香，鮭魚就很棒跟剛剛吃的壽司差不多，干貝和天使蝦都很鮮甜可口，最後是星鰻這價位竟然有好大一片，而且吃起來微微的香甜也沒有顯著的小刺，口感和味道很不錯！"
+    },
+    {
+      "id": "10",
+      "picture": "./images/maindish/MB-010炊飯.jpg",
+      "name": "炊飯",
+      "price": 90,
+      "category":"maindish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "11",
+      "picture": "./images/maindish/MB-011蛋包飯.jpg",
+      "name": "蛋包飯",
+      "price": 90,
+      "category":"maindish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "12",
+      "picture": "./images/maindish/MB-012漢堡排.jpg",
+      "name": "漢堡排",
+      "price": 100,
+      "category":"maindish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "13",
+      "picture": "./images/maindish/MB-013明太子義大利麵.jpg",
+      "name": "明太子義大利麵",
+      "price": 130,
+      "category":"maindish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "14",
+      "picture": "./images/sidedish/MA-001日式溏心蛋沙拉.jpg",
+      "name": "日式溏心蛋沙拉",
+      "price": 60,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "15",
+      "picture": "./images/sidedish/MA-002小魚豆腐沙拉.png",
+      "name": "小魚豆腐沙拉",
+      "price": 50,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "16",
+      "picture": "./images/sidedish/MA-003和風野菜沙拉.jpg",
+      "name": "和風野菜沙拉",
+      "price": 50,
+      "category":"sidedish",
+      "introduction":"今天午餐或晚餐想來點清爽順口的料理，那就來試試特別的「我要吃草系列」吧！大份量的生菜無論搭配和風、胡麻等醬料都十分清爽。"
+    },
+    {
+      "id": "17",
+      "picture": "./images/sidedish/MA-004牛肉沙拉.jpg",
+      "name": "牛肉沙拉",
+      "price": 80,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "18",
+      "picture": "./images/sidedish/MA-005炒鮮菇綠蘆筍.jpg",
+      "name": "炒鮮菇綠蘆筍",
+      "price": 70,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "19",
+      "picture": "./images/sidedish/MA-006海鮮玉子燒.webp",
+      "name": "海鮮玉子燒",
+      "price": 60,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "20",
+      "picture": "./images/sidedish/MA-007日式唐楊雞.jpg",
+      "name": "日式唐楊雞",
+      "price": 80,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "21",
+      "picture": "./images/sidedish/MA-008可樂餅.jpg",
+      "name": "可樂餅",
+      "price": 70,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "22",
+      "picture": "./images/sidedish/MA-009煎餃子.jpg",
+      "name": "煎餃子",
+      "price": 80,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "23",
+      "picture": "./images/sidedish/MA-010薯條.jpg",
+      "name": "薯條",
+      "price": 60,
+      "category":"sidedish",
+      "introduction":"好吃"
+    },
+    {
+      "id": "24",
+      "picture": "./images/soup/MC-001味噌湯.jpg",
+      "name": "味噌湯",
+      "price": 40,
+      "category":"soup",
+      "introduction":"好吃"
+    },
+    {
+      "id": "25",
+      "picture": "./images/soup/MC-002南瓜濃湯.jpg",
+      "name": "南瓜濃湯",
+      "price": 50,
+      "category":"soup",
+      "introduction":"好吃"
+    },
+    {
+      "id": "26",
+      "picture": "./images/soup/MC-003烤鮭魚蘿蔔味增湯.jpg",
+      "name": "烤鮭魚蘿蔔味增湯",
+      "price": 50,
+      "category":"soup",
+      "introduction":"好吃"
+    },
+    {
+      "id": "27",
+      "picture": "./images/soup/MC-004豬肉湯.jpg",
+      "name": "豬肉湯",
+      "price": 50,
+      "category":"soup",
+      "introduction":"好吃"
+    },
+    {
+      "id": "28",
+      "picture": "./images/dessert/ME-001抹茶冰淇淋.jpg",
+      "name": "抹茶冰淇淋",
+      "price": 70,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "29",
+      "picture": "./images/dessert/ME-002紅豆湯圓.jpg",
+      "name": "紅豆湯圓",
+      "price": 60,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "30",
+      "picture": "./images/dessert/ME-003焦糖布丁.jpg",
+      "name": "焦糖布丁",
+      "price": 40,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "31",
+      "picture": "./images/dessert/ME-004起士蛋糕.jpg",
+      "name": "起士蛋糕",
+      "price": 50,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "32",
+      "picture": "./images/dessert/ME-005提拉米蘇.jpg",
+      "name": "提拉米蘇",
+      "price": 70,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "33",
+      "picture": "./images/dessert/ME-006義式奶酪.jpg",
+      "name": "義式奶酪",
+      "price": 60,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "34",
+      "picture": "./images/dessert/ME-007鬆餅.jpg",
+      "name": "鬆餅",
+      "price": 40,
+      "category":"dessert",
+      "introduction":"好吃"
+    },
+    {
+      "id": "35",
+      "picture": "./images/drink/MD-001抹茶拿鐵.jpg",
+      "name": "抹茶拿鐵",
+      "price": 70,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "36",
+      "picture": "./images/drink/MD-002可爾必思.jpg",
+      "name": "可爾必思",
+      "price": 60,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "37",
+      "picture": "./images/drink/MD-003藍色氣泡飲.jpg",
+      "name": "藍色氣泡飲",
+      "price": 60,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "38",
+      "picture": "./images/drink/MD-004季節果汁.PNG",
+      "name": "季節果汁",
+      "price": 50,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "39",
+      "picture": "./images/drink/MD-005紅茶.PNG",
+      "name": "紅茶",
+      "price": 40,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "40",
+      "picture": "./images/drink/MD-006美式咖啡.PNG",
+      "name": "美式咖啡",
+      "price": 60,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "41",
+      "picture": "./images/drink/MD-007拿鐵.PNG",
+      "name": "拿鐵",
+      "price": 60,
+      "category":"drink",
+      "introduction":"好吃"
+    },
+    {
+      "id": "42",
+      "picture": "./images/coproduct/CH-001綜合寶寶粥.jpg",
+      "name": "綜合寶寶粥",
+      "price": 130,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "43",
+      "picture": "./images/coproduct/CH-002心干貝貝粥.jpg",
+      "name": "心干貝貝粥",
+      "price": 140,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "44",
+      "picture": "./images/coproduct/CH-003乖乖豬豬粥.jpg",
+      "name": "乖乖豬豬粥",
+      "price": 130,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "45",
+      "picture": "./images/coproduct/CH-004南瓜飽飽粥.jpg",
+      "name": "南瓜飽飽粥",
+      "price": 120,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "46",
+      "picture": "./images/coproduct/CH-005原淬寶寶粥.jpg",
+      "name": "原淬寶寶粥",
+      "price": 150,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "47",
+      "picture": "./images/coproduct/PG-001日式咖哩調理包.jpg",
+      "name": "日式咖哩調理包",
+      "price": 160,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "48",
+      "picture": "./images/coproduct/PG-002骰子牛調理包.webp",
+      "name": "骰子牛調理包",
+      "price": 200,
+      "category":"coproduct",
+      "introduction":"好吃"
+    },
+    {
+      "id": "49",
+      "picture": "./images/coproduct/PG-003冷凍可樂餅.jpg",
+      "name": "冷凍可樂餅",
+      "price": 170,
+      "category":"coproduct",
+      "introduction":"好吃"
+    }
+
+  ]

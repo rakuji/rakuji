@@ -18,6 +18,7 @@
     "react-image-magnifiers": "^1.4.0",
     "react-router-dom": "^5.3.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.52.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
