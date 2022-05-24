@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 
@@ -55,7 +56,7 @@ const Cart = () => {
 
             <div className="row justify-content-end">
 
-                <div className="col-3 checkarea me-5">
+                <div className="col-3 cart_checkarea me-5">
                     <div className='quantity my-4'>
                         <p>商品數量</p>
                         <p>共5件</p>
@@ -66,8 +67,10 @@ const Cart = () => {
                         <p>$600元</p>
                     </div>
 
-                    <button className="go_check my-4">前往結帳</button>
-                    
+                    <Link to="/cart/cart_info">
+                        <button className="go_check my-4">前往結帳</button>
+                    </Link>
+
                 </div>
             </div>
 

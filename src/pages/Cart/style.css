@@ -1,3 +1,27 @@
+.accordion-button {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+}
+
+.accordion-button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #ffffff;
+}
+
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.StepperContainer-0-2-1 a {
+  text-decoration: none;
+  color: black;
+}
+
 tbody,
 td,
 tfoot,
@@ -33,11 +57,11 @@ table tbody .img_container img {
   width: 100%;
 }
 
-.checkarea p {
+.cart_checkarea p {
   margin-bottom: 0;
 }
 
-.checkarea .quantity {
+.cart_checkarea .quantity {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +70,7 @@ table tbody .img_container img {
           justify-content: space-between;
 }
 
-.checkarea .price {
+.cart_checkarea .price {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,12 +79,73 @@ table tbody .img_container img {
           justify-content: space-between;
 }
 
-.checkarea .go_check {
+.cart_checkarea .go_check {
   color: #fff;
   text-decoration: none;
   border: 1px solid #58c2dd;
   border-radius: 100px;
   width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #58c2dd;
+}
+
+.checkarea {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.checkarea p {
+  margin-bottom: 0;
+}
+
+.checkarea div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkarea button {
+  text-decoration: none;
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.checkarea button.last_page {
+  background-color: transparent;
+  color: #58c2dd;
+}
+
+.checkarea button.next_page {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.cart_confirm p,
+.cart_confirm h3 {
+  margin-bottom: 0;
+}
+
+.cart_confirm .order_success i {
+  font-size: 2rem;
+}
+
+.cart_confirm .accordion button {
+  background-color: #58c2dd;
+}
+
+.cart_confirm .cart_confirm_btn {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 200px;
   height: 50px;
   margin-bottom: 20px;
   background-color: #58c2dd;

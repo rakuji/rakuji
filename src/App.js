@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 // components
 import Nav from "./components/Nav";
@@ -18,47 +19,64 @@ import Store from "./pages/Store/Store";
 import Booking_information from "./pages/Booking/Booking_information";
 import Booking_finish from "./pages/Booking/Booking_finish";
 import Cart from "./pages/Cart/Cart";
+import Cart_info from "./pages/Cart/Cart_info";
+import Cart_order from "./pages/Cart/Cart_order";
+import Cart_confirm from "./pages/Cart/Cart_confirm";
 
 function App() {
 
   return (
     <div className="App">
       <Nav />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/about" exact>
-          <About />
-        </Route>
-        <Route path="/newslist" exact>
-          <Newslist />
-        </Route>
-        <Route path="/products" exact>
-          <Products />
-        </Route>
-        <Route path="/products/product_detail" exact>
-          <Product_detail />
-        </Route>
-        <Route path="/cart" exact>
-          <Cart />
-        </Route>
-        <Route path="/booking" exact>
-          <Booking />
-        </Route>
-        <Route path="/booking/booking_information" exact>
-          <Booking_information />
-        </Route>
-        <Route path="/booking/booking_information/booking_finish" exact>
-          <Booking_finish />
-        </Route>
-        <Route path="/recipes" exact>
-          <Recipes />
-        </Route>
-        <Route path="/store" exact>
-          <Store />
-        </Route>
-      </Switch>
+
+      <ScrollToTop>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/about" exact>
+            <About />
+          </Route>
+          <Route path="/newslist" exact>
+            <Newslist />
+          </Route>
+          <Route path="/products" exact>
+            <Products />
+          </Route>
+          <Route path="/products/product_detail" exact>
+            <Product_detail />
+          </Route>
+          <Route path="/cart" exact>
+            <Cart />
+          </Route>
+          <Route path="/cart/cart_info" exact>
+            <Cart_info />
+          </Route>
+          <Route path="/cart/cart_info/cart_order" exact>
+            <Cart_order />
+          </Route>
+          <Route path="/cart/cart_info/cart_order/cart_confirm" exact>
+            <Cart_confirm />
+          </Route>
+          <Route path="/booking" exact>
+            <Booking />
+          </Route>
+          <Route path="/booking/booking_information" exact>
+            <Booking_information />
+          </Route>
+          <Route path="/booking/booking_information/booking_finish" exact>
+            <Booking_finish />
+          </Route>
+          <Route path="/recipes" exact>
+            <Recipes />
+          </Route>
+          <Route path="/store" exact>
+            <Store />
+          </Route>
+        </Switch>
+      </ScrollToTop>
+
+
       <Footer />
     </div>
   );
