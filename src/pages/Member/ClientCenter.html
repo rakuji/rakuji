@@ -49,7 +49,7 @@
         }
 
         header {
-            background-image: url(/src/image/banner/header.png);
+            background-image: url(../../images/banner/headerA.png);
             background-size: 100vw auto;
             /* width: 100vw; */
             height: 20vw;
@@ -88,6 +88,8 @@
             background: yellowgreen;
             height: 20vh;
         }
+
+
 
         .breadcrumb {
             height: 20px;
@@ -170,7 +172,9 @@
 </head>
 
 <body class="my-login-page">
-    <header>header</header>
+    <header>
+        <div class="mask"></div>
+    </header>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#index">首頁</a></li>
@@ -235,21 +239,42 @@
                 <!-- <input type="file" id="pic" class="" name="pic" value="" required autofocus> -->
             </div>
         </aside>
-        <article>
+        <article class="m-3">
             <div class="card fat">
                 <div class="card-body">
                     <!-- <div class="tag_page">tag_page</div> -->
                     <!-- tab -->
                     <nav class="nav nav-pills flex-column flex-sm-row">
                         <a class="flex-sm-fill text-sm-center nav-link active" aria-current="page"
-                            href="./client-center.html">會員個人資料</a>
+                            href="./client-center.html" target="_self">會員個人資料</a>
                         <a class="flex-sm-fill text-sm-center nav-link" href="./order-list.html"
                             target="_self">訂單交易紀錄</a>
                         <a class="flex-sm-fill text-sm-center nav-link" href="./coupon-list.html"
                             target="_self">優惠資料紀錄</a>
-
                     </nav>
                     <br>
+
+                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">會員個人資料</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">訂單交易紀錄</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                                type="button" role="tab" aria-controls="contact" aria-selected="false">優惠資料紀錄</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">123
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">456</div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">789</div>
+                    </div>
 
                     <!-- 表單 -->
                     <form method="POST" class="my-login-validation" novalidate="">
@@ -322,7 +347,21 @@
             </div>
         </article>
     </main>
-    <footer>footer</footer>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 
 </html>
