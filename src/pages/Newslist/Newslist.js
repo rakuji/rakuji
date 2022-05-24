@@ -19,16 +19,18 @@ const Newslist = () => {
 
       {/*  放breadcrumb 顏色修改 第三個畫面更新 */}
       <Breadcrumb />
-      <div className="container container col-6">
-        <div id="list" className="row row-cols-1 row-cols-md-3 g-4 ">
+      {/* 動全部card的寬 */}
+      <div className="container  col-10">
+
+        <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
             {/* 1 */}
               <div className="col">
             <div className="card1">
                   <img
                     src={require("./firstpic.png")}
-                    className="card-img-top"
+                    className="card-img-top "
                     alt="..."
-                    width="250px"
+                    width="180px"
                     height="370px"
                   />
 
@@ -38,12 +40,12 @@ const Newslist = () => {
             </div>
             {/* 2  圖片文字可以連結到Votelist */}
             <div className="col">
-              <div className="card">
+              <div className="card">  
                 <img
                   src={require("./00001.png")}
                   className="card-img-top"
                   alt="..."
-                />
+                />  
                 <div className="card-body">
                   <h3 className="card-title fs-4">樂時町年末同樂會</h3>
                   <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
@@ -146,6 +148,8 @@ const Newslist = () => {
                   <p className="card-content fs-5">
                     生日壽星，同桌享有88折優惠!
                     <br></br>
+                    <br></br>
+
                   </p>
                 </div>
               </div>
@@ -200,6 +204,7 @@ const Newslist = () => {
                     加入樂食町家族，讓我們一同成長!!
                   </p>
                   <br></br>
+
                 </div>
               </div>
             </div>
