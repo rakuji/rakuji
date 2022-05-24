@@ -102,7 +102,7 @@ function Footer() {
               <li className="nav-item ">
                 <span className="p-0">營業時間</span>
               </li>
-              <li className="nav-item mb-3">
+              <li className="nav-item mb-2">
                 <span className="fs-5">11:00~21:30</span>
               </li>
               <li className="nav-item mb-2">
