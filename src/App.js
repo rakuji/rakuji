@@ -37,13 +37,13 @@ function App() {
         <Route path="/about" exact>
           <About />
         </Route>
-        <Route path="/Newslist" exact>
+        <Route path="/newslist" exact>
           <Newslist />
         </Route>
-        <Route path="/Newslist/Cooperationform" exact>
+        <Route path="/newslist/Cooperationform" exact>
           <Cooperationform />
         </Route>
-        <Route path="/Newslist/Votelist" exact>
+        <Route path="/newslist/Votelist" exact>
           <Votelist />
         </Route>
         <Route path="/products" exact>

@@ -28,18 +28,18 @@ const routes = [
   // -----------------------------------------------------------
 
   {
-    path: "/Newslist",
+    path: "/newslist",
     component: Newslist,
     breadcrumbName: "最新消息",
     routes: [
       {
-        path: "/Newslist/Votelist",
-        component: box,
+        path: "/newslist/Votelist",
+        component: Newslist,
         breadcrumbName: "票選料理之王",
       },
       {
-        path: "/Newslist/Cooperationform",
-        component: box,
+        path: "/newslist/Cooperationform",
+        component: Newslist,
         breadcrumbName: "異業合作",
       },
     ],

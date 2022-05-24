@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./Cooperationform.css";
@@ -10,6 +10,13 @@ import Breadcrumb from "./Breadcrumb";
 const Cooperationform = () => {
   return (
     <main>
+      <img
+        src={require("./002.png")}
+        width="100%"
+        height="100%"
+        className="d-block  mx-auto"
+        alt="..."
+      />
       {/* test */}
 
       {/* test */}
@@ -17,21 +24,13 @@ const Cooperationform = () => {
 
       <Breadcrumb />
       <div className="container">
-        <div className="col">
-          {/* <div className="" width="18rem;"> */}
-          <img
-            src={require("./002.png")}
-            width="80%"
-            height="80%"
-            className="d-block  mx-auto"
-            alt="..."
-          />
-        </div>
+        <div className="col"></div>
       </div>
-      {/* </div> */}
 
-      <Form style={{  }} className="container   , block">
-        <Form.Label className="fs-1">商家聯絡資料</Form.Label>
+      <Form style={{}} className="container   , block">
+        <Form.Label className="client fs-1" src="">
+          商家聯絡資料
+        </Form.Label>
         <br></br>
         <Form.Label className="fs-6">2022/12/56 - 2022/12/56</Form.Label>
         <br></br>
@@ -87,12 +86,11 @@ const Cooperationform = () => {
           送出
         </Button>
       </Form>
-<br></br>
+      <br></br>
       <button className="d-block , mx-auto " alt="...">
         icon回上一頁
       </button>
       <br></br>
-
     </main>
   );
 };

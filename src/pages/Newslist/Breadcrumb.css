@@ -4,4 +4,11 @@
     margin-top: 35px;
     margin-bottom:35px ;
 
+/* 設定 breadcrumb 手機板不會顯示出來 */
+/* max-width:576px 
+
+
+    body {
+        .breadcrumb: none;
+    } */
 }
