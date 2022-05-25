@@ -30,8 +30,8 @@ const Recipes = () => {
               alt="Recipes"
             ></img>
           </div>
-          <div className="RecipesClassButtonAllOn">
           
+          <div className="RecipesClassButtonAllOn">
             <div className="btn-group">
               <div>
                 <button className=" RecipesClassButton " id="">
@@ -110,16 +110,38 @@ const Recipes = () => {
                 aria-labelledby="home-tab"
                 tabindex="0"
               >
-                <div className="container  nav RecipesSearchDiv ">
-                  <h6 className="RecipesSearchText">食譜名稱</h6>
-                  <input
-                    className="RecipesSearchInput form-control"
-                    placeholder="搜尋餐點名稱"
-                  ></input>
-                  <h6 className="RecipesSearchText"></h6>
-                  <button className=" RecipesSearchButton buttonoff" id="">
-                    搜尋
-                  </button>
+                <div className="container  nav RecipesSearchDiv RecipesOff">
+                  <div className="row">
+                    <div className="col-3">
+                      <h6 className="RecipesSearchText">食譜名稱</h6>
+                    </div>
+                    <div className="col-6">
+                      <input
+                        className=" RecipesSearchInput form-control"
+                        placeholder="搜尋餐點名稱"
+                      />
+                    </div>
+                    <div className="col-2">
+                      <button className=" RecipesSearchButton buttonoff" id="">
+                        搜尋
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div className="container  nav RecipesSearchDiv RecipesOn">
+                  <div className="">
+                    <div className="col">
+                      <input
+                        className=" RecipesSearchInput form-control"
+                        placeholder="搜尋餐點名稱"
+                      />
+                    </div>
+                    <div className="col-1">
+                      <button className=" RecipesSearchButton buttonoff" id="">
+                        搜尋
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div
@@ -129,21 +151,54 @@ const Recipes = () => {
                 aria-labelledby="profile-tab"
                 tabindex="0"
               >
-                <div className="container  nav RecipesSearchDiv ">
-                  <h6 className="RecipesSearchText">卡路里範圍</h6>
-                  <input
-                    className="RecipesSearchInput form-control"
-                    placeholder="請輸入最小卡路里範圍"
-                  ></input>
-                  <h6 className="RecipesSearchText">~</h6>
-                  <input
-                    className="RecipesSearchInput form-control"
-                    placeholder="請輸入最大卡路里範圍"
-                  ></input>
-                  <h6 className="RecipesSearchText">大卡</h6>
-                  <button className=" RecipesSearchButton" id="">
-                    搜尋
-                  </button>
+                <div className="container  nav RecipesSearchDiv text-center RecipesOff">
+                  <div className="row ">
+                    <div className="col-4">
+                      <input
+                        className="RecipesSearchInput form-control"
+                        placeholder="請輸入最小卡路里範圍"
+                      ></input>
+                    </div>
+                    <div className="col-1">
+                      <h6 className="RecipesSearchText ">~</h6>
+                    </div>
+                    <div className="col-4">
+                      <input
+                        className="RecipesSearchInput form-control"
+                        placeholder="請輸入最大卡路里範圍"
+                      ></input>
+                    </div>
+                    <div className="col-2">
+                      <h6 className="RecipesSearchText">大卡</h6>
+                    </div>
+                    <div className="col-1">
+                      <button className=" RecipesSearchButton" id="">
+                        搜尋
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="container  nav RecipesSearchDiv text-center RecipesOn">
+                  <div className="">
+                    <div className="col">
+                      <input
+                        className="RecipesSearchInput form-control"
+                        placeholder="請輸入最小卡路里範圍"
+                      ></input>
+                    </div>
+                    <div className="col">
+                      <input
+                        className="RecipesSearchInput form-control"
+                        placeholder="請輸入最大卡路里範圍"
+                      ></input>
+                    </div>
+                    <div className="col-1">
+                      <button className=" RecipesSearchButton" id="">
+                        搜尋
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
