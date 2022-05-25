@@ -40,11 +40,11 @@ const Store = () => {
           {/* 門市區域按鈕 */}
           <div className="d-flex justify-content-around areaBtns">
 
-            <div className="  myBtn2">
-              <div className="" id="storeArray_buttons">
+            <div className=" container ">
+              <div className="row myBtn2" id="storeArray_buttons">
                 {storeArray.map((v, i) => {
                   return (
-                    <button key={i} className="">
+                    <button key={i} className="col">
                       {v}
                     </button>
                   );
