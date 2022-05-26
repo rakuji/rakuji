@@ -1,21 +1,26 @@
-import React, { useEffect ,useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import gsap from "gsap";
 import $ from "jquery"
+import { Modal, Button } from 'react-bootstrap'
+import { useCart } from '../../utils/useCart'
 
-const Products = () => {
-  // 從資料庫取得資料
-  const [datas, setDatas] = useState([])
-  const fetchData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
-    const results = await response.json();
-    setDatas(results);
-  }
-  useEffect(() => {
-    fetchData();
-  }, [])
-  
+// 商品範例
+import datas from './data/products.json'
+
+const Products = (props) => {
+  // // 從資料庫取得資料
+  // const [datas, setDatas] = useState([])
+  // const fetchData = async () => {
+  //   const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+  //   const results = await response.json();
+  //   setDatas(results);
+  // }
+  // useEffect(() => {
+  //   fetchData();
+  // }, [])
+
 
   const category = [
     "全部商品",
@@ -64,11 +69,50 @@ const Products = () => {
 
 
   //商品加入購物車按鈕(事件阻擋)
-  useEffect(() => {
-    document.getElementsByClassName("product_card").onclick = (event) => {
-      // event.stopPropagation();
-    };
-  }, []);
+  // useEffect(() => {
+  //   document.getElementsByClassName("product_card").onclick = (event) => {
+  //     event.stopPropagation();
+  //   };
+  // }, []);
+
+
+  // 對話盒使用
+  const [show, setShow] = useState(false)
+  // 對話盒中的商品名稱
+  const [productName, setProductName] = useState('')
+
+  const { addItem } = useCart()
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
+  const showModal = (name) => {
+    setProductName('產品：' + name + '已成功加入購物車')
+    handleShow()
+  }
+
+  const messageModal = (
+    <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+      <Modal.Header closeButton>
+        <Modal.Title>加入購物車訊息</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>{productName} </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          繼續購物
+        </Button>
+        <Button
+          variant="primary"
+          onClick={() => {
+            // 導向購物車頁面
+            props.history.push('/cart')
+          }}
+        >
+          前往購物車結帳
+        </Button>
+      </Modal.Footer>
+    </Modal>
+  )
 
 
   return (
@@ -126,14 +170,21 @@ const Products = () => {
                       {/* <img src="/img/products/CH-001綜合寶寶粥.jpg" alt="" /> */}
                       <img src={`/img/products/${v.picture}`} alt="" />
                     </div>
-                    <div className="product_card_info">
-                      <p className="mb-2">{v.name}</p>
-                      <p className="mb-2">NT{v.price}</p>
-                      <button id="cart_icon">
-                        <i className="fa-solid fa-cart-shopping"></i>
-                      </button>
-                    </div>
                   </Link>
+                  <div className="product_card_info">
+                    <p className="mb-2">{v.name}</p>
+                    <p className="mb-2">NT{v.price}</p>
+                    <button id="cart_icon" onClick={() => {
+                      // 商品原本無數量屬性(quantity)，要先加上
+                      const item = { ...v, quantity: 1 }
+                      // 注意: 重覆加入會自動+1產品數量
+                      addItem(item)
+                      // 呈現跳出對話盒
+                      showModal(v.name)
+                    }}>
+                      <i className="fa-solid fa-cart-shopping"></i>
+                    </button>
+                  </div>
                 </div>
 
               </div>
@@ -141,8 +192,11 @@ const Products = () => {
           })}
         </div>
       </div>
+
+      {messageModal}
+
     </div>
   );
 };
 
-export default Products;
+export default withRouter(Products);
