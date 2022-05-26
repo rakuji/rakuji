@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
+
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
 // pages
 import Home from "./pages/Home/Home";
-// import Contact from "./pages/About/contact";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
 import Products from "./pages/Products/Products";
