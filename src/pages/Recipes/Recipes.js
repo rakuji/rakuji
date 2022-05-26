@@ -5,6 +5,7 @@ import "./Recipes.css";
 import "../../components/background.css";
 import $ from "jquery";
 
+
 const Recipes = () => {
   const recipesArray = ["全部食譜", "主食", "前菜", "湯品", "飲品", "甜點"];
 
