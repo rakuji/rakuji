@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
-
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
@@ -18,7 +17,6 @@ import Store from "./pages/Store/Store";
 import Contact from "./pages/Contact/Contact";
 import Votelist from "./pages/Newslist/Votelist";
 import Cooperationform from "./pages/Newslist/Cooperationform";
-import Signin from "./pages/Signin/Signin"
 
 function App() {
   return (
@@ -54,9 +52,6 @@ function App() {
         </Route>
         <Route path="/contact" exact>
           <Contact />
-        </Route>
-        <Route path="/Signin" exact>
-          <Signin />
         </Route>
       </Switch>
       <Footer />

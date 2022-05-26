@@ -7,20 +7,20 @@ import Axios from "axios";
 function Contact(){
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [select, setSelect] = useState("一般消費建議");
+  const [select, setSelect] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
 
   
   const submitForm = () => {
-    Axios.post("http://localhost:3001/contact", {
+    Axios.post("http://localhost:3001/submit", {
       name: name,
       email: email,
       select: select,
       subject: subject,
       message: message,
     }).then(() => {
-      console.log("成功");
+      console.log("success");
     });
   }
 
@@ -131,7 +131,7 @@ return (
       </Row>
       <Row>
         <Col className="d-flex justify-content-center">
-          <input type="submit" value="送出" className="btn1" onClick={submitForm}></input>
+          <button type="submit" value="送出" className="btn1" onClick={submitForm}>送出</button>
         </Col>
       </Row>
     </Form>
