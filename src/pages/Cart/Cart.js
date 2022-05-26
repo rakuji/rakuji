@@ -34,10 +34,10 @@ const Cart = () => {
                             <tr key={i} className='cart_items'>
                                 <td>
                                     <div className="img_container">
-                                        <img
+                                        {/* <img
                                             src={require("../Products/images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
                                             alt=""
-                                        />
+                                        /> */}
                                     </div>
 
                                 </td>

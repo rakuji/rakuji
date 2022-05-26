@@ -1,12 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import gsap from "gsap";
 import $ from "jquery"
 
-import products from './data/products.json'
-
 const Products = () => {
+  // 從資料庫取得資料
+  const [datas, setDatas] = useState([])
+  const fetchData = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+    const results = await response.json();
+    setDatas(results);
+  }
+  useEffect(() => {
+    fetchData();
+  }, [])
+  
+
   const category = [
     "全部商品",
     "主食",
@@ -16,8 +26,6 @@ const Products = () => {
     "甜點",
     "副產品",
   ];
-
-  // const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
   let deg = 0;
   const price_search = () => {
@@ -45,7 +53,6 @@ const Products = () => {
 
 
 
-
   useEffect(() => {
     gsap.timeline().from(".product_card", {
       duration: 1,
@@ -53,12 +60,13 @@ const Products = () => {
       delay: 1,
       stagger: 0.1,
     });
-  }, []);
+  }, [datas]);
 
+
+  //商品加入購物車按鈕(事件阻擋)
   useEffect(() => {
     document.getElementsByClassName("product_card").onclick = (event) => {
       // event.stopPropagation();
-      console.log(87878787);
     };
   }, []);
 
@@ -106,7 +114,7 @@ const Products = () => {
           </div>
         </div>
         <div className="col-10 products">
-          {products.map((v, i) => {
+          {datas.map((v, i) => {
             return (
 
               <div key={i} className="product_container">
@@ -114,11 +122,9 @@ const Products = () => {
                 <div className="product_card">
                   <Link to={`/products/product_detail/${v.id}`}>
                     <div className="imageContainer mb-2">
-                      <img
-                        // src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
-                        src={require(`${v.picture}`)}
-                        alt=""
-                      />
+                      {/* <img src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")} alt="" /> */}
+                      {/* <img src="/img/products/CH-001綜合寶寶粥.jpg" alt="" /> */}
+                      <img src={`/img/products/${v.picture}`} alt="" />
                     </div>
                     <div className="product_card_info">
                       <p className="mb-2">{v.name}</p>
