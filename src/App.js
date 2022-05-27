@@ -23,62 +23,72 @@ import Cart_info from "./pages/Cart/Cart_info";
 import Cart_order from "./pages/Cart/Cart_order";
 import Cart_confirm from "./pages/Cart/Cart_confirm";
 
+//購物車
+// 匯入 Cart 要用的 ContextProvider
+import { CartProvider } from './utils/useCart'
+import { SecondCartProvider } from './utils/useSecondCart'
+
 function App() {
 
   return (
-    <div className="App">
-      <Nav />
 
-      <ScrollToTop>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about" exact>
-            <About />
-          </Route>
-          <Route path="/newslist" exact>
-            <Newslist />
-          </Route>
-          <Route path="/products" exact>
-            <Products />
-          </Route>
-          <Route path="/products/product_detail/:productId" exact>
-            <Product_detail />
-          </Route>
-          <Route path="/cart" exact>
-            <Cart />
-          </Route>
-          <Route path="/cart/cart_info" exact>
-            <Cart_info />
-          </Route>
-          <Route path="/cart/cart_info/cart_order" exact>
-            <Cart_order />
-          </Route>
-          <Route path="/cart/cart_info/cart_order/cart_confirm" exact>
-            <Cart_confirm />
-          </Route>
-          <Route path="/booking" exact>
-            <Booking />
-          </Route>
-          <Route path="/booking/booking_information" exact>
-            <Booking_information />
-          </Route>
-          <Route path="/booking/booking_information/booking_finish" exact>
-            <Booking_finish />
-          </Route>
-          <Route path="/recipes" exact>
-            <Recipes />
-          </Route>
-          <Route path="/store" exact>
-            <Store />
-          </Route>
-        </Switch>
-      </ScrollToTop>
+    <SecondCartProvider localStorageKey="secondCart">
+      <CartProvider>
+        <div className="App">
+          <Nav />
+
+          <ScrollToTop>
+            <Switch>
+              <Route path="/" exact>
+                <Home />
+              </Route>
+              <Route path="/about" exact>
+                <About />
+              </Route>
+              <Route path="/newslist" exact>
+                <Newslist />
+              </Route>
+              <Route path="/products" exact>
+                <Products />
+              </Route>
+              <Route path="/products/product_detail/:productId" exact>
+                <Product_detail />
+              </Route>
+              <Route path="/cart" exact>
+                <Cart />
+              </Route>
+              <Route path="/cart/cart_info" exact>
+                <Cart_info />
+              </Route>
+              <Route path="/cart/cart_info/cart_order" exact>
+                <Cart_order />
+              </Route>
+              <Route path="/cart/cart_info/cart_order/cart_confirm" exact>
+                <Cart_confirm />
+              </Route>
+              <Route path="/booking" exact>
+                <Booking />
+              </Route>
+              <Route path="/booking/booking_information" exact>
+                <Booking_information />
+              </Route>
+              <Route path="/booking/booking_information/booking_finish" exact>
+                <Booking_finish />
+              </Route>
+              <Route path="/recipes" exact>
+                <Recipes />
+              </Route>
+              <Route path="/store" exact>
+                <Store />
+              </Route>
+            </Switch>
+          </ScrollToTop>
+          <Footer />
+        </div>
+      </CartProvider>
+    </SecondCartProvider>
 
 
-      <Footer />
-    </div>
   );
 }
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import CartCheckArea from './components/CartCheckArea';
 
 const Cart_order = () => {
 
@@ -19,8 +20,8 @@ const Cart_order = () => {
 
     return (
         <div className='container mb-5'>
-            
-            
+
+
             <Stepper activeStep={1}>
                 <Step label="填寫聯絡資訊" />
                 <Step label="填寫付款資訊" />
@@ -126,37 +127,7 @@ const Cart_order = () => {
 
                 {/* check_area */}
                 <div className="col-4">
-                    <div className='checkarea'>
-
-                        <div className='my-4'>
-                            <p>小計</p>
-                            <p>$600元</p>
-                        </div>
-
-
-                        <div className='my-4'>
-                            <p>折扣優惠</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>運費</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>總計</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <Link to="/cart/cart_info/cart_order/cart_confirm">
-                            <button className="next_page my-2">確認付款</button>
-                        </Link>
-
-                        <Link to="/cart/cart_info">
-                            <button className="last_page my-2">上一步</button>
-                        </Link>
-                    </div>
+                    <CartCheckArea />
                 </div>
             </div>
         </div>

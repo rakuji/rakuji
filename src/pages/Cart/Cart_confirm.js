@@ -1,12 +1,20 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import { Accordion } from 'react-bootstrap';
+import { useCart } from '../../utils/useCart';
 
 const Cart_confirm = () => {
 
-    // 購物車筆數
-    const cart_items = [1, 2, 3, 4, 5];
+    // 使用hooks 解出所需的狀態與函式(自context)
+    const { cart, items} = useCart()
+    console.log(items)
+
+    // discount
+    const [discount, setDiscount] = useState(600)
+
+    //deliveryfee 
+    const [deliveryfee, setDeliveryfee] = useState(100)
 
 
     return (
@@ -45,29 +53,26 @@ const Cart_confirm = () => {
                             </thead>
 
                             <tbody>
-                                {cart_items.map((v, i) => {
+                                {items.map((v, i) => {
 
                                     return (
                                         <tr key={i} className='cart_items'>
                                             <td>
                                                 <div className="img_container">
-                                                    {/* <img
-                                                        src={require("../Products/images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
+                                                    <img
+                                                        src={`/img/products/${v.picture}`}
                                                         alt=""
-                                                    /> */}
+                                                    />
                                                 </div>
 
                                             </td>
-                                            <td>裝蒜牛五花飯</td>
-                                            <td>$120</td>
-                                            <td>1</td>
-                                            <td>$120</td>
+                                            <td>{v.name}</td>
+                                            <td>${v.price}</td>
+                                            <td>{v.quantity}</td>
+                                            <td>${v.itemTotal}</td>
                                         </tr>)
                                 })}
-
-
                             </tbody>
-
                         </table>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -114,23 +119,22 @@ const Cart_confirm = () => {
 
                         <div className='my-4'>
                             <p>小計</p>
-                            <p>$600元</p>
-                        </div>
-
-
-                        <div className='my-4'>
-                            <p>折扣優惠</p>
-                            <p>$600元</p>
+                            <p>${cart.cartTotal}元</p>
                         </div>
 
                         <div className='my-4'>
                             <p>運費</p>
-                            <p>$600元</p>
+                            <p>${deliveryfee}元</p>
+                        </div>
+
+                        <div className='my-4'>
+                            <p>折扣優惠</p>
+                            <p>-${discount}元</p>
                         </div>
 
                         <div className='my-4'>
                             <p>總計</p>
-                            <p>$600元</p>
+                            <p>${cart.cartTotal - discount + deliveryfee}元</p>
                         </div>
                     </div>
 

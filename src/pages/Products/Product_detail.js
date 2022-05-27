@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { GlassMagnifier } from "react-image-magnifiers";
+import { useCart } from '../../utils/useCart'
 
 // import products from './data/products.json'
 
@@ -21,7 +22,7 @@ const Product_detail = () => {
   }, [])
 
 
-
+  // 取得:id資料
   const [product, setProduct] = useState({
     id: 0,
     picture:'https://i.imgur.com/1GrakTl.jpg',

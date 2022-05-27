@@ -1,8 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
 import { Stepper, Step } from 'react-form-stepper';
+import CartCheckArea from './components/CartCheckArea';
+
 
 const Cart_info = () => {
+
+
+
     return (
         <div className='container mb-5'>
 
@@ -21,21 +25,21 @@ const Cart_info = () => {
                     <hr />
 
                     <div className='mb-3'>
-                        <label htmlFor="name" class="form-label">姓名</label>
-                        <input id='name' type="text" class="form-control" />
+                        <label htmlFor="name" className="form-label">姓名</label>
+                        <input id='name' type="text" className="form-control" />
                     </div>
 
                     <div className='mb-3'>
-                        <label htmlFor="phone" class="form-label">手機</label>
-                        <input id='phone' type="text" class="form-control" />
+                        <label htmlFor="phone" className="form-label">手機</label>
+                        <input id='phone' type="text" className="form-control" />
                     </div>
                     <div className='mb-3'>
-                        <label htmlFor="email" class="form-label">信箱</label>
-                        <input id='email' type="text" class="form-control" />
+                        <label htmlFor="email" className="form-label">信箱</label>
+                        <input id='email' type="text" className="form-control" />
                     </div>
                     <div className='mb-3'>
-                        <label htmlFor="address" class="form-label">外送地址</label>
-                        <input id='address' type="text" class="form-control" />
+                        <label htmlFor="address" className="form-label">外送地址</label>
+                        <input id='address' type="text" className="form-control" />
 
                     </div>
 
@@ -44,40 +48,7 @@ const Cart_info = () => {
 
                 {/* check_area */}
                 <div className="col-4">
-
-                    <div className='checkarea'>
-
-                        <div className='my-4'>
-                            <p>小計</p>
-                            <p>$600元</p>
-                        </div>
-
-
-                        <div className='my-4'>
-                            <p>折扣優惠</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>運費</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>總計</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <Link to="/cart/cart_info/cart_order">
-                            <button className="next_page my-2">下一步</button>
-                        </Link>
-
-                        <Link to="/cart">
-                            <button className="last_page my-2">上一步</button>
-                        </Link>
-                    </div>
-
-
+                    <CartCheckArea />
                 </div>
             </div>
         </div>

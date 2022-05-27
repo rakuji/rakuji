@@ -57,6 +57,10 @@ table tbody .img_container img {
   width: 100%;
 }
 
+table tbody .cart_trush_btn {
+  cursor: pointer;
+}
+
 .cart_checkarea p {
   margin-bottom: 0;
 }
