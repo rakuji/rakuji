@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+body.my-login-page {
+    background-color: #fff;
+    /*要喚回白色*/
+    background-image: url(/src/image/BG-signup.png);
+    background-size: 960px auto;
+    background-repeat: repeat-y;
+    background-position: center;
+    font-size: 14px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+header {
+    background-image: url(../../images/banner/headerA.png);
+    background-size: 100vw auto;
+    /* width: 100vw; */
+    height: 20vw;
+    /* background-image: linear-gradient(#aaa, #000); */
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+main {
+    display: flex;
+    min-height: calc(100vh - 30vh);
+    max-width: 960px;
+
+    justify-content: center;
+
+}
+
+main>article {
+    flex: 1;
+}
+
+main>aside {
+    flex: 0 0 20vw;
+    background: rgb(255, 255, 255);
+}
+
+
+header,
+footer,
+article,
+aside {
+    padding: 1em;
+}
+
+footer {
+    background: yellowgreen;
+    height: 20vh;
+}
+
+
+
+.breadcrumb {
+    height: 20px;
+    margin: 10px;
+    background-color: #fff;
+}
+
+.btn-custom {
+    background-color: #58C2DD;
+    color: #fff;
+    /* border-radius: 50%; */
+}
+
+.btn-custom:hover {
+    color: #fff;
+    background-color: #53acc2;
+}
+
+
+.align {
+    /* justify-content: center; */
+    text-align: center;
+    color: #a9a9a9;
+}
+
+.star {
+    color: red;
+}
+
+.m-title img {
+    width: 50%;
+
+}
+
+span>.hy-link {
+    color: #58C2DD;
+}
+
+.pic-dox {
+    background-image: url(/src/image/icon/pic.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px auto;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+    border: 1px solid #C4C4C4;
+
+}
+
+.text-control {
+    font-weight: bolder;
+    /* font-weight: 900;     */
+
+}
+
+figure img {
+    max-width: 100%;
+}
+
+.circle {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mask1 {
+    /* -webkit-mask-image: url(../../../images/account/Circle.png); */
+    /* mask-image: url(../../../images/account/Circle.png); */
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@media screen and (max-width: 576px) {
+    .nav-link {
+        font-size: 10px;
+    }
+}

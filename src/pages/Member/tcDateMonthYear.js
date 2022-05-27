@@ -1,3 +1,4 @@
+
 // select
 const year = document.getElementById('year')
 const month = document.getElementById('month')
@@ -84,3 +85,5 @@ date.addEventListener('change', function () {
   selectedDate = +date.value
   console.log(selectedDate)
 })
+
+export default createOptionsMap

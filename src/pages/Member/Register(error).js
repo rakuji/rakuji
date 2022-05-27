@@ -2,27 +2,14 @@
 import React, { useState } from "react";
 import "./css/my-login.css"
 import "./css/reset.css"
+  
 
-function Registration() {
-    const [name, setName] = useState("");
-    const [nameMessage, setNameMessage] = useState("");
-    const handleValueChange = (e) => {
-        setName(e.target.value)
-    }
-    const handleCheckName = async () => {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/users/checkName?name=${name}`);
-        const results = await response.json();
-        if (results.total === 0) {
-            setNameMessage("帳號可以使用");
-        } else {
-            setNameMessage("帳號已存在");
-        }
-
-    }
+function Register() {
+    
     return (
         //JSX
         <>
-            <body class="my-login-page">
+            <div class="my-login-page">
                 <section class="h-100">
                     <div class="container h-100">
                         <div class="row justify-content-md-center h-100">
@@ -159,10 +146,10 @@ function Registration() {
                 </section>
 
 
-            </body>
+            </div>
         </>
     )
 }
 
-export default Registration
+export default Register
 

@@ -9,6 +9,7 @@ import "./styles/style.css";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 
+
 // pages
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -19,11 +20,12 @@ import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 import Login from "./pages/Member/Login";
 import Signup from "./pages/Member/Signup";
-import Registration from "./pages/Member/Registration";
+import Register from "./pages/Member/Register(error)";
 import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
 import OrderList from "./pages/Member/OrderList";
 import TcRegister from "./pages/Member/TcRegister";
+import TcDateMonthYear from "./pages/Member/TcDateMonthYear"
 
 
 // import BirthData from "./pages/Member/BirthData"
@@ -62,8 +64,8 @@ function App() {
         <Route path="/Signup" exact>
           <Signup />
         </Route>
-        <Route path="/Registration" exact>
-          <Registration />
+        <Route path="/Register" exact>
+          <Register />
         </Route>
         <Route path="/ClientCenter" exact>
           <ClientCenter />
@@ -77,6 +79,10 @@ function App() {
         <Route path="/TcRegister" exact>
           <TcRegister />
         </Route>
+        <Route path="/TcDateMonthYear" exact>
+          <TcDateMonthYear />
+        </Route>
+        
         
       </Switch>
       <Footer />
