@@ -7,6 +7,9 @@ import $ from "jquery";
 import axios from "axios";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
+//食譜範例
+import datas from "./data/recipes.json";
+
 const Recipes = () => {
   const recipesArray = ["全部食譜", "主食", "前菜", "湯品", "飲品", "甜點"];
 
@@ -212,108 +215,52 @@ const Recipes = () => {
         </Link> */}
       </div>
 
-      <div className="container nav ">
-        <div className="col-2 RecipesClassButton RecipesClassButtonAll">
-          <div className="" id="recipesArray_buttons">
-            {recipesArray.map((v, i) => {
+      <div className="container">
+        <div className="row">
+          <div className="col-2 RecipesClassButton RecipesClassButtonAll">
+            <div className="" id=" recipesArray_buttons">
+              {recipesArray.map((v, i) => {
+                return (
+                  <button key={i} className="">
+                    {v}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="col-10 RecipesBoxCardAll">
+            {datas.map((v, i) => {
               return (
-                <button key={i} className="">
-                  {v}
-                </button>
+                <div key={i} className="RecipesSearchBoxCardAll ">
+
+                  <div className="RecipesSearchBoxCard ">
+                  
+                    <img
+                      src={require("./image/00001.jpg")}
+                      className="card-img-top"
+                      alt="日式唐揚炸雞"
+                    />
+                    <div className="card-body">
+                      <p className="card-text h6">
+                        <img className="Boximg" />
+                        日式唐揚炸雞
+                      </p>
+                      <p className="card-text h6">瀏覽次數:65,535次</p>
+                      <Link to="/recipes/box">
+                        <button className=" RecipesLookButton" id="">
+                          查看
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </div>
         </div>
-
-        <div className=" col row">
-          <div className="RecipesSearchBoxCardAll col">
-            <div className="RecipesSearchBoxCard ">
-              <img
-                src={require("./image/00001.jpg")}
-                className="card-img-top"
-                alt="日式唐揚炸雞"
-              />
-              <div className="card-body">
-                <p className="card-text h6">
-                  <img className="Boximg" />
-                  日式唐揚炸雞
-                </p>
-                <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box">
-                  <button className=" RecipesLookButton" id="">
-                    查看
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="RecipesSearchBoxCardAll col">
-            <div className="RecipesSearchBoxCard ">
-              <img
-                src={require("./image/00001.jpg")}
-                className="card-img-top"
-                alt="日式唐揚炸雞"
-              />
-              <div className="card-body">
-                <p className="card-text h6">
-                  <img className="Boximg" />
-                  日式唐揚炸雞
-                </p>
-                <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box">
-                  <button className=" RecipesLookButton" id="">
-                    查看
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="RecipesSearchBoxCardAll col">
-            <div className="RecipesSearchBoxCard ">
-              <img
-                src={require("./image/00001.jpg")}
-                className="card-img-top"
-                alt="日式唐揚炸雞"
-              />
-              <div className="card-body">
-                <p className="card-text h6">
-                  <img className="Boximg" />
-                  日式唐揚炸雞
-                </p>
-                <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box">
-                  <button className=" RecipesLookButton" id="">
-                    查看
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="RecipesSearchBoxCardAll col">
-            <div className="RecipesSearchBoxCard ">
-              <img
-                src={require("./image/00001.jpg")}
-                className="card-img-top"
-                alt="日式唐揚炸雞"
-              />
-              <div className="card-body">
-                <p className="card-text h6">
-                  <img className="Boximg" />
-                  日式唐揚炸雞
-                </p>
-                <p className="card-text h6">瀏覽次數:65,535次</p>
-                <Link to="/recipes/box">
-                  <button className=" RecipesLookButton" id="">
-                    查看
-                  </button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className=""></div>
       </div>
+
       <nav aria-label="Page navigation example " className="RecipesPage">
         <ul class="pagination">
           <li class="page-item">

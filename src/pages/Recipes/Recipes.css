@@ -20,6 +20,7 @@
 }
 
 
+
 .RecipesSearchDiv {
     padding: 0px;
     margin: 27px 10px 0px 15px;
@@ -160,6 +161,11 @@
     max-width: 230px;
     margin: 10px 0px 30px 20px;
 
+}
+
+.RecipesBoxCardAll {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .RecipesLookButton {
