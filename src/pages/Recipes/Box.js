@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Recipes.css";
+import MyBackTop from "../About/myComponents/MyBackTop";
 
 
 
@@ -664,6 +665,8 @@ function Box() {
           </div>
         </div>
       </div>
+      <MyBackTop />
+
     </>
   );
 }
