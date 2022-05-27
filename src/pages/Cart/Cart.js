@@ -1,11 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./style.css";
+
+import { useCart } from '../../utils/useCart'
 
 
 const Cart = () => {
 
+    // 使用hooks 解出所需的狀態與函式(自context)
+    const { cart, items, plusOne, minusOne, removeItem } = useCart()
+
     // 購物車筆數
-    const cart_items = [1, 2, 3, 4, 5];
+    // const cart_items = [1, 2, 3, 4, 5];
 
 
 
@@ -27,24 +33,48 @@ const Cart = () => {
                 </thead>
 
                 <tbody>
-                    {cart_items.map((v, i) => {
+                    {items.map((v, i) => {
 
                         return (
                             <tr key={i} className='cart_items'>
                                 <td>
                                     <div className="img_container">
                                         <img
-                                            src={require("../Products/images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
+                                            src="/img/products/MB-006裝蒜牛五花飯_s.jpg"
                                             alt=""
                                         />
                                     </div>
 
                                 </td>
-                                <td>裝蒜牛五花飯</td>
-                                <td>$120</td>
-                                <td>1</td>
-                                <td>$120</td>
-                                <td><i className="fa-solid fa-trash-can"></i></td>
+                                <td>{v.name}</td>
+                                <td>${v.price}</td>
+                                <td><div className="btn-group mr-2" role="group">
+                                    <button
+                                        type="button"
+                                        className="btn btn-light"
+                                        onClick={() => {
+                                            minusOne(v.id)
+                                        }}
+                                    >
+                                        -
+                                    </button>
+                                    <button type="button" className="btn btn-light">
+                                        {v.quantity}
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="btn btn-light"
+                                        onClick={() => {
+                                            plusOne(v.id)
+                                        }}
+                                    >
+                                        +
+                                    </button>
+                                </div></td>
+                                <td>${v.itemTotal}</td>
+                                <td><i className="fa-solid fa-trash-can" onClick={() => {
+                                    removeItem(v.id)
+                                }}></i></td>
                             </tr>)
                     })}
 
@@ -55,7 +85,7 @@ const Cart = () => {
 
             <div className="row justify-content-end">
 
-                <div className="col-3 checkarea me-5">
+                <div className="col-3 cart_checkarea me-5">
                     <div className='quantity my-4'>
                         <p>商品數量</p>
                         <p>共5件</p>
@@ -66,8 +96,10 @@ const Cart = () => {
                         <p>$600元</p>
                     </div>
 
-                    <button className="go_check my-4">前往結帳</button>
-                    
+                    <Link to="/cart/cart_info">
+                        <button className="go_check my-4">前往結帳</button>
+                    </Link>
+
                 </div>
             </div>
 

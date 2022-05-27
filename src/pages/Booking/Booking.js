@@ -158,8 +158,8 @@ const Booking = () => {
 
           {booking_time_noon.map((d, i) => {
             return (
-              <div className="button_container">
-                <button key={i} >{d}</button>
+              <div key={i} className="button_container">
+                <button>{d}</button>
               </div>)
           })}
 
