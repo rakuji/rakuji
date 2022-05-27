@@ -11,6 +11,22 @@ function Newslist() {
   const [News, setNews] = useState([])
 
   //向伺服器get資料
+ 
+  const fetchNews = async () => {
+    //向遠端伺服器get資料
+    const response = await fetch('/NEWSdata')
+    const data = await response.json()
+
+    // 載入資料後設定到狀態中
+    // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
+    setNews(data)
+  }
+
+  // didMount - 載入資料的時間點
+  useEffect(() => {
+    // 向伺服器要求get資料
+    fetchNews()
+  }, [])
 
   return (
     <main>
@@ -28,8 +44,9 @@ function Newslist() {
               {News.map((v, i) => {
                 return (
                   <tr key={v.sid}>
-                    <img className="card-img-top">{v.img_id}</img>
+                    <img className="card-img-top" alt="">{v.img_id}</img>
                     <div className="card-body">
+                  console.log(v)
                       <h3 className="card-title fs-4">{v.name}</h3>
                       <p className="card-text fs-6">{v.timestart}- {v.timeend}</p>
                       <p className="card-content fs-5">{v.content}</p>
