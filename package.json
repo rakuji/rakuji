@@ -21,6 +21,7 @@
     "react-bootstrap-breadcrumbs": "^0.1.2",
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.1.0",
+    "react-form-stepper": "^2.0.1",
     "react-image": "^4.0.3",
     "react-image-magnifiers": "^1.4.0",
     "react-router-config": "^5.1.1",
