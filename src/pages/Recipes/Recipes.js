@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 
 import { Link } from "react-router-dom";
 import "./Recipes.css";
 import "../../components/background.css";
 import $ from "jquery";
-
+import axios from "axios";
 
 const Recipes = () => {
   const recipesArray = ["全部食譜", "主食", "前菜", "湯品", "飲品", "甜點"];
@@ -31,7 +31,7 @@ const Recipes = () => {
               alt="Recipes"
             ></img>
           </div>
-          
+
           <div className="RecipesClassButtonAllOn">
             <div className="btn-group">
               <div>
