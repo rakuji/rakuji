@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
+import React, { useState } from "react";
+
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
@@ -21,6 +23,8 @@ import Registration from "./pages/Member/Registration";
 import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
 import OrderList from "./pages/Member/OrderList";
+import TcRegister from "./pages/Member/TcRegister";
+
 
 // import BirthData from "./pages/Member/BirthData"
 
@@ -70,10 +74,10 @@ function App() {
         <Route path="/OrderList" exact>
           <OrderList />
         </Route>
-        {/* <Route path="/BirthData" exact>
-          <BirthData />
+        <Route path="/TcRegister" exact>
+          <TcRegister />
         </Route>
-         */}
+        
       </Switch>
       <Footer />
     </div>
