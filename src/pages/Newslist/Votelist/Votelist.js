@@ -1,13 +1,13 @@
 import React from "react";
-import "./Votelist.css";
+import "../Votelist/Votelist.css";
 
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb";
 
 const Votelist = () => {
   return (
     <main>
         <img
-          src={require("./001.png")}
+          src={require("../image/001.png")}
           width="100%"
           height="100%"
           className="d-block  mx-auto"
@@ -56,7 +56,7 @@ const Votelist = () => {
           <div className="col_v">
             <div className="card">
               <img
-                src={require("./main1.png")}
+                src={require("../image/main1.png")}
                 className="card-img-top"
                 alt="..."
               />

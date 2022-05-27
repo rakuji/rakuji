@@ -31,7 +31,7 @@ body {
     background-size: 1840px ;
     background-position: 40% 41%;
     background-repeat: no-repeat;
-    background-image: url('./BG.png');
+    background-image: url('./image/BG.png');
 }
 
 @media screen and (max-width:576px) {

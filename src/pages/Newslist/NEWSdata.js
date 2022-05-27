@@ -1,4 +1,4 @@
-export const Newslist = [
+export const NEWSdata = [
     {
       sid: 1,
       id:1,

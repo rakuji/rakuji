@@ -1,15 +1,15 @@
 import React ,{useState} from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./Cooperationform.css";
+import "../Cooperationform/Cooperationform.css";
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import InputGroup from 'react-bootstrap/InputGroup'
 // pages
 
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb";
 
-import titleP from "./titleP.png";
+import titleP from "../image/titleP.png";
 
 
 function  Cooperationform  ()  {
@@ -27,7 +27,7 @@ function  Cooperationform  ()  {
   return (
     <>
       <img
-        src={require("./002.png")}
+        src={require("../image/002.png")}
         width="100%"
         height="100%"
         className="d-block  mx-auto"

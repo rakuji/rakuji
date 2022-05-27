@@ -1,32 +1,30 @@
-import React ,{ useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
+import { NEWSdata } from "./NEWSdata";
 
 import "./Newslist.css";
 // pages
 import Carousel_g from "../../components/Carousel/Carousel_g";
 
 function Newslist() {
+  console.log(NEWSdata);
+  const [News, setNews] = useState(NEWSdata);
 
-  const [News, setNews] = useState([])
-
-  //向伺服器get資料
- 
+  //get假資料
   const fetchNews = async () => {
     //向遠端伺服器get資料
-    const response = await fetch('/NEWSdata')
-    const data = await response.json()
-
+    const response = await fetch("/NEWSdata");
+    const data = await response.json();
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
-    setNews(data)
-  }
-
+    setNews(data);
+  };
   // didMount - 載入資料的時間點
   useEffect(() => {
     // 向伺服器要求get資料
-    fetchNews()
-  }, [])
+    fetchNews();
+  }, []);
 
   return (
     <main>
@@ -38,31 +36,11 @@ function Newslist() {
       {/* 動全部card的寬 */}
       <div className="container  col-10  d-flex justify-content-center">
         <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
-          {/* test */}
-          <div className="col">
-            <div className="card">
-              {News.map((v, i) => {
-                return (
-                  <tr key={v.sid}>
-                    <img className="card-img-top" alt="">{v.img_id}</img>
-                    <div className="card-body">
-                  console.log(v)
-                      <h3 className="card-title fs-4">{v.name}</h3>
-                      <p className="card-text fs-6">{v.timestart}- {v.timeend}</p>
-                      <p className="card-content fs-5">{v.content}</p>
-                    </div>
-                  </tr>
-                );
-              })}
-            </div>
-          </div>
-                    {/* test end */}
-
-          {/* 1 */}
+          {/* 1  最新消息照片*/}
           <div className="col">
             <div className="card1">
               <img
-                src={require("./firstpic.png")}
+                src={require("./image/firstpic.png")}
                 className="card-img-top "
                 alt="..."
                 width="180px"
@@ -73,11 +51,53 @@ function Newslist() {
               <br />
             </div>
           </div>
+          {/* test 假資料 */}
+          {News.map((v, i) => {
+            return (
+              <div className="col" key={v.sid}>
+                <div className="card ">
+                  <img className="card-img-top" alt="">
+                    {v.img_id}
+                  </img>
+                  <div className="card-body">
+                    <h3 className="card-title fs-4">{v.name}</h3>
+                    <p className="card-text fs-6">
+                      {v.timestart}- {v.timeend}
+                    </p>
+                    <p className="card-content fs-5">{v.content}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          {/* test end */}
+          {/* test 真資料 來自資料庫 */}
+
+          {/* {News.map((v, i) => {
+            return (
+              <div className="col" key={v.sid}>
+                <div className="card ">
+                  <img className="card-img-top" alt="">
+                    {v.img_id}
+                  </img>
+                  <div className="card-body">
+                    <h3 className="card-title fs-4">{v.name}</h3>
+                    <p className="card-text fs-6">
+                      {v.timestart}- {v.timeend}
+                    </p>
+                    <p className="card-content fs-5">{v.content}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })} */}
+          {/* test end */}
+
           {/* 2  圖片文字可以連結到Votelist */}
           <div className="col">
             <div className="card">
               <img
-                src={require("./00001.png")}
+                src={require("./image/00001.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -95,7 +115,7 @@ function Newslist() {
             <div className="card">
               <a href="/Votelist">
                 <img
-                  src={require("./00002.png")}
+                  src={require("./image/00002.png")}
                   className="card-img-top"
                   alt="..."
                 />
@@ -119,7 +139,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00003.png")}
+                src={require("./image/00003.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -136,7 +156,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00004.png")}
+                src={require("./image/00004.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -152,7 +172,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00005.png")}
+                src={require("./image/00005.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -171,7 +191,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00006.png")}
+                src={require("./image/00006.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -190,7 +210,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00007.png")}
+                src={require("./image/00007.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -207,7 +227,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00008.png")}
+                src={require("./image/00008.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -225,7 +245,7 @@ function Newslist() {
           <div className="col">
             <div className="card">
               <img
-                src={require("./00009.png")}
+                src={require("./image/00009.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -244,7 +264,7 @@ function Newslist() {
             <div className="card">
               <a href="/Cooperationform">
                 <img
-                  src={require("./00010.png")}
+                  src={require("./image/00010.png")}
                   className="card-img-top"
                   alt="..."
                 />
