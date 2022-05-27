@@ -11,6 +11,7 @@ import MyBackTop from "../About/myComponents/MyBackTop";
 import datas from "./data/recipes.json";
 
 const Recipes = () => {
+
   const recipesArray = ["全部食譜", "主食", "前菜", "湯品", "飲品", "甜點"];
 
   useEffect(() => {
@@ -233,9 +234,7 @@ const Recipes = () => {
             {datas.map((v, i) => {
               return (
                 <div key={i} className="RecipesSearchBoxCardAll ">
-
                   <div className="RecipesSearchBoxCard ">
-                  
                     <img
                       src={require("./image/00001.jpg")}
                       className="card-img-top"
@@ -279,8 +278,9 @@ const Recipes = () => {
             </a>
           </li>
         </ul>
-        <MyBackTop />
       </nav>
+      <MyBackTop />
+
     </>
   );
 };
