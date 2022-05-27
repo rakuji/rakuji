@@ -34,7 +34,6 @@ const Products = (props) => {
     "副產品",
   ];
 
-  // 價格篩選
   let deg = 0;
   const price_search = () => {
     deg += 180;
@@ -44,7 +43,6 @@ const Products = (props) => {
     ).style.transform = `rotate(${deg}deg)`;
   };
 
-  // 左側選單列
   useEffect(() => {
     $(`#category_buttons button[id=${categoryIndex}]`).attr("id", "active")
   })
@@ -57,7 +55,6 @@ const Products = (props) => {
     })
   }, [])
 
-  // 動畫
   useEffect(() => {
     gsap.timeline().from(".product_card", {
       duration: 1,
@@ -73,8 +70,6 @@ const Products = (props) => {
   // 對話盒中的商品名稱
   const [productName, setProductName] = useState('')
 
-
-  //購物車
   const { addItem } = useCart()
 
   const handleClose = () => setShow(false)
@@ -171,7 +166,6 @@ const Products = (props) => {
                       <p className="mb-2">NT{v.price}</p>
                       <button id="cart_icon" onClick={(e) => {
                         console.log(v)
-                        // 事件阻擋
                         e.preventDefault()
                         // 商品原本無數量屬性(quantity)，要先加上
                         const item = { ...v, quantity: 1 }
