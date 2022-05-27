@@ -7,12 +7,6 @@ import MyShopList from "../About/myComponents/MyShopList";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
 const Store = () => {
-  
-  (async function loadData() {
-    
-
-  })();
-
   return (
     <>
       {/* 輪播 */}
