@@ -1,6 +1,5 @@
 // import React, { useEffect } from "react";
 import React, { useState } from "react";
-
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
@@ -25,7 +24,6 @@ import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
 import OrderList from "./pages/Member/OrderList";
 import TcRegister from "./pages/Member/TcRegister";
-import TcDateMonthYear from "./pages/Member/TcDateMonthYear"
 
 
 // import BirthData from "./pages/Member/BirthData"
@@ -79,9 +77,7 @@ function App() {
         <Route path="/TcRegister" exact>
           <TcRegister />
         </Route>
-        <Route path="/TcDateMonthYear" exact>
-          <TcDateMonthYear />
-        </Route>
+        
         
         
       </Switch>
