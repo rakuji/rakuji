@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import { Accordion } from 'react-bootstrap';
-import { useCart } from '../../utils/useCart';
+import { useCart } from './utils/useCart';
 
 const Cart_confirm = () => {
 
@@ -16,6 +16,9 @@ const Cart_confirm = () => {
     //deliveryfee 
     const [deliveryfee, setDeliveryfee] = useState(100)
 
+    const{address,email,name,phone} = JSON.parse(localStorage.getItem("cart_info"))
+
+    
 
     return (
         <div className='container mb-5 cart_confirm'>
@@ -87,25 +90,25 @@ const Cart_confirm = () => {
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂單日期:</p>
-                        <p>2022/05/24</p>
+                        <p>{2022/05/24}</p>
                     </div>
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人姓名:</p>
-                        <p>王曉明</p>
+                        <p>{name}</p>
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人電話:</p>
-                        <p>0912345678</p>
+                        <p>{phone}</p>
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人信箱:</p>
-                        <p>test@gmail.com</p>
+                        <p>{email}</p>
 
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>外送地址:</p>
-                        <p>高雄市前金區</p>
+                        <p>{address}</p>
 
                     </div>
 

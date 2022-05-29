@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
-import { useCart } from '../../../utils/useCart'
+import { useCart } from '../utils/useCart'
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router'
 
 
 const CartCheckArea = () => {
+    let couponPrice = localStorage.getItem("couponPrice")
 
     const location = useLocation()
     console.log(location.pathname)
 
     // 使用hooks 解出所需的狀態與函式(自context)
     const { cart } = useCart()
-
-    // discount
-    const [discount, setDiscount] = useState(600)
 
     //deliveryfee 
     const [deliveryfee, setDeliveryfee] = useState(100)
@@ -33,14 +31,14 @@ const CartCheckArea = () => {
             </div>
 
             <div className='my-4'>
-                <p>折扣優惠</p>
-                <p>-${discount}元</p>
+                <p>優惠折扣</p>
+                <p>-${couponPrice}元</p>
             </div>
 
 
             <div className='my-4'>
                 <p>總計</p>
-                <p>${cart.cartTotal - discount + deliveryfee}元</p>
+                <p>${cart.cartTotal + deliveryfee - couponPrice }元</p>
             </div>
 
             <Link to={(location.pathname === "/cart/cart_info") ? "/cart/cart_info/cart_order" : "/cart/cart_info/cart_order/cart_confirm"}>

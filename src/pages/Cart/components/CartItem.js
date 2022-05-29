@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useCart } from '../../../utils/useCart'
+import { useCart } from '../utils/useCart'
 
 const CartItem = ({id,picture,name,price,quantity,itemTotal}) => {
 

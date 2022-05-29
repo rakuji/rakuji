@@ -1,6 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem';
-import { useCart } from '../../../utils/useCart'
+import { useCart } from '../utils/useCart'
 
 const CartItemArea = () => {
 

@@ -1,9 +1,25 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import $ from 'jquery'
+import { useCart } from "../pages/Cart/utils/useCart"
 
 function Nav() {
+  const { cart } = useCart()
+
+ 
+  console.log(cart.totalItems)
+
+  useEffect(()=>{
+
+    if(cart.totalItems == 0){
+      $(".cart_totalItems").hide()
+    
+    }else{
+      $(".cart_totalItems").show()
+    }
+  },[cart])
+
 
   useEffect(() => {
 
@@ -85,11 +101,21 @@ function Nav() {
           {/* 按鈕區 */}
           <div>
             <Link to="/cart">
-              <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
+
+              <div className="position-relative d-inline me-2">
+
+                <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart_totalItems">
+                  {cart.totalItems}
+                </span>
+
+              </div>
+
             </Link>
 
             <button type="button" className="btn mx-2">
               登入/註冊
+
             </button>
           </div>
         </div>

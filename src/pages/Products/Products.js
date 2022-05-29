@@ -4,7 +4,7 @@ import { Link, withRouter } from "react-router-dom";
 import gsap from "gsap";
 import $ from "jquery"
 import { Modal, Button } from 'react-bootstrap'
-import { useCart } from '../../utils/useCart'
+import { useCart } from '../Cart/utils/useCart'
 
 // 商品範例
 // import datas from './data/products.json'
@@ -56,13 +56,13 @@ const Products = (props) => {
   }, [])
 
   useEffect(() => {
-    gsap.timeline().from(".product_card", {
+    gsap.timeline({ onComplete: () => gsap.set(".product_card", {clearProps: true}) }).from(".product_card", {
       duration: 1,
       opacity: 0,
-      delay: 1,
+      delay: 0,
       stagger: 0.1,
     });
-  }, [datas]);
+  }, [categoryIndex,datas]);
 
 
   // 對話盒使用

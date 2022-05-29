@@ -15,9 +15,6 @@ const Cart_order = () => {
 
 
 
-
-
-
     return (
         <div className='container mb-5'>
 
@@ -52,7 +49,7 @@ const Cart_order = () => {
                                         type="tel"
                                         name="number"
                                         placeholder="Card Number"
-                                        maxlength="16"
+                                        maxLength="16"
                                         value={number}
                                         onChange={e => setNumber(e.target.value)}
                                         onFocus={e => setFocus(e.target.name)}

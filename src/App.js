@@ -25,8 +25,8 @@ import Cart_confirm from "./pages/Cart/Cart_confirm";
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
-import { CartProvider } from './utils/useCart'
-import { SecondCartProvider } from './utils/useSecondCart'
+import { CartProvider } from './pages/Cart/utils/useCart'
+import { SecondCartProvider } from './pages/Cart/utils/useSecondCart'
 
 function App() {
 
