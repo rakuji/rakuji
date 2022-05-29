@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const MyBreadcrumb = (props) => {
   return (
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item">
+      <ol className="breadcrumb">
+        <li className="breadcrumb-item">
           <Link to="/">首頁</Link>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
+        <li className="breadcrumb-item active" aria-current="page">
           <Link to={props.navlink}>{props.nav}</Link>
         </li>
-        <li class="breadcrumb-item  active" aria-current="page">
+        <li className="breadcrumb-item  active" aria-current="page">
           {props.location}
         </li>
       </ol>

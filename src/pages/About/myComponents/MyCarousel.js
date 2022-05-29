@@ -8,21 +8,21 @@ let MyCarousel = function () {
       <Carousel controls={false} indicators={false}>
         <Carousel.Item interval={10000}>
           <img
-            className="d-block w-100"
+            className=" w-100"
             src={require("../images/slider01.png")}
             alt="First slide"
           />
         </Carousel.Item>
         <Carousel.Item interval={10000}>
           <img
-            className="d-block w-100"
+            className=" w-100"
             src={require("../images/slider02.jpg")}
             alt="Second slide"
           />
         </Carousel.Item>
         <Carousel.Item interval={10000}>
           <img
-            className="d-block w-100"
+            className=" w-100"
             src={require("../images/slider03.jpg")}
             alt="Third slide"
           />

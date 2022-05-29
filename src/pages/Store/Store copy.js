@@ -29,7 +29,7 @@ const Store = () => {
             <button type="button" className="btn myBtn ">高屏</button>
           </div>
           {/* 門市資料列 */}
-          <MyShopList shop_id="1"/>
+          <MyShopList listName="高雄左營店"/>
           {/* 回最上層 */}
           <MyBackTop />
         </div>

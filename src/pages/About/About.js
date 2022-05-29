@@ -14,7 +14,7 @@ const About = () => {
 
     //IIFE:立即呼叫函式表達式(載入頁面時立即執行)
     (async function loadData() {
-      // fetch回傳JASON陣列(參見customer.js line#10)
+      // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
       const responseArea = await fetch("/shopmap/area");
       // 將JASON陣列轉成物件陣列(JSAON-->object)
       const areas = await responseArea.json();
@@ -29,7 +29,6 @@ const About = () => {
       const shop_id = selShop.options[selShop.selectedIndex].value;
       const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
       const address = await responseAddress.json();
-      // console.log(address);
       renderAddress(address);
     })();
 
@@ -56,7 +55,7 @@ const About = () => {
     function renderArea(datas) {
       datas.forEach((item) => {
         const { area_id, area_name } = item;
-        //顯示資料
+        //加入選項
         const opt = new Option(area_name, area_id);
         selArea.options.add(opt);
       });
@@ -64,11 +63,14 @@ const About = () => {
 
     //顯示門市的資料:selShop(datas:物件陣列)
     function renderShop(datas) {
-      //如果先清除selShop中的資料
-      selShop.length = 0;
+      //只留selShop中的第一個選項，其他刪除
+      let selShop_len = selShop.length
+      for(let i=1; i<selShop_len; i++){
+        selShop.remove(1);
+      }
       datas.forEach((item) => {
         const { shop_id, shop_name } = item;
-        //顯示資料
+        //加入選項
         const opt = new Option(shop_name, shop_id);
         selShop.options.add(opt);
       });
@@ -76,10 +78,7 @@ const About = () => {
 
     // 顯示門市地圖: ifrAddress(datas:物件陣列)
     function renderAddress(datas) {
-      //清除iframe的內容
-      if (! ifrAddress.src == "") {
-        ifrAddress.src = "";
-      }
+      
       datas.forEach((item) => {
         const {shop_address} = item;
         console.log(shop_address);
@@ -91,7 +90,9 @@ const About = () => {
 
   return (
     <>
-      <MyCarousel/>
+      <div>
+        <MyCarousel/>
+      </div>
       <div className="bg">
         <div className="container">
           <MyBreadcrumb nav="關於我們" navlink="/about" location="123"/>
@@ -189,7 +190,7 @@ const About = () => {
                 <option selected>請先選擇區域</option>
               </select>
               <select id="select2" className="form-select" aria-label="Default select example">
-                {/* <option selected>再選擇分店</option> */}
+                <option selected>再選擇分店</option>
               </select>
             </div>
             <div className="col-12 col-md-8 mapQuery">

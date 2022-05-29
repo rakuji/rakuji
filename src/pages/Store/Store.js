@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../About/aboutStore.css";
 import MyBreadcrumb from "../About/myComponents/MyBreadcrumb";
@@ -8,10 +8,20 @@ import MyBackTop from "../About/myComponents/MyBackTop";
 
 const Store = () => {
   
-  (async function loadData() {
-    
 
-  })();
+  
+    let shopsArray=[1,2,3];
+    (async function loadData() {
+      // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
+      const responseShops = await fetch("/shopLists");
+      // 將JASON陣列轉成物件陣列(JSAON-->object)
+      const shops = await responseShops.json();
+      // console.log(shops);
+      shopsArray = [...shops];
+    })();
+    
+    console.log(shopsArray); 
+ 
 
   return (
     <>
@@ -35,7 +45,18 @@ const Store = () => {
             <button type="button" className="btn myBtn ">高屏</button>
           </div>
           {/* 門市資料列 */}
-          <MyShopList shop_id="1"/>
+          {
+                shopsArray.map((v,i) => {
+                  return (
+                    <div>
+                      <MyShopList listName={v}/>  
+                    </div>
+                  )
+                })
+          }
+          
+          <MyShopList listName="高雄左營店"/>
+          {/* <MyShopList listName={shopsArray[0].shop_name}/>   */}
           {/* 回最上層 */}
           <MyBackTop />
         </div>
