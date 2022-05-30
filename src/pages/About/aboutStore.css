@@ -5,7 +5,11 @@ a:hover {
   text-decoration: underline;
 }
 .areaBtns {
-  margin-bottom: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  position: sticky;
+  top:192px;  
+  background-color: white;
 }
 .backTop {
   width: 130px;
@@ -18,9 +22,11 @@ a:hover {
 .backTop img {
   width: 20px;
 }
-.breadcrumb {
-  margin: 10px;
+.mybread {
+  position:sticky;
+  top:0;
   font-size: 1em;
+  background-color: white;
 }
 .bg {
   background-image: url("./images/BG.png");
@@ -77,7 +83,8 @@ img.about {
 }
 
 .shopList {
-  margin-top: 1.5em;
+  padding-bottom: 1em;
+  border-bottom: #cac9c9 1px solid;
 }
 p.about {
   font-size: 20px;
@@ -93,6 +100,9 @@ p.about {
 
 .pageTitleImg {
   margin-bottom: 2em;
+  position: sticky;
+  top:56px;
+  background-color: white;
 }
 .row {
   margin-bottom: 1em;

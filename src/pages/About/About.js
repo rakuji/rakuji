@@ -95,7 +95,7 @@ const About = () => {
       </div>
       <div className="bg">
         <div className="container">
-          <MyBreadcrumb nav="關於我們" navlink="/about" location="123"/>
+          <MyBreadcrumb nav="關於我們" navlink="/about" />
         {/* ABOUT圖片  */}
         <div className="row justify-content-center pageTitleImg">
           <div className="col-4">

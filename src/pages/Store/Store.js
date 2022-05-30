@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect } from "react";
 
 import "../About/aboutStore.css";
 import MyBreadcrumb from "../About/myComponents/MyBreadcrumb";
@@ -7,20 +7,28 @@ import MyShopList from "../About/myComponents/MyShopList";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
 const Store = () => {
-  
+  const [shopsArray, setShopsArray ] = useState([])
 
-  
-    let shopsArray=[1,2,3];
-    (async function loadData() {
-      // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
+  // (async function fetchData() {
+  //     // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
+  //     const responseShops = await fetch("/shopLists");
+  //     // 將JASON陣列轉成物件陣列(JSAON-->object)
+  //     const shops = await responseShops.json();
+  //     console.log(shops);
+  //     setshopsArray(shops);
+  // })();
+  const fetchData = async () => {
+      // fetch回傳JASON陣列(參見rakuji_backend專案:routes/shopLists.js)
       const responseShops = await fetch("/shopLists");
       // 將JASON陣列轉成物件陣列(JSAON-->object)
       const shops = await responseShops.json();
       // console.log(shops);
-      shopsArray = [...shops];
-    })();
-    
-    console.log(shopsArray); 
+      setShopsArray(shops);
+  }
+
+  useEffect(()=>{
+      fetchData();
+  },[shopsArray])
  
 
   return (
@@ -31,7 +39,7 @@ const Store = () => {
       <div className="bg">
         <div className="container">
           {/* 麵包屑 */}
-          <MyBreadcrumb nav="門市資訊" navlink="/store" location="123"/>
+          <MyBreadcrumb nav="門市資訊" navlink="/store"/>
           {/* SHOPS圖片  */}
           <div className="d-flex justify-content-center pageTitleImg">
             <img src={require("../About/images/pageTitleShops.png")} className="img-fluid" alt="門市資訊" />
@@ -47,16 +55,25 @@ const Store = () => {
           {/* 門市資料列 */}
           {
                 shopsArray.map((v,i) => {
+                  const {area_name,shop_id,shop_name,shop_address,shop_tel,day_content,night_content,info_detail,info_traffic,info_parking} = v;
                   return (
                     <div>
-                      <MyShopList listName={v}/>  
+                      <MyShopList 
+                        shopid={shop_id}
+                        area={area_name}
+                        name={shop_name}
+                        address={shop_address}
+                        tel={shop_tel}
+                        day={day_content}
+                        night={night_content}
+                        detail={info_detail}
+                        traffic={info_traffic}
+                        parking={info_parking}
+                      />  
                     </div>
                   )
                 })
           }
-          
-          <MyShopList listName="高雄左營店"/>
-          {/* <MyShopList listName={shopsArray[0].shop_name}/>   */}
           {/* 回最上層 */}
           <MyBackTop />
         </div>
