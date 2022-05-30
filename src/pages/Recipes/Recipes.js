@@ -239,8 +239,6 @@ function Recipes() {
             </div>
           </div>
 
-          
-
           <div className="col-10 RecipesBoxCardAll">
             {datas.length > 0 &&
               datas.map((recipes, i) => {
