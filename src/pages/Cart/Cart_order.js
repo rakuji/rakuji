@@ -26,7 +26,7 @@ const Cart_order = () => {
     const cartTotalPrice = cart.cartTotal - couponPrice
     const totalItems = cart.totalItems
     const cartTotal = cart.cartTotal
-    const orderNumber = Math.floor(Math.random() * 888 ); // 訂單編號
+    
 
     console.log(name) //姓名
     console.log(phone) //手機 
@@ -38,12 +38,12 @@ const Cart_order = () => {
     console.log(cartTotal) //商品小計
     console.log(couponPrice) //優惠折扣金額
     console.log(cartTotalPrice) //商品總計
-    console.log(orderNumber) //訂單編號
+    
 
 
 
     //送資料到資料庫
-    const testSendData = () => {
+    const sendData = () => {
 
         fetch(`${process.env.REACT_APP_API_URL}/cart`, {
             method: 'POST',
@@ -57,8 +57,7 @@ const Cart_order = () => {
                 totalItems,
                 cartTotal,
                 couponPrice,
-                cartTotalPrice,
-                orderNumber
+                cartTotalPrice
             }),
         })
             .then(res => res.json())
@@ -66,25 +65,12 @@ const Cart_order = () => {
     }
 
 
-
-
     //送出訂單後要處理的事
-    const cartStorageClear = () => {
-
-
-        // sendCartData();
-        // clearCart();
-        // localStorage.clear();
+    const sendCartData = () => {
+        sendData();
+        clearCart();
+        localStorage.clear();
     }
-
-    //訂單日期
-    // const [orederCreateAt, setOrederCreateAt] = useState("")
-
-    // const setOrderDate = ()=>{
-    //     let d = new Date();
-    //     console.log(d)
-    // }
-
 
     // 對話盒使用
     const [show, setShow] = useState(false)
@@ -103,7 +89,7 @@ const Cart_order = () => {
             <Modal.Footer>
 
                 <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
-                    <Button variant="primary" onClick={cartStorageClear}>
+                    <Button variant="primary" onClick={sendCartData}>
                         確定
                     </Button>
                 </Link>
@@ -221,13 +207,12 @@ const Cart_order = () => {
                             <button className="next_page my-2">確認付款</button>
                         </Link> */}
 
-                        <button className="next_page my-2" onClick={() => { handleShow() }}>確認付款</button>
+                        <button className="next_page my-2" onClick={handleShow}>確認付款</button>
 
                         <Link to={"/cart/cart_info"}>
                             <button className="last_page my-2">上一步</button>
                         </Link>
 
-                        <button className='next_page' onClick={testSendData}>測試按鈕</button>
                     </div>
                 </div>
 
