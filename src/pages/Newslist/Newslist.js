@@ -14,7 +14,9 @@ function Newslist() {
   //get假資料
   const fetchNews = async () => {
     //向遠端伺服器get資料
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/latest_news`);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/latest_news`
+    );
     const data = await response.json();
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
@@ -28,11 +30,9 @@ function Newslist() {
     fetchNews();
   }, []);
 
- 
-  
+  // console.log(date.toLocaleDateString(v.timestart)- (v.timeend))
   return (
     <main>
-    
       <Carouselg />
 
       {/*  放breadcrumb 顏色修改 第三個畫面更新 */}
@@ -56,38 +56,30 @@ function Newslist() {
               <br />
             </div>
           </div>
-          {/* test 資料 */}
-
-          {/* {News.map((v,i)=>{
-            return(
-              <>
-                <div>{v.sid}</div>
-                <div>{v.name}</div>
-              </>
-            )
-          })} */}
-
           {News.map((v, i) => {
             return (
               <div className="col" key={i}>
                 <div className="card ">
-                  {/* <img className="card-img-top" alt="">
-                    {v.img_id}
-                  </img> */}
+                  {/* 照片抓資料庫無法顯示 img 會全白 src只有數字.png */}
+                  <src className="card-img-top" alt="" >
+                  {v.imgid}
+                  </src>
                   <div className="card-body">
                     <h3 className="card-title fs-4">{v.name}</h3>
+
+                    {/* 時間顯示"timestart": "2022-05-31T16:00:00.000Z" 不要後面T到Z這串  在後端那隻+dateString:true  */}
+
                     <p className="card-text fs-6">
                       {v.timestart}- {v.timeend}
                     </p>
                     <p className="card-content fs-5">{v.content}</p>
+                    
                   </div>
                 </div>
               </div>
             );
           })}
           {/* test end */}
-       
-
           {/* 2  圖片文字可以連結到Votelist */}
           <div className="col">
             <div className="card">
@@ -129,7 +121,6 @@ function Newslist() {
               </div>
             </div>
           </div>
-
           {/* ˋ4 */}
           <div className="col">
             <div className="card">
@@ -181,7 +172,6 @@ function Newslist() {
               </div>
             </div>
           </div>
-
           {/* 7 */}
           <div className="col">
             <div className="card">
@@ -235,7 +225,6 @@ function Newslist() {
               </div>
             </div>
           </div>
-
           {/* 10 照片失真要換*/}
           <div className="col">
             <div className="card">
