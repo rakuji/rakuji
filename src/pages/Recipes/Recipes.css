@@ -130,10 +130,6 @@
     color: #fff;
 }
 
-.RecipesListImg {
-    max-width: 230px;
-    max-height: 150px;
-}
 
 .RecipesLogoDiv {
     max-width: 263px;
@@ -145,6 +141,11 @@
     max-height: 100%;
     max-width: 100%;
 
+}
+
+.RecipesListImg {
+    max-width: 230px;
+    max-height: 150px;
 }
 
 .phoneDiv {
