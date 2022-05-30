@@ -166,6 +166,7 @@ const Products = (props) => {
                       <p className="mb-2">NT{v.price}</p>
                       <button id="cart_icon" onClick={(e) => {
                         console.log(v)
+                        // 事件阻擋
                         e.preventDefault()
                         // 商品原本無數量屬性(quantity)，要先加上
                         const item = { ...v, quantity: 1 }

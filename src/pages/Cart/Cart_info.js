@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Stepper, Step } from 'react-form-stepper';
-import CartCheckArea from './components/CartCheckArea';
+import CartCheckAreaInfo from './components/CartCheckAreaInfo';
+import { Link } from 'react-router-dom';
 
 
 const Cart_info = () => {
@@ -8,9 +9,12 @@ const Cart_info = () => {
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
     const [address, setAddress] = useState("")
-    
-    let cart_info = {name,phone,email,address}
-    localStorage.setItem("cart_info",JSON.stringify(cart_info))
+
+
+
+
+    let cart_info = { name, phone, email, address }
+    localStorage.setItem("cart_info", JSON.stringify(cart_info))
 
 
     return (
@@ -37,15 +41,15 @@ const Cart_info = () => {
 
                     <div className='mb-3'>
                         <label htmlFor="phone" className="form-label">手機</label>
-                        <input id='phone' type="text" className="form-control" onChange={(e) => setPhone(e.target.value)}/>
+                        <input id='phone' type="text" className="form-control" onChange={(e) => setPhone(e.target.value)} />
                     </div>
                     <div className='mb-3'>
                         <label htmlFor="email" className="form-label">信箱</label>
-                        <input id='email' type="email" className="form-control" onChange={(e) => setEmail(e.target.value)}/>
+                        <input id='email' type="email" className="form-control" onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <div className='mb-3'>
                         <label htmlFor="address" className="form-label">外送地址</label>
-                        <input id='address' type="text" className="form-control" onChange={(e) => setAddress(e.target.value)}/>
+                        <input id='address' type="text" className="form-control" onChange={(e) => setAddress(e.target.value)} />
 
                     </div>
 
@@ -54,7 +58,18 @@ const Cart_info = () => {
 
                 {/* check_area */}
                 <div className="col-4">
-                    <CartCheckArea />
+                    <div className='checkarea'>
+                        <CartCheckAreaInfo />
+
+                        <Link to={"/cart/cart_info/cart_order"}>
+                            <button className="next_page my-2">下一步</button>
+                        </Link>
+
+                        <Link to={"/cart"}>
+                            <button className="last_page my-2">上一步</button>
+                        </Link>
+
+                    </div>
                 </div>
             </div>
         </div>
