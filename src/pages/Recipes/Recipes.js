@@ -10,7 +10,16 @@ import MyBackTop from "../About/myComponents/MyBackTop";
 //食譜範例
 import datas from "./data/recipes.json";
 
-const Recipes = () => {
+function Recipes() {
+  const [datas, setDatas] = useState([]);
+  const fetchData = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes`);
+    const results = await response.json();
+    setDatas(results);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const recipesArray = ["全部食譜", "主食", "前菜", "湯品", "飲品", "甜點"];
 
@@ -231,31 +240,33 @@ const Recipes = () => {
           </div>
 
           <div className="col-10 RecipesBoxCardAll">
-            {datas.map((v, i) => {
-              return (
-                <div key={i} className="RecipesSearchBoxCardAll ">
-                  <div className="RecipesSearchBoxCard ">
-                    <img
-                      src={require("./image/00001.jpg")}
-                      className="card-img-top"
-                      alt="日式唐揚炸雞"
-                    />
-                    <div className="card-body">
-                      <p className="card-text h6">
-                        <img className="Boximg" />
-                        日式唐揚炸雞
-                      </p>
-                      <p className="card-text h6">瀏覽次數:65,535次</p>
-                      <Link to="/recipes/box">
-                        <button className=" RecipesLookButton" id="">
-                          查看
-                        </button>
-                      </Link>
+            {datas.length > 0 &&
+              datas.map((recipes, i) => {
+                const { RecipesID, Recipes_Name, Recipes_Clicks } = recipes;
+                return (
+                  <div key={i} className="RecipesSearchBoxCardAll ">
+                    <div className="RecipesSearchBoxCard ">
+                      <img
+                        src={require("./image/00001.jpg")}
+                        className="card-img-top"
+                        alt="日式唐揚炸雞"
+                      />
+                      <div className="card-body">
+                        <p className="card-text h6">
+                          <img className="Boximg" />
+                          {Recipes_Name}
+                        </p>
+                        <p className="card-text h6">瀏覽次數:{Recipes_Clicks}次</p>
+                        <Link to="/recipes/box">
+                          <button className=" RecipesLookButton" id="">
+                            查看
+                          </button>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
       </div>
@@ -280,9 +291,8 @@ const Recipes = () => {
         </ul>
       </nav>
       <MyBackTop />
-
     </>
   );
-};
+}
 
 export default Recipes;

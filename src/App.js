@@ -25,10 +25,14 @@ import Store from "./pages/Store/Store";
 //麵包屑  //安裝套件==> npm i react-router-config@5.1.1
 import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
 
+//test
+import Category from "./pages/Recipes/Categorie";
+
 function App() {
   return (
     <div className="App">
       <Nav />
+      {/* http://localhost:3000/categories */}
       <Breadcrumb />
       <Switch>
         <Route path="/" exact>
