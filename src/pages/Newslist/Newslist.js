@@ -1,34 +1,39 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Breadcrumb from "./Breadcrumb";
-import { NEWSdata } from "./NEWSdata";
+// import { NEWSdata } from "./NEWSdata";
 
 import "./Newslist.css";
 // pages
-import Carousel_g from "../../components/Carousel/Carousel_g";
+import Carouselg from "../../components/Carousel/Carouselg";
 
 function Newslist() {
-  console.log(NEWSdata);
-  const [News, setNews] = useState(NEWSdata);
+  // console.log(NEWSdata);
+  const [News, setNews] = useState([]);
 
   //get假資料
   const fetchNews = async () => {
     //向遠端伺服器get資料
-    const response = await fetch("/NEWSdata");
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/latest_news`);
     const data = await response.json();
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setNews(data);
   };
+
+  // console.log(News)
   // didMount - 載入資料的時間點
   useEffect(() => {
     // 向伺服器要求get資料
     fetchNews();
   }, []);
 
+ 
+  
   return (
     <main>
-      <Carousel_g />
+    
+      <Carouselg />
 
       {/*  放breadcrumb 顏色修改 第三個畫面更新 */}
       <Breadcrumb />
@@ -51,14 +56,24 @@ function Newslist() {
               <br />
             </div>
           </div>
-          {/* test 假資料 */}
+          {/* test 資料 */}
+
+          {/* {News.map((v,i)=>{
+            return(
+              <>
+                <div>{v.sid}</div>
+                <div>{v.name}</div>
+              </>
+            )
+          })} */}
+
           {News.map((v, i) => {
             return (
-              <div className="col" key={v.sid}>
+              <div className="col" key={i}>
                 <div className="card ">
-                  <img className="card-img-top" alt="">
+                  {/* <img className="card-img-top" alt="">
                     {v.img_id}
-                  </img>
+                  </img> */}
                   <div className="card-body">
                     <h3 className="card-title fs-4">{v.name}</h3>
                     <p className="card-text fs-6">
@@ -71,27 +86,7 @@ function Newslist() {
             );
           })}
           {/* test end */}
-          {/* test 真資料 來自資料庫 */}
-
-          {/* {News.map((v, i) => {
-            return (
-              <div className="col" key={v.sid}>
-                <div className="card ">
-                  <img className="card-img-top" alt="">
-                    {v.img_id}
-                  </img>
-                  <div className="card-body">
-                    <h3 className="card-title fs-4">{v.name}</h3>
-                    <p className="card-text fs-6">
-                      {v.timestart}- {v.timeend}
-                    </p>
-                    <p className="card-content fs-5">{v.content}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })} */}
-          {/* test end */}
+       
 
           {/* 2  圖片文字可以連結到Votelist */}
           <div className="col">

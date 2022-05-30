@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 // 需安裝套件 及更改照片
 
-function Carousel_g() {
+function Carouselg() {
   return (
     <>
       <Carousel controls={false} indicators={false}>
@@ -32,4 +32,4 @@ function Carousel_g() {
   );
 }
 
-export default Carousel_g;
+export default Carouselg;
