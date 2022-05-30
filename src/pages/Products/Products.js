@@ -168,7 +168,7 @@ const Products = (props) => {
                     <div className="imageContainer mb-2">
                       {/* <img src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")} alt="" /> */}
                       {/* <img src="/img/products/CH-001綜合寶寶粥.jpg" alt="" /> */}
-                      <img src={`/img/products/${v.picture}`} alt="" />
+                      <img src={`/image/${v.picture}`} alt="" />
                     </div>
                   </Link>
                   <div className="product_card_info">

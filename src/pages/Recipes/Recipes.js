@@ -228,7 +228,7 @@ function Recipes() {
       <div className="container">
         <div className="row">
           <div className="col-2 RecipesClassButton RecipesClassButtonAll">
-            <div className="" id=" recipesArray_buttons">
+            <div className="" id="recipesArray_buttons">
               {recipesArray.map((v, i) => {
                 return (
                   <button key={i} className="">
@@ -239,24 +239,33 @@ function Recipes() {
             </div>
           </div>
 
+          
+
           <div className="col-10 RecipesBoxCardAll">
             {datas.length > 0 &&
               datas.map((recipes, i) => {
-                const { RecipesID, Recipes_Name, Recipes_Clicks } = recipes;
+                const {
+                  CategoryID,
+                  Recipes_Name,
+                  Recipes_Clicks,
+                  Recipes_Picture,
+                } = recipes;
                 return (
                   <div key={i} className="RecipesSearchBoxCardAll ">
                     <div className="RecipesSearchBoxCard ">
                       <img
-                        src={require("./image/00001.jpg")}
-                        className="card-img-top"
-                        alt="日式唐揚炸雞"
+                        src={require(`./image/${Recipes_Picture}`)}
+                        className="card-img-top RecipesListImg"
+                        alt={Recipes_Name}
                       />
                       <div className="card-body">
                         <p className="card-text h6">
                           <img className="Boximg" />
                           {Recipes_Name}
                         </p>
-                        <p className="card-text h6">瀏覽次數:{Recipes_Clicks}次</p>
+                        <p className="card-text h6">
+                          瀏覽次數:{Recipes_Clicks}次
+                        </p>
                         <Link to="/recipes/box">
                           <button className=" RecipesLookButton" id="">
                             查看
