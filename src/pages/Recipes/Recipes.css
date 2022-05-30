@@ -130,6 +130,10 @@
     color: #fff;
 }
 
+.RecipesListImg {
+    max-width: 230px;
+    max-height: 150px;
+}
 
 .RecipesLogoDiv {
     max-width: 263px;
