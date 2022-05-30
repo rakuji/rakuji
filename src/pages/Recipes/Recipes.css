@@ -144,8 +144,8 @@
 }
 
 .RecipesListImg {
-    max-width: 230px;
-    max-height: 150px;
+    width: 230px;
+    height: 150px;
 }
 
 .phoneDiv {

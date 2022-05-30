@@ -1,4 +1,5 @@
 // /src/routes.js
+import React, { useEffect, useState } from "react";
 
 import {
   Home,
@@ -60,9 +61,8 @@ const routes = [
   },
 
   // -----------------------------------------------------------
-  
-  {
 
+  {
     path: "/recipes",
     component: recipes,
     breadcrumbName: "創意食譜",
@@ -71,11 +71,6 @@ const routes = [
         path: "/recipes/box",
         component: box,
         breadcrumbName: "日式唐揚炸雞",
-      },
-      {
-        path: "/recipes/cox",
-        component: box,
-        breadcrumbName: "1234",
       },
     ],
   }, // -----------------------------------------------------------

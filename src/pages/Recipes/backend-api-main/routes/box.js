@@ -5,7 +5,7 @@ const db = require('../modules/mysql_config');
 const upload = multer();
 const perPage = 8;//每一頁有幾筆
 //GET　http://localhost:3001/categories/
-router.route('/')
+router.route('/box')
     .get(async (req,res,next)=>{
         const sql = "SELECT * FROM recipeslist";
         const [datas] = await db.query(sql);

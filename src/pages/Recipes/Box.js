@@ -1,11 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Recipes.css";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
-
-
 function Box() {
+  const [datas, setDatas] = useState([]);
+  const fetchData = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes/box/1`);
+    const results = await response.json();
+    setDatas(results);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
       <div className="container p-3 mb-2  text-dar ">
@@ -61,11 +68,19 @@ function Box() {
             {/* ----------------------------------------------------------------------- */}
             <div className="d-flex ">
               <div className="col-7 avatar ">
-                <img
-                  className="container"
-                  src={require("./image/00001.jpg")}
-                  alt=""
-                />
+                {datas.length > 0 &&
+                  datas.map((recipes, i) => {
+                    const { Recipes_ID, Recipes_Name, Recipes_Picture } =
+                      recipes;
+
+                    return (
+                      <img
+                        className="container"
+                        src={require(`./image/${Recipes_Picture}`)}
+                        alt=""
+                      />
+                    );
+                  })}
               </div>
 
               <div className=" text-center container col-5 row align-items-end">
@@ -161,9 +176,9 @@ function Box() {
                   </div>
                 </div>
               </div>
-            </div>    
+            </div>
           </div>
-          <Link to="/recipes" >
+          <Link to="/recipes">
             <h5 className="RecipesOn  RecipesText">
               <img src={require("./image/circle.png")}></img>返回列表
             </h5>
@@ -666,7 +681,6 @@ function Box() {
         </div>
       </div>
       <MyBackTop />
-
     </>
   );
 }

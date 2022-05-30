@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const categoriesRouter = require('./routes/categories');
 const recipesRouter = require('./routes/recipes');
+const recipesboxRouter = require('./routes/box');
 const productsRouter = require('./routes/products');
 
 
@@ -31,6 +32,7 @@ app.use('/users', usersRouter);
 //http://localhost:3001/categories
 app.use('/categories',categoriesRouter);
 app.use('/recipes',recipesRouter);
+app.use('/recipes/box',recipesboxRouter);
 //http://localhost:3001/products
 app.use('/products',productsRouter);
 
