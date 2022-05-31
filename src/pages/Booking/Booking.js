@@ -4,6 +4,8 @@ import $ from "jquery";
 import "./style.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Booking = () => {
   // 中午時段用餐時間
@@ -165,7 +167,7 @@ const Booking = () => {
 
 
         </div>
-        <hr className="my-3"/>
+        <hr className="my-3" />
       </div>
       <div className="booking-instruction">
         <p>【線上訂位說明】</p>

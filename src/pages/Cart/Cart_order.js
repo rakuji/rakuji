@@ -7,6 +7,8 @@ import CartCheckAreaInfo from './components/CartCheckAreaInfo';
 import { useLocation } from 'react-router'
 import { Modal, Button } from 'react-bootstrap'
 import { useCart } from './utils/useCart'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 const Cart_order = () => {
 
@@ -17,7 +19,7 @@ const Cart_order = () => {
     const [focus, setFocus] = useState('');
 
     // 使用hooks 解出所需的狀態與函式(自context)
-    const { cart, items, clearCart } = useCart()
+    const { cart, items } = useCart()
 
     // 取出資料來
     const { address, email, name, phone } = JSON.parse(localStorage.getItem("cart_info"))
@@ -69,15 +71,6 @@ const Cart_order = () => {
     console.log(orderid)
 
 
-
-    //送出訂單後要處理的事
-    const sendCartData = () => {
-        sendData(); //送出資料
-        // clearCart(); //清除購物車
-        // localStorage.removeItem('couponPrice'); //清除優惠折扣
-        // localStorage.removeItem('cart_info'); //清除訂購資訊
-    }
-
     // 對話盒使用
     const [show, setShow] = useState(false)
 
@@ -86,26 +79,26 @@ const Cart_order = () => {
     const handleShow = () => setShow(true)
 
 
-    const messageModal = (
-        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
-            <Modal.Header closeButton>
-                <Modal.Title>提示訊息</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>確認要送出訂單嗎?</Modal.Body>
-            <Modal.Footer>
+    // const messageModal = (
+    //     <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+    //         <Modal.Header closeButton>
+    //             <Modal.Title>提示訊息</Modal.Title>
+    //         </Modal.Header>
+    //         <Modal.Body>確認要送出訂單嗎?</Modal.Body>
+    //         <Modal.Footer>
 
-                <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
-                    <Button variant="primary" onClick={sendCartData}>
-                        確定
-                    </Button>
-                </Link>
+    //             <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
+    //                 <Button variant="primary" onClick={sendCartData}>
+    //                     確定
+    //                 </Button>
+    //             </Link>
 
-                <Button variant="secondary" onClick={handleClose}>
-                    取消
-                </Button>
-            </Modal.Footer>
-        </Modal>
-    )
+    //             <Button variant="secondary" onClick={handleClose}>
+    //                 取消
+    //             </Button>
+    //         </Modal.Footer>
+    //     </Modal>
+    // )
 
 
 
@@ -213,22 +206,45 @@ const Cart_order = () => {
                             <button className="next_page my-2">確認付款</button>
                         </Link> */}
 
-                        {/* <button className="next_page my-2" onClick={handleShow}>確認付款</button> */}
+                        <button className="next_page my-2 sweet_btn" onClick={() => {
+                            Swal.fire({
+                                title: '確定要送出訂單?',
+                                icon: 'warning',
+                                showCancelButton: true,
+                                confirmButtonColor: '#3085d6',
+                                cancelButtonColor: '#d33',
+                                confirmButtonText: '<a href="/cart/cart_info/cart_order/cart_confirm">確定</a>',
+                                // confirmButtonText: '測試按鈕',
+                                cancelButtonText: '取消',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+
+                                    //送出訂單後要處理的事
+                                    sendData(); //送出資料
+                                    localStorage.removeItem('couponPrice'); //清除優惠折扣
+                                    localStorage.removeItem('cart_info'); //清除訂購資訊
+                                    Swal.fire({
+                                        icon: 'success',
+                                        title: '訂單已送出!',
+                                    })
+                                }
+                            })
+                        }}>確認付款</button>
 
                         <Link to={"/cart/cart_info"}>
                             <button className="last_page my-2">上一步</button>
                         </Link>
 
                         {/* 傳後端測試用 */}
-                        <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
+                        {/* <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
                             <button className="next_page my-2" onClick={sendCartData}>測試按鈕</button>
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
 
 
 
-                {messageModal}
+                {/* {messageModal} */}
             </div>
 
         </div >

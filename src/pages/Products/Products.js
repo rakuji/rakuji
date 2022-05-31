@@ -5,6 +5,8 @@ import gsap from "gsap";
 import $ from "jquery"
 import { Modal, Button } from 'react-bootstrap'
 import { useCart } from '../Cart/utils/useCart'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 // 商品範例
 // import datas from './data/products.json'
@@ -56,13 +58,13 @@ const Products = (props) => {
   }, [])
 
   useEffect(() => {
-    gsap.timeline({ onComplete: () => gsap.set(".product_card", {clearProps: true}) }).from(".product_card", {
+    gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
       duration: 1,
       opacity: 0,
       delay: 0,
       stagger: 0.1,
     });
-  }, [categoryIndex,datas]);
+  }, [categoryIndex, datas]);
 
 
   // 對話盒使用
@@ -120,6 +122,7 @@ const Products = (props) => {
             </div>
           </div>
 
+          {/* 產品搜尋 */}
           <form className="d-flex product_search">
             <input
               className="form-control"
@@ -127,10 +130,11 @@ const Products = (props) => {
               placeholder="搜尋餐點"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-success" type="button">
               <i className="fa-solid fa-magnifying-glass"></i>
             </button>
           </form>
+
         </div>
       </div>
 
@@ -174,7 +178,15 @@ const Products = (props) => {
                         // 注意: 重覆加入會自動+1產品數量
                         addItem(item)
                         // 呈現跳出對話盒
-                        showModal(v.name)
+                        // showModal(v.name) //react-bootstrap modal
+                        Swal.fire({
+                          icon: 'success',
+                          title: '商品已加入購物車',
+                          timer: 1500,
+                          timerProgressBar: true,
+                          showCancelButton: false, // There won't be any cancel button
+                          showConfirmButton: false // There won't be any confirm button
+                        })
                       }}>
                         <i className="fa-solid fa-cart-shopping"></i>
                       </button>

@@ -4,6 +4,8 @@ import "./style.css";
 import CartItemArea from './components/CartItemArea';
 import $ from "jquery"
 import { Modal, Button } from 'react-bootstrap'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 
 import { useCart } from './utils/useCart'
@@ -14,7 +16,7 @@ const Cart = (props) => {
     const [coupon, setCoupon] = useState(0)
     const [couponPrice, setCouponPrice] = useState(0)
     const [couponMsg, setCouponMsg] = useState("")
-    
+
 
     const couponhandler = () => {
 
@@ -22,25 +24,38 @@ const Cart = (props) => {
             case "VIP666":
                 setCouponMsg("成功套用優惠碼，已折抵100元!")
                 setCouponPrice(100)
-                handleShow()
+                // handleShow()
+                Swal.fire({
+                    icon: 'success',
+                    title: '成功套用優惠碼，已折抵100元!',
+                })
                 break;
             case "HAPPY888":
                 setCouponMsg("成功套用優惠碼，已折抵50元!")
                 setCouponPrice(50)
-                handleShow()
+                Swal.fire({
+                    icon: 'success',
+                    title: '成功套用優惠碼，已折抵50元!',
+                })
                 break;
-            case "rakujiisgood":
+            case "RAKUJIISGOOD":
                 setCouponMsg("成功套用優惠碼，已折抵30元!")
                 setCouponPrice(30)
-                handleShow()
+                Swal.fire({
+                    icon: 'success',
+                    title: '成功套用優惠碼，已折抵30元!',
+                })
                 break;
             default:
                 setCouponMsg("請輸入正確的優惠碼!")
                 setCouponPrice(0)
-                handleShow()
+                Swal.fire({
+                    icon: 'warning',
+                    title: '請輸入正確的優惠碼!',
+                })
         }
     }
-    
+
     localStorage.setItem("couponPrice", couponPrice)
 
 
@@ -110,7 +125,7 @@ const Cart = (props) => {
 
                     <div className='price my-3'>
                         <p>總計</p>
-                        <p>${(cart.cartTotal - couponPrice <= 0)? 0 : (cart.cartTotal - couponPrice)}</p>
+                        <p>${(cart.cartTotal - couponPrice <= 0) ? 0 : (cart.cartTotal - couponPrice)}</p>
                     </div>
 
                     <Link to="/cart/cart_info">

@@ -13,15 +13,29 @@
 .srarch_bar .product_search .form-control {
   width: 100%;
   border-color: #58c2dd;
+  border: none;
+  border-bottom: 1px solid #58c2dd;
+  border-radius: 0%;
+}
+
+.srarch_bar .product_search .form-control:focus {
+  border-color: transparent;
+  -webkit-box-shadow: 0px 2px 0px 0px #58c2dd;
+          box-shadow: 0px 2px 0px 0px #58c2dd;
+  border-bottom: 1px solid #58c2dd;
+  -webkit-transition: border-color .25s ease-in-out,-webkit-box-shadow .25s ease-in-out;
+  transition: border-color .25s ease-in-out,-webkit-box-shadow .25s ease-in-out;
+  transition: border-color .25s ease-in-out,box-shadow .25s ease-in-out;
+  transition: border-color .25s ease-in-out,box-shadow .25s ease-in-out,-webkit-box-shadow .25s ease-in-out;
 }
 
 .srarch_bar .product_search button {
-  background-color: #58c2dd;
-  border-color: #58c2dd;
+  background-color: #fff;
+  border-color: #fff;
 }
 
 .srarch_bar .product_search button i {
-  color: #fff;
+  color: #58c2dd;
 }
 
 .product_category_aside {

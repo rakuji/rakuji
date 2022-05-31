@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom'
 import { GlassMagnifier } from "react-image-magnifiers";
 import { useCart } from '../Cart/utils/useCart'
 import { Modal, Button } from 'react-bootstrap'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 // import products from './data/products.json'
 
@@ -140,7 +142,15 @@ const Product_detail = (props) => {
               // 注意: 重覆加入會自動+1產品數量
               addItem(item)
               // 呈現跳出對話盒
-              showModal(product.name)
+              // showModal(product.name)
+              Swal.fire({
+                icon: 'success',
+                title: '商品已加入購物車',
+                timer: 1500,
+                timerProgressBar: true,
+                showCancelButton: false, // There won't be any cancel button
+                showConfirmButton: false // There won't be any confirm button
+              })
             }}> 加入購物車 </button>
           </div>
         </div>
