@@ -4,6 +4,8 @@ import "./Recipes.css";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
 function Box() {
+  var s =  window.location.href;
+  console.log(s);
   const [datas, setDatas] = useState([]);
   const fetchData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes/2`);
