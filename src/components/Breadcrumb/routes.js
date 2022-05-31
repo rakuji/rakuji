@@ -70,7 +70,7 @@ const routes = [
       {
         path: "/recipes/box",
         component: box,
-        breadcrumbName: "日式唐揚炸雞",
+        breadcrumbName: "",
       },
     ],
   }, // -----------------------------------------------------------

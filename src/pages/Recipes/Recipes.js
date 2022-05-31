@@ -242,19 +242,17 @@ function Recipes() {
           <div className="col-10 RecipesBoxCardAll">
             {datas.length > 0 &&
               datas.map((recipes, i) => {
-                const {                  
-                  Recipes_Name,
-                  Recipes_Clicks,
-                  Recipes_Picture,
-                } = recipes;
+                const { Recipes_Name, Recipes_Clicks, Recipes_Picture } =
+                  recipes;
                 return (
                   <div key={i} className="RecipesSearchBoxCardAll ">
                     <div className="RecipesSearchBoxCard ">
-                      <img
-                        src={require(`./image/${Recipes_Picture}`)}
-                        className="card-img-top RecipesListImg"
-                        alt={Recipes_Name}
-                      />
+                      <Link to={`/recipes/box/${recipes.Recipes_ID}`}>
+                        <img
+                          src={require(`./image/${Recipes_Picture}`)}
+                          className="card-img-top RecipesListImg"
+                          alt={Recipes_Name}
+                        /></Link>
                       <div className="card-body">
                         <p className="card-text h6">
                           <img className="Boximg" />
