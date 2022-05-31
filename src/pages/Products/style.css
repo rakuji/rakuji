@@ -121,6 +121,18 @@
   margin-bottom: 10px;
 }
 
+.products .product_container .product_card .product_card_info button:hover {
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.products .product_container .product_card .product_card_info button:hover i {
+  color: #58c2dd;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 .products .product_container .product_card .product_card_info button i {
   color: #fff;
 }

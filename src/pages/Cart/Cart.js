@@ -1,99 +1,115 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import "./style.css";
+import CartItemArea from './components/CartItemArea';
+import $ from "jquery"
+import { Modal, Button } from 'react-bootstrap'
 
-import { useCart } from '../../utils/useCart'
+
+import { useCart } from './utils/useCart'
 
 
-const Cart = () => {
+const Cart = (props) => {
+
+    const [coupon, setCoupon] = useState(0)
+    const [couponPrice, setCouponPrice] = useState(0)
+    const [couponMsg, setCouponMsg] = useState("")
+    
+
+    const couponhandler = () => {
+
+        switch (coupon) {
+            case "VIP666":
+                setCouponMsg("成功套用優惠碼，已折抵100元!")
+                setCouponPrice(100)
+                handleShow()
+                break;
+            case "HAPPY888":
+                setCouponMsg("成功套用優惠碼，已折抵50元!")
+                setCouponPrice(50)
+                handleShow()
+                break;
+            case "rakujiisgood":
+                setCouponMsg("成功套用優惠碼，已折抵30元!")
+                setCouponPrice(30)
+                handleShow()
+                break;
+            default:
+                setCouponMsg("請輸入正確的優惠碼!")
+                setCouponPrice(0)
+                handleShow()
+        }
+    }
+    
+    localStorage.setItem("couponPrice", couponPrice)
+
 
     // 使用hooks 解出所需的狀態與函式(自context)
     const { cart, items, plusOne, minusOne, removeItem } = useCart()
 
-    // 購物車筆數
-    // const cart_items = [1, 2, 3, 4, 5];
 
 
+    // 對話盒使用
+    const [show, setShow] = useState(false)
+
+
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+
+
+    const messageModal = (
+        <Modal show={show} onHide={handleClose} keyboard={false}>
+            <Modal.Header closeButton>
+                <Modal.Title>套用優惠碼訊息</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{couponMsg}</Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    確定
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    )
 
     return (
         <div className='container'>
 
 
             <h3>購物車</h3>
-            <table className='table'>
-                <thead>
-                    <tr>
-                        <th>商品圖片</th>
-                        <th>商品名稱</th>
-                        <th>金額</th>
-                        <th>數量</th>
-                        <th>小計</th>
-                        <th>刪除</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {items.map((v, i) => {
-
-                        return (
-                            <tr key={i} className='cart_items'>
-                                <td>
-                                    <div className="img_container">
-                                        <img
-                                            src="/img/products/MB-006裝蒜牛五花飯_s.jpg"
-                                            alt=""
-                                        />
-                                    </div>
-
-                                </td>
-                                <td>{v.name}</td>
-                                <td>${v.price}</td>
-                                <td><div className="btn-group mr-2" role="group">
-                                    <button
-                                        type="button"
-                                        className="btn btn-light"
-                                        onClick={() => {
-                                            minusOne(v.id)
-                                        }}
-                                    >
-                                        -
-                                    </button>
-                                    <button type="button" className="btn btn-light">
-                                        {v.quantity}
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="btn btn-light"
-                                        onClick={() => {
-                                            plusOne(v.id)
-                                        }}
-                                    >
-                                        +
-                                    </button>
-                                </div></td>
-                                <td>${v.itemTotal}</td>
-                                <td><i className="fa-solid fa-trash-can" onClick={() => {
-                                    removeItem(v.id)
-                                }}></i></td>
-                            </tr>)
-                    })}
-
-
-                </tbody>
-
-            </table>
+            <CartItemArea />
 
             <div className="row justify-content-end">
 
                 <div className="col-3 cart_checkarea me-5">
-                    <div className='quantity my-4'>
-                        <p>商品數量</p>
-                        <p>共5件</p>
+
+                    <form className="input-group mb-3">
+                        <input className="form-control" type="text" placeholder="請輸入優惠碼" aria-label="Recipient's username" aria-describedby="button-coupon" required="" onChange={(e) => {
+                            setCoupon(e.target.value)
+                        }} />
+                        <button type="button" className="btn btn-right fz-0" id="button-coupon" onClick={couponhandler}> 套用優惠碼 </button>
+                    </form>
+
+
+                    <div className='quantity my-3'>
+                        <p>數量</p>
+                        <p>共{cart.totalItems}件</p>
                     </div>
 
-                    <div className='price my-4'>
-                        <p>商品總計</p>
-                        <p>$600元</p>
+                    <div className='price my-3'>
+                        <p>小計</p>
+                        <p>${cart.cartTotal}</p>
+                    </div>
+
+                    <div className='price my-3'>
+                        <p>優惠折扣</p>
+                        <p>$-{couponPrice}</p>
+                    </div>
+
+                    <hr />
+
+                    <div className='price my-3'>
+                        <p>總計</p>
+                        <p>${(cart.cartTotal - couponPrice <= 0)? 0 : (cart.cartTotal - couponPrice)}</p>
                     </div>
 
                     <Link to="/cart/cart_info">
@@ -102,7 +118,7 @@ const Cart = () => {
 
                 </div>
             </div>
-
+            {messageModal}
         </div >
 
     )

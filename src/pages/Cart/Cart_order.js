@@ -3,24 +3,110 @@ import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
+import CartCheckAreaInfo from './components/CartCheckAreaInfo';
+import { useLocation } from 'react-router'
+import { Modal, Button } from 'react-bootstrap'
+import { useCart } from './utils/useCart'
 
 const Cart_order = () => {
 
     const [number, setNumber] = useState('');
-    const [name, setName] = useState('');
+    const [cardName, setCardName] = useState('');
     const [expiry, setExpiry] = useState('');
     const [cvc, setCvc] = useState('');
     const [focus, setFocus] = useState('');
 
+    // 使用hooks 解出所需的狀態與函式(自context)
+    const { cart, items,clearCart } = useCart()
+
+    // 取出資料來
+    const { address, email, name, phone } = JSON.parse(localStorage.getItem("cart_info"))
+
+    const couponPrice = localStorage.getItem("couponPrice")
+    const cartTotalPrice = cart.cartTotal - couponPrice
+    const totalItems = cart.totalItems
+    const cartTotal = cart.cartTotal
+    
+
+    console.log(name) //姓名
+    console.log(phone) //手機 
+    console.log(email) //信箱
+    console.log(address) //外送地址
+    console.log(cart) //商品物件
+    console.log(items) //商品明細
+    console.log(totalItems) //商品數量
+    console.log(cartTotal) //商品小計
+    console.log(couponPrice) //優惠折扣金額
+    console.log(cartTotalPrice) //商品總計
+    
 
 
+
+    //送資料到資料庫
+    const sendData = () => {
+
+        fetch(`${process.env.REACT_APP_API_URL}/cart`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                name,
+                phone,
+                email,
+                address,
+                items,
+                totalItems,
+                cartTotal,
+                couponPrice,
+                cartTotalPrice
+            }),
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+    }
+
+
+    //送出訂單後要處理的事
+    const sendCartData = () => {
+        sendData();
+        clearCart();
+        localStorage.clear();
+    }
+
+    // 對話盒使用
+    const [show, setShow] = useState(false)
+
+
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
+
+
+    const messageModal = (
+        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+            <Modal.Header closeButton>
+                <Modal.Title>提示訊息</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>確認要送出訂單嗎?</Modal.Body>
+            <Modal.Footer>
+
+                <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
+                    <Button variant="primary" onClick={sendCartData}>
+                        確定
+                    </Button>
+                </Link>
+
+                <Button variant="secondary" onClick={handleClose}>
+                    取消
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    )
 
 
 
     return (
         <div className='container mb-5'>
-            
-            
+
+
             <Stepper activeStep={1}>
                 <Step label="填寫聯絡資訊" />
                 <Step label="填寫付款資訊" />
@@ -36,7 +122,7 @@ const Cart_order = () => {
                     <div id="PaymentForm">
                         <Cards
                             number={number}
-                            name={name}
+                            name={cardName}
                             expiry={expiry}
                             cvc={cvc}
                             focused={focus}
@@ -51,7 +137,7 @@ const Cart_order = () => {
                                         type="tel"
                                         name="number"
                                         placeholder="Card Number"
-                                        maxlength="16"
+                                        maxLength="16"
                                         value={number}
                                         onChange={e => setNumber(e.target.value)}
                                         onFocus={e => setFocus(e.target.name)}
@@ -66,8 +152,8 @@ const Cart_order = () => {
                                         type="text"
                                         name="name"
                                         placeholder="Name"
-                                        value={name}
-                                        onChange={e => setName(e.target.value)}
+                                        value={cardName}
+                                        onChange={e => setCardName(e.target.value)}
                                         onFocus={e => setFocus(e.target.name)}
                                     ></input>
                                 </div>
@@ -106,20 +192,8 @@ const Cart_order = () => {
 
                             </div>
 
-
-
-
-
-
-
-
                         </form>
                     </div>
-
-
-
-
-
 
                 </div>
 
@@ -127,39 +201,27 @@ const Cart_order = () => {
                 {/* check_area */}
                 <div className="col-4">
                     <div className='checkarea'>
+                        <CartCheckAreaInfo />
 
-                        <div className='my-4'>
-                            <p>小計</p>
-                            <p>$600元</p>
-                        </div>
-
-
-                        <div className='my-4'>
-                            <p>折扣優惠</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>運費</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>總計</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <Link to="/cart/cart_info/cart_order/cart_confirm">
+                        {/* <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
                             <button className="next_page my-2">確認付款</button>
-                        </Link>
+                        </Link> */}
 
-                        <Link to="/cart/cart_info">
+                        <button className="next_page my-2" onClick={handleShow}>確認付款</button>
+
+                        <Link to={"/cart/cart_info"}>
                             <button className="last_page my-2">上一步</button>
                         </Link>
+
                     </div>
                 </div>
+
+
+
+                {messageModal}
             </div>
-        </div>
+
+        </div >
     )
 }
 

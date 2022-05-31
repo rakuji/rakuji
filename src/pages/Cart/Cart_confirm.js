@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import { Accordion } from 'react-bootstrap';
+import { useCart } from './utils/useCart';
+import CartCheckAreaInfo from './components/CartCheckAreaInfo';
 
 const Cart_confirm = () => {
 
-    // 購物車筆數
-    const cart_items = [1, 2, 3, 4, 5];
+    // 使用hooks 解出所需的狀態與函式(自context)
+    const { cart, items } = useCart()
+    console.log(items)
+
+    // discount
+    const [discount, setDiscount] = useState(600)
+
+    //deliveryfee 
+    const [deliveryfee, setDeliveryfee] = useState(100)
+
+ 
+
 
 
     return (
@@ -20,7 +32,7 @@ const Cart_confirm = () => {
 
             <div className="row mb-3 order_success">
                 <div className='d-flex justify-content-center align-items-center my-3'>
-                    <i class="fa-solid fa-check me-2"></i>
+                    <i className="fa-solid fa-check me-2"></i>
                     <h3>訂購成功</h3>
                 </div>
                 <div className='d-flex justify-content-center'>
@@ -45,29 +57,26 @@ const Cart_confirm = () => {
                             </thead>
 
                             <tbody>
-                                {cart_items.map((v, i) => {
+                                {items.map((v, i) => {
 
                                     return (
                                         <tr key={i} className='cart_items'>
                                             <td>
                                                 <div className="img_container">
-                                                    {/* <img
-                                                        src={require("../Products/images/maindish/MB-006裝蒜牛五花飯_s.jpg")}
+                                                    <img
+                                                        src={`/img/products/${v.picture}`}
                                                         alt=""
-                                                    /> */}
+                                                    />
                                                 </div>
 
                                             </td>
-                                            <td>裝蒜牛五花飯</td>
-                                            <td>$120</td>
-                                            <td>1</td>
-                                            <td>$120</td>
+                                            <td>{v.name}</td>
+                                            <td>${v.price}</td>
+                                            <td>{v.quantity}</td>
+                                            <td>${v.itemTotal}</td>
                                         </tr>)
                                 })}
-
-
                             </tbody>
-
                         </table>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -82,25 +91,25 @@ const Cart_confirm = () => {
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂單日期:</p>
-                        <p>2022/05/24</p>
+                        <p>2022/05/30</p>
                     </div>
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人姓名:</p>
-                        <p>王曉明</p>
+                        {/* <p>{name}</p> */}
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人電話:</p>
-                        <p>0912345678</p>
+                        {/* <p>{phone}</p> */}
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人信箱:</p>
-                        <p>test@gmail.com</p>
+                        {/* <p>{email}</p> */}
 
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>外送地址:</p>
-                        <p>高雄市前金區</p>
+                        {/* <p>{address}</p> */}
 
                     </div>
 
@@ -112,26 +121,7 @@ const Cart_confirm = () => {
 
                     <div className='checkarea'>
 
-                        <div className='my-4'>
-                            <p>小計</p>
-                            <p>$600元</p>
-                        </div>
-
-
-                        <div className='my-4'>
-                            <p>折扣優惠</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>運費</p>
-                            <p>$600元</p>
-                        </div>
-
-                        <div className='my-4'>
-                            <p>總計</p>
-                            <p>$600元</p>
-                        </div>
+                        <CartCheckAreaInfo />
                     </div>
 
 

@@ -4,23 +4,25 @@ import { Link, withRouter } from "react-router-dom";
 import gsap from "gsap";
 import $ from "jquery"
 import { Modal, Button } from 'react-bootstrap'
-import { useCart } from '../../utils/useCart'
+import { useCart } from '../Cart/utils/useCart'
 
 // 商品範例
-import datas from './data/products.json'
+// import datas from './data/products.json'
 
 const Products = (props) => {
-  // // 從資料庫取得資料
-  // const [datas, setDatas] = useState([])
-  // const fetchData = async () => {
-  //   const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
-  //   const results = await response.json();
-  //   setDatas(results);
-  // }
-  // useEffect(() => {
-  //   fetchData();
-  // }, [])
+  // 從資料庫取得資料
+  const [datas, setDatas] = useState([])
+  // 選單列狀態
+  const [categoryIndex, setCatetoryIndex] = useState(0)
 
+  const fetchData = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
+    const results = await response.json();
+    setDatas(results);
+  }
+  useEffect(() => {
+    fetchData();
+  }, [])
 
   const category = [
     "全部商品",
@@ -41,14 +43,11 @@ const Products = (props) => {
     ).style.transform = `rotate(${deg}deg)`;
   };
 
-
   useEffect(() => {
-    $("#category_buttons button:first-child").attr("id", "active")
+    $(`#category_buttons button[id=${categoryIndex}]`).attr("id", "active")
   })
 
-
   useEffect(() => {
-
 
     $("#category_buttons button").click(function () {
       $("#category_buttons button").removeAttr("id")
@@ -56,24 +55,14 @@ const Products = (props) => {
     })
   }, [])
 
-
-
   useEffect(() => {
-    gsap.timeline().from(".product_card", {
+    gsap.timeline({ onComplete: () => gsap.set(".product_card", {clearProps: true}) }).from(".product_card", {
       duration: 1,
       opacity: 0,
-      delay: 1,
+      delay: 0,
       stagger: 0.1,
     });
-  }, [datas]);
-
-
-  //商品加入購物車按鈕(事件阻擋)
-  // useEffect(() => {
-  //   document.getElementsByClassName("product_card").onclick = (event) => {
-  //     event.stopPropagation();
-  //   };
-  // }, []);
+  }, [categoryIndex,datas]);
 
 
   // 對話盒使用
@@ -150,7 +139,7 @@ const Products = (props) => {
           <div className="sticky-top" id="category_buttons">
             {category.map((v, i) => {
               return (
-                <button key={i} className="product_category">
+                <button key={i} id={i} className="product_category" onClick={() => setCatetoryIndex(i)}>
                   {v}
                 </button>
               );
@@ -158,34 +147,40 @@ const Products = (props) => {
           </div>
         </div>
         <div className="col-10 products">
-          {datas.map((v, i) => {
+          {datas.filter((v, i) => {
+            if (categoryIndex === 0) return true
+
+            return v.category === category[categoryIndex]
+          }).map((v, i) => {
             return (
-
               <div key={i} className="product_container">
-
-                <div className="product_card">
-                  <Link to={`/products/product_detail/${v.id}`}>
+                <Link to={`/products/product_detail/${v.id}`}>
+                  <div className="product_card">
                     <div className="imageContainer mb-2">
                       {/* <img src={require("./images/maindish/MB-006裝蒜牛五花飯_s.jpg")} alt="" /> */}
                       {/* <img src="/img/products/CH-001綜合寶寶粥.jpg" alt="" /> */}
-                      <img src={`/image/${v.picture}`} alt="" />
+                      <img src={`/img/products/${v.picture}`} alt="" />
                     </div>
-                  </Link>
-                  <div className="product_card_info">
-                    <p className="mb-2">{v.name}</p>
-                    <p className="mb-2">NT{v.price}</p>
-                    <button id="cart_icon" onClick={() => {
-                      // 商品原本無數量屬性(quantity)，要先加上
-                      const item = { ...v, quantity: 1 }
-                      // 注意: 重覆加入會自動+1產品數量
-                      addItem(item)
-                      // 呈現跳出對話盒
-                      showModal(v.name)
-                    }}>
-                      <i className="fa-solid fa-cart-shopping"></i>
-                    </button>
+                    <div className="product_card_info">
+                      <p className="mb-2">{v.name}</p>
+                      <p className="mb-2">NT{v.price}</p>
+                      <button id="cart_icon" onClick={(e) => {
+                        console.log(v)
+                        // 事件阻擋
+                        e.preventDefault()
+                        // 商品原本無數量屬性(quantity)，要先加上
+                        const item = { ...v, quantity: 1 }
+                        console.log(item)
+                        // 注意: 重覆加入會自動+1產品數量
+                        addItem(item)
+                        // 呈現跳出對話盒
+                        showModal(v.name)
+                      }}>
+                        <i className="fa-solid fa-cart-shopping"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </Link>
 
               </div>
             );
@@ -195,7 +190,7 @@ const Products = (props) => {
 
       {messageModal}
 
-    </div>
+    </div >
   );
 };
 

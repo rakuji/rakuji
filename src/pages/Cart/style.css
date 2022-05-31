@@ -57,8 +57,26 @@ table tbody .img_container img {
   width: 100%;
 }
 
+table tbody .cart_trush_btn {
+  cursor: pointer;
+}
+
 .cart_checkarea p {
   margin-bottom: 0;
+}
+
+.cart_checkarea form input {
+  border-color: #58c2dd;
+}
+
+.cart_checkarea form button {
+  border-color: #58c2dd;
+  color: #58c2dd;
+}
+
+.cart_checkarea form button:hover {
+  background-color: #58c2dd;
+  color: #fff;
 }
 
 .cart_checkarea .quantity {

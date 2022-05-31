@@ -242,8 +242,7 @@ function Recipes() {
           <div className="col-10 RecipesBoxCardAll">
             {datas.length > 0 &&
               datas.map((recipes, i) => {
-                const {
-                  Recipes_ID,
+                const {                  
                   Recipes_Name,
                   Recipes_Clicks,
                   Recipes_Picture,
@@ -264,7 +263,7 @@ function Recipes() {
                         <p className="card-text h6">
                           瀏覽次數:{Recipes_Clicks}次
                         </p>
-                        <Link to="/recipes/box">
+                        <Link to={`/recipes/box/${recipes.Recipes_ID}`}>
                           <button className=" RecipesLookButton" id="">
                             查看
                           </button>

@@ -115,6 +115,15 @@
           height: 30px;
           margin-bottom: 10px;
 
+          &:hover{
+            background-color: #fff;
+            transition: all 0.3s ease;
+            i{
+              color: #58c2dd;
+              transition: all 0.3s ease;
+            }
+          }
+
           i {
             color: #fff;
           }
