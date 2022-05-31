@@ -6,7 +6,7 @@ import MyBackTop from "../About/myComponents/MyBackTop";
 function Box() {
   const [datas, setDatas] = useState([]);
   const fetchData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes/box/box/1`);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes/2`);
     const results = await response.json();
     setDatas(results);
   };
