@@ -1,3 +1,9 @@
+.bg {
+  background-image: url("./images/BG.png");
+  background-repeat: no-repeat;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 a {
   text-decoration: none;
 }
@@ -8,7 +14,7 @@ a:hover {
   padding-bottom: 1em;
   margin-bottom: 1em;
   position: sticky;
-  top:192px;  
+  top: 191px;
   background-color: white;
 }
 .backTop {
@@ -23,17 +29,12 @@ a:hover {
   width: 20px;
 }
 .mybread {
-  position:sticky;
-  top:0;
+  position: sticky;
+  top: 0;
   font-size: 1em;
   background-color: white;
 }
-.bg {
-  background-image: url("./images/BG.png");
-  background-repeat: no-repeat;
-  max-width: 1440px;
-  margin: 0 auto;
-}
+
 .carousel {
   height: 300px;
   overflow: hidden;
@@ -86,6 +87,12 @@ img.about {
   padding-bottom: 1em;
   border-bottom: #cac9c9 1px solid;
 }
+
+  /* .shopListGroup {
+    position:sticky;
+    top: 251px;
+  } */
+
 p.about {
   font-size: 20px;
 }
@@ -101,7 +108,7 @@ p.about {
 .pageTitleImg {
   margin-bottom: 2em;
   position: sticky;
-  top:56px;
+  top: 56px;
   background-color: white;
 }
 .row {

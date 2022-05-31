@@ -9,7 +9,7 @@ import "../aboutStore.css";
 const MyShopList = (props) => {
     const [modalShow, setModalShow] = useState(false);
     return (
-    <div className="row shopList">
+    <div className="row shopList" id={props.shopid}>
         {/* 門市卡片 */}
         <div className="col-12 col-md-6 ">
             <h3 className="cardTitle">{props.name}</h3>
