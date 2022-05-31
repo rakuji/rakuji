@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import { Accordion } from 'react-bootstrap';
@@ -9,15 +9,53 @@ const Cart_confirm = () => {
 
     // 使用hooks 解出所需的狀態與函式(自context)
     const { cart, items } = useCart()
-    console.log(items)
+    // console.log(items)
 
-    // discount
-    const [discount, setDiscount] = useState(600)
+    //取出訂單編號
+    const orderid = localStorage.getItem("orderid")
 
-    //deliveryfee 
-    const [deliveryfee, setDeliveryfee] = useState(100)
+    // 從資料庫取得資料(未篩選過)
+    const [orderDatas, setOrderDatas] = useState([])
+    const [orderDetailDatas, setOrderDetailDatas] = useState([])
 
- 
+    // 訂單聯絡資訊(篩選過後)
+    // const [mdfk,setMdfk] = useState({})
+
+    // -------------------------測試區--------------------------------------------------
+    console.log(orderid)
+
+    console.log(orderDatas)
+    const order_info = orderDatas.find((v, i) => v.sid == orderid) //訂單聯絡資訊
+    console.log(order_info)
+    // setOrderDatas(order_info)
+    
+    console.log(orderDetailDatas)
+    const order_items = orderDetailDatas.filter((v, i) => v.order_id == orderid) //訂單商品明細
+    console.log(order_items)
+
+    // --------------------------------------------------------------------------------
+
+
+
+
+    //查詢訂單聯絡資訊
+    const fetchOrderData = async () => {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/cart/order`);
+        const results = await response.json();
+        setOrderDatas(results);
+    }
+
+    //查詢訂單商品明細
+    const fetchOrderDetailData = async () => {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/cart/orderdetail`);
+        const results = await response.json();
+        setOrderDetailDatas(results);
+    }
+
+    useEffect(() => {
+        fetchOrderData();
+        fetchOrderDetailData();
+    }, [])
 
 
 
@@ -36,7 +74,7 @@ const Cart_confirm = () => {
                     <h3>訂購成功</h3>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <p>訂單編號:001</p>
+                    <p>訂單編號:{orderid}</p>
                 </div>
             </div>
 
@@ -57,7 +95,7 @@ const Cart_confirm = () => {
                             </thead>
 
                             <tbody>
-                                {items.map((v, i) => {
+                                {order_items.map((v, i) => {
 
                                     return (
                                         <tr key={i} className='cart_items'>
@@ -73,7 +111,7 @@ const Cart_confirm = () => {
                                             <td>{v.name}</td>
                                             <td>${v.price}</td>
                                             <td>{v.quantity}</td>
-                                            <td>${v.itemTotal}</td>
+                                            <td>${v.price * v.quantity}</td>
                                         </tr>)
                                 })}
                             </tbody>
@@ -91,25 +129,25 @@ const Cart_confirm = () => {
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂單日期:</p>
-                        <p>2022/05/30</p>
+                        <p>{orderDatas.created_at}</p>
                     </div>
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人姓名:</p>
-                        {/* <p>{name}</p> */}
+                        {/* <p>{order_info.name}</p> */}
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人電話:</p>
-                        {/* <p>{phone}</p> */}
+                        {/* <p>{order_info.phone}</p> */}
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人信箱:</p>
-                        {/* <p>{email}</p> */}
+                        {/* <p>{order_info.email}</p> */}
 
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>外送地址:</p>
-                        {/* <p>{address}</p> */}
+                        {/* <p>{order_info.address}</p> */}
 
                     </div>
 
@@ -121,7 +159,24 @@ const Cart_confirm = () => {
 
                     <div className='checkarea'>
 
-                        <CartCheckAreaInfo />
+                        {/* <CartCheckAreaInfo cartTotal={order_info.cartTotal} couponPrice={order_info.couponPrice} cartTotalPrice={order_info.cartTotalPrice}/> */}
+
+                        <div className='my-4'>
+                            <p>小計</p>
+                            {/* <p>${order_info.cartTotal}元</p> */}
+                        </div>
+
+                        <div className='my-4'>
+                            <p>優惠折扣</p>
+                            {/* <p>-${order_info.couponPrice}元</p> */}
+                        </div>
+
+
+                        <div className='my-4'>
+                            <p>總計</p>
+                            {/* <p>${order_info.cartTotalPrice}元</p> */}
+                        </div>
+
                     </div>
 
 

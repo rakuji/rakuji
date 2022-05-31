@@ -47,6 +47,7 @@ const Cart = (props) => {
     // 使用hooks 解出所需的狀態與函式(自context)
     const { cart, items, plusOne, minusOne, removeItem } = useCart()
 
+    console.log(cart)
 
 
     // 對話盒使用

@@ -8,7 +8,7 @@ function Nav() {
   const { cart } = useCart()
 
  
-  console.log(cart.totalItems)
+  // console.log(cart.totalItems)
 
   useEffect(()=>{
 
