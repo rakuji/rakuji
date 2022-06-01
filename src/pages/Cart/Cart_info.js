@@ -36,6 +36,8 @@ const Cart_info = () => {
 
                     <div className='mb-3'>
                         <label htmlFor="name" className="form-label">姓名</label>
+
+                        {/* is-invalid */}
                         <input id='name' type="text" className="form-control" onChange={(e) => setName(e.target.value)} />
                     </div>
 
@@ -58,7 +60,7 @@ const Cart_info = () => {
 
                 {/* check_area */}
                 <div className="col-4">
-                    <div className='checkarea'>
+                    <div className='checkarea mt-5'>
                         <CartCheckAreaInfo />
 
                         <Link to={"/cart/cart_info/cart_order"}>

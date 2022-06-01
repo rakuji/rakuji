@@ -22,7 +22,9 @@ const Cart_order = () => {
     const { cart, items } = useCart()
 
     // 取出資料來
-    const { address, email, name, phone } = JSON.parse(localStorage.getItem("cart_info"))
+    if (localStorage.getItem("cart_info")) {
+        var { address, email, name, phone } = JSON.parse(localStorage.getItem("cart_info"))
+    }
 
     const couponPrice = parseInt(localStorage.getItem("couponPrice"))
     const cartTotalPrice = cart.cartTotal - couponPrice
@@ -199,7 +201,7 @@ const Cart_order = () => {
 
                 {/* check_area */}
                 <div className="col-4">
-                    <div className='checkarea'>
+                    <div className='checkarea mt-5'>
                         <CartCheckAreaInfo />
 
                         {/* <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
@@ -223,6 +225,8 @@ const Cart_order = () => {
                                     sendData(); //送出資料
                                     localStorage.removeItem('couponPrice'); //清除優惠折扣
                                     localStorage.removeItem('cart_info'); //清除訂購資訊
+                                    window.location.href = `/cart/cart_info/cart_order/cart_confirm` //跳轉頁面
+
                                     Swal.fire({
                                         icon: 'success',
                                         title: '訂單已送出!',
@@ -240,6 +244,8 @@ const Cart_order = () => {
                         {/* <Link to={"/cart/cart_info/cart_order/cart_confirm"}>
                             <button className="next_page my-2" onClick={sendCartData}>測試按鈕</button>
                         </Link> */}
+
+                        {/* <button className="next_page my-2" onClick={()=>{window.location.href = `/cart/cart_info/cart_order/cart_confirm`}}>測試按鈕</button> */}
                     </div>
                 </div>
 

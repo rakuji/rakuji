@@ -247,7 +247,7 @@ const Products = (props) => {
           </div>
 
           {/* 產品搜尋 */}
-          <form className="d-flex product_search">
+          <form className="d-flex product_search" onSubmit={(e)=>e.preventDefault()}>
             <input
               className="form-control"
               type="search"
