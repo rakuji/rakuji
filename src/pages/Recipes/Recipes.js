@@ -247,7 +247,7 @@ function Recipes() {
                 return (
                   <div key={i} className="RecipesSearchBoxCardAll ">
                     <div className="RecipesSearchBoxCard ">
-                      <Link to={`/recipes/${recipes.Recipes_ID}`}>
+                      <Link to={`/recipes/id=${recipes.Recipes_ID}`}>
                         <img
                           src={require(`./image/${Recipes_Picture}`)}
                           className="card-img-top RecipesListImg"
@@ -261,7 +261,7 @@ function Recipes() {
                         <p className="card-text h6">
                           瀏覽次數:{Recipes_Clicks}次
                         </p>
-                        <Link to={`/recipes/${recipes.Recipes_ID}`}>
+                        <Link to={`/recipes/id=${recipes.Recipes_ID}`}>
                           <button className=" RecipesLookButton" id="">
                             查看
                           </button>

@@ -88,7 +88,7 @@ function App() {
         <Route path="/recipes" exact>
           <Recipes />
         </Route>
-        <Route path="/recipes/:Recipes_ID" exact>
+        <Route path="/recipes/id=:Recipes_ID" exact>
           <Box />
         </Route>
         <Route path="/store" exact>

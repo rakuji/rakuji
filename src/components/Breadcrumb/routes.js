@@ -68,7 +68,7 @@ const routes = [
     breadcrumbName: "創意食譜",
     routes: [
       {
-        path: "/recipes/box",
+        path: "/recipes/id=",
         component: box,
         breadcrumbName: "",
       },
