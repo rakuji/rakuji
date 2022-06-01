@@ -5,7 +5,7 @@ import "./css/reset.css"
 
 function Register() {
 
-    }
+    
     return (
         //JSX
         <>

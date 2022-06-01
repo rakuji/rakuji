@@ -115,20 +115,23 @@ span>.hy-link {
 
 }
 
-figure img {
-    max-width: 100%;
-}
+
 
 .circle {
     border-radius: 50%;
     overflow: hidden;
 }
 
-.mask1 {
-    /* -webkit-mask-image: url(../../../images/account/Circle.png); */
-    /* mask-image: url(../../../images/account/Circle.png); */
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+/* .avatar {
+    width: 120px;
+} */
+
+img {
+    width: 200px;
+}
+
+.clip-circle {
+    clip-path: circle(25% at center);
 }
 
 @media screen and (max-width: 576px) {

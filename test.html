@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 400px;
+            margin: 20px;
+        }
+
+        .clip-circle {
+            clip-path: circle(25% at center);
+        }
+
+        .clip-ellipse {
+            clip-path: ellipse(60px 40px at center);
+        }
+
+        .clip-polygon {
+            clip-path: polygon(5% 5%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+        }
+
+        /* body {
+            background: linear-gradient(to bottom,
+                    red,
+                    yellow);
+        } */
+
+        .avatar {
+            width: 120px;
+        }
+
+        /* .clip-circle {
+            clip-path: circle(100px at center);
+        } */
+
+
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="avatar">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" class="clip-circle">
+    </div>
+
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt="">
+
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt="" class="clip-circle">
+
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt="" class="clip-ellipse">
+
+    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg" alt="" class="clip-polygon">
+</body>
+
+</html>
