@@ -1,5 +1,5 @@
 .bg {
-  background-image: url("./images/BG.png");
+  /* background-image: url("./images/BG.png"); */
   background-repeat: no-repeat;
   max-width: 1440px;
   margin: 0 auto;
@@ -88,7 +88,7 @@ img.about {
   border-bottom: #cac9c9 1px solid;
 }
 
-  /* .shopListGroup {
+/* .shopListGroup {
     position:sticky;
     top: 251px;
   } */
@@ -105,16 +105,17 @@ p.about {
   font-size: 1em;
 }
 
+.row {
+  margin: 1em 0;
+  width: 100%;
+}
+
 .pageTitleImg {
   margin-bottom: 2em;
   position: sticky;
   top: 56px;
   background-color: white;
 }
-.row {
-  margin-bottom: 1em;
-}
-
 section {
   margin-bottom: 2em;
 }
@@ -147,5 +148,13 @@ section {
   }
   p.about {
     font-size: 16px;
+  }
+  .areaBtns {
+    position:sticky;
+    top:135px;
+  }
+  .pageTitleImg {
+    position:sticky;
+    top: 0;
   }
 }

@@ -162,10 +162,10 @@ const About = () => {
           </p>
           <div className="row">
             <div className="col-12">
-              <img src={require("./images/style-1.png")} className="img-fluid about" alt="" />
+              <img src={require("./images/style-1.png")} className="img-fluid about" alt="style-1.png" />
             </div>
             <div className="col-12">
-              <img src={require("./images/style-2.png")} className="img-fluid about" alt="" />
+              <img src={require("./images/style-2.png")} className="img-fluid about" alt="style-2.png" />
             </div>
           </div>
         </section>
