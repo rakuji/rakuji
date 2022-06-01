@@ -115,7 +115,7 @@ span>.hy-link {
 }
 
 .pic-dox {
-	background-image: url(../../../images/icon/pic.png);
+	background-image: url(../images/icon/pic.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 24px auto;
@@ -129,7 +129,7 @@ span>.hy-link {
 .avatar {
 	width: 160px;
 	height: 160px;
-	background-image: url(../../../images/account/account-1.jpg);
+	background-image: url(../images/account/account-1.jpg);
 	background-size: 300px;
 	background-position-x: -20px;
 	background-repeat: no-repeat;

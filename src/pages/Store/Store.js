@@ -9,6 +9,8 @@ import MyBackTop from "../About/myComponents/MyBackTop";
 const Store = () => {
   const [shopsArray, setShopsArray ] = useState([])
   const [firstArray, setFirstArray ] = useState([])
+  // const [clickedShopId, setClickedShopId ] = useState(0)
+
   // fetchData()寫在 useEffect()之中，故不使用IIEF
   // (async function fetchData() {
   //     // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
@@ -33,7 +35,14 @@ const Store = () => {
   }
 
   useEffect(()=>{
+    function getScrollElement(sid){
+      document.querySelector(`#${sid}`).scrollIntoView({ block: "center" });
+  }},[])
+  
+
+  useEffect(()=>{
       fetchDatas();
+
   },[shopsArray,firstArray])
  
 
@@ -55,6 +64,7 @@ const Store = () => {
             { firstArray.map((v,i) => {
                 const {shop_id,area_name} = v;
                 return(
+                  <button type="button" className="btn myBtn" onClick={getScrollElement(shop_id)}>{area_name}</button>
                   <button type="button" className="btn myBtn "><a href={"#"+shop_id}>{area_name}</a></button>
                 )
             })}
