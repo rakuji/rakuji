@@ -9,7 +9,15 @@
     border-radius: 0.25rem;
     background-color: #fff;
     color: #58c2dd;
-    padding: 0.35rem 0.75rem;
+    padding: 0.35rem 0.55rem;
+
+    .p_icon_container{
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   .product_search {

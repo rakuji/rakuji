@@ -226,6 +226,7 @@ const Cart_order = () => {
                                     Swal.fire({
                                         icon: 'success',
                                         title: '訂單已送出!',
+                                        showConfirmButton: false
                                     })
                                 }
                             })

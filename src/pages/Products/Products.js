@@ -14,8 +14,14 @@ import withReactContent from 'sweetalert2-react-content'
 const Products = (props) => {
   // 從資料庫取得資料
   const [datas, setDatas] = useState([])
-  // 選單列狀態
-  const [categoryIndex, setCatetoryIndex] = useState(0)
+
+  // 篩選類別後的資料
+  const [sortData, setSortData] = useState([])
+
+  // 搜尋後的資料
+  const [searchData, setSearchData] = useState([])
+
+
 
   const fetchData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
@@ -25,6 +31,11 @@ const Products = (props) => {
   useEffect(() => {
     fetchData();
   }, [])
+
+  //--------------------篩選類別----------------------------------------------------------
+  // 選單列狀態
+  const [categoryIndex, setCatetoryIndex] = useState(0)
+
 
   const category = [
     "全部商品",
@@ -36,14 +47,118 @@ const Products = (props) => {
     "副產品",
   ];
 
-  let deg = 0;
-  const price_search = () => {
-    deg += 180;
-    document.getElementById("price_search").style.transition = "0.3s";
-    document.getElementById(
-      "price_search"
-    ).style.transform = `rotate(${deg}deg)`;
-  };
+  // const f_result = datas.filter((v) => {
+  //   if (categoryIndex === 0) return true
+
+  //   return v.category === category[categoryIndex]
+  // })
+
+  // useEffect(() => {
+  //   setSortData(f_result)
+  // }, [categoryIndex])
+
+  // console.log(f_result)
+
+
+  //-------------------------------------------------------------------------------------
+
+  //--------------------搜尋----------------------------------------------------------
+  const [searchInput, setSearchInput] = useState("")
+
+  // const s_result = sortData.filter((v)=>v.name.includes(searchInput))
+  // console.log(s_result)
+
+
+  // console.log(datas)
+  // console.log(searchInput)
+
+
+  // console.log("白飯".includes('飯'))
+
+  // const result = datas.filter((v)=> (v.id == 2))
+  // console.log(typeof result[0].name)
+
+  //-------------------------------------------------------------------------------------
+
+
+  //--------------------價格排序-------------------------------------------------------
+  const [priceBtnState, setPriceBtnState] = useState(0)
+
+
+
+
+  const DP = datas.filter((v, i) => {
+    if (categoryIndex === 0) return true
+
+    return v.category === category[categoryIndex]
+  }).filter((v) => v.name.includes(searchInput))
+
+  
+  let priceSortButton;
+  if (priceBtnState == 0) {
+    priceSortButton = <i className="fa-solid fa-filter-circle-dollar"></i>
+    DP.sort((a,b)=>{
+      //編號由小到大(預設)
+    return a.id - b.id;
+    })
+  } else if (priceBtnState == 1) {
+    priceSortButton = <i className="fa-solid fa-arrow-down"></i>
+    DP.sort((a,b)=>{
+      //價格由小到大
+    return a.price - b.price;
+    })
+  } else if (priceBtnState == 2) {
+    priceSortButton = <i className="fa-solid fa-arrow-up"></i>
+    DP.sort((a,b)=>{
+      //價格由大到小
+    return b.price - a.price;
+    })
+  }
+
+  let students = [
+    {
+      fname: "Rohan",
+      lname: "Dalal",
+      age: 19
+    },
+
+    {
+      fname: "Zain",
+      lname: "Ahmed",
+      age: 21
+    },
+
+    {
+      fname: "Anadi",
+      lname: "Malhotra",
+      age: 16
+    }
+  ];
+
+  students.sort((a, b) => {
+    //價格由小到大
+    return a.age - b.age;
+  })
+  // console.log(students)
+
+
+  // console.log(students.sort((a,b)=>{
+  //   //價格由大到小
+  //   return b.age - a.age;
+  // }))
+
+
+  //-------------------------------------------------------------------------------------
+
+  //價格排序效果
+  // let deg = 0;
+  // const price_search = () => {
+  //   deg += 180;
+  //   document.getElementById("price_search").style.transition = "0.3s";
+  //   document.getElementById(
+  //     "price_search"
+  //   ).style.transform = `rotate(${deg}deg)`;
+  // };
 
   useEffect(() => {
     $(`#category_buttons button[id=${categoryIndex}]`).attr("id", "active")
@@ -57,14 +172,14 @@ const Products = (props) => {
     })
   }, [])
 
-  useEffect(() => {
-    gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
-      duration: 1,
-      opacity: 0,
-      delay: 0,
-      stagger: 0.1,
-    });
-  }, [categoryIndex, datas]);
+  // useEffect(() => {
+  //   gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
+  //     duration: 1,
+  //     opacity: 0,
+  //     delay: 0,
+  //     stagger: 0.1,
+  //   });
+  // }, [categoryIndex, datas]);
 
 
   // 對話盒使用
@@ -112,13 +227,22 @@ const Products = (props) => {
       <div className="row mb-3">
         <div className="col-2"></div>
         <div className="col-10 srarch_bar d-flex justify-content-between">
+
+          {/* 價格排序 */}
           <div
             className="price_search d-flex justify-content-center align-items-center"
-            onClick={price_search}
+            // onClick={price_search}
+            onClick={() => {
+              if (priceBtnState == 2) {
+                setPriceBtnState(0)
+              } else {
+                setPriceBtnState(priceBtnState + 1)
+              }
+            }}
           >
-            <p className="mb-0 me-2">價錢</p>
-            <div>
-              <i id="price_search" className="fa-solid fa-arrow-down"></i>
+            <p className="mb-0">價錢</p>
+            <div className="p_icon_container">
+              {priceSortButton}
             </div>
           </div>
 
@@ -129,6 +253,7 @@ const Products = (props) => {
               type="search"
               placeholder="搜尋餐點"
               aria-label="Search"
+              onChange={(e) => { setSearchInput(e.target.value) }}
             />
             <button className="btn btn-outline-success" type="button">
               <i className="fa-solid fa-magnifying-glass"></i>
@@ -139,6 +264,8 @@ const Products = (props) => {
       </div>
 
       <div className="row">
+
+        {/* 商品類別 */}
         <div className="col-2 product_category_aside">
           <div className="sticky-top" id="category_buttons">
             {category.map((v, i) => {
@@ -150,12 +277,10 @@ const Products = (props) => {
             })}
           </div>
         </div>
-        <div className="col-10 products">
-          {datas.filter((v, i) => {
-            if (categoryIndex === 0) return true
 
-            return v.category === category[categoryIndex]
-          }).map((v, i) => {
+        {/* 商品卡片 */}
+        <div className="col-10 products">
+          {DP.map((v, i) => {
             return (
               <div key={i} className="product_container">
                 <Link to={`/products/product_detail/${v.id}`}>
