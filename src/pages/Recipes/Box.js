@@ -349,12 +349,12 @@ function Box() {
                     </div>
                     {datas.length > 0 &&
                       datas.map((recipes, i) => {
-                        const { RecipesBoxTop2_Name, RecipesBoxTop2_Quantity } =
+                        const { recipesIngredients_Name, RecipesIngredients_Quantity } =
                           recipes;
                         return (
                           <div key={i} className="nav RecipesIngredientsBorder">
-                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
-                            <h6>{RecipesBoxTop2_Quantity}</h6>
+                            <h6 className=" col">{recipesIngredients_Name}</h6>
+                            <h6>{RecipesIngredients_Quantity}</h6>
                           </div>
                         );
                       })}
@@ -377,12 +377,12 @@ function Box() {
                     </div>
                     {datas.length > 0 &&
                       datas.map((recipes, i) => {
-                        const { RecipesBoxTop2_Name, RecipesBoxTop2_Quantity } =
+                        const { RecipesSeasoning_Name, RecipeSseasoning_Quantity } =
                           recipes;
                         return (
                           <div key={i} className="nav RecipesIngredientsBorder">
-                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
-                            <h6>{RecipesBoxTop2_Quantity}</h6>
+                            <h6 className=" col">{RecipesSeasoning_Name}</h6>
+                            <h6>{RecipeSseasoning_Quantity}</h6>
                           </div>
                         );
                       })}
