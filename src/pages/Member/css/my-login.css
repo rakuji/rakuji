@@ -76,6 +76,7 @@ body.my-login-page {
 
 .my-login-page .btn.btn-block {
 	padding: 12px 10px;
+	width:100%;
 }
 
 .my-login-page .footer {
@@ -99,6 +100,7 @@ body.my-login-page {
 	/* justify-content: center; */
 	text-align: center;
 	color: #a9a9a9;
+	font-size: 1em;
 }
 
 .star {

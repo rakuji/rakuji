@@ -12,7 +12,7 @@ const MyShopList = (props) => {
     <div className="row shopList" id={props.shopid}>
         {/* 門市卡片 */}
         <div className="col-12 col-md-6 ">
-            <h3 className="cardTitle">{props.name}</h3>
+            <h3 className="cardTitle my-3">{props.name}</h3>
             <p className="cardBody"><img src={require("../images/icon_address.png")} alt="Icon address"/> {props.address} </p>
             <p className="cardBody"><img src={require("../images/icon_tel.png")} alt="Icon Tel"/> {props.tel} </p>
             <div className="cardBody">

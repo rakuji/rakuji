@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/my-login.css"
-import "./css/reset.css"
+// import "./css/reset.css"
 
 
 function Login() {
