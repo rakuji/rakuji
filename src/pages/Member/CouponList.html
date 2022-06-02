@@ -93,6 +93,22 @@
                 <div class="card-body">
                     <!-- <div class="tag_page">tag_page</div> -->
                     <!-- tab -->
+                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link " id="profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                aria-selected="false">會員個人資料</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="order-tab" data-bs-toggle="tab" data-bs-target="#order"
+                                type="button" role="tab" aria-controls="order" aria-selected="false">訂單交易紀錄</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="coupon-tab" data-bs-toggle="tab" data-bs-target="#coupon"
+                                type="button" role="tab" aria-controls="coupon" aria-selected="true">優惠資料紀錄</button>
+                        </li>
+                    </ul>
+                    <!-- 
                     <nav class="nav nav-pills flex-column flex-sm-row">
                         <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="./ClientCenter.html"
                             target="_self">會員個人資料</a>
@@ -101,48 +117,50 @@
                         <a class="flex-sm-fill text-sm-center nav-link  active" href="./CouponList.html"
                             target="_self">優惠資料紀錄</a>
 
-                    </nav>
+                    </nav> -->
 
 
                     <br>
 
                     <!-- 表單 -->
-                    <div class="row">
-                        <h4>未使用</h4>
-                        <div class="col-12 col-md-6">
-                            <div class="card col">
-                                <img src="/image/account/Rectangle(unused).png">
-                                <br>
-                                生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
-                                <!-- <button onclick="myFunction()">Copy</button> -->
-                                <br>
+                    <form method="POST" class="my-login-validation" id="coupon" aria-labelledby="coupon-tab"
+                        novalidate="">
+                        <div class="row">
+                            <h4>未使用</h4>
+                            <div class="col-12 col-md-6">
+                                <div class="card col">
+                                    <img src="../../images/account/Rectangle(unused).png">
+                                    <br>
+                                    生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
+                                    <!-- <button onclick="myFunction()">Copy</button> -->
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card col">
+
+                                    <img src="../../images/account/Rectangle(unused).png">
+                                    <br>
+                                    情人節折扣碼:<input class="a1" type="text" value=" Lover1798" id="myInput">
+                                    <br>
+
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h4>已使用</h4>
+                            <div class="col-12 col-md-6">
+                                <div class="card col">
+
+                                    <img src="../../images/account/Rectangle(used).png">
+                                    <br>
+                                    首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
+                                    <br>
+
+                                </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
-                            <div class="card col">
-
-                                <img src="/image/account/Rectangle(unused).png">
-                                <br>
-                                情人節折扣碼:<input class="a1" type="text" value=" Lover1798" id="myInput">
-                                <br>
-
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <h4>已使用</h4>
-                        <div class="col-12 col-md-6">
-                            <div class="card col">
-
-                                <img src="/image/account/Rectangle(used).png">
-                                <br>
-                                首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
-                                <br>
-
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </article>

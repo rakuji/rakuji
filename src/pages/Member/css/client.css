@@ -147,6 +147,14 @@ figure img {
     width: 250px;
 }
 
+/* coupon_css */
+.card{
+    border: 0px ;
+}
+
+hr{
+    margin: 20px 0px;
+}
 .a1 {
 
     padding: 6px;
