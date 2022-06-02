@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
-    <!-- JS -->
+    <!-- bs-JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
         crossorigin="anonymous"></script>
@@ -63,9 +63,9 @@
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item m-3">
                                 <div class="mb-2">
-                                    <span class="text-control ">日期</span>
+                                    <span class="text-control">日期</span>
                                 </div>
-                                <div class=" pt-2">
+                                <div class="pt-2">
                                     <img src="/src/image/account/Date.png" alt="">
                                     <br>
                                 </div>
@@ -107,8 +107,9 @@
                             </li>
                         </ul>
 
-                        <form method="POST" class="my-login-validation" id="profile" aria-labelledby="profile-tab"
-                            novalidate="">
+                        <!-- profile -->
+                        <form method="POST" class="my-login-validation tab-pane" id="profile" role="tabpanel"
+                            aria-labelledby="profile-tab" novalidate="">
 
                             <div class="form-group">
                                 <label for="a">姓名</label>
@@ -155,6 +156,62 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <button type="submit" class="btn btn-block btn-danger">取消</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- order -->
+                        <form method="POST" class="my-login-validation tab-pane" id="order" role="tabpanel"
+                            aria-labelledby="order-tab" novalidate="">
+
+
+                            <figure class="list-1">
+                                <img src="/src/image/account/list-1.png" alt="">
+                            </figure>
+                            <ul class="list-group">
+                                <li class="list-group-item">An item</li>
+                                <li class="list-group-item">A second item</li>
+
+                            </ul>
+                        </form>
+
+                        <!-- coupon -->
+                        <form method="POST" class="my-login-validation tab-pane" id="coupon" role="tabpanel"
+                            aria-labelledby="coupon-tab" novalidate="">
+                            <div class="row">
+                                <h4>未使用</h4>
+                                <div class="col-12 col-md-6">
+                                    <div class="card col">
+                                        <img src="../../images/account/Rectangle(unused).png">
+                                        <br>
+                                        生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
+                                        <!-- <button onclick="myFunction()">Copy</button> -->
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card col">
+
+                                        <img src="../../images/account/Rectangle(unused).png">
+                                        <br>
+                                        情人節折扣碼:<input class="a1" type="text" value=" Lover1798" id="myInput">
+                                        <br>
+
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <h4>已使用</h4>
+                                <div class="col-12 col-md-6">
+                                    <div class="card col">
+
+                                        <img src="../../images/account/Rectangle(used).png">
+                                        <br>
+                                        首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
+                                        <br>
+
+                                    </div>
                                 </div>
                             </div>
                         </form>

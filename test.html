@@ -58,8 +58,57 @@
 
         <div class="tab-content">
           <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            aaa
-            <a href="./src/pages/Member/ClientCenter.html" target="_self"></a>
+            <form method="POST" class="my-login-validation tab-pane" id="profile" role="tabpanel"
+              aria-labelledby="profile-tab" novalidate="">
+
+              <div class="form-group">
+                <label for="a">姓名</label>
+                <input id="Name" type="text" class="form-control" name="Name" value="吳建凡" disabled>
+              </div>
+              <div class="form-group">
+                <label for="sex">性別</label>
+                <input id="sex" type="text" class="form-control" name="sex" value="男" disabled>
+              </div>
+              <div class="form-group">
+                <label for="__">職業</label>
+                <input id="__" type="text" class="form-control" name="__d" value="工程師" disabled>
+              </div>
+              <div class="form-group">
+                <label for="">出生年月日</label>
+                <input id="" type="text" class="form-control" name="" value="1983-03-10" disabled>
+              </div>
+              <div class="form-group">
+                <label for="">居住縣市</label>
+                <input id="" type="text" class="form-control" name="" value="彰化縣" disabled>
+              </div>
+              <div class="form-group">
+                <label for="">居住地址</label>
+                <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號" disabled>
+              </div>
+              <div class="form-group">
+                <label for="">子嗣</label>
+                <input id="" type="text" class="form-control" name="" value="有小孩" disabled>
+              </div>
+              <div class="form-group">
+                <label for="number">手機號碼</label>
+                <input type="tel" class="form-control" id="phone" name="phone" value="0912479060" disabled>
+              </div>
+              <div class="form-group">
+                <label for="password">修改密碼</label>
+                <input type="password" class="form-control" id="password" name="password" value="aaaaaaaaaa"
+                  disabled><br>
+              </div>
+              <br>
+              <div class="row form-group  g-3">
+                <div class="col-sm-6">
+                  <button type="submit" class="btn btn-block btn-custom ">修改</button>
+                </div>
+                <div class="col-sm-6">
+                  <button type="submit" class="btn btn-block btn-danger">取消</button>
+                </div>
+              </div>
+            </form>
+
 
           </div>
           <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">bbb</div>
