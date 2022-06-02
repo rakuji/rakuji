@@ -50,7 +50,7 @@ function Recipes() {
             <div className="btn-group">
               <div>
                 <button className=" RecipesClassButton " id="">
-                  全部商品
+                  全部食譜
                 </button>
               </div>
               <div>
@@ -252,15 +252,20 @@ function Recipes() {
                           src={require(`./image/${Recipes_Picture}`)}
                           className="card-img-top RecipesListImg"
                           alt={Recipes_Name}
-                        /></Link>
+                        />
+                      </Link>
                       <div className="card-body">
-                        <p className="card-text h6">
-                          <img className="Boximg" />
-                          {Recipes_Name}
-                        </p>
-                        <p className="card-text h6">
-                          瀏覽次數:{Recipes_Clicks}次
-                        </p>
+                        <div className=" testBOX ">
+                          <p className="card-text h6 ">
+                            <img className="Boximg" />
+                            {Recipes_Name}
+                          </p>
+                          <div className="" >
+                            <p className="text-sm-start h6" >
+                              瀏覽次數:{Recipes_Clicks}次
+                            </p>
+                          </div>
+                        </div>
                         <Link to={`/recipes/id=${recipes.Recipes_ID}`}>
                           <button className=" RecipesLookButton" id="">
                             查看

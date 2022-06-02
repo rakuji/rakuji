@@ -10,7 +10,6 @@ function Box() {
   const ary1 = url.split("=");
   //此時ary1裡的內容為：
   console.log(ary1);
-
   //ary1[0] = "http://localhost:3000/recipes/id"，ary2[1] = '1'
 
   //取得id值
@@ -19,7 +18,7 @@ function Box() {
   const [datas, setDatas] = useState([]);
   const fetchData = async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/recipes/${id}`
+      `${process.env.REACT_APP_API_URL}/recipes/box/abcde/${id}`
     );
     const results = await response.json();
     setDatas(results);
@@ -31,7 +30,19 @@ function Box() {
     <>
       {datas.length > 0 &&
         datas.map((recipes, i) => {
-          const { Recipes_ID, Recipes_Name, Recipes_Picture } = recipes;
+          const {
+            Recipes_ID,
+            Recipes_Name,
+            Recipes_Picture,
+            RecipesBox_Time,
+            RecipesBox_Kcal,
+            RecipesBox_SeveralCopies,
+          } = recipes;
+
+          //宣告熱量 = 資料庫內的RecipesBox_Kcal
+          let kcal = RecipesBox_Kcal;
+          let SeveralCopies = RecipesBox_SeveralCopies;
+          let aaaa = kcal / SeveralCopies;
 
           return (
             <div className="container p-3 mb-2  text-dar ">
@@ -51,7 +62,7 @@ function Box() {
                     }}
                     className="fs-2  "
                   >
-                    759.1大卡
+                    {kcal}大卡
                   </h3>
                   <div
                     style={{ padding: "20px" }}
@@ -134,8 +145,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
+                              <h7>烹飪時間</h7>
                               <br />
-                              <h7>0分鐘</h7>
+                              <h7>{RecipesBox_Time}分鐘</h7>
                             </div>
                           </div>
                           <div className="2">
@@ -160,9 +172,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                              <h7>1人份</h7>
+                              <h7>{SeveralCopies}人份</h7>
                               <br />
-                              <h7>190大卡</h7>
+                              <h7>{aaaa}大卡</h7>
                             </div>
                           </div>
                           <div className="3">
@@ -184,8 +196,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="  RecipesTimebottombox rounded-bottom border-2 ">
+                              <h7>{SeveralCopies}</h7>
                               <br />
-                              <h7>4人份</h7>
+                              <h7>人份</h7>
                             </div>
                           </div>
                         </div>
@@ -208,7 +221,7 @@ function Box() {
                     <div className="col- avatar ">
                       <img
                         className="container "
-                        src={require("./image/00001.jpg")}
+                        src={require(`./image/${Recipes_Picture}`)}
                         alt=""
                       />
                     </div>
@@ -218,7 +231,7 @@ function Box() {
                         className="fs-5 "
                       >
                         <img className="BoxRwdimg" />
-                        日式唐揚炸雞
+                        {Recipes_Name}
                       </h3>
                     </div>
                     <h3
@@ -229,7 +242,7 @@ function Box() {
                       }}
                       className="fs-6  "
                     >
-                      759.1大卡
+                      {RecipesBox_Kcal}大卡
                     </h3>
                     <div className="d-flex text-center container">
                       <div className="row row-cols-3">
@@ -267,8 +280,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
+                              <h7>{RecipesBox_Time}</h7>
                               <br />
-                              <h7>0分鐘</h7>
+                              <h7>分鐘</h7>
                             </div>
                           </div>
                         </div>
@@ -293,9 +307,9 @@ function Box() {
                         </text> */}
                           </div>
                           <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                            <h7>1人份</h7>
+                            <h7>{SeveralCopies}人份</h7>
                             <br />
-                            <h7>89大卡</h7>
+                            <h7>{aaaa}</h7>
                           </div>
                         </div>
                         <div className="col">
@@ -315,8 +329,9 @@ function Box() {
                       ></canvas> */}
                           </div>
                           <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
+                            <h7>{SeveralCopies}</h7>
                             <br />
-                            <h7>4人份</h7>
+                            <h7>人份</h7>
                             <br />
                           </div>
                         </div>
@@ -324,6 +339,7 @@ function Box() {
                     </div>
                   </div>
                 </div>
+
                 <div className="p-3 mb-2 nav RecipesOff  ">
                   <div className="col-3 container ">
                     <div className="text-center container">
@@ -331,22 +347,17 @@ function Box() {
                         食材
                       </h5>
                     </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">雞腿肉</h6>
-                      <h6>600g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">麵粉</h6>
-                      <h6>200g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">水</h6>
-                      <h6>100g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">油</h6>
-                      <h6>200g</h6>
-                    </div>
+                    {datas.length > 0 &&
+                      datas.map((recipes, i) => {
+                        const { RecipesBoxTop2_Name, RecipesBoxTop2_Quantity } =
+                          recipes;
+                        return (
+                          <div key={i} className="nav RecipesIngredientsBorder">
+                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
+                            <h6>{RecipesBoxTop2_Quantity}</h6>
+                          </div>
+                        );
+                      })}
                   </div>
                   <svg className="col-2 ">
                     <g
@@ -364,18 +375,17 @@ function Box() {
                         調味料
                       </h5>
                     </div>
-                    <div className="nav RecipesIngredientsBorder  ">
-                      <h6 className=" col ">砂糖</h6>
-                      <h6>20g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">醬油</h6>
-                      <h6>10g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">胡椒粉</h6>
-                      <h6>5g</h6>
-                    </div>
+                    {datas.length > 0 &&
+                      datas.map((recipes, i) => {
+                        const { RecipesBoxTop2_Name, RecipesBoxTop2_Quantity } =
+                          recipes;
+                        return (
+                          <div key={i} className="nav RecipesIngredientsBorder">
+                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
+                            <h6>{RecipesBoxTop2_Quantity}</h6>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
                 <div className="p-3 mb-2 nav RecipesOn  ">
@@ -385,22 +395,20 @@ function Box() {
                         食材
                       </h5>
                     </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">雞腿肉</h6>
-                      <h6>600g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">麵粉</h6>
-                      <h6>200g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">水</h6>
-                      <h6>100g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">油</h6>
-                      <h6>200g</h6>
-                    </div>
+                    {datas.length > 0 &&
+                      datas.map((recipes, i) => {
+                        const {
+                          RecipesBoxTop2_Name,
+                          RecipesBoxTop2_Quantity,
+                          Recipes_Picture,
+                        } = recipes;
+                        return (
+                          <div key={i} className="nav RecipesIngredientsBorder">
+                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
+                            <h6>{RecipesBoxTop2_Quantity}</h6>
+                          </div>
+                        );
+                      })}
                   </div>
 
                   <div className="col-12 container ">
@@ -409,18 +417,23 @@ function Box() {
                         調味料
                       </h5>
                     </div>
-                    <div className="nav RecipesIngredientsBorder  ">
-                      <h6 className=" col ">砂糖</h6>
-                      <h6>20g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">醬油</h6>
-                      <h6>10g</h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className=" col">胡椒粉</h6>
-                      <h6>5g</h6>
-                    </div>
+                    {datas.length > 0 &&
+                      datas.map((recipes, i) => {
+                        const {
+                          RecipesBoxTop2_Name,
+                          RecipesBoxTop2_Quantity,
+                          Recipes_Picture,
+                        } = recipes;
+                        return (
+                          <div
+                            key={i}
+                            className="nav RecipesIngredientsBorder  "
+                          >
+                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
+                            <h6>{RecipesBoxTop2_Quantity}</h6>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
                 <div className="p-3 mb-2  text-dar container row RecipesOff">
