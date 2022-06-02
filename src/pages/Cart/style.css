@@ -146,6 +146,10 @@ table tbody .cart_trush_btn {
   color: #fff;
 }
 
+.ErrorMessage {
+  color: #dc3545;
+}
+
 .swal2-container a {
   color: #fff;
   text-decoration: none;
