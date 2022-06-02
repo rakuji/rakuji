@@ -19,7 +19,7 @@ import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 import Login from "./pages/Member/Login";
 import Signup from "./pages/Member/Signup";
-import Register from "./pages/Member/Register(error)";
+import Register from "./pages/Member/Register";
 import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
 import OrderList from "./pages/Member/OrderList";

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import "./css/my-login.css"
 import "./css/reset.css"
 
@@ -58,7 +59,7 @@ function Login() {
                                             </button>
                                         </div>
                                         <div class="mt-4 text-center">
-                                            還沒有會員? <a href="register.html">註冊</a>
+                                            還沒有會員? <Link to="Signup">註冊</Link>
                                         </div>
                                     </form>
                                 </div>
