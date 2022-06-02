@@ -58,8 +58,6 @@ footer {
     height: 20vh;
 }
 
-
-
 .breadcrumb {
     height: 20px;
     margin: 10px;
@@ -111,20 +109,13 @@ span>.hy-link {
 
 .text-control {
     font-weight: bolder;
-    /* font-weight: 900;     */
 
 }
-
-
 
 .circle {
     border-radius: 50%;
     overflow: hidden;
 }
-
-/* .avatar {
-    width: 120px;
-} */
 
 img {
     width: 200px;
@@ -132,6 +123,52 @@ img {
 
 .clip-circle {
     clip-path: circle(25% at center);
+}
+
+
+figure img {
+    max-width: 100%;
+}
+
+.circle {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.box {
+    width: 150px;
+    height: 150px;
+    background-color: #53acc2;
+    overflow: hidden;
+}
+
+.p-control {
+    /* background-image: none; */
+    width: 250px;
+}
+
+.a1 {
+
+    padding: 6px;
+    font-size: 16px;
+    /* font-weight: 400; */
+    /* line-height: 1.5; */
+    color: #212529;
+    background-color: #fff;
+    /* background-clip: padding-box; */
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 4px;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+.a1:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
 
 @media screen and (max-width: 576px) {

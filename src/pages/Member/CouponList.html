@@ -26,145 +26,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Potta+One&family=Yuji+Mai&display=swap"
         rel="stylesheet">
+    <!-- <link rel="stylesheet" href="client.css"> -->
+    <link rel="stylesheet" href="./css/client.css">
 
-    <!-- style -->
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-        }
-
-        body.my-login-page {
-            background-color: #fff;
-            /*要喚回白色*/
-            background-image: url(/src/image/BG-signup.png);
-            background-size: 960px auto;
-            background-repeat: repeat-y;
-            background-position: center;
-            font-size: 14px;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-
-        header {
-            background-image: url(/src/image/banner/header.png);
-            background-size: 100vw auto;
-            /* width: 100vw; */
-            height: 20vw;
-            /* background-image: linear-gradient(#aaa, #000); */
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
-
-        main {
-            display: flex;
-            min-height: calc(100vh - 30vh);
-            max-width: 960px;
-
-            justify-content: center;
-
-        }
-
-        main>article {
-            flex: 1;
-        }
-
-        main>aside {
-            flex: 0 0 20vw;
-            background: rgb(255, 255, 255);
-        }
-
-
-        header,
-        footer,
-        article,
-        aside {
-            padding: 1em;
-        }
-
-        footer {
-            background: yellowgreen;
-            height: 20vh;
-        }
-
-        .breadcrumb {
-            height: 20px;
-            margin: 10px;
-            background-color: #fff;
-        }
-
-        .btn-custom {
-            background-color: #58C2DD;
-            color: #fff;
-            /* border-radius: 50%; */
-        }
-
-        .btn-custom:hover {
-            color: #fff;
-            background-color: #53acc2;
-        }
-
-
-        .align {
-            /* justify-content: center; */
-            text-align: center;
-            color: #a9a9a9;
-        }
-
-        .star {
-            color: red;
-        }
-
-        .m-title img {
-            width: 50%;
-
-        }
-
-        span>.hy-link {
-            color: #58C2DD;
-        }
-
-        .pic-dox {
-            background-image: url(/src/image/icon/pic.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 24px auto;
-            width: 120px;
-            height: 120px;
-            margin-bottom: 20px;
-            border: 1px solid #C4C4C4;
-
-        }
-
-        .text-control {
-            font-weight: bolder;
-            /* font-weight: 900;     */
-
-        }
-
-        figure img {
-            max-width: 100%;
-        }
-
-        .circle {
-            border-radius: 50%;
-            overflow: hidden;
-        }
-
-        .box {
-            width: 150px;
-            height: 150px;
-            background-color: #53acc2;
-            overflow: hidden;
-        }
-
-        .p-control {
-            /* background-image: none; */
-            width: 250px;
-        }
-    </style>
 </head>
 
 <body class="my-login-page">
@@ -230,8 +94,8 @@
                     <!-- <div class="tag_page">tag_page</div> -->
                     <!-- tab -->
                     <nav class="nav nav-pills flex-column flex-sm-row">
-                        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page"
-                            href="./ClientCenter.html">會員個人資料</a>
+                        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="./ClientCenter.html"
+                            target="_self">會員個人資料</a>
                         <a class="flex-sm-fill text-sm-center nav-link" href="./OrderList.html"
                             target="_self">訂單交易紀錄</a>
                         <a class="flex-sm-fill text-sm-center nav-link  active" href="./CouponList.html"
@@ -243,23 +107,43 @@
                     <br>
 
                     <!-- 表單 -->
-                    <form method="POST" class="my-login-validation" novalidate="">
-                        <div class="m-3">
-                            未使用
+                    <div class="row">
+                        <h4>未使用</h4>
+                        <div class="col-12 col-md-6">
+                            <div class="card col">
+                                <img src="/image/account/Rectangle(unused).png">
+                                <br>
+                                生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
+                                <!-- <button onclick="myFunction()">Copy</button> -->
+                                <br>
+                            </div>
                         </div>
-                        <figure class="list-1">
-                            <img src="/src/image/account/coupon.png" alt="">
-                        </figure>
+                        <div class="col-12 col-md-6">
+                            <div class="card col">
+
+                                <img src="/image/account/Rectangle(unused).png">
+                                <br>
+                                情人節折扣碼:<input class="a1" type="text" value=" Lover1798" id="myInput">
+                                <br>
+
+                            </div>
+                        </div>
+
                         <hr>
-                        <div class="m-3">
-                            已使用
+
+                        <h4>已使用</h4>
+                        <div class="col-12 col-md-6">
+                            <div class="card col">
+
+                                <img src="/image/account/Rectangle(used).png">
+                                <br>
+                                首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
+                                <br>
+
+                            </div>
                         </div>
-                        <figure class="list-1">
-                            <img src="/src/image/account/coupon(used).png" alt="">
-                        </figure>
-                    </form>
+                    </div>
                 </div>
-            </div>
             </div>
         </article>
     </main>
