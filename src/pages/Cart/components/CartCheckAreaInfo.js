@@ -34,7 +34,7 @@ const CartCheckAreaInfo = () => {
             <div className='my-4'>
                 <p>總計</p>
                 {/* <p>${cart.cartTotal + deliveryfee - couponPrice}元</p> */}
-                <p>${cart.cartTotal - couponPrice}元</p>
+                <b className='cart_total_price'>${(cart.cartTotal - couponPrice <= 0) ? 0 : (cart.cartTotal - couponPrice)}元</b>
             </div>
         </>
 

@@ -96,10 +96,12 @@ const Product_detail = (props) => {
   return (
     <div className='container product_detail pb-5'>
       <div className="row">
-        <div className="col-6 product_img_container d-flex justify-content-center align-items-center">
+
+        {/* 商品圖片 */}
+        <div className="col-6 product_img d-flex justify-content-center align-items-center">
 
 
-          <div className='product_img'>
+          <div className='product_img_container'>
             <img src={`/img/products/${product.picture}`} alt="" />
           </div>
 
@@ -114,6 +116,8 @@ const Product_detail = (props) => {
           /> */}
 
         </div>
+
+        {/* 商品資訊 */}
         <div className="col-6 product_info">
           <h1 className='pb-3'>{product.name}</h1>
           <p className='pb-5'>{product.introduction}</p>

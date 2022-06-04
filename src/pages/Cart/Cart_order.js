@@ -27,7 +27,8 @@ const Cart_order = () => {
     }
 
     const couponPrice = parseInt(localStorage.getItem("couponPrice"))
-    const cartTotalPrice = cart.cartTotal - couponPrice
+    const cartTotalPrice = (cart.cartTotal - couponPrice <= 0) ? 0 : (cart.cartTotal - couponPrice)
+    console.log(cartTotalPrice)
     const totalItems = cart.totalItems
     const cartTotal = cart.cartTotal
 
@@ -70,6 +71,7 @@ const Cart_order = () => {
             .then(res => res.json())
             // .then(data => setOrderid(data))
             .then(data => localStorage.setItem("orderid", data))
+            // .then(data => console.log(data))
     }
 
     console.log(orderid)
@@ -217,14 +219,14 @@ const Cart_order = () => {
                                 showCancelButton: true,
                                 confirmButtonColor: '#3085d6',
                                 cancelButtonColor: '#d33',
-                                confirmButtonText: '<a href="/cart/cart_info/cart_order/cart_confirm">確定</a>',
+                                confirmButtonText: '確定',
                                 // confirmButtonText: '測試按鈕',
                                 cancelButtonText: '取消',
-                            }).then((result) => {
+                            }).then(async (result) => {
                                 if (result.isConfirmed) {
 
                                     //送出訂單後要處理的事
-                                    sendData(); //送出資料
+                                    await sendData(); //送出資料
                                     localStorage.removeItem('couponPrice'); //清除優惠折扣
                                     localStorage.removeItem('cart_info'); //清除訂購資訊
                                     window.location.href = `/cart/cart_info/cart_order/cart_confirm` //跳轉頁面

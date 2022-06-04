@@ -88,7 +88,7 @@ const Cart = (props) => {
     )
 
     return (
-        <div className='container'>
+        <div className='container' style={{ minHeight: " calc(100vh - 86px - 308px)" }}>
 
 
             <h3>購物車</h3>
@@ -125,7 +125,7 @@ const Cart = (props) => {
 
                     <div className='price my-3'>
                         <p>總計</p>
-                        <p>${(cart.cartTotal - couponPrice <= 0) ? 0 : (cart.cartTotal - couponPrice)}</p>
+                        <b className='cart_total_price'>${(cart.cartTotal - couponPrice <= 0) ? 0 : (cart.cartTotal - couponPrice)}</b>
                     </div>
 
                     <Link to="/cart/cart_info">
