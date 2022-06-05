@@ -90,131 +90,150 @@
                 <div class="card fat">
                     <div class="card-body">
                         <!-- tab -->
-                        <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                    aria-selected="true">會員個人資料</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="order-tab" data-bs-toggle="tab" data-bs-target="#order"
-                                    type="button" role="tab" aria-controls="order" aria-selected="false">訂單交易紀錄</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="coupon-tab" data-bs-toggle="tab" data-bs-target="#coupon"
-                                    type="button" role="tab" aria-controls="coupon"
-                                    aria-selected="false">優惠資料紀錄</button>
-                            </li>
-                        </ul>
+                        <div class="container">
+                            <div class="exTab3">
 
-                        <!-- profile -->
-                        <form method="POST" class="my-login-validation tab-pane" id="profile" role="tabpanel"
-                            aria-labelledby="profile-tab" novalidate="">
+                                <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab"
+                                            data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                            aria-selected="true">會員個人資料</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="order-tab" data-bs-toggle="tab"
+                                            data-bs-target="#order" type="button" role="tab" aria-controls="order"
+                                            aria-selected="false">訂單交易紀錄</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="coupon-tab" data-bs-toggle="tab"
+                                            data-bs-target="#coupon" type="button" role="tab" aria-controls="coupon"
+                                            aria-selected="false">優惠資料紀錄</button>
+                                    </li>
+                                </ul>
+                                <div class="tab-content" id="pills-tabContent">
+                                    <!-- profile -->
+                                    <div class="tab-pane fade show active" id="profile" role="tabpanel"
+                                        aria-labelledby="profile-tab" role="tabpanel">
 
-                            <div class="form-group">
-                                <label for="a">姓名</label>
-                                <input id="Name" type="text" class="form-control" name="Name" value="吳建凡" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="sex">性別</label>
-                                <input id="sex" type="text" class="form-control" name="sex" value="男" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="__">職業</label>
-                                <input id="__" type="text" class="form-control" name="__d" value="工程師" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="">出生年月日</label>
-                                <input id="" type="text" class="form-control" name="" value="1983-03-10" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="">居住縣市</label>
-                                <input id="" type="text" class="form-control" name="" value="彰化縣" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="">居住地址</label>
-                                <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="">子嗣</label>
-                                <input id="" type="text" class="form-control" name="" value="有小孩" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="number">手機號碼</label>
-                                <input type="tel" class="form-control" id="phone" name="phone" value="0912479060"
-                                    disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">修改密碼</label>
-                                <input type="password" class="form-control" id="password" name="password"
-                                    value="aaaaaaaaaa" disabled><br>
-                            </div>
-                            <br>
-                            <div class="row form-group  g-3">
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block btn-custom ">修改</button>
-                                </div>
-                                <div class="col-sm-6">
-                                    <button type="submit" class="btn btn-block btn-danger">取消</button>
-                                </div>
-                            </div>
-                        </form>
+                                        <form method="POST" class="my-login-validation" novalidate="">
 
-                        <!-- order -->
-                        <form method="POST" class="my-login-validation tab-pane" id="order" role="tabpanel"
-                            aria-labelledby="order-tab" novalidate="">
-
-
-                            <figure class="list-1">
-                                <img src="/src/image/account/list-1.png" alt="">
-                            </figure>
-                            <ul class="list-group">
-                                <li class="list-group-item">An item</li>
-                                <li class="list-group-item">A second item</li>
-
-                            </ul>
-                        </form>
-
-                        <!-- coupon -->
-                        <form method="POST" class="my-login-validation tab-pane" id="coupon" role="tabpanel"
-                            aria-labelledby="coupon-tab" novalidate="">
-                            <div class="row">
-                                <h4>未使用</h4>
-                                <div class="col-12 col-md-6">
-                                    <div class="card col">
-                                        <img src="../../images/account/Rectangle(unused).png">
-                                        <br>
-                                        生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
-                                        <!-- <button onclick="myFunction()">Copy</button> -->
-                                        <br>
+                                            <div class="form-group">
+                                                <label for="a">姓名</label>
+                                                <input id="Name" type="text" class="form-control" name="Name"
+                                                    value="吳建凡" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sex">性別</label>
+                                                <input id="sex" type="text" class="form-control" name="sex" value="男"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="__">職業</label>
+                                                <input id="__" type="text" class="form-control" name="__d" value="工程師"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">出生年月日</label>
+                                                <input id="" type="text" class="form-control" name="" value="1983-03-10"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">居住縣市</label>
+                                                <input id="" type="text" class="form-control" name="" value="彰化縣"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">居住地址</label>
+                                                <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">子嗣</label>
+                                                <input id="" type="text" class="form-control" name="" value="有小孩"
+                                                    disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="number">手機號碼</label>
+                                                <input type="tel" class="form-control" id="phone" name="phone"
+                                                    value="0912479060" disabled>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">修改密碼</label>
+                                                <input type="password" class="form-control" id="password"
+                                                    name="password" value="aaaaaaaaaa" disabled><br>
+                                            </div>
+                                            <br>
+                                            <div class="row form-group  g-3">
+                                                <div class="col-sm-6">
+                                                    <button type="submit" class="btn btn-block btn-custom ">修改</button>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <button type="submit" class="btn btn-block btn-danger">取消</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card col">
 
-                                        <img src="../../images/account/Rectangle(unused).png">
-                                        <br>
-                                        情人節折扣碼:<input class="a1" type="text" value=" Lover1798" id="myInput">
-                                        <br>
+                                    <!-- order -->
+                                    <div class="tab-pane fade show active" id="order" role="tabpanel"
+                                        aria-labelledby="order-tab">
+                                        <form method="POST" class="my-login-validation" novalidate="">
 
+                                            <figure class="list-1">
+                                                <img src="/src/image/account/list-1.png" alt="">
+                                            </figure>
+                                            <ul class="list-group">
+                                                <li class="list-group-item">An item</li>
+                                                <li class="list-group-item">A second item</li>
+
+                                            </ul>
+                                        </form>
                                     </div>
-                                </div>
 
-                                <hr>
+                                    <!-- coupon -->
+                                    <form method="POST" class="my-login-validation tab-pane" id="coupon" role="tabpanel"
+                                        aria-labelledby="coupon-tab" novalidate="">
+                                        <div class="row">
+                                            <h4>未使用</h4>
+                                            <div class="col-12 col-md-6">
+                                                <div class="card col">
+                                                    <img src="../../images/account/Rectangle(unused).png">
+                                                    <br>
+                                                    生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
+                                                    <!-- <button onclick="myFunction()">Copy</button> -->
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <div class="card col">
 
-                                <h4>已使用</h4>
-                                <div class="col-12 col-md-6">
-                                    <div class="card col">
+                                                    <img src="../../images/account/Rectangle(unused).png">
+                                                    <br>
+                                                    情人節折扣碼:<input class="a1" type="text" value=" Lover1798"
+                                                        id="myInput">
+                                                    <br>
 
-                                        <img src="../../images/account/Rectangle(used).png">
-                                        <br>
-                                        首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
-                                        <br>
+                                                </div>
+                                            </div>
 
-                                    </div>
+                                            <hr>
+
+                                            <h4>已使用</h4>
+                                            <div class="col-12 col-md-6">
+                                                <div class="card col">
+
+                                                    <img src="../../images/account/Rectangle(used).png">
+                                                    <br>
+                                                    首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
+                                                    <br>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
