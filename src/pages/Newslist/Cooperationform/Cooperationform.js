@@ -78,17 +78,20 @@ function  Cooperationform  ()  {
     
           <Form.Label></Form.Label>
 
-        <Form.Group className="mb-3" controlId="">
+        <Form.Group className="mb-3" controlId="validationCustom02">
           <Form.Label>公司單位/名稱</Form.Label>
-          <Form.Control type="" placeholder="" />
+          <Form.Control type="text" required placeholder="資展國際股份有限公司" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="">
+        <Form.Group className="mb-3" controlId="validationCustom03">
           <Form.Label>聯絡人姓名</Form.Label>
-          <Form.Control type="" placeholder="" />
+          <Form.Control type="text"  required placeholder="王大雄"/>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="">
-          <Form.Label>聯絡人電話</Form.Label>
-          <Form.Control type="" placeholder="" />
+        <Form.Group className="mb-3" controlId="validationCustom04">
+          <Form.Label>聯絡人手機號碼</Form.Label>
+          {/* input-type 設定手機號碼格式 */}
+          <Form.Control input-type="Number" maxlength="12" pattern="09\d{2}-\d{3}-\d{3}" 
+          required placeholder="0901-234-567" 
+          defaultValue="" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
