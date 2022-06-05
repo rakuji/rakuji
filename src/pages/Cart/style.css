@@ -170,6 +170,33 @@ table tbody .cart_trush_btn {
   background-color: #58c2dd;
 }
 
+.LuckyWheelFont {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.coupon_game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 3vw;
+  bottom: 15vh;
+  cursor: pointer;
+}
+
+.coupon_game i {
+  font-size: 2.5rem;
+  color: #BE5438;
+}
+
 .checkarea {
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.125);

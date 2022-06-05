@@ -169,16 +169,16 @@
   color: #fff;
 }
 
-.product_detail .product_img {
+.product_detail {
   padding-top: 80px;
   padding-left: 100px;
-  padding-right: 20px;
+  padding-right: 100px;
 }
 
 .product_detail .product_img .product_img_container {
   overflow: hidden;
-  width: 460px;
-  height: 460px;
+  width: 540px;
+  height: 540px;
 }
 
 .product_detail .product_img .product_img_container img {
@@ -186,12 +186,6 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.product_detail .product_info {
-  padding-top: 80px;
-  padding-right: 100px;
-  padding-left: 20px;
 }
 
 .product_detail .product_info .product_counts button {

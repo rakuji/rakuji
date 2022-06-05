@@ -134,6 +134,33 @@ table {
   }
 }
 
+.LuckyWheelFont{
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.coupon_game{
+  // width: 60px;
+  // height: 60px;
+  // border-radius: 50%;
+  // background-color: #e2d0ad;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  right: 3vw;
+  bottom: 15vh;
+  cursor: pointer;
+
+  i{
+    font-size: 2.5rem;
+    color: #BE5438;
+  }
+}
+
 // Cart_info.js & Cart_order.js checkarea
 .checkarea {
   padding: 20px;
