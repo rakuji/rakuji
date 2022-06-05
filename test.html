@@ -26,109 +26,111 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
     crossorigin="anonymous"></script>
-
+  
   <title>Document</title>
 
+  <style>
+    .table-rwd {}
+
+    /*這是額外做顏色，沒有什麼意義*/
+    tr.tr-only-hide {
+      color: #D20B2A;
+    }
+
+    @media (max-width: 736px) {
+      .table-rwd {
+        min-width: 100%;
+      }
+
+      /*針對tr去做隱藏*/
+      tr.tr-only-hide {
+        display: none !important;
+      }
+
+      /*讓tr變成區塊主要讓他有個區塊*/
+      .table-rwd tr {
+        display: block;
+        border: 1px solid #ddd;
+        margin-top: 5px;
+      }
+
+      .table-rwd td {
+        text-align: left;
+        font-size: 15px;
+        overflow: hidden;
+        width: 100%;
+        display: block;
+      }
+
+      .table-rwd td:before {
+        /*最重要的就是這串*/
+        content: attr(data-th) " : ";
+        /*最重要的就是這串*/
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 10px;
+        color: #D20B2A;
+      }
+
+      /*當RWD縮小的時候.table-bordered 會有兩條線，所以針對.table-bordered去做修正*/
+      .table-rwd.table-bordered td,
+      .table-rwd.table-bordered th,
+      .table-rwd.table-bordered {
+        border: 0;
+      }
+
+    }
+  </style>
 
 </head>
 
 <body>
-
-  <div class="col-12 col-md-8 ">
-    <div class="card fat">
-      <div class="card-body">
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
-              role="tab" aria-controls="home" aria-selected="true">Home</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
-              role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="messages-tab" data-bs-toggle="tab" data-bs-target="#messages" type="button"
-              role="tab" aria-controls="messages" aria-selected="false">Messages</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="settings-tab" data-bs-toggle="tab" data-bs-target="#settings" type="button"
-              role="tab" aria-controls="settings" aria-selected="false">Settings</button>
-          </li>
-        </ul>
-
-        <div class="tab-content">
-          <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form method="POST" class="my-login-validation tab-pane" id="profile" role="tabpanel"
-              aria-labelledby="profile-tab" novalidate="">
-
-              <div class="form-group">
-                <label for="a">姓名</label>
-                <input id="Name" type="text" class="form-control" name="Name" value="吳建凡" disabled>
-              </div>
-              <div class="form-group">
-                <label for="sex">性別</label>
-                <input id="sex" type="text" class="form-control" name="sex" value="男" disabled>
-              </div>
-              <div class="form-group">
-                <label for="__">職業</label>
-                <input id="__" type="text" class="form-control" name="__d" value="工程師" disabled>
-              </div>
-              <div class="form-group">
-                <label for="">出生年月日</label>
-                <input id="" type="text" class="form-control" name="" value="1983-03-10" disabled>
-              </div>
-              <div class="form-group">
-                <label for="">居住縣市</label>
-                <input id="" type="text" class="form-control" name="" value="彰化縣" disabled>
-              </div>
-              <div class="form-group">
-                <label for="">居住地址</label>
-                <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號" disabled>
-              </div>
-              <div class="form-group">
-                <label for="">子嗣</label>
-                <input id="" type="text" class="form-control" name="" value="有小孩" disabled>
-              </div>
-              <div class="form-group">
-                <label for="number">手機號碼</label>
-                <input type="tel" class="form-control" id="phone" name="phone" value="0912479060" disabled>
-              </div>
-              <div class="form-group">
-                <label for="password">修改密碼</label>
-                <input type="password" class="form-control" id="password" name="password" value="aaaaaaaaaa"
-                  disabled><br>
-              </div>
-              <br>
-              <div class="row form-group  g-3">
-                <div class="col-sm-6">
-                  <button type="submit" class="btn btn-block btn-custom ">修改</button>
-                </div>
-                <div class="col-sm-6">
-                  <button type="submit" class="btn btn-block btn-danger">取消</button>
-                </div>
-              </div>
-            </form>
-
-
-          </div>
-          <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">bbb</div>
-          <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">ccc</div>
-          <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">ddd</div>
-        </div>
-        <form method="POST" class="my-login-validation" id="profile" aria-labelledby="profile-tab" novalidate="">
-
-
-
-      </div>
-    </div>
+  bootstrap 原生的rwd".table-responsive"
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      　<tr>
+        　　<th>序號</th>
+        　　<th>產品名稱</th>
+        　　<th>售價</th>
+        　　<th>其他</th>
+        　</tr>
+      　<tr>
+        　　<td data-th="序號">1</td>
+        　　<td data-th="產品名稱">產品名稱產品名稱產品名稱</td>
+        　　<td data-th="售價">500</td>
+        　　<td data-th="其他">其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容</td>
+        　</tr>
+      <tr>
+        　　<td data-th="序號">2</td>
+        　　<td data-th="產品名稱">產品名稱產品名稱產品名稱</td>
+        　　<td data-th="售價">500</td>
+        　　<td data-th="其他">其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容</td>
+        　</tr>
+    </table>
   </div>
+  套上.table-rwd
+  <table class="table table-striped table-bordered table-rwd">
+    　<tr class="tr-only-hide">
+      　　<th>序號</th>
+      　　<th>產品名稱</th>
+      　　<th>售價</th>
+      　　<th>其他</th>
+      　</tr>
+    　<tr>
+      　　<td data-th="序號">1</td>
+      　　<td data-th="產品名稱">產品名稱產品名稱產品名稱</td>
+      　　<td data-th="售價">500</td>
+      　　<td data-th="其他">其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容</td>
+      　</tr>
+    <tr>
+      　　<td data-th="序號">2</td>
+      　　<td data-th="產品名稱">產品名稱產品名稱產品名稱</td>
+      　　<td data-th="售價">500</td>
+      　　<td data-th="其他">其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容其他文字內容</td>
+      　</tr>
+  </table>
 
-  <script>
-    var firstTabEl = document.querySelector('#myTab li:last-child a')
-    var firstTab = new bootstrap.Tab(firstTabEl)
-
-    firstTab.show()
-  </script>
 
 </body>
 

@@ -153,7 +153,7 @@ figure img {
 }
 
 hr{
-    margin: 20px 0px;
+    margin-bottom:20px;
 }
 .a1 {
 
@@ -178,6 +178,12 @@ hr{
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
+
+.avatar{
+    width: 96px;
+    height: 96px;
+}
+
 
 @media screen and (max-width: 576px) {
     .nav-link {

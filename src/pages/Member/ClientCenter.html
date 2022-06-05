@@ -46,17 +46,12 @@
                 <div class="form-group">
                     <div class="card">
                         <div class="m-3 d-flex justify-content-center">
-                            <div class="avatar">
-                                <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/Harry-Potter-1-.jpg"
-                                    class="clip-circle">
-
-                                <img src="../../images/account/account-1.jpg" alt="" class="clip-circle"> -->
-
-                                <img src="https://picsum.photos/200" alt="" class="clip-circle">
-                            </div>
+                            <figure class="avatar mx-auto rounded-circle overflow-hidden">
+                                <img class="cover-fit" src="https://picsum.photos/200" alt="">
+                            </figure>
                         </div>
                         <div class="card-body">
-                            <div class="justify-content-center text-sm-center m-3">
+                            <div class="justify-content-center text-sm-center">
                                 <p class="card-text">Coupons: 2張</p>
                             </div>
                         </div>
@@ -95,7 +90,7 @@
 
                                 <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="profile-tab" data-bs-toggle="tab"
+                                        <button class="nav-link a" id="profile-tab" data-bs-toggle="tab"
                                             data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
                                             aria-selected="true">會員個人資料</button>
                                     </li>
@@ -105,14 +100,14 @@
                                             aria-selected="false">訂單交易紀錄</button>
                                     </li>
                                     <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="coupon-tab" data-bs-toggle="tab"
+                                        <button class="nav-link active" id="coupon-tab" data-bs-toggle="tab"
                                             data-bs-target="#coupon" type="button" role="tab" aria-controls="coupon"
                                             aria-selected="false">優惠資料紀錄</button>
                                     </li>
                                 </ul>
-                                <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-content mt-5" id="pills-tabContent">
                                     <!-- profile -->
-                                    <div class="tab-pane fade show active" id="profile" role="tabpanel"
+                                    <div class="tab-pane fade show " id="profile" role="tabpanel"
                                         aria-labelledby="profile-tab" role="tabpanel">
 
                                         <form method="POST" class="my-login-validation" novalidate="">
@@ -175,62 +170,105 @@
                                     </div>
 
                                     <!-- order -->
-                                    <div class="tab-pane fade show active" id="order" role="tabpanel"
+                                    <div class="tab-pane fade show " id="order" role="tabpanel"
                                         aria-labelledby="order-tab">
-                                        <form method="POST" class="my-login-validation" novalidate="">
+                                        <form method="POST" class="my-login-validation " novalidate="">
 
-                                            <figure class="list-1">
-                                                <img src="/src/image/account/list-1.png" alt="">
-                                            </figure>
-                                            <ul class="list-group">
-                                                <li class="list-group-item">An item</li>
-                                                <li class="list-group-item">A second item</li>
-
-                                            </ul>
+                                            <table class="table " style="text-align:center">
+                                                <thead class="line">
+                                                    <tr class="text-color">
+                                                        <th scope="col b1">訂單編號</th>
+                                                        <th scope="col">商品圖片</th>
+                                                        <th scope="col">商品名稱</th>
+                                                        <th scope="col">金額</th>
+                                                        <th scope="col">運費</th>
+                                                        <!-- <th scope="col">折扣</th> -->
+                                                        <th scope="col">合計</th>
+                                                        <th scope="col">日期</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">001</th>
+                                                        <td><img src="http://picsum.photos/50/50?random=10" alt=""></td>
+                                                        <td>裝蒜牛五花飯<br>文青花魚飯</td>
+                                                        <td>120$x5<br>120$x5</td>
+                                                        <td>0$</td>
+                                                        <!-- <td>-100$</td> -->
+                                                        <td>1200$</td>
+                                                        <td>2022-03-14</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">002</th>
+                                                        <td><img src="" alt=""></td>
+                                                        <td>裝蒜牛五花飯<br>文青花魚飯</td>
+                                                        <td>120$x5<br>120$x5</td>
+                                                        <td>100$</td>
+                                                        <!-- <td>-100$</td> -->
+                                                        <td>1200$</td>
+                                                        <td>2022-03-14</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">003</th>
+                                                        <td><img src="" alt=""></td>
+                                                        <td>裝蒜牛五花飯<br>文青花魚飯</td>
+                                                        <td>120$x5<br>120$x5</td>
+                                                        <td>100$</td>
+                                                        <!-- <td>-100$</td> -->
+                                                        <td>1200$</td>
+                                                        <td>2022-03-14</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </form>
                                     </div>
 
                                     <!-- coupon -->
-                                    <form method="POST" class="my-login-validation tab-pane" id="coupon" role="tabpanel"
+                                    <div class="tab-pane fade show active" id="coupon" role="tabpanel"
                                         aria-labelledby="coupon-tab" novalidate="">
-                                        <div class="row">
-                                            <h4>未使用</h4>
-                                            <div class="col-12 col-md-6">
-                                                <div class="card col">
-                                                    <img src="../../images/account/Rectangle(unused).png">
-                                                    <br>
-                                                    生日折扣碼:<input class="a1" type="text" value=" HBD520" id="myInput">
-                                                    <!-- <button onclick="myFunction()">Copy</button> -->
-                                                    <br>
+                                        <form method="POST" class="my-login-validation">
+                                            <div class="row">
+
+                                                <h4>未使用</h4>
+
+                                                <div class="card col-12 col-md-5">
+                                                    <img src="../../images/account/Rectangle(unused).png"
+                                                        class="card-img-top w-100" alt="coupon">
+                                                    <div class="card-body">
+                                                        <h6 class="card-title">生日折扣碼:</h6>
+                                                        <input class="a1 w-100" type="text" value=" HBD520" id="myInput">
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-12 col-md-6">
-                                                <div class="card col">
 
-                                                    <img src="../../images/account/Rectangle(unused).png">
-                                                    <br>
-                                                    情人節折扣碼:<input class="a1" type="text" value=" Lover1798"
-                                                        id="myInput">
-                                                    <br>
-
+                                                <div class="card col-12 col-md-5">
+                                                    <img src="../../images/account/Rectangle(unused).png"
+                                                        class="card-img-top w-100" alt="coupon">
+                                                    <div class="card-body">
+                                                        <h6 class="card-title">情人節折扣碼:</h6>
+                                                        <input class="a1 w-100" type="text" value="Lover1798" id="myInput">
+                                                    </div>
                                                 </div>
-                                            </div>
 
-                                            <hr>
-
-                                            <h4>已使用</h4>
-                                            <div class="col-12 col-md-6">
-                                                <div class="card col">
-
-                                                    <img src="../../images/account/Rectangle(used).png">
-                                                    <br>
-                                                    首購折扣碼:<input class="a1" type="text" value=" Frist1001" id="myInput">
-                                                    <br>
-
+                                                <div>
+                                                    <hr>
                                                 </div>
+
+                                                <h4>已使用</h4>
+
+                                                <div class="card col-12 col-md-5">
+                                                    <img src="../../images/account/Rectangle(used).png"
+                                                        class="card-img-top w-100" alt="coupon">
+                                                    <div class="card-body">
+                                                        <h6 class="card-title">首購折扣碼:</h6>
+                                                        <input class="a1 w-100" type="text" value=" Frist1001"
+                                                            id="myInput">
+                                                    </div>
+                                                </div>
+
+                                                
                                             </div>
-                                        </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
