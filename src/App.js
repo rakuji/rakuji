@@ -17,16 +17,17 @@ import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
 import Booking_information from "./pages/Booking/Booking_information";
 import Booking_finish from "./pages/Booking/Booking_finish";
-// import Cart from "./pages/Cart/Cart";
-// import Cart_info from "./pages/Cart/Cart_info";
+import Cart from "./pages/Cart/Cart";
+import Cart_info from "./pages/Cart/Cart_info";
 // import Cart_order from "./pages/Cart/Cart_order";
-// import Cart_confirm from "./pages/Cart/Cart_confirm";
+import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes";
 import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
+import MyBreadcrumb from "./pages/About/myComponents/MyBreadcrumb";
 
-//麵包屑  //安裝套件==> npm i react-router-config@5.1.1
-import Breadcrumb from "./components/Breadcrumb/Breadcrumb";
+
+
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
@@ -40,8 +41,9 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <MyBreadcrumb />
       {/* http://localhost:3000/categories */}
-      <Breadcrumb />
+      {/* <Breadcrumb /> */}
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -64,18 +66,18 @@ function App() {
         <Route path="/products/product_detail" exact>
           <Product_detail />
         </Route>
-        {/* <Route path="/cart" exact>
+        <Route path="/cart" exact>
           <Cart />
-        </Route> */}
-        {/* <Route path="/cart/cart_info" exact>
+        </Route>
+        <Route path="/cart/cart_info" exact>
           <Cart_info />
         </Route>
-        <Route path="/cart/cart_info/cart_order" exact>
+        {/* <Route path="/cart/cart_info/cart_order" exact>
           <Cart_order />
-        </Route>
+        </Route> */}
         <Route path="/cart/cart_info/cart_order/cart_confirm" exact>
           <Cart_confirm />
-        </Route> */}
+        </Route>
         <Route path="/booking" exact>
           <Booking />
         </Route>
