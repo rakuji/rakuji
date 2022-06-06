@@ -23,7 +23,7 @@ import Register from "./pages/Member/Register";
 import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
 import OrderList from "./pages/Member/OrderList";
-import TcRegister from "./pages/Member/TcRegister";
+// import TcRegister from "./pages/Member/TcRegister";
 
 
 // import BirthData from "./pages/Member/BirthData"
@@ -42,6 +42,7 @@ function App() {
           <About />
         </Route>
         <Route path="/newslist" exact>
+
           <Newslist />
         </Route>
         <Route path="/products" exact>
@@ -74,9 +75,9 @@ function App() {
         <Route path="/OrderList" exact>
           <OrderList />
         </Route>
-        <Route path="/TcRegister" exact>
+        {/* <Route path="/TcRegister" exact>
           <TcRegister />
-        </Route>
+        </Route> */}
         
         
         
