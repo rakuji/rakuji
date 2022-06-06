@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import Cards from 'react-credit-cards';
 import 'react-credit-cards/es/styles-compiled.css';
@@ -11,6 +11,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 
 const Cart_order = () => {
+    const history = useHistory()
 
     const [number, setNumber] = useState('');
     const [cardName, setCardName] = useState('');
@@ -229,7 +230,8 @@ const Cart_order = () => {
                                     await sendData(); //送出資料
                                     localStorage.removeItem('couponPrice'); //清除優惠折扣
                                     localStorage.removeItem('cart_info'); //清除訂購資訊
-                                    window.location.href = `/cart/cart_info/cart_order/cart_confirm` //跳轉頁面
+                                    // window.location.href = `/cart/cart_info/cart_order/cart_confirm` 
+                                    history.push('/cart/cart_info/cart_order/cart_confirm') //跳轉頁面
 
                                     Swal.fire({
                                         icon: 'success',

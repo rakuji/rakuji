@@ -18,44 +18,53 @@ const Cart = (props) => {
   const couponhandler = () => {
     switch (coupon) {
       case "VIP666":
-        setCouponMsg("成功套用優惠碼，已折抵100元!");
+        var p = 100;
+        var msg = `成功套用優惠碼，已折抵${p}元!`
+        setCouponMsg(msg);
         setCouponPrice(100);
         // handleShow()
         Swal.fire({
           icon: "success",
-          title: "成功套用優惠碼，已折抵100元!",
+          title: msg,
         });
         break;
       case "HAPPY888":
-        setCouponMsg("成功套用優惠碼，已折抵50元!");
+        var p = 50
+        var msg = `成功套用優惠碼，已折抵${p}元!`
+        setCouponMsg(`成功套用優惠碼，已折抵${p}元!`);
         setCouponPrice(50);
         Swal.fire({
           icon: "success",
-          title: "成功套用優惠碼，已折抵50元!",
+          title: msg,
         });
         break;
       case "RAKUJIISGOOD":
-        setCouponMsg("成功套用優惠碼，已折抵30元!");
+        var p = 30
+        var msg = `成功套用優惠碼，已折抵${p}元!`
+        setCouponMsg(`成功套用優惠碼，已折抵${p}元!`);
         setCouponPrice(30);
         Swal.fire({
           icon: "success",
-          title: "成功套用優惠碼，已折抵30元!",
+          title: msg,
         });
         break;
       case "SEEYOUAGAIN":
-        setCouponMsg("成功套用優惠碼，已折抵10元!");
+        var p = 10
+        var msg = `成功套用優惠碼，已折抵${p}元!`
+        setCouponMsg(`成功套用優惠碼，已折抵${p}元!`);
         setCouponPrice(10);
         Swal.fire({
           icon: "success",
-          title: "成功套用優惠碼，已折抵10元!",
+          title: msg,
         });
         break;
       default:
-        setCouponMsg("請輸入正確的優惠碼!");
+        var msg = "請輸入正確的優惠碼!"
+        setCouponMsg(msg);
         setCouponPrice(0);
         Swal.fire({
           icon: "warning",
-          title: "請輸入正確的優惠碼!",
+          title: msg,
         });
     }
   };
@@ -162,7 +171,7 @@ const Cart = (props) => {
   const handleShow = () => setShow(true);
 
   const messageModal = (
-    <Modal show={show} onHide={handleClose} keyboard={false}>
+    <Modal show={show} onHide={handleClose} keyboard={false} centered>
       <Modal.Header closeButton>
         <Modal.Title>套用優惠碼訊息</Modal.Title>
       </Modal.Header>
@@ -176,6 +185,98 @@ const Cart = (props) => {
   );
 
   // --------------------------------------------------------------------------
+
+
+  // Swal.fire({
+  // icon: "success",
+  // title: "恭喜你獲得折抵100元優惠碼!",
+  // html: `${coupon_msg()}`,
+  // text:"別難過，給你安慰獎"
+  // });
+
+  // switch (prize.fonts[0].text) {
+  //   case "折抵100元":
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "恭喜你獲得折抵100元優惠碼!",
+  //       text:"別難過，給你安慰獎"
+  //     });
+  //     break;
+  //   case "再接再厲":
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "再接再厲",
+  //       text:"別難過，給你安慰獎"
+  //     });
+  //     break;
+  //   case "折抵50元":
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "恭喜你獲得折抵50元優惠碼!",
+  //       text:"別難過，給你安慰獎"
+  //     });
+  //     break;
+  //   case "下來再來":
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "下來再來",
+  //       text:"別難過，給你安慰獎"
+  //     });
+  //     break;
+
+  //   case "折抵30元":
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "恭喜你獲得折抵30元優惠碼!",
+  //       text:"別難過，給你安慰獎"
+  //     });
+  //     break;
+
+  //   case "銘謝惠顧":
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "銘謝惠顧",
+  //       text:"別難過，給你安慰獎"
+  //     });
+  //     break;
+  // }
+
+
+
+
+
+  // --------------------------------------------------------------------------
+  const coupon_input = () => {
+    return (
+      <form className="input-group mb-3">
+        <input
+          className="form-control"
+          type="text"
+          placeholder="請輸入優惠碼"
+          aria-label="Recipient's username"
+          aria-describedby="button-coupon"
+          required=""
+          onChange={(e) => {
+            setCoupon(e.target.value);
+          }}
+        />
+        <button
+          type="button"
+          className="btn btn-right fz-0"
+          id="button-coupon"
+          onClick={couponhandler}
+        >
+          套用優惠碼
+        </button>
+      </form>
+    )
+  }
+
+
+
+  // --------------------------------------------------------------------------
+
+
   const [modalShow, setModalShow] = React.useState(false);
 
   function MyVerticallyCenteredModal(props) {
@@ -211,56 +312,10 @@ const Cart = (props) => {
                 }, 2500);
               }}
               onEnd={(prize) => {
-                // alert("恭喜你抽到 " + prize.fonts[0].text + " 獎");
-                Swal.fire({
-                  icon: "warning",
-                  title: prize.fonts[0].text,
-                });
 
-                switch (prize.fonts[0].text) {
-                  case "折抵100元":
-                    // handleShow()
-                    Swal.fire({
-                      icon: "success",
-                      title: "恭喜你獲得折抵100元優惠碼!",
-                    });
-                    break;
-                  case "再接再厲":
-                    Swal.fire({
-                      icon: "success",
-                      title: "再接再厲",
-                      text:"別難過，給你安慰獎"
-                    });
-                    break;
-                  case "折抵50元":
-                    Swal.fire({
-                      icon: "success",
-                      title: "恭喜你獲得折抵50元優惠碼!",
-                    });
-                    break;
-                  case "下來再來":
-                    Swal.fire({
-                      icon: "success",
-                      title: "下來再來",
-                      text:"別難過，給你安慰獎"
-                    });
-                    break;
+                handleShow()
 
-                  case "折抵30元":
-                    Swal.fire({
-                      icon: "success",
-                      title: "恭喜你獲得折抵30元優惠碼!",
-                    });
-                    break;
-                    
-                  case "銘謝惠顧":
-                    Swal.fire({
-                      icon: "success",
-                      title: "銘謝惠顧",
-                      text:"別難過，給你安慰獎"
-                    });
-                    break;
-                }
+
               }}
             />
           </div>
@@ -338,7 +393,6 @@ const Cart = (props) => {
         </div>
       </div>
 
-      {messageModal}
 
       <div className="coupon_game" onClick={() => setModalShow(true)}>
         <i class="fa-solid fa-gift"></i>
@@ -348,6 +402,9 @@ const Cart = (props) => {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
+
+      {messageModal}
+
     </div>
   );
 };
