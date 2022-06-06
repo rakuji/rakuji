@@ -19,7 +19,7 @@ const Cart = (props) => {
     switch (coupon) {
       case "VIP666":
         var p = 100;
-        var msg = `成功套用優惠碼，已折抵${p}元!`
+        var msg = `成功套用優惠碼，已折抵${p}元!`;
         setCouponMsg(msg);
         setCouponPrice(100);
         // handleShow()
@@ -29,8 +29,8 @@ const Cart = (props) => {
         });
         break;
       case "HAPPY888":
-        var p = 50
-        var msg = `成功套用優惠碼，已折抵${p}元!`
+        var p = 50;
+        var msg = `成功套用優惠碼，已折抵${p}元!`;
         setCouponMsg(`成功套用優惠碼，已折抵${p}元!`);
         setCouponPrice(50);
         Swal.fire({
@@ -39,8 +39,8 @@ const Cart = (props) => {
         });
         break;
       case "RAKUJIISGOOD":
-        var p = 30
-        var msg = `成功套用優惠碼，已折抵${p}元!`
+        var p = 30;
+        var msg = `成功套用優惠碼，已折抵${p}元!`;
         setCouponMsg(`成功套用優惠碼，已折抵${p}元!`);
         setCouponPrice(30);
         Swal.fire({
@@ -49,8 +49,8 @@ const Cart = (props) => {
         });
         break;
       case "SEEYOUAGAIN":
-        var p = 10
-        var msg = `成功套用優惠碼，已折抵${p}元!`
+        var p = 10;
+        var msg = `成功套用優惠碼，已折抵${p}元!`;
         setCouponMsg(`成功套用優惠碼，已折抵${p}元!`);
         setCouponPrice(10);
         Swal.fire({
@@ -59,7 +59,7 @@ const Cart = (props) => {
         });
         break;
       default:
-        var msg = "請輸入正確的優惠碼!"
+        var msg = "請輸入正確的優惠碼!";
         setCouponMsg(msg);
         setCouponPrice(0);
         Swal.fire({
@@ -186,64 +186,12 @@ const Cart = (props) => {
 
   // --------------------------------------------------------------------------
 
-
   // Swal.fire({
   // icon: "success",
   // title: "恭喜你獲得折抵100元優惠碼!",
   // html: `${coupon_msg()}`,
   // text:"別難過，給你安慰獎"
   // });
-
-  // switch (prize.fonts[0].text) {
-  //   case "折抵100元":
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "恭喜你獲得折抵100元優惠碼!",
-  //       text:"別難過，給你安慰獎"
-  //     });
-  //     break;
-  //   case "再接再厲":
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "再接再厲",
-  //       text:"別難過，給你安慰獎"
-  //     });
-  //     break;
-  //   case "折抵50元":
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "恭喜你獲得折抵50元優惠碼!",
-  //       text:"別難過，給你安慰獎"
-  //     });
-  //     break;
-  //   case "下來再來":
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "下來再來",
-  //       text:"別難過，給你安慰獎"
-  //     });
-  //     break;
-
-  //   case "折抵30元":
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "恭喜你獲得折抵30元優惠碼!",
-  //       text:"別難過，給你安慰獎"
-  //     });
-  //     break;
-
-  //   case "銘謝惠顧":
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "銘謝惠顧",
-  //       text:"別難過，給你安慰獎"
-  //     });
-  //     break;
-  // }
-
-
-
-
 
   // --------------------------------------------------------------------------
   const coupon_input = () => {
@@ -269,13 +217,10 @@ const Cart = (props) => {
           套用優惠碼
         </button>
       </form>
-    )
-  }
-
-
+    );
+  };
 
   // --------------------------------------------------------------------------
-
 
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -299,8 +244,8 @@ const Cart = (props) => {
             {/* 輪盤抽獎 */}
             <LuckyWheel
               ref={myLucky}
-              width="400px"
-              height="400px"
+              width="350px"
+              height="350px"
               blocks={blocks}
               prizes={prizes}
               buttons={buttons}
@@ -314,6 +259,46 @@ const Cart = (props) => {
               onEnd={(prize) => {
 
                 handleShow()
+
+
+                // switch (prize.fonts[0].text) {
+                //   case "折抵100元":
+                //     Swal.fire({
+                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                //       text:"優惠碼：VIP666"
+                //     });
+                //     break;
+                //   case "再接再厲":
+                //     Swal.fire({
+                //       title: prize.fonts[0].text,
+                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN"
+                //     });
+                //     break;
+                //   case "折抵50元":
+                //     Swal.fire({
+                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                //       text:"優惠碼：HAPPY888"
+                //     });
+                //     break;
+                //   case "下來再來":
+                //     Swal.fire({
+                //       title: prize.fonts[0].text,
+                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN"
+                //     });
+                //     break;
+                //   case "折抵30元":
+                //     Swal.fire({
+                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                //       text:"優惠碼：RAKUJIISGOOD"
+                //     });
+                //     break;
+                //   case "銘謝惠顧":
+                //     Swal.fire({
+                //       title: prize.fonts[0].text,
+                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN"
+                //     });
+                //     break;
+                // }
 
 
               }}
@@ -393,9 +378,9 @@ const Cart = (props) => {
         </div>
       </div>
 
-
       <div className="coupon_game" onClick={() => setModalShow(true)}>
-        <i class="fa-solid fa-gift"></i>
+        {/* <i class="fa-solid fa-gift"></i> */}
+        <img src={require("./images/coupon.png")} alt="" />
       </div>
 
       <MyVerticallyCenteredModal
@@ -404,6 +389,29 @@ const Cart = (props) => {
       />
 
       {messageModal}
+
+      {/* <form className="input-group">
+        <input
+          id="haha"
+          className="form-control"
+          type="text"
+          value={123}
+          readOnly
+        />
+        <button
+          type="button"
+          className="btn btn-right btn-primary fz-0"
+          onClick={() => {
+            const obj = document.getElementById("haha");
+            console.log(obj);
+            obj.select();
+            document.execCommand("copy");
+          }}
+        >
+          複製
+        </button>
+      </form> */}
+
 
     </div>
   );
