@@ -1,26 +1,34 @@
-import React,{useEffect} from "react";
+import React,{useState, useEffect} from "react";
 import "./css/my-login.css"
 // import "./css/reset.css"
 
 function Login() {
-    useEffect(()=>{
-    const submitBtn = document.querySelector("#submitBtn");
-    const userEmail = document.querySelector("#email");
-    const emailStatus = document.querySelector("#emailStatus");
+    const [loginStatus, setLoginStatus ] = useState([])
 
-    submitBtn.addEventListener("click",(e)=>{
-        e.preventDefault();
-        const formData =  new FormData(document.loginForm);
-        fetch(`${process.env.REACT_APP_API_URL}/members`,{
-            method:"post",
-            body:formData
-          }).then(response=>{
-            return response.text()
-          }).then(data=>{
-            emailStatus.textContent = data;
-          })
-        })
+    useEffect(()=>{
+        const submitBtn = document.querySelector("#submitBtn");
+        const userEmail = document.querySelector("#email");
+        const userPassword = document.querySelector("#password");
+
+        submitBtn.addEventListener("click",(e)=>{
+            // console.log("Clicked!!");
+            e.preventDefault();
+            const formData =  new FormData(document.loginForm);
+            fetch(`${process.env.REACT_APP_API_URL}/members`,{
+                method:"post",
+                body:formData
+            }).then(response=>{
+                // 將'response'(Json陣列)轉為物件陣列並回傳給'data'
+                return response.text()
+            }).then(data=>{
+                console.log(data);
+                setLoginStatus(data);
+                userEmail.value = "";
+                userPassword.value = "";
+            })
+            })
     },[])
+
     return (
         <body class="my-login-page">
             <section class="h-100">
@@ -30,10 +38,11 @@ function Login() {
                             <div class="brand">
                                 <img src={require("./images/logo/logo_color_login.png")} alt="logo_color_login.png"/>
                             </div>
+                            <div className="">{loginStatus}</div>
                             <div class="card fat">
                                 <div class="card-body">
-
-                                    <form class="my-login-validation" enctype="multipart/form-data" name="loginForm">
+                                    
+                                    <form class="my-login-validation" encType="multipart/form-data" name="loginForm">
                                         <div class="form-group">
                                             <label for="email">會員帳號</label>
                                             <input id="email" type="email" class="form-control" name="email"  required autofocus />
