@@ -9,6 +9,10 @@ border-radius: 20px;
    margin-bottom: 0px;
 
 }
+/* 注意這行 */
+input.group{ 
+    border:1px solid red
+  }
 
 .container .sixyellow {margin-bottom:20px ;
 }
