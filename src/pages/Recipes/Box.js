@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Recipes.css";
 import MyBackTop from "../About/myComponents/MyBackTop";
+import Box_Ingredients from "./Box_Ingredients";
+import Box_Seasoning from "./Box_Seasoning";
+import Box_Cookingsteps from "./Box_Cookingsteps";
+import Box_CookingstepsPhone from "./Box_CookingstepsPhone";
+import Box_Nutrient from "./Box_Nutrient";
+import Box_NutrientPhone from "./Box_NutrientPhone";
 
 function Box() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
@@ -9,7 +15,7 @@ function Box() {
   //之後去分割字串把分割後的字串放進陣列中
   const ary1 = url.split("=");
   //此時ary1裡的內容為：
-  console.log(ary1);
+  // console.log(ary1);
   //ary1[0] = "http://localhost:3000/recipes/id"，ary2[1] = '1'
 
   //取得id值
@@ -31,14 +37,12 @@ function Box() {
       {datas.length > 0 &&
         datas.map((recipes, i) => {
           const {
-            Recipes_ID,
             Recipes_Name,
             Recipes_Picture,
             RecipesBox_Time,
             RecipesBox_Kcal,
             RecipesBox_SeveralCopies,
           } = recipes;
-
           //宣告熱量 = 資料庫內的RecipesBox_Kcal
           let kcal = RecipesBox_Kcal;
           let SeveralCopies = RecipesBox_SeveralCopies;
@@ -347,17 +351,7 @@ function Box() {
                         食材
                       </h5>
                     </div>
-                    {datas.length > 0 &&
-                      datas.map((recipes, i) => {
-                        const { recipesIngredients_Name, RecipesIngredients_Quantity } =
-                          recipes;
-                        return (
-                          <div key={i} className="nav RecipesIngredientsBorder">
-                            <h6 className=" col">{recipesIngredients_Name}</h6>
-                            <h6>{RecipesIngredients_Quantity}</h6>
-                          </div>
-                        );
-                      })}
+                    <Box_Ingredients />
                   </div>
                   <svg className="col-2 ">
                     <g
@@ -375,17 +369,7 @@ function Box() {
                         調味料
                       </h5>
                     </div>
-                    {datas.length > 0 &&
-                      datas.map((recipes, i) => {
-                        const { RecipesSeasoning_Name, RecipeSseasoning_Quantity } =
-                          recipes;
-                        return (
-                          <div key={i} className="nav RecipesIngredientsBorder">
-                            <h6 className=" col">{RecipesSeasoning_Name}</h6>
-                            <h6>{RecipeSseasoning_Quantity}</h6>
-                          </div>
-                        );
-                      })}
+                    <Box_Seasoning />
                   </div>
                 </div>
                 <div className="p-3 mb-2 nav RecipesOn  ">
@@ -395,20 +379,7 @@ function Box() {
                         食材
                       </h5>
                     </div>
-                    {datas.length > 0 &&
-                      datas.map((recipes, i) => {
-                        const {
-                          RecipesBoxTop2_Name,
-                          RecipesBoxTop2_Quantity,
-                          Recipes_Picture,
-                        } = recipes;
-                        return (
-                          <div key={i} className="nav RecipesIngredientsBorder">
-                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
-                            <h6>{RecipesBoxTop2_Quantity}</h6>
-                          </div>
-                        );
-                      })}
+                    <Box_Ingredients />
                   </div>
 
                   <div className="col-12 container ">
@@ -417,23 +388,7 @@ function Box() {
                         調味料
                       </h5>
                     </div>
-                    {datas.length > 0 &&
-                      datas.map((recipes, i) => {
-                        const {
-                          RecipesBoxTop2_Name,
-                          RecipesBoxTop2_Quantity,
-                          Recipes_Picture,
-                        } = recipes;
-                        return (
-                          <div
-                            key={i}
-                            className="nav RecipesIngredientsBorder  "
-                          >
-                            <h6 className=" col">{RecipesBoxTop2_Name}</h6>
-                            <h6>{RecipesBoxTop2_Quantity}</h6>
-                          </div>
-                        );
-                      })}
+                    <Box_Seasoning />
                   </div>
                 </div>
                 <div className="p-3 mb-2  text-dar container row RecipesOff">
@@ -442,28 +397,11 @@ function Box() {
                       料理步驟
                     </h5>
                   </div>
-                  <div className="row justify-content-center">
-                    <div className="nav RecipesIngredientsBorder col-7 ">
-                      <h6 className="RecipesText fs-2 fw-bold ">1</h6>
-                      <h6 className="RecipesIngredients col-10">
-                        砂糖、醬油混合後，將雞腿肉切成小塊放入攪拌，靜置15分鐘等待入味
-                      </h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder col-7 ">
-                      <h6 className="RecipesText fs-2 fw-bold ">2</h6>
-                      <h6 className="RecipesIngredients col-10">
-                        將油倒入鍋中加熱，油鍋預先加熱備用。再將麵粉和水混合攪拌均勻後，將醃好的雞肉塊放入麵液內。
-                      </h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder col-7 ">
-                      <h6 className="RecipesText fs-2 fw-bold ">3</h6>
-                      <h6 className="RecipesIngredients col-10">
-                        將裹好麵衣的雞肉塊從鍋面滑入油鍋內，最後就能將炸好的雞肉塊撈起瀝油擺盤。
-                      </h6>
-                    </div>
-                  </div>
+                  <div className="row justify-content-center"></div>
                 </div>
-
+                <div className="row justify-content-center RecipesOff">
+                  <Box_Cookingsteps />
+                </div>
                 <div className="p-3 mb-2 nav RecipesOn  ">
                   <div className="col-12 container ">
                     <div className="text-center ">
@@ -471,24 +409,7 @@ function Box() {
                         料理步驟
                       </h5>
                     </div>
-                    <div className="nav RecipesIngredientsBorder  ">
-                      <h6 className="RecipesText fs-2 fw-bold ">1</h6>
-                      <h6 className="RecipesIngredients col-10">
-                        砂糖、醬油混合後，將雞腿肉切成小塊放入攪拌，靜置15分鐘等待入味
-                      </h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className="RecipesText fs-2 fw-bold ">2</h6>
-                      <h6 className="RecipesIngredients col-10">
-                        將油倒入鍋中加熱，油鍋預先加熱備用。再將麵粉和水混合攪拌均勻後，將醃好的雞肉塊放入麵液內。
-                      </h6>
-                    </div>
-                    <div className="nav RecipesIngredientsBorder">
-                      <h6 className="RecipesText fs-2 fw-bold ">3</h6>
-                      <h6 className="RecipesIngredients col-10">
-                        將裹好麵衣的雞肉塊從鍋面滑入油鍋內，最後就能將炸好的雞肉塊撈起瀝油擺盤。
-                      </h6>
-                    </div>
+                    <Box_CookingstepsPhone />
                   </div>
                 </div>
 
@@ -498,66 +419,20 @@ function Box() {
                       營養成分
                     </h5>
                   </div>
-                  <div className="row  container  ">
-                    <div className="col-2 fw-bold RecipesNutrientLeftBox">
-                      蛋白質(g)
-                    </div>
-                    <div className="col-1 fw-bold RecipesNutrientRightBox">
-                      12.0
-                    </div>
-                    <div className="col-2 fw-bold RecipesNutrientLeftBox">
-                      蛋白質(g)
-                    </div>
-                    <div className="col-1 fw-bold RecipesNutrientRightBox">
-                      12.3
-                    </div>
-                    <div className="col-2 fw-bold RecipesNutrientLeftBox">
-                      蛋白質(g)
-                    </div>
-                    <div className="col-1 fw-bold RecipesNutrientRightBox">
-                      12.5
-                    </div>
-                    <div className="col-2 fw-bold RecipesNutrientLeftBox">
-                      蛋白質(g)
-                    </div>
-                    <div className="col-1 fw-bold RecipesNutrientRightBox">
-                      12.7
-                    </div>
+                  <div className="row nav container  ">                    
+                      <Box_Nutrient />                   
                   </div>
                 </div>
 
                 <div className="p-3 mb-2 nav RecipesOn">
-                  <div className="col container ">
+                  <div className="container row ">
                     <div className="text-center ">
                       <h5 className="RecipesText fw-bold RecipesIngredientsText">
                         營養成分
                       </h5>
                     </div>
-                    <div className="row  container  ">
-                      <div className="col-8 fw-bold RecipesNutrientLeftBox">
-                        蛋白質(g)
-                      </div>
-                      <div className="col-4 fw-bold RecipesNutrientRightBox">
-                        12.0
-                      </div>
-                      <div className="col-8 fw-bold RecipesNutrientLeftBox">
-                        脂肪(g)
-                      </div>
-                      <div className="col-4 fw-bold RecipesNutrientRightBox">
-                        12.3
-                      </div>
-                      <div className="col-8 fw-bold RecipesNutrientLeftBox">
-                        碳水化合物(g)
-                      </div>
-                      <div className="col-4 fw-bold RecipesNutrientRightBox">
-                        12.5
-                      </div>
-                      <div className="col-8 fw-bold RecipesNutrientLeftBox">
-                        蛋白質(g)
-                      </div>
-                      <div className="col-4 fw-bold RecipesNutrientRightBox">
-                        12.7
-                      </div>
+                    <div className="  container  ">
+                    <Box_NutrientPhone />
                     </div>
                   </div>
                 </div>
