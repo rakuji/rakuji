@@ -5,6 +5,8 @@ import "./styles/style.css";
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 // pages
 import Home from "./pages/Home/Home";
@@ -22,6 +24,8 @@ function App() {
   return (
     <div className="App">
       <Nav />
+      <ScrollToTop>
+
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -51,6 +55,8 @@ function App() {
           <Store />
         </Route>
       </Switch>
+      </ScrollToTop>
+
       <Footer />
     </div>
   );
