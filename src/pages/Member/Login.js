@@ -9,24 +9,35 @@ function Login() {
         const submitBtn = document.querySelector("#submitBtn");
         const userEmail = document.querySelector("#email");
         const userPassword = document.querySelector("#password");
+        const sesStorage  = sessionStorage;
 
         submitBtn.addEventListener("click",(e)=>{
-            // console.log("Clicked!!");
             e.preventDefault();
+            if(sesStorage['memail'] == null){ // 若 storage未設置 
+                sesStorage['memail'] = '';    // 先設為空字串
+            }
+
             const formData =  new FormData(document.loginForm);
             fetch(`${process.env.REACT_APP_API_URL}/members`,{
                 method:"post",
                 body:formData
             }).then(response=>{
-                // 將'response'(Json陣列)轉為物件陣列並回傳給'data'
-                return response.text()
+                console.log(response);
+                // 將'response'(Json陣列)轉為文字並回傳給'data'
+                return response.text();
             }).then(data=>{
                 console.log(data);
                 setLoginStatus(data);
+                if (data){
+                    sesStorage['memail'] = userEmail.value;
+                }
                 userEmail.value = "";
                 userPassword.value = "";
+                
             })
-            })
+
+            
+        })
     },[])
 
     return (
