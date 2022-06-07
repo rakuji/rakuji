@@ -2,6 +2,7 @@ import React from "react";
 import "../Votelist/Votelist.css";
 
 import Breadcrumb from "../Breadcrumb";
+import MyBackTop from "../../../components/MyBackTop/MyBackTop";
 
 const Votelist = () => {
   return (
@@ -218,9 +219,8 @@ const Votelist = () => {
 
       <br></br>
 
-      <button className="d-block  mx-auto" alt="...">
-        icon回上一頁
-      </button>
+      <MyBackTop/>
+
     </main>
   );
 };

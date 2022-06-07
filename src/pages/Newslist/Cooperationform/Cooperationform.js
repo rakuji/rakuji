@@ -3,6 +3,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 // pages
+import MyBackTop from "../../../components/MyBackTop/MyBackTop";
+
 import "../Cooperationform/Cooperationform.css";
 
 import Breadcrumb from "../Breadcrumb";
@@ -167,9 +169,8 @@ function Cooperationform() {
           </Button>
         </Form>
         <br></br>
-        <button className="d-block , mx-auto " alt="...">
-          icon回上一頁
-        </button>
+        <MyBackTop/>
+
         <br></br>
       </div>
     </>

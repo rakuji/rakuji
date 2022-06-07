@@ -6,6 +6,7 @@ import Breadcrumb from "./Breadcrumb";
 import "./Newslist.css";
 // pages
 import Carouselg from "../../components/Carousel/Carouselg";
+import MyBackTop from "../../components/MyBackTop/MyBackTop"
 
 function Newslist() {
   // console.log(NEWSdata);
@@ -268,7 +269,10 @@ function Newslist() {
           </div>
         </div>
       </div>
+      
       <br></br>
+      <MyBackTop/>
+
     </main>
   );
 }

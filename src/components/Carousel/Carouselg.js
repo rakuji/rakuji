@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React  from "react";
 import Carousel from "react-bootstrap/Carousel";
 // 需安裝套件 及更改照片
 
