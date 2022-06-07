@@ -16,3 +16,7 @@ input.group{
 
 .container .sixyellow {margin-bottom:20px ;
 }
+
+.form.control.validated{
+  background-image: none;
+}
