@@ -7,6 +7,8 @@ import { Modal, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { LuckyWheel, LuckyGrid } from "@lucky-canvas/react";
+import ReactDOM from 'react-dom';
+import ReactModal from 'react-modal';
 
 import { useCart } from "./utils/useCart";
 
@@ -162,63 +164,6 @@ const Cart = (props) => {
 
   const myLucky = useRef();
 
-  // --------------------------------------------------------------------------
-
-  // 對話盒使用
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
-  const messageModal = (
-    <Modal show={show} onHide={handleClose} keyboard={false} centered>
-      <Modal.Header closeButton>
-        <Modal.Title>套用優惠碼訊息</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>{couponMsg}</Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={handleClose}>
-          確定
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
-
-  // --------------------------------------------------------------------------
-
-  // Swal.fire({
-  // icon: "success",
-  // title: "恭喜你獲得折抵100元優惠碼!",
-  // html: `${coupon_msg()}`,
-  // text:"別難過，給你安慰獎"
-  // });
-
-  // --------------------------------------------------------------------------
-  const coupon_input = () => {
-    return (
-      <form className="input-group mb-3">
-        <input
-          className="form-control"
-          type="text"
-          placeholder="請輸入優惠碼"
-          aria-label="Recipient's username"
-          aria-describedby="button-coupon"
-          required=""
-          onChange={(e) => {
-            setCoupon(e.target.value);
-          }}
-        />
-        <button
-          type="button"
-          className="btn btn-right fz-0"
-          id="button-coupon"
-          onClick={couponhandler}
-        >
-          套用優惠碼
-        </button>
-      </form>
-    );
-  };
 
   // --------------------------------------------------------------------------
 
@@ -230,6 +175,7 @@ const Cart = (props) => {
         {...props}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
+        centered
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
@@ -258,47 +204,50 @@ const Cart = (props) => {
               }}
               onEnd={(prize) => {
 
-                handleShow()
+                switch (prize.fonts[0].text) {
+                  case "折抵100元":
+                    Swal.fire({
+                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                      text:"優惠碼：VIP666",
 
+                    });
+                    break;
+                  case "再接再厲":
+                    Swal.fire({
+                      title: prize.fonts[0].text,
+                      text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                // switch (prize.fonts[0].text) {
-                //   case "折抵100元":
-                //     Swal.fire({
-                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                //       text:"優惠碼：VIP666"
-                //     });
-                //     break;
-                //   case "再接再厲":
-                //     Swal.fire({
-                //       title: prize.fonts[0].text,
-                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN"
-                //     });
-                //     break;
-                //   case "折抵50元":
-                //     Swal.fire({
-                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                //       text:"優惠碼：HAPPY888"
-                //     });
-                //     break;
-                //   case "下來再來":
-                //     Swal.fire({
-                //       title: prize.fonts[0].text,
-                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN"
-                //     });
-                //     break;
-                //   case "折抵30元":
-                //     Swal.fire({
-                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                //       text:"優惠碼：RAKUJIISGOOD"
-                //     });
-                //     break;
-                //   case "銘謝惠顧":
-                //     Swal.fire({
-                //       title: prize.fonts[0].text,
-                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN"
-                //     });
-                //     break;
-                // }
+                    });
+                    break;
+                  case "折抵50元":
+                    Swal.fire({
+                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                      text:"優惠碼：HAPPY888",
+
+                    });
+                    break;
+                  case "下來再來":
+                    Swal.fire({
+                      title: prize.fonts[0].text,
+                      text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+
+                    });
+                    break;
+                  case "折抵30元":
+                    Swal.fire({
+                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                      text:"優惠碼：RAKUJIISGOOD",
+
+                    });
+                    break;
+                  case "銘謝惠顧":
+                    Swal.fire({
+                      title: prize.fonts[0].text,
+                      text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+
+                    });
+                    break;
+                }
 
 
               }}
@@ -311,7 +260,6 @@ const Cart = (props) => {
       </Modal>
     );
   }
-  // --------------------------------------------------------------------------
 
   return (
     <div
@@ -387,30 +335,6 @@ const Cart = (props) => {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-
-      {messageModal}
-
-      {/* <form className="input-group">
-        <input
-          id="haha"
-          className="form-control"
-          type="text"
-          value={123}
-          readOnly
-        />
-        <button
-          type="button"
-          className="btn btn-right btn-primary fz-0"
-          onClick={() => {
-            const obj = document.getElementById("haha");
-            console.log(obj);
-            obj.select();
-            document.execCommand("copy");
-          }}
-        >
-          複製
-        </button>
-      </form> */}
 
 
     </div>
