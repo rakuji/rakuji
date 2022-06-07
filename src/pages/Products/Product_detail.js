@@ -12,10 +12,18 @@ import {
   TwitterShareButton,
   FacebookMessengerShareButton,
 } from "react-share";
-import { EmailIcon, FacebookIcon, LineIcon, TwitterIcon, FacebookMessengerIcon, } from "react-share";
+import {
+  EmailIcon,
+  FacebookIcon,
+  LineIcon,
+  TwitterIcon,
+  FacebookMessengerIcon,
+} from "react-share";
+import Product_comment from "./components/Product_comment";
 
-
+//JSON資料
 // import products from './data/products.json'
+import product_comments from "./data/product_comments.json";
 
 const Product_detail = (props) => {
   // 從資料庫取得資料
@@ -53,17 +61,18 @@ const Product_detail = (props) => {
     }
   }, [datas]);
 
-  console.log(params.productId)
-  const id = params.productId
-  console.log(id)
+  // console.log(params.productId);
 
   //商品數量
   const [count, setCount] = useState(1);
-
+  console.log(count);
 
   const { addItem } = useCart();
 
+  //留言內容
+  const [comments, setComments] = useState("");
 
+  
 
   return (
     <div className="container-xxl product_detail pb-5">
@@ -102,7 +111,8 @@ const Product_detail = (props) => {
               type="text"
               className="form-control text-center"
               min="1"
-              onChange={(e) => setCount(parseInt(e.target.value))}
+              onChange={(e) => setCount(Number(e.target.value ? "" : 1))}
+              // onChange={(e) => setCount(e.target.value)}
               value={count}
             />
 
@@ -138,11 +148,8 @@ const Product_detail = (props) => {
                 });
               }}
             >
-              {" "}
-              加入購物車{" "}
+              加入購物車
             </button>
-
-
           </div>
 
           <div className="product_share">
@@ -183,56 +190,81 @@ const Product_detail = (props) => {
             >
               <TwitterIcon size={30} round />
             </TwitterShareButton>
-
           </div>
-
         </div>
       </div>
 
       <div className="row">
         <hr />
-        <h3>評論區</h3>
+        <h3 className="mb-4">評論區</h3>
 
-        <div className="col-4">
-          <p>留言內容</p>
-          <textarea name="" id="" cols="30" ></textarea>
-          <button>送出</button>
+        <div className="comments_create mb-5">
+          <p className="mb-2">留言內容：</p>
+
+          <div className="mb-3">
+            <textarea
+              className="form-control"
+              placeholder="告訴別人你有多喜歡此商品"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              value={comments}
+              onChange={(e) => setComments(e.target.value)}
+            ></textarea>
+          </div>
+
+          <div className="good_comment d-flex mb-4">
+            <button
+              className="good"
+              onClick={() => {
+                setComments(comments + "超讚的出貨速度");
+              }}
+            >
+              超讚的出貨速度
+            </button>
+            <button
+              className="good"
+              onClick={() => {
+                setComments(comments + "超讚的商品品質");
+              }}
+            >
+              超讚的商品品質
+            </button>
+            <button
+              className="good"
+              onClick={() => {
+                setComments(comments + "超讚的CP值");
+              }}
+            >
+              超讚的CP值
+            </button>
+            <button
+              className="good"
+              onClick={() => {
+                setComments(comments + "超讚的服務");
+              }}
+            >
+              超讚的服務
+            </button>
+          </div>
+
+          <button
+            type="button"
+            className="send_comments_btn btn btn-outline-info fw-bold"
+          >
+            送出
+          </button>
         </div>
 
-        <div className="col-8">
-
-          <div className="d-flex mb-5">
-            <div className="profile me-3">大頭貼</div>
-            <div className="info">
-              <div>id:1213213212313</div>
-              <div>*****</div>
-              <div>2022-03-14</div>
-              <div>餐點很好吃</div>
-            </div>
-          </div>
-
-          <div className="d-flex mb-5">
-            <div className="profile me-3">大頭貼</div>
-            <div className="info">
-              <div>id:1213213212313</div>
-              <div>*****</div>
-              <div>2022-03-14</div>
-              <div>餐點很好吃</div>
-            </div>
-          </div>
-          
-          <div  className="d-flex mb-5">
-            <div className="profile me-3">大頭貼</div>
-            <div className="info">
-              <div>id:1213213212313</div>
-              <div>*****</div>
-              <div>2022-03-14</div>
-              <div>餐點很好吃</div>
-            </div>
-          </div>
-
-
-
+        <div className="comments_area">
+          {product_comments.map((v, i) => (
+            <Product_comment
+              key={i}
+              member_name={v.member_name}
+              contents={v.contents}
+              rating={v.rating}
+              created_at={v.created_at}
+            />
+          ))}
         </div>
       </div>
     </div>

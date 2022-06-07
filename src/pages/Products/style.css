@@ -198,4 +198,69 @@
   background: #fff;
   color: #58c2dd;
 }
+
+.product_detail .comments_create .good_comment .good {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.09);
+  border-radius: 1.5rem;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+.product_detail .comments_create .good_comment .good:active {
+  -webkit-box-shadow: 0 0 0 .05rem #97a6aa;
+          box-shadow: 0 0 0 .05rem #97a6aa;
+  background-color: #fff;
+}
+
+.product_detail .comments_create button.send_comments_btn {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.product_detail .comments_create button.send_comments_btn:hover {
+  background-color: #fff;
+  color: #58c2dd;
+}
+
+.product_detail .comments_area .comments_msg {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: .5rem;
+  padding: .5rem;
+}
+
+.product_detail .comments_area .comments_msg .avatar_container {
+  width: 3.5rem;
+}
+
+.product_detail .comments_area .comments_msg .avatar_container .avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.product_detail .comments_area .comments_msg .avatar_container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.product_detail .comments_area .comments_msg .info ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.product_detail .comments_area .comments_msg .info ul li {
+  font-size: 1.5rem;
+  color: #dc3545;
+}
+
+.product_detail .comments_area .comments_msg .info .comment_time {
+  font-size: .9rem;
+  color: rgba(0, 0, 0, 0.5);
+}
 /*# sourceMappingURL=style.css.map */

@@ -7,8 +7,8 @@ import { Modal, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { LuckyWheel, LuckyGrid } from "@lucky-canvas/react";
-import ReactDOM from 'react-dom';
-import ReactModal from 'react-modal';
+import ReactDOM from "react-dom";
+import ReactModal from "react-modal";
 
 import { useCart } from "./utils/useCart";
 
@@ -164,7 +164,6 @@ const Cart = (props) => {
 
   const myLucky = useRef();
 
-
   // --------------------------------------------------------------------------
 
   const [modalShow, setModalShow] = React.useState(false);
@@ -203,53 +202,56 @@ const Cart = (props) => {
                 }, 2500);
               }}
               onEnd={(prize) => {
+                Swal.fire({
+                  title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                  html:true,
+                  text: i,
+                });
 
-                switch (prize.fonts[0].text) {
-                  case "折抵100元":
-                    Swal.fire({
-                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                      text:"優惠碼：VIP666",
+                // switch (prize.fonts[0].text) {
+                //   case "折抵100元":
+                //     Swal.fire({
+                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                //       text:"優惠碼：VIP666",
 
-                    });
-                    break;
-                  case "再接再厲":
-                    Swal.fire({
-                      title: prize.fonts[0].text,
-                      text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+                //     });
+                //     break;
+                //   case "再接再厲":
+                //     Swal.fire({
+                //       title: prize.fonts[0].text,
+                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                    });
-                    break;
-                  case "折抵50元":
-                    Swal.fire({
-                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                      text:"優惠碼：HAPPY888",
+                //     });
+                //     break;
+                //   case "折抵50元":
+                //     Swal.fire({
+                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                //       text:"優惠碼：HAPPY888",
 
-                    });
-                    break;
-                  case "下來再來":
-                    Swal.fire({
-                      title: prize.fonts[0].text,
-                      text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+                //     });
+                //     break;
+                //   case "下來再來":
+                //     Swal.fire({
+                //       title: prize.fonts[0].text,
+                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                    });
-                    break;
-                  case "折抵30元":
-                    Swal.fire({
-                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                      text:"優惠碼：RAKUJIISGOOD",
+                //     });
+                //     break;
+                //   case "折抵30元":
+                //     Swal.fire({
+                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                //       text:"優惠碼：RAKUJIISGOOD",
 
-                    });
-                    break;
-                  case "銘謝惠顧":
-                    Swal.fire({
-                      title: prize.fonts[0].text,
-                      text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+                //     });
+                //     break;
+                //   case "銘謝惠顧":
+                //     Swal.fire({
+                //       title: prize.fonts[0].text,
+                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                    });
-                    break;
-                }
-
-
+                //     });
+                //     break;
+                // }
               }}
             />
           </div>
@@ -260,6 +262,13 @@ const Cart = (props) => {
       </Modal>
     );
   }
+
+  const i = (
+    <div>
+      <input type="text" />
+      <button>123</button>
+    </div>
+  );
 
   return (
     <div
@@ -335,8 +344,6 @@ const Cart = (props) => {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-
-
     </div>
   );
 };

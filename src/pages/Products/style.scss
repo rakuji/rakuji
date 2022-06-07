@@ -206,4 +206,78 @@
       }
     }
   }
+
+  .comments_create{
+    .good_comment{
+      .good{
+        padding: 0.5rem 0.75rem;
+        border: 1px solid rgba(0, 0, 0, 0.09);
+        border-radius: 1.5rem;
+        margin-right: 1rem;
+        font-size: 0.9rem;
+  
+        &:active{
+          box-shadow: 0 0 0 .05rem #97a6aa;
+          background-color: #fff;
+        }
+      }
+    }
+
+    button{
+      &.send_comments_btn{
+        background-color: #58c2dd;
+        color: #fff;
+      }
+      
+      &.send_comments_btn:hover{
+        background-color: #fff;
+        color: #58c2dd;
+      }
+    }
+  }
+
+  .comments_area{
+    .comments_msg{
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: .5rem;
+      padding: .5rem;
+
+      .avatar_container{
+        width: 3.5rem;
+        .avatar{
+          width: 2.5rem;
+          height: 2.5rem;
+      }
+  
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .info{
+        ul{
+          list-style: none;
+          display: flex;
+          padding-left: 0;
+          margin-bottom: 0;
+
+          li{
+            font-size: 1.5rem;
+            color: #dc3545;
+
+          }
+        }
+
+        .comment_time{
+          font-size: .9rem;
+          color:rgba(0,0,0,.5) ;
+        }
+      }
+    }
+
+    
+  }
+  
 }
