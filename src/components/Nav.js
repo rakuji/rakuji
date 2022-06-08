@@ -85,7 +85,7 @@ function Nav() {
           {/* 按鈕區 */}
           <div>
             <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
-            <Link to ="/member">
+            <Link to ="/member/login">
               <button type="button" className="btn mx-2">
                 登入/註冊
               </button>

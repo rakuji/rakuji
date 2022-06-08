@@ -15,6 +15,7 @@ import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 import Login from "./pages/Member/Login";
+import ClientCenter from "./pages/Member/clientCenter";
 
 function App() {
 
@@ -43,8 +44,11 @@ function App() {
         <Route path="/store" exact>
           <Store />
         </Route>
-        <Route path="/member" exact>
+        <Route path="/member/login" exact>
           <Login />
+        </Route>
+        <Route path="/member/clientCenter" exact>
+          <ClientCenter />
         </Route>
       </Switch>
       <Footer />

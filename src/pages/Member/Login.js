@@ -1,10 +1,11 @@
 import React,{useState, useEffect} from "react";
+import  { Redirect } from 'react-router-dom'
 import "./css/my-login.css"
 // import "./css/reset.css"
 
 function Login() {
-    const [loginStatus, setLoginStatus ] = useState([])
-
+    const [loginStatus, setLoginStatus ] = useState()
+    
     useEffect(()=>{
         const submitBtn = document.querySelector("#submitBtn");
         const userEmail = document.querySelector("#email");
@@ -27,90 +28,94 @@ function Login() {
                 return response.text();
             }).then(data=>{
                 console.log(data);
-                setLoginStatus(data);
-                if (data){
-                    sesStorage['memail'] = userEmail.value;
-                }
                 userEmail.value = "";
                 userPassword.value = "";
-                
+                if (data){
+                    sesStorage['memail'] = userEmail.value;
+                }else{
+                    setLoginStatus(data);
+                }
             })
 
             
         })
     },[])
 
-    return (
-        <body class="my-login-page">
-            <section class="h-100">
-                <div class="container h-100">
-                    <div class="row justify-content-md-center h-100">
-                        <div class="card-wrapper">
-                            <div class="brand">
-                                <img src={require("./images/logo/logo_color_login.png")} alt="logo_color_login.png"/>
-                            </div>
-                            <div className="">{loginStatus}</div>
-                            <div class="card fat">
-                                <div class="card-body">
-                                    
-                                    <form class="my-login-validation" encType="multipart/form-data" name="loginForm">
-                                        <div class="form-group">
-                                            <label for="email">會員帳號</label>
-                                            <input id="email" type="email" class="form-control" name="email"  required autofocus />
-                                            <div class="invalid-feedback" id="emailStatus">
-                                                無效的電子信箱
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="password">會員密碼
-                                                <a href="forgot.html" class="float-right">
-                                                    忘記密碼?
-                                                </a>
-                                            </label>
-                                            <input id="password" type="password" class="form-control" name="password" required data-eye />
-                                            <div class="invalid-feedback">
-                                                密碼已存在
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="custom-checkbox custom-control">
-                                                <input type="checkbox" name="remember" id="remember" class="custom-control-input" />
-                                                <label for="remember" class="custom-control-label">記住我</label>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group m-0">
-                                            <button type="submit" class="btn btn-block btn-custom" id="submitBtn">
-                                                登入
-                                            </button><br />
-                                            <p class="align">其他方式登入</p>
-
-                                            <button type="submit" class="btn btn-danger btn-block">
-                                                使用GOOGLE登入
-                                            </button>
-                                            <button type="submit" class="btn btn-primary btn-block">
-                                                使用Facebook登入
-                                            </button>
-                                        </div>
-                                        <div class="mt-4 text-center">
-                                            還沒有會員? <a href="register.html">註冊</a>
-                                        </div>
-                                    </form>
+    const sesStorage  = sessionStorage;
+    if(sesStorage['memail']){
+        return (<Redirect to='/member/clientCenter'  />)
+    } else {
+        return (
+            <body class="my-login-page">
+                <section class="h-100">
+                    <div class="container h-100">
+                        <div class="row justify-content-md-center h-100">
+                            <div class="card-wrapper">
+                                <div class="brand">
+                                    <img src={require("./images/logo/logo_color_login.png")} alt="logo_color_login.png"/>
                                 </div>
-                            </div>
-                            <div class="footer">
-                                Copyright &copy; 2022  &mdash; RAKUJI樂時町洋食館
+                                <div style={{color:"red"}}>{loginStatus}</div>
+                                <div class="card fat">
+                                    <div class="card-body">
+                                        
+                                        <form class="my-login-validation" encType="multipart/form-data" name="loginForm">
+                                            <div class="form-group">
+                                                <label for="email">會員帳號</label>
+                                                <input id="email" type="email" class="form-control" name="email"  required autofocus />
+                                                <div class="invalid-feedback" id="emailStatus">
+                                                    無效的電子信箱
+                                                </div>
+                                            </div>
 
+                                            <div class="form-group">
+                                                <label for="password">會員密碼
+                                                    <a href="forgot.html" class="float-right">
+                                                        忘記密碼?
+                                                    </a>
+                                                </label>
+                                                <input id="password" type="password" class="form-control" name="password" required data-eye />
+                                                <div class="invalid-feedback">
+                                                    密碼已存在
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="custom-checkbox custom-control">
+                                                    <input type="checkbox" name="remember" id="remember" class="custom-control-input" />
+                                                    <label for="remember" class="custom-control-label">記住我</label>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group m-0">
+                                                <button type="submit" class="btn btn-block btn-custom" id="submitBtn">
+                                                    登入
+                                                </button><br />
+                                                <p class="align">其他方式登入</p>
+
+                                                <button type="submit" class="btn btn-danger btn-block">
+                                                    使用GOOGLE登入
+                                                </button>
+                                                <button type="submit" class="btn btn-primary btn-block">
+                                                    使用Facebook登入
+                                                </button>
+                                            </div>
+                                            <div class="mt-4 text-center">
+                                                還沒有會員? <a href="register.html">註冊</a>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    Copyright &copy; 2022  &mdash; RAKUJI樂時町洋食館
+
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </body>
+                </section>
+            </body>
 
-    )
+        )}
 };
 
 export default Login
