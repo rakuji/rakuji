@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 // import "../aboutStore.css";
 
 const MyBreadcrumb = (props) => {
-  const gggttt = 1;
   return (
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">

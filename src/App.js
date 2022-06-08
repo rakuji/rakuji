@@ -24,7 +24,6 @@ import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes";
 import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
-import MyBreadcrumb from "./pages/About/myComponents/MyBreadcrumb";
 
 
 
@@ -41,7 +40,6 @@ function App() {
   return (
     <div className="App">
       <Nav />
-      <MyBreadcrumb />
       {/* http://localhost:3000/categories */}
       {/* <Breadcrumb /> */}
       <Switch>
