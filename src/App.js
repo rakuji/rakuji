@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import BootstrapDatePicker from "./components/BootstrapDatePicker";
 
 // pages
 import Home from "./pages/Home/Home";
@@ -17,6 +19,9 @@ import Store from "./pages/Store/Store";
 import Contact from "./pages/Contact/Contact";
 import Votelist from "./pages/Newslist/Votelist";
 import Cooperationform from "./pages/Newslist/Cooperationform";
+import Login from "./pages/Member/Login"
+import Signup from "./pages/Member/Signup"
+import Register from "./pages/Member/Register"
 
 function App() {
   return (
@@ -53,8 +58,18 @@ function App() {
         <Route path="/contact" exact>
           <Contact />
         </Route>
+        <Route path="/Login" exact>
+          <Login />
+        </Route>
+        <Route path="/Signup" exact>
+          <Signup />
+        </Route>
+        <Route path="/Register" exact>
+          <Register />
+        </Route>
       </Switch>
       <Footer />
+      <BootstrapDatePicker />  
     </div>
   );
 }
