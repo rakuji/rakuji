@@ -148,13 +148,14 @@ figure img {
 }
 
 /* coupon_css */
-.card{
-    border: 0px ;
+.card {
+    border: 0px;
 }
 
-hr{
-    margin-bottom:20px;
+hr {
+    margin-bottom: 20px;
 }
+
 .a1 {
 
     padding: 6px;
@@ -179,9 +180,16 @@ hr{
     box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
 
-.avatar{
+.avatar {
     width: 96px;
     height: 96px;
+}
+
+table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 

@@ -1,11 +1,48 @@
 import React from "react";
 import "./css/my-login.css"
 import "./css/reset.css"
+import _ from 'lodash'
 
 // import { Row } from "bootstrap"s
 
-function ClientCenter() {
+const myYear = 2022
+const myMonth = 2
 
+function ClientCenter() {
+    // 呈現yearAndMonth
+    const now = new Date()
+
+    // 要得到今天的西元年使用Date物件的getFullYear()，要得到月份使用getMonth()(注意回傳為 0~11)
+    const nowY = myYear ? myYear : now.getFullYear()
+
+    // nowM =1-12
+    const nowM = myMonth ? myMonth : now.getMonth() + 1 //注意回傳為 0~11
+
+    // 呈現標題
+    const weekDayList = ['日', '一', '二', '三', '四', '五', '六']
+
+    // 本月有幾天
+    // (上個月的最後一天是幾號)
+    const days = new Date(nowY, nowM, 0).getDate()
+
+    // 這個月的第一天是星期幾(0-6) (月份為0-11)
+    const firstDay = new Date(nowY, nowM - 1, 1).getDay()
+
+    // 本月所有日期的陣列資料
+    const daysDataArray = []
+
+    // 補前面的空白資料
+    for (let i = 0; i < firstDay; i++) {
+        daysDataArray.push('')
+    }
+
+    // 加入本月所有的日期資料
+    for (let i = 0; i < days; i++) {
+        daysDataArray.push(i + 1)
+    }
+
+    // 準備要呈現在網頁上
+    const daysDisplayArray = _.chunk(daysDataArray, 7)
     return (
 
         <div className="container">
@@ -36,10 +73,32 @@ function ClientCenter() {
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item m-3">
                                     <div className="mb-2">
-                                        <span className="text-control">日期</span>
+                                        <span>日期</span>
                                     </div>
-                                    <div className="pt-2">
-                                        <img src={require('../../images/account/Date.png')} alt="" className="w-100" />
+                                    <div className="">
+                                        <h2 id="yearAndMonth" className="text-center fs-3">{nowY + '/' + nowM}</h2>
+                                        <div className="table-responsive-md ">
+                                            <table className="table">
+                                                <thead id="title">
+                                                    <tr>
+                                                        {weekDayList.map(function (v, i) {
+                                                            return <th key={i}>{v}</th>
+                                                        })}
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="data" className="table-bordered">
+                                                    {daysDisplayArray.map((v, i) => {
+                                                        return (
+                                                            <tr key={i}>
+                                                                {v.map((item, idx) => (
+                                                                    <td key={idx}>{item}</td>
+                                                                ))}
+                                                            </tr>
+                                                        )
+                                                    })}
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         <br />
                                     </div>
                                 </li>
@@ -55,6 +114,7 @@ function ClientCenter() {
                                     </div>
                                 </li>
                             </ul>
+
                         </div>
                     </div>
                 </div>
@@ -150,52 +210,54 @@ function ClientCenter() {
                                         <div className="tab-pane fade show " id="order" role="tabpanel"
                                             aria-labelledby="order-tab">
                                             <form method="POST" className="my-login-validation " noValidate="">
+                                               
+                                                <div className="table-responsive">
+                                                    <table className="table " style={{ textAlign: "center" }}>
+                                                        <thead className="line">
+                                                            <tr className="text-color">
+                                                                <th scope="col b1">訂單編號</th>
+                                                                <th scope="col">商品圖片</th>
+                                                                <th scope="col">商品名稱</th>
+                                                                <th scope="col">金額</th>
+                                                                <th scope="col">運費</th>
 
-                                                <table className="table " style={{ textAlign: "center" }}>
-                                                    <thead className="line">
-                                                        <tr className="text-color">
-                                                            <th scope="col b1">訂單編號</th>
-                                                            <th scope="col">商品圖片</th>
-                                                            <th scope="col">商品名稱</th>
-                                                            <th scope="col">金額</th>
-                                                            <th scope="col">運費</th>
+                                                                <th scope="col">合計</th>
+                                                                <th scope="col">日期</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">001</th>
+                                                                <td><img src="http://picsum.photos/50/50?random=10" alt="" /></td>
+                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
+                                                                <td>120$x5<br />120$x5</td>
+                                                                <td>0$</td>
 
-                                                            <th scope="col">合計</th>
-                                                            <th scope="col">日期</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">001</th>
-                                                            <td><img src="http://picsum.photos/50/50?random=10" alt="" /></td>
-                                                            <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                            <td>120$x5<br />120$x5</td>
-                                                            <td>0$</td>
+                                                                <td>1200$</td>
+                                                                <td>2022-03-14</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">002</th>
+                                                                <td><img src="" alt="" /></td>
+                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
+                                                                <td>120$x5<br />120$x5</td>
+                                                                <td>100$</td>
 
-                                                            <td>1200$</td>
-                                                            <td>2022-03-14</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">002</th>
-                                                            <td><img src="" alt="" /></td>
-                                                            <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                            <td>120$x5<br />120$x5</td>
-                                                            <td>100$</td>
-
-                                                            <td>1200$</td>
-                                                            <td>2022-03-14</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th scope="row">003</th>
-                                                            <td><img src="" alt="" /></td>
-                                                            <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                            <td>120$x5<br />120$x5</td>
-                                                            <td>100$</td>
-                                                            <td>1200$</td>
-                                                            <td>2022-03-14</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                                                <td>1200$</td>
+                                                                <td>2022-03-14</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">003</th>
+                                                                <td><img src="" alt="" /></td>
+                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
+                                                                <td>120$x5<br />120$x5</td>
+                                                                <td>100$</td>
+                                                                <td>1200$</td>
+                                                                <td>2022-03-14</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </form>
                                         </div>
 
