@@ -7,13 +7,13 @@ import $ from "jquery";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
 function Recipes(props) {
-    // 從資料庫取得資料
+  // 從資料庫取得資料
   const [datas, setDatas] = useState([]);
-    // 篩選類別後的資料
-    const [sortData, setSortData] = useState([])
+  // 篩選類別後的資料
+  const [sortData, setSortData] = useState([]);
 
-    // 搜尋後的資料
-    const [searchData, setSearchData] = useState([])
+  // 搜尋後的資料
+  const [searchData, setSearchData] = useState([]);
   const fetchData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes`);
     const results = await response.json();
@@ -32,9 +32,10 @@ function Recipes(props) {
     .filter((v, i) => {
       if (recipesIndex === 0) return true;
 
-      return v.recipesArray === recipesArray[recipesIndex];
+      return v.RecipesClass === recipesArray[recipesIndex];
     })
     .filter((v) => v.Recipes_Name.includes(searchInput));
+       
 
   useEffect(() => {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
@@ -126,7 +127,7 @@ function Recipes(props) {
                 role="tabpanel"
                 aria-labelledby="home-tab"
               >
-                <div className="container  nav RecipesSearchDiv RecipesOff">
+                <form className="container  nav RecipesSearchDiv RecipesOff">
                   <div className="row">
                     <div className="col-3">
                       <h6 className="RecipesSearchText">食譜名稱</h6>
@@ -135,30 +136,36 @@ function Recipes(props) {
                       <input
                         className=" RecipesSearchInput form-control"
                         placeholder="搜尋餐點名稱"
+                        type="search"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          setSearchInput(e.target.value);
+                        }}
                       />
                     </div>
                     <div className="col-2">
-                      <button className=" RecipesSearchButton buttonoff" id="">
-                        搜尋
-                      </button>
+ 
                     </div>
                   </div>
-                </div>
-                <div className="container  nav RecipesSearchDiv RecipesOn">
+                </form>
+                <form className="container  nav RecipesSearchDiv RecipesOn">
                   <div className="">
                     <div className="col">
                       <input
                         className=" RecipesSearchInput form-control"
                         placeholder="搜尋餐點名稱"
+                        type="search"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          setSearchInput(e.target.value);
+                        }}
                       />
                     </div>
                     <div className="col-1">
-                      <button className=" RecipesSearchButton buttonoff" id="">
-                        搜尋
-                      </button>
+
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
               <div
                 className="tab-pane fade"
@@ -166,13 +173,18 @@ function Recipes(props) {
                 role="tabpanel"
                 aria-labelledby="profile-tab"
               >
-                <div className="container  nav RecipesSearchDiv text-center RecipesOff">
+                <form className="container  nav RecipesSearchDiv text-center RecipesOff">
                   <div className="row ">
                     <div className="col-4">
                       <input
                         className="RecipesSearchInput form-control"
                         placeholder="請輸入最小卡路里範圍"
-                      ></input>
+                        type="search"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          setSearchInput(e.target.value);
+                        }}
+                      />
                     </div>
                     <div className="col-1">
                       <h6 className="RecipesSearchText ">~</h6>
@@ -181,40 +193,55 @@ function Recipes(props) {
                       <input
                         className="RecipesSearchInput form-control"
                         placeholder="請輸入最大卡路里範圍"
-                      ></input>
+                        type="search"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          setSearchInput(e.target.value);
+                        }}
+                      />
                     </div>
                     <div className="col-2">
                       <h6 className="RecipesSearchText">大卡</h6>
                     </div>
                     <div className="col-1">
-                      <button className=" RecipesSearchButton" id="">
+                      <button className=" RecipesSearchButton" type="button" id="">
                         搜尋
                       </button>
                     </div>
                   </div>
-                </div>
+                </form>
 
-                <div className="container  nav RecipesSearchDiv text-center RecipesOn">
+                <form className="container  nav RecipesSearchDiv text-center RecipesOn">
                   <div className="">
                     <div className="col">
                       <input
                         className="RecipesSearchInput form-control"
                         placeholder="請輸入最小卡路里範圍"
-                      ></input>
+                        type="search"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          setSearchInput(e.target.value);
+                        }}
+                      />
                     </div>
                     <div className="col">
                       <input
                         className="RecipesSearchInput form-control"
                         placeholder="請輸入最大卡路里範圍"
-                      ></input>
+                        type="search"
+                        aria-label="Search"
+                        onChange={(e) => {
+                          setSearchInput(e.target.value);
+                        }}
+                      />
                     </div>
                     <div className="col-1">
-                      <button className=" RecipesSearchButton" id="">
+                      <button className=" RecipesSearchButton" type="button" id="">
                         搜尋
                       </button>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -229,18 +256,18 @@ function Recipes(props) {
         <div className="row">
           <div className="col-2 RecipesClassButton RecipesClassButtonAll">
             <div className="" id="recipesArray_buttons">
-            {recipesArray.map((v, i) => {
-                      return (
-                        <button
-                          key={i}
-                          id={i}
-                          className="col container"
-                          onClick={() => setRecipesIndex(i)}
-                        >
-                          {v}
-                        </button>
-                      );
-                    })}
+              {recipesArray.map((v, i) => {
+                return (
+                  <button
+                    key={i}
+                    id={i}
+                    className="col container"
+                    onClick={() => setRecipesIndex(i)}
+                  >
+                    {v}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
