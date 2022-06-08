@@ -4,6 +4,7 @@ import { GlassMagnifier } from "react-image-magnifiers";
 import { useCart } from "../Cart/utils/useCart";
 import { Modal, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
+import $ from "jquery"
 import withReactContent from "sweetalert2-react-content";
 import {
   EmailShareButton,
@@ -65,14 +66,50 @@ const Product_detail = (props) => {
 
   //商品數量
   const [count, setCount] = useState(1);
-  console.log(count);
+  // console.log(count);
 
   const { addItem } = useCart();
 
   //留言內容
   const [comments, setComments] = useState("");
 
-  
+  // 從資料庫取得評論資料
+  const [CommentsDatas, setCommentsDatas] = useState([]);
+
+  const fetchCommentsData = async () => {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/products/productcomment`);
+    const results = await response.json();
+    setCommentsDatas(results);
+    // console.log(results)
+  };
+  useEffect(() => {
+    fetchCommentsData();
+  }, []);
+
+  //------------------------------------------------------------------------------------------------------
+  const [start, setStart] = useState(0)
+  const solid_star = "★";
+  const hollow_star = "☆";
+  const total_star = [];
+
+  for (let i = 1; i <= start; i++) {
+    total_star.push(solid_star);
+  }
+
+  for (let i = 1; i <= 5 - start; i++) {
+    total_star.push(hollow_star);
+  }
+
+  // console.log(total_star)
+
+
+
+  const [clickState, setClickState] = useState(false)
+
+
+
+
+  //------------------------------------------------------------------------------------------------------
 
   return (
     <div className="container-xxl product_detail pb-5">
@@ -201,6 +238,57 @@ const Product_detail = (props) => {
         <div className="comments_create mb-5">
           <p className="mb-2">留言內容：</p>
 
+          <div className="comments_create_rating mb-3">
+            <ul>
+              {/* <li id="star1">☆</li>
+              <li id="star1">☆</li>
+              <li id="star1">☆</li>
+              <li id="star1">☆</li>
+              <li id="star1">☆</li> */}
+
+              {total_star.map((v, i) =>
+                <li id="star" key={i}
+
+                  onClick={() => {
+                    setStart(i + 1)
+                    console.log(i + 1)
+                    setClickState(true)
+                  }}
+
+
+
+                  onMouseEnter={() => {
+                    if (clickState == false) {
+                      setStart(i + 1)
+                      console.log(i + 1)
+                    }
+                  }}
+
+
+
+                  onMouseLeave={() => {
+                    if (clickState == false) {
+                      setStart(0)
+                      console.log(i + 1)
+                    }
+                  }}
+
+                // onMouseOver={()=>{
+                //   setStart(i+1)
+                //   console.log(i)
+                // }}
+
+                // onMouseOut={()=>{
+                //   setStart(0)
+                //   console.log(i)
+                // }}
+
+                >{v}</li>
+              )}
+            </ul>
+            <p id="score"></p>
+          </div>
+
           <div className="mb-3">
             <textarea
               className="form-control"
@@ -256,10 +344,10 @@ const Product_detail = (props) => {
         </div>
 
         <div className="comments_area">
-          {product_comments.map((v, i) => (
+          {CommentsDatas.map((v, i) => (
             <Product_comment
               key={i}
-              member_name={v.member_name}
+              member_name={v.name}
               contents={v.contents}
               rating={v.rating}
               created_at={v.created_at}

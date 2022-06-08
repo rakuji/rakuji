@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from 'moment';
 
 const Product_comment = ({ member_name, contents, rating ,created_at}) => {
   //留言內容
@@ -16,7 +17,7 @@ const Product_comment = ({ member_name, contents, rating ,created_at}) => {
     total_star.push(hollow_star);
   }
 
-  console.log(rating);
+  // console.log(rating);
 
   return (
     <div className="comments_msg d-flex mb-3">
@@ -35,7 +36,7 @@ const Product_comment = ({ member_name, contents, rating ,created_at}) => {
             ))}
           </ul>
         </div>
-        <div className="comment_time mb-3">{created_at}</div>
+        <div className="comment_time mb-3">{moment(created_at).format("YYYY-MM-DD kk:mm:ss")}</div>
         <div>{contents}</div>
       </div>
     </div>

@@ -199,6 +199,20 @@
   color: #58c2dd;
 }
 
+.product_detail .comments_create .comments_create_rating ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.product_detail .comments_create .comments_create_rating ul li {
+  font-size: 1.5rem;
+  color: #dc3545;
+}
+
 .product_detail .comments_create .good_comment .good {
   padding: 0.5rem 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.09);

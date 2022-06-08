@@ -208,6 +208,20 @@
   }
 
   .comments_create{
+    .comments_create_rating{
+      ul{
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li{
+          font-size: 1.5rem;
+          color: #dc3545;
+
+        }
+      }
+    }
     .good_comment{
       .good{
         padding: 0.5rem 0.75rem;
