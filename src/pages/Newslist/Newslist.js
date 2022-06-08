@@ -37,7 +37,7 @@ function Newslist() {
       <Carouselg />
 
       {/*  放breadcrumb margin-top 16px 無法加入  */}
-      <div className="mm">
+      <div className="tt">
         <Breadcrumb />
       </div>  
       {/* 動全部card的寬 */}
@@ -63,7 +63,7 @@ function Newslist() {
             <div className="card">
               <a href="/Votelist">
                 <img
-                  src={require("./image/00002.png")}
+                  src={require("./image/33.jpg")}
                   className="card-img-top"
                   alt="..."
                 />

@@ -20,3 +20,16 @@ input.group{
 .form.control.validated{
   background-image: none;
 }
+.bu{
+  background-color: #58c2dd;
+color: #fff;
+}
+/* .button:not(.collapsed) {
+  color: #ffffff;
+} */
+/* 
+.button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #ffffff;
+} */

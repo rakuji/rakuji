@@ -8,19 +8,16 @@ const Votelist = () => {
   return (
     <main>
         <img
-          src={require("../image/001.png")}
+          src={require("../image/88.png")}
           width="100%"
           height="100%"
           className="d-block  mx-auto"
           alt="..."
         />
-
-      <Breadcrumb class="container col-8">
-        <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-        <Breadcrumb.Item href="/Newslist">最新消息</Breadcrumb.Item>
-        {/* 麵包屑製作問題 */}
-        {/* <Breadcrumb.Item active href="/Votelist">選出你的天菜</Breadcrumb.Item> */}
-      </Breadcrumb>
+   <div className="tt">
+        <Breadcrumb />
+      </div>  
+      
       <div className="container">
         <div className="col">
           <div className="card-body">

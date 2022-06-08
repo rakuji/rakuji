@@ -35,8 +35,10 @@ function Cooperationform() {
 
       {/* 麵包屑製作問題 */}
 
-      <Breadcrumb />
-      <div className="container">
+      <div className="tt">
+        <Breadcrumb />
+      </div>      
+        <div className="container">
         <div className="col"></div>
 
         <Form
@@ -164,7 +166,7 @@ function Cooperationform() {
               required
             />
           </Form.Group>
-          <Button variant="primary , d-block , mx-auto " type="submit">
+          <Button className="bu" variant=" primary , d-block , mx-auto " type="submit">
             送出
           </Button>
         </Form>
