@@ -6,7 +6,7 @@ import Breadcrumb from "./Breadcrumb";
 import "./Newslist.css";
 // pages
 import Carouselg from "../../components/Carousel/Carouselg";
-import MyBackTop from "../../components/MyBackTop/MyBackTop"
+import MyBackTop from "../../components/MyBackTop/MyBackTop";
 
 function Newslist() {
   // console.log(NEWSdata);
@@ -24,7 +24,7 @@ function Newslist() {
     setNews(data);
   };
 
-  console.log(News)
+  console.log(News);
   // didMount - 載入資料的時間點
   useEffect(() => {
     // 向伺服器要求get資料
@@ -36,9 +36,10 @@ function Newslist() {
     <main>
       <Carouselg />
 
-      {/*  放breadcrumb 顏色修改 第三個畫面更新 */}
-      <Breadcrumb />
-
+      {/*  放breadcrumb margin-top 16px 無法加入  */}
+      <div className="mm">
+        <Breadcrumb />
+      </div>  
       {/* 動全部card的寬 */}
       <div className="container  col-10  d-flex justify-content-center">
         <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
@@ -52,53 +53,12 @@ function Newslist() {
                 width="180px"
                 height="370px"
               />
-
               <br />
               <br />
             </div>
+            {/*測試是否抓的到照片 <img src="http://localhost/project_rakuji/imgs/4b07d654503a3d3b98e2721adaaada1516c3fed8.png" /> */}
           </div>
-          {News.map((v, i) => {
-            return (
-              <div className="col" key={i}>
-                <div className="card ">
-                  {/* 照片抓資料庫無法顯示 img 會全白 src只有數字.png */}
-                  <src className="card-img-top" alt="" >
-                  {v.imgid}
-                  </src>
-                  <div className="card-body">
-                    <h3 className="card-title fs-4">{v.name}</h3>
-
-                    {/* 時間顯示"timestart": "2022-05-31T16:00:00.000Z" 不要後面T到Z這串  在後端那隻+dateString:true  */}
-
-                    <p className="card-text fs-6">
-                      {v.timestart}- {v.timeend}
-                    </p>
-                    <p className="card-content fs-5">{v.content}</p>
-                    
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-          {/* test end */}
-          {/* 2  圖片文字可以連結到Votelist */}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00001.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">樂時町年末同樂會</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  年末開心情!!!慰勞一整年的辛苦!來樂時町享用套餐吧!
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* 3 */}
+          {/* 2 餐點投票 */}
           <div className="col">
             <div className="card">
               <a href="/Votelist">
@@ -110,7 +70,7 @@ function Newslist() {
               </a>
               <div className="card-body">
                 <h3 className="card-title fs-4">票選料理之王</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <p className="card-text fs-6">2022/06/06 - 2022/06/26</p>
                 <p className="card-content fs-5">
                   選出你的料理天菜，投票抽大獎!
                 </p>
@@ -122,39 +82,63 @@ function Newslist() {
               </div>
             </div>
           </div>
-          {/* ˋ4 */}
+
+          {/* 3 異業合作 */}
           <div className="col">
             <div className="card">
-              <img
-                src={require("./image/00003.png")}
-                className="card-img-top"
-                alt="..."
-              />
+              <a href="/Cooperationform">
+                <img
+                  src={require("./image/00010.png")}
+                  className="card-img-top"
+                  alt="..."
+                />
+              </a>
               <div className="card-body">
-                <h3 className="card-title fs-4">前程似錦</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
+                <h3 className="card-title fs-4">異業合作</h3>
+                <p className="card-text fs-6">2022/01/01 - 2022/12/31</p>
                 <p className="card-content fs-5">
-                  樂食町與您一同慶祝畢業，同桌每人皆享有甜品!
+                  歡迎將您的想法填入表單，將與您聯繫!!
                 </p>
+                {/* 手機版及縮小會跑版 */}
+                <Link to="/Cooperationform" className="">
+                  Cooperationform
+                </Link>
               </div>
             </div>
           </div>
-          {/* 5 */}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00004.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">端午特別優惠</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">來店點節慶套餐，享特殊優惠!</p>
-                <br></br>
+
+          {/* 開始接資料庫資料 */}
+          {News.map((v, i) => {
+            {
+              /* console.log(v)
+            console.log(v.imgid) */
+            }
+            return (
+              <div className="col" key={i}>
+                <div className="card ">
+                  {/* 抓照片  */}
+                  <img
+                    src={`http://localhost/project_rakuji/imgs/${v.imgid}`}
+                    className="card-img-top"
+                    alt=""
+                  ></img>
+                  <div className="card-body">
+                    <h3 className="card-title fs-4">{v.name}</h3>
+
+                    {/* 時間顯示"timestart": "2022-05-31T16:00:00.000Z" 不要後面T到Z這串  在後端那隻+dateString:true  */}
+
+                    <p className="card-text fs-6">
+                      {v.timestart}- {v.timeend}
+                    </p>
+                    <p className="card-content fs-5">{v.content}</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            );
+          })}
+
+        
+
           {/* 6 */}
           <div className="col">
             <div className="card">
@@ -173,106 +157,15 @@ function Newslist() {
               </div>
             </div>
           </div>
-          {/* 7 */}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00006.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">生日壽星</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  生日壽星，同桌享有88折優惠!
-                  <br></br>
-                  <br></br>
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* 8 照片失真要換*/}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00007.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">食品認證</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  樂食町各項產品皆有通過食品認證，請安心享用!
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* 9 照片失真要換*/}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00008.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">會員限定</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  加入樂食町會員，獲得第一手訊息及優惠方案!
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* 10 照片失真要換*/}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00009.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">人才招募</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  加入樂食町家族，讓我們一同成長!!
-                </p>
-                <br></br>
-              </div>
-            </div>
-          </div>
-          {/* 11 照片失真要換*/}
-          <div className="col">
-            <div className="card">
-              <a href="/Cooperationform">
-                <img
-                  src={require("./image/00010.png")}
-                  className="card-img-top"
-                  alt="..."
-                />
-              </a>
-              <div className="card-body">
-                <h3 className="card-title fs-4">異業合作</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  歡迎將您的想法填入表單，將與您聯繫!!
-                </p>
-                {/* 手機版及縮小會跑版 */}
-                <Link to="/Cooperationform" className="">
-                  Cooperationform
-                </Link>
-              </div>
-            </div>
-          </div>
+     
+        
+   
+   {/* 下面div是接頭 */}
         </div>
       </div>
-      
-      <br></br>
-      <MyBackTop/>
 
+      <br></br>
+      <MyBackTop />
     </main>
   );
 }
