@@ -4,7 +4,7 @@ import { GlassMagnifier } from "react-image-magnifiers";
 import { useCart } from "../Cart/utils/useCart";
 import { Modal, Button } from "react-bootstrap";
 import Swal from "sweetalert2";
-import $ from "jquery"
+import $ from "jquery";
 import withReactContent from "sweetalert2-react-content";
 import {
   EmailShareButton,
@@ -29,6 +29,9 @@ import product_comments from "./data/product_comments.json";
 const Product_detail = (props) => {
   // 從資料庫取得資料
   const [datas, setDatas] = useState([]);
+
+  //註記
+  const [add, setAdd] = useState(0);
 
   const fetchData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
@@ -70,46 +73,74 @@ const Product_detail = (props) => {
 
   const { addItem } = useCart();
 
-  //留言內容
-  const [comments, setComments] = useState("");
-
   // 從資料庫取得評論資料
-  const [CommentsDatas, setCommentsDatas] = useState([]);
+  const [commentsDatas, setCommentsDatas] = useState([]);
 
   const fetchCommentsData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/products/productcomment`);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/products/productcomment`
+    );
     const results = await response.json();
-    setCommentsDatas(results);
-    // console.log(results)
+
+    const comments = await results.filter(
+      (v, i) => v.product_id == params.productId
+    );
+
+    setCommentsDatas(comments);
   };
   useEffect(() => {
     fetchCommentsData();
-  }, []);
+  }, [add]);
 
-  //------------------------------------------------------------------------------------------------------
-  const [start, setStart] = useState(0)
+  //score
+  const [rating, setRating] = useState(0);
   const solid_star = "★";
   const hollow_star = "☆";
   const total_star = [];
 
-  for (let i = 1; i <= start; i++) {
+  for (let i = 1; i <= rating; i++) {
     total_star.push(solid_star);
   }
 
-  for (let i = 1; i <= 5 - start; i++) {
+  for (let i = 1; i <= 5 - rating; i++) {
     total_star.push(hollow_star);
   }
-
   // console.log(total_star)
 
+  //檢查click狀態
+  const [clickState, setClickState] = useState(false);
 
+  //評分後內容
+  const [ratingMsg, setRatingMsg] = useState("");
 
-  const [clickState, setClickState] = useState(false)
+  //留言內容
+  const [comments, setComments] = useState("");
 
+  //假會員ID
+  const [memberId, setMemberId] = useState(5);
 
+  //商品編號
+  const product_id = Number(params.productId);
 
+  //送資料到資料庫
+  const sendData = async () => {
+    await fetch(`${process.env.REACT_APP_API_URL}/products/productcomment`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        product_id,
+        rating,
+        comments,
+        memberId,
+      }),
+    }).then((res) => res.json());
+  };
 
-  //------------------------------------------------------------------------------------------------------
+  console.log(commentsDatas)
+  console.log(add)
 
   return (
     <div className="container-xxl product_detail pb-5">
@@ -238,55 +269,59 @@ const Product_detail = (props) => {
         <div className="comments_create mb-5">
           <p className="mb-2">留言內容：</p>
 
-          <div className="comments_create_rating mb-3">
-            <ul>
+          <div className="comments_create_rating mb-3 d-flex align-items-center">
+            <ul className="me-3">
               {/* <li id="star1">☆</li>
               <li id="star1">☆</li>
               <li id="star1">☆</li>
               <li id="star1">☆</li>
               <li id="star1">☆</li> */}
 
-              {total_star.map((v, i) =>
-                <li id="star" key={i}
-
+              {total_star.map((v, i) => (
+                <li
+                  id="star"
+                  key={i}
                   onClick={() => {
-                    setStart(i + 1)
-                    console.log(i + 1)
-                    setClickState(true)
+                    setRating(i + 1);
+                    // console.log(i+1);
+                    setClickState(true);
+                    switch (i) {
+                      case 0:
+                        setRatingMsg("如果再加四顆星那就更棒了😓");
+                        break;
+                      case 1:
+                        setRatingMsg("如果再加三顆星那就更棒了😌");
+                        break;
+                      case 2:
+                        setRatingMsg("如果再加二顆星那就更棒了😅");
+                        break;
+                      case 3:
+                        setRatingMsg("如果再加一顆星那就更棒了😀");
+                        break;
+                      case 4:
+                        setRatingMsg("感謝親對商品的支持🤑");
+                        break;
+                    }
                   }}
-
-
-
                   onMouseEnter={() => {
                     if (clickState == false) {
-                      setStart(i + 1)
-                      console.log(i + 1)
+                      setRating(i + 1);
+                      // console.log(i + 1);
                     }
                   }}
-
-
-
                   onMouseLeave={() => {
                     if (clickState == false) {
-                      setStart(0)
-                      console.log(i + 1)
+                      setRating(0);
+                      // console.log(i + 1);
+                      setRatingMsg("");
                     }
                   }}
-
-                // onMouseOver={()=>{
-                //   setStart(i+1)
-                //   console.log(i)
-                // }}
-
-                // onMouseOut={()=>{
-                //   setStart(0)
-                //   console.log(i)
-                // }}
-
-                >{v}</li>
-              )}
+                >
+                  {v}
+                </li>
+              ))}
             </ul>
-            <p id="score"></p>
+            <span id="score">{ratingMsg}</span>
           </div>
 
           <div className="mb-3">
@@ -338,13 +373,22 @@ const Product_detail = (props) => {
           <button
             type="button"
             className="send_comments_btn btn btn-outline-info fw-bold"
+            onClick={async () => {
+              await sendData()
+              .then(setRating(0))
+              .then(setRatingMsg(""))
+              .then(setComments(""))
+              .then(setAdd(add + 1))
+
+            
+            }}
           >
             送出
           </button>
         </div>
 
         <div className="comments_area">
-          {CommentsDatas.map((v, i) => (
+          {commentsDatas.map((v, i) => (
             <Product_comment
               key={i}
               member_name={v.name}

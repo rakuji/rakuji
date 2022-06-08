@@ -211,6 +211,12 @@
 .product_detail .comments_create .comments_create_rating ul li {
   font-size: 1.5rem;
   color: #dc3545;
+  cursor: pointer;
+}
+
+.product_detail .comments_create .comments_create_rating #score {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .product_detail .comments_create .good_comment .good {

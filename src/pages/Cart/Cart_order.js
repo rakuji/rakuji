@@ -223,11 +223,11 @@ const Cart_order = () => {
                                 confirmButtonText: '確定',
                                 // confirmButtonText: '測試按鈕',
                                 cancelButtonText: '取消',
-                            }).then(async (result) => {
+                            }).then((result) => {
                                 if (result.isConfirmed) {
 
                                     //送出訂單後要處理的事
-                                    await sendData(); //送出資料
+                                    sendData(); //送出資料
                                     localStorage.removeItem('couponPrice'); //清除優惠折扣
                                     localStorage.removeItem('cart_info'); //清除訂購資訊
                                     // window.location.href = `/cart/cart_info/cart_order/cart_confirm` 
