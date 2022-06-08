@@ -6,8 +6,14 @@ import "../../components/background.css";
 import $ from "jquery";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
-function Recipes() {
+function Recipes(props) {
+    // 從資料庫取得資料
   const [datas, setDatas] = useState([]);
+    // 篩選類別後的資料
+    const [sortData, setSortData] = useState([])
+
+    // 搜尋後的資料
+    const [searchData, setSearchData] = useState([])
   const fetchData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes`);
     const results = await response.json();
@@ -17,10 +23,21 @@ function Recipes() {
     fetchData();
   }, []);
 
+  //--------------------搜尋
+  const [searchInput, setSearchInput] = useState("");
+  //----------------------------------------------------------
+  const [recipesIndex, setRecipesIndex] = useState(0);
   const recipesArray = ["全部", "主食", "前菜", "湯品", "飲品", "甜點"];
+  const DP = datas
+    .filter((v, i) => {
+      if (recipesIndex === 0) return true;
+
+      return v.recipesArray === recipesArray[recipesIndex];
+    })
+    .filter((v) => v.Recipes_Name.includes(searchInput));
 
   useEffect(() => {
-    $("#recipesArray_buttons button:first-child").attr("id", "active");
+    $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
   });
 
   useEffect(() => {
@@ -46,10 +63,18 @@ function Recipes() {
             <div className="col-12   container">
               <div className=" container">
                 <div className="row container">
-                  <div className="row  container RecipesClassButton" id="recipesArray_buttons">
+                  <div
+                    className="row  container RecipesClassButton"
+                    id="recipesArray_buttons"
+                  >
                     {recipesArray.map((v, i) => {
                       return (
-                        <button key={i} className="col container">
+                        <button
+                          key={i}
+                          id={i}
+                          className="col container"
+                          onClick={() => setRecipesIndex(i)}
+                        >
                           {v}
                         </button>
                       );
@@ -204,53 +229,55 @@ function Recipes() {
         <div className="row">
           <div className="col-2 RecipesClassButton RecipesClassButtonAll">
             <div className="" id="recipesArray_buttons">
-              {recipesArray.map((v, i) => {
-                return (
-                  <button key={i} className="">
-                    {v}
-                  </button>
-                );
-              })}
+            {recipesArray.map((v, i) => {
+                      return (
+                        <button
+                          key={i}
+                          id={i}
+                          className="col container"
+                          onClick={() => setRecipesIndex(i)}
+                        >
+                          {v}
+                        </button>
+                      );
+                    })}
             </div>
           </div>
 
           <div className="col-10 RecipesBoxCardAll">
-            {datas.length > 0 &&
-              datas.map((recipes, i) => {
-                const { Recipes_Name, Recipes_Clicks, Recipes_Picture } =
-                  recipes;
-                return (
-                  <div key={i} className="RecipesSearchBoxCardAll ">
-                    <div className="RecipesSearchBoxCard ">
-                      <Link to={`/recipes/id=${recipes.Recipes_ID}`}>
-                        <img
-                          src={require(`./image/${Recipes_Picture}`)}
-                          className="card-img-top RecipesListImg"
-                          alt={Recipes_Name}
-                        />
-                      </Link>
-                      <div className="card-body">
-                        <div className=" testBOX ">
-                          <p className="card-text h6 ">
-                            <img className="Boximg" />
-                            {Recipes_Name}
+            {DP.map((v, i) => {
+              return (
+                <div key={i} className="RecipesSearchBoxCardAll ">
+                  <div className="RecipesSearchBoxCard ">
+                    <Link to={`/recipes/id=${v.Recipes_ID}`}>
+                      <img
+                        src={require(`./image/${v.Recipes_Picture}`)}
+                        className="card-img-top RecipesListImg"
+                        alt={v.Recipes_Name}
+                      />
+                    </Link>
+                    <div className="card-body">
+                      <div className=" testBOX ">
+                        <p className="card-text h6 ">
+                          <img className="Boximg" />
+                          {v.Recipes_Name}
+                        </p>
+                        <div className="">
+                          <p className="text-sm-start h6">
+                            瀏覽次數:{v.Recipes_Clicks}次
                           </p>
-                          <div className="">
-                            <p className="text-sm-start h6">
-                              瀏覽次數:{Recipes_Clicks}次
-                            </p>
-                          </div>
                         </div>
-                        <Link to={`/recipes/id=${recipes.Recipes_ID}`}>
-                          <button className=" RecipesLookButton" id="">
-                            查看
-                          </button>
-                        </Link>
                       </div>
+                      <Link to={`/recipes/id=${v.Recipes_ID}`}>
+                        <button className=" RecipesLookButton" id="">
+                          查看
+                        </button>
+                      </Link>
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
