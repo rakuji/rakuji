@@ -3,8 +3,14 @@ import  { Redirect } from 'react-router-dom'
 import "./css/my-login.css"
 // import "./css/reset.css"
 
+function AuthMessage(props){
+    if( ! props.loginStatus ){
+       <div style={{color:"red"}}>帳號密碼有誤!</div>
+    }
+}
+
 function Login() {
-    const [loginStatus, setLoginStatus ] = useState()
+    const [loginStatus, setLoginStatus ] = useState("init")
     
     useEffect(()=>{
         const submitBtn = document.querySelector("#submitBtn");
@@ -32,9 +38,9 @@ function Login() {
                 userPassword.value = "";
                 if (data){
                     sesStorage['memail'] = userEmail.value;
-                }else{
-                    setLoginStatus(data);
                 }
+                setLoginStatus(data);               
+                
             })
 
             
@@ -54,7 +60,7 @@ function Login() {
                                 <div class="brand">
                                     <img src={require("./images/logo/logo_color_login.png")} alt="logo_color_login.png"/>
                                 </div>
-                                <div style={{color:"red"}}>{loginStatus}</div>
+                                <AuthMessage loginStatus={loginStatus}/>
                                 <div class="card fat">
                                     <div class="card-body">
                                         
