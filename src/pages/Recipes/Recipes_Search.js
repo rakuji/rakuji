@@ -1,21 +1,34 @@
 import React, { useEffect, useState } from "react";
-
 import { Link } from "react-router-dom";
 import "./Recipes.css";
-import "../../components/background.css";
-import $ from "jquery";
 import MyBackTop from "../About/myComponents/MyBackTop";
+import Box_Ingredients from "./Box_Ingredients";
+import $ from "jquery";
 
-function Recipes(props) {
-  // 從資料庫取得資料
+
+function Box() {
+  //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
+  const url = window.location.href;
+  //之後去分割字串把分割後的字串放進陣列中
+  const ary1 = url.split("=");
+  const ary2 = url.split("=,~");
+
+
+  //此時ary1裡的內容為：
+  // console.log(ary1);
+  //ary1[0] = "http://localhost:3000/recipes/id"，ary2[1] = '1'
+
+  //取得id值
+  const id = ary1[1];
+  const id2 = ary2[0];
+  const id3 = ary1[0];
+
+console.log(id2);
   const [datas, setDatas] = useState([]);
-  // 篩選類別後的資料
-  const [sortData, setSortData] = useState([]);
-
-  // 搜尋後的資料
-  const [searchData, setSearchData] = useState([]);
   const fetchData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/recipes`);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/recipes/search/${id}`
+    );
     const results = await response.json();
     setDatas(results);
   };
@@ -29,8 +42,8 @@ function Recipes(props) {
   const [recipesIndex, setRecipesIndex] = useState(0);
   const recipesArray = ["全部", "主食", "前菜", "湯品", "飲品", "甜點"];
   //----------------------------------------------------------
-  const [KcalMin, setKcalMin] = useState();
-  const [KcalMax, setKcalMax] = useState();
+  const [KcalMin,setKcalMin]=useState();
+  const [KcalMax,setKcalMax]=useState();
   //----------------------------------------------------------
   const DP = datas
     .filter((v, i) => {
@@ -39,6 +52,9 @@ function Recipes(props) {
       return v.RecipesClass === recipesArray[recipesIndex];
     })
     .filter((v) => v.Recipes_Name.includes(searchInput));
+
+    
+
 
   useEffect(() => {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
@@ -50,7 +66,6 @@ function Recipes(props) {
       $(this).attr("id", "active");
     });
   }, []);
-
   return (
     <>
       <div className="nav-item container phoneDiv ">
@@ -172,7 +187,7 @@ function Recipes(props) {
                 role="tabpanel"
                 aria-labelledby="profile-tab"
               >
-                <form className="container  nav RecipesSearchDiv text-center RecipesOff">
+                              <form className="container  nav RecipesSearchDiv text-center RecipesOff">
                   <div className="row ">
                     <div className="col-4">
                       <input
@@ -203,7 +218,7 @@ function Recipes(props) {
                       <h6 className="RecipesSearchText">大卡</h6>
                     </div>
                     <div className="col-1">
-                      <Link to={`/recipes/search/=${KcalMin}~${KcalMax}`}>
+                    <Link to={`/recipes/search/=${KcalMin}~${KcalMax}`}>
                         <button
                           className=" RecipesSearchButton"
                           type="button"
@@ -215,6 +230,7 @@ function Recipes(props) {
                     </div>
                   </div>
                 </form>
+                
 
                 <form className="container  nav RecipesSearchDiv text-center RecipesOn">
                   <div className="">
@@ -241,7 +257,7 @@ function Recipes(props) {
                       />
                     </div>
                     <div className="col-1">
-                      <Link to={`/recipes/search/=${KcalMin}~${KcalMax}`}>
+                    <Link to={`/recipes/search/=${KcalMin}~${KcalMax}`}>
                         <button
                           className=" RecipesSearchButton"
                           type="button"
@@ -344,4 +360,4 @@ function Recipes(props) {
   );
 }
 
-export default Recipes;
+export default Box;
