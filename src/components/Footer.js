@@ -137,30 +137,25 @@ function Footer() {
               </li>
             </ul>
             <ul className="nav  row align-items-center">
-              <li className="nav-item  ">
+              <ol className="nav-item  ">
                 <div style={{ visibility: "hidden" }}>#</div>
                 <li className="nav-item row align-items-center">
-                <a href="#" className="p-0 col-2">
-
-                </a>
-                <a href="#" className="p-0 col-2">
-                  <i className="fa-brands fa-facebook"></i>
-                </a>
-                <a href="#" className="p-0 col-2">
-                  <i className="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#" className="p-0 col-2">
-                  <i className="fa-brands fa-line"></i>
-                </a>
-                <a href="#" className="p-0 col-2">
-                  <i className="fa-brands fa-youtube"></i>
-                </a>
-                <a href="#" className="p-0 col-2">
-                  
-                </a>
-              </li>
-              </li>
-
+                  <a href="#" className="p-0 col-2"></a>
+                  <a href="#" className="p-0 col-2">
+                    <i className="fa-brands fa-facebook"></i>
+                  </a>
+                  <a href="#" className="p-0 col-2">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                  <a href="#" className="p-0 col-2">
+                    <i className="fa-brands fa-line"></i>
+                  </a>
+                  <a href="#" className="p-0 col-2">
+                    <i className="fa-brands fa-youtube"></i>
+                  </a>
+                  <a href="#" className="p-0 col-2"></a>
+                </li>
+              </ol>
             </ul>
           </div>
         </div>

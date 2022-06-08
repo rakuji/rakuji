@@ -49,7 +49,7 @@ function Box() {
           let aaaa = kcal / SeveralCopies;
 
           return (
-            <div className="container p-3 mb-2  text-dar ">
+            <div key={i} className="container p-3 mb-2  text-dar ">
               <div className="container row p-3 mb-2  text-dark">
                 <div className="p-3 mb-2 bg-body text-dar RecipesOff">
                   <h3
@@ -149,9 +149,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                              <h7>烹飪時間</h7>
+                              <>烹飪時間</>
                               <br />
-                              <h7>{RecipesBox_Time}分鐘</h7>
+                              <>{RecipesBox_Time}分鐘</>
                             </div>
                           </div>
                           <div className="2">
@@ -176,9 +176,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                              <h7>{SeveralCopies}人份</h7>
+                              <>{SeveralCopies}人份</>
                               <br />
-                              <h7>{aaaa}大卡</h7>
+                              <>{aaaa}大卡</>
                             </div>
                           </div>
                           <div className="3">
@@ -200,9 +200,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="  RecipesTimebottombox rounded-bottom border-2 ">
-                              <h7>{SeveralCopies}</h7>
+                              <>{SeveralCopies}</>
                               <br />
-                              <h7>人份</h7>
+                              <>人份</>
                             </div>
                           </div>
                         </div>
@@ -284,9 +284,9 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                              <h7>{RecipesBox_Time}</h7>
+                              <>{RecipesBox_Time}</>
                               <br />
-                              <h7>分鐘</h7>
+                              <>分鐘</>
                             </div>
                           </div>
                         </div>
@@ -311,9 +311,9 @@ function Box() {
                         </text> */}
                           </div>
                           <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                            <h7>{SeveralCopies}人份</h7>
+                            <>{SeveralCopies}人份</>
                             <br />
-                            <h7>{aaaa}</h7>
+                            <>{aaaa}</>
                           </div>
                         </div>
                         <div className="col">
@@ -333,9 +333,9 @@ function Box() {
                       ></canvas> */}
                           </div>
                           <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                            <h7>{SeveralCopies}</h7>
+                            <>{SeveralCopies}</>
                             <br />
-                            <h7>人份</h7>
+                            <>人份</>
                             <br />
                           </div>
                         </div>
@@ -356,7 +356,7 @@ function Box() {
                   <svg className="col-2 ">
                     <g
                       stroke="#58C2DD"
-                      stroke-width="3"
+                      strokeWidth="3"
                       style={{ fill: "#ccc" }}
                     >
                       <line x1="50%" y1="0" x2="50%" y2="85%" />
@@ -445,9 +445,7 @@ function Box() {
                     height="315"
                     src="https://www.youtube.com/embed/YvwkK_OqYdQ"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
                   ></iframe>
                 </div>
                 <div className="p-3 mb-2 text-dar container RecipesOn">
@@ -457,15 +455,7 @@ function Box() {
                     </div>
                   </div>
                   <div className="row">
-                    <iframe
-                      width="560"
-                      height="315"
-                      src="https://www.youtube.com/embed/YvwkK_OqYdQ"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
+
                   </div>
                 </div>
                 <div className="p-3 mb-2  text-dar container row RecipesOff">
