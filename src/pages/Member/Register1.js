@@ -2,42 +2,51 @@
 // import React from 'react'
 import React, { useState } from "react";
 import "./css/my-login.css";
-// import "./css/reset.css";
+import "./css/reset.css";
 import { Form, Row, Col } from "react-bootstrap";
-// import BootstrapDatePicker from "../../components/BootstrapDatePicker";
+import BootstrapDatePicker from "../../components/BootstrapDatePicker";
 import Axios from "axios";
 
 function Register() {
   const [Memail, setMemail] = useState("");
   const [Mpassword, setMpassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  // const [Mpic, setMpic] = useState("");
-  // const [Mname, setMname] = useState("");
-  // const [Msex, setMsex] = useState("");
-  // const [Mvocation, setMvocation] = useState("");
-  // const [Mbirthday, setMbirthday] = useState("");
-  // const [Mcity, setMcity] = useState("");
-  // const [Maddress, setMaddress] = useState("");
-  // const [Mchild, setMchild] = useState("");
-  // const [Mphone, setMphone] = useState("");
-  // const [file, setFile] = useState("");
+  const [Mpic, setMpic] = useState("");
+  const [Mname, setMname] = useState("");
+  const [Msex, setMsex] = useState("");
+  const [Mvocation, setMvocation] = useState("");
+  const [Mbirthday, setMbirthday] = useState("");
+  const [Mcity, setMcity] = useState("");
+  const [Maddress, setMaddress] = useState("");
+  const [Mchild, setMchild] = useState("");
+  const [Mphone, setMphone] = useState("");
+  const [file, setFile] = useState("");
   const submit = (event) => {
      
       Axios
         .post("http://localhost:7000/register", {
           Memail: Memail,
           Mpassword: Mpassword,
-          rePassword: rePassword, 
+          rePassword: rePassword,
+          Mpic: Mpic,
+          Mname: Mname,
+          Msex: Msex,
+          Mvocation: Mvocation,
+          Mbirthday: Mbirthday,
+          Mcity: Mcity,
+          Maddress: Maddress,
+          Mchild: Mchild,
+          Mphone: Mphone,
         })
         .then(() => {
-          alert("註冊成功!")
+          alert("註冊成功!");
         });
     };
   
-  // function handleChange(e) {
-  //   console.log(e.target.files);
-  //   setFile(URL.createObjectURL(e.target.files[0]));
-  // }
+  function handleChange(e) {
+    console.log(e.target.files);
+    setFile(URL.createObjectURL(e.target.files[0]));
+  }
   return (
     //JSX
     <>
@@ -87,7 +96,7 @@ function Register() {
                           />
                         </Form.Group>
                       </Row>
-{/* 
+
                       <Row>
                         <Form.Group className="mb-3">上傳大頭照</Form.Group>
                       </Row>
@@ -196,7 +205,7 @@ function Register() {
                             placeholder="" onChange={(event) => {setMphone(event.target.value);}}
                           ></input>
                         </Form.Group>
-                      </Row> */}
+                      </Row>
                       <Row>
                         <Col className="d-flex justify-content-center">
                           <button type="submit" value="送出" className="btn1" onClick={submit}>

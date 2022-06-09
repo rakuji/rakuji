@@ -5,19 +5,25 @@ import "./css/reset.css";
 import { Form } from 'react-bootstrap';
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Axios from "axios";
 
 
 function Signup() {
-    const [validated, setValidated] = useState(false);
-
-    const handleSubmit = (event) => {
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-  
-      setValidated(true);
+    const [Memail, setMemail] = useState("");
+    const [Mpassword, setMpassword] = useState("");
+    const [rePassword, setRePassword] = useState("");
+    const submit = (event) => {
+     
+      Axios
+        .post("http://localhost:7000/register", {
+          Memail: Memail,
+          Mpassword: Mpassword,
+          rePassword: rePassword, 
+        })
+        .then(() => {
+          alert("註冊成功!")
+          
+        });
     };
   return (
     <body class="my-login-page">
@@ -30,7 +36,7 @@ function Signup() {
               </div>
               <div class="card fat">
                 <div class="card-body">
-                  <Form noValidate validated={validated} class="my-login-validation" novalidate="">
+                  <Form noValidate class="my-login-validation" novalidate="">
                     <div class="form-group">
                       <label for="email">
                         <span class="star">*</span>輸入註冊信箱{" "}
@@ -41,8 +47,7 @@ function Signup() {
                         class="form-control"
                         name="email"
                         required
-                        autofocus
-                      />
+                        autofocus onChange={(event) => {setMemail(event.target.value)}} />
                       <div class="invalid-feedback">電子信已被使用</div>
                     </div>
                     <div class="form-group">
@@ -55,7 +60,7 @@ function Signup() {
                         class="form-control"
                         name="password"
                         required
-                        data-eye
+                        data-eye onChange={(event) => {setMpassword(event.target.value);}}
                       />
                       <div class="invalid-feedback"> 密碼已存在 </div>
                     </div>
@@ -69,7 +74,7 @@ function Signup() {
                         class="form-control"
                         name="password"
                         required
-                        data-eye
+                        data-eye onChange={(event) => {setRePassword(event.target.value);}}
                       />
                       <div class="invalid-feedback"> 密碼不一致 </div>
                     </div>
@@ -77,8 +82,8 @@ function Signup() {
                     <br />
 
                     <div class="form-group m-0">
-                      <button type="submit" class="btn btn-block btn-custom">
-                      <Link to="/Register" style={{ color: '#FFF', textDecoration: 'none' }}>註冊</Link>
+                      <button type="submit" class="btn btn-block btn-custom" onClick={submit}>
+                      <Link to="/Register" style={{ color: '#FFF', textDecoration: 'none' }} >註冊</Link>
                         
                       </button>
                       <br />

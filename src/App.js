@@ -6,7 +6,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import BootstrapDatePicker from "./components/BootstrapDatePicker";
+// import BootstrapDatePicker from "./components/BootstrapDatePicker";
 
 // pages
 import Home from "./pages/Home/Home";
@@ -69,7 +69,7 @@ function App() {
         </Route>
       </Switch>
       <Footer />
-      <BootstrapDatePicker />  
+      {/* <BootstrapDatePicker />   */}
     </div>
   );
 }
