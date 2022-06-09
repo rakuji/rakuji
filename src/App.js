@@ -12,6 +12,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
+import Newslistback from "./pages/Newslist/Newslistback";
 import Votelist from "./pages/Newslist/Votelist/Votelist";
 import Cooperationform from "./pages/Newslist/Cooperationform/Cooperationform";
 import Products from "./pages/Products/Products";
@@ -35,6 +36,9 @@ function App() {
         </Route>
         <Route path="/Newslist" exact>
           <Newslist />
+          </Route>
+          <Route path="/Newslistback" exact>
+          <Newslistback />
           </Route>
           <Route path="/Cooperationform" exact>
           <Cooperationform />
