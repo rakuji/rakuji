@@ -37,8 +37,7 @@ function Recipes(props) {
       return v.RecipesClass === recipesArray[recipesIndex];
     })
     .filter((v) => v.Recipes_Name.includes(searchInput))
-    .filter((v) => v.RecipesBox_Kcal >= KcalMin)
-    .filter((v) => v.RecipesBox_Kcal <= KcalMax);
+    .filter((v) => v.RecipesBox_Kcal >= KcalMin);
 
   useEffect(() => {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
@@ -67,9 +66,9 @@ function Recipes(props) {
           <div className="RecipesClassButtonAllOn container ">
             <div className="col-12   container">
               <div className=" container">
-                <div className="row container">
+                <div className="row col container">
                   <div
-                    className="row  container RecipesClassButton"
+                    className="row   container RecipesClassButton"
                     id="recipesArray_buttons"
                   >
                     {recipesArray.map((v, i) => {
@@ -175,7 +174,10 @@ function Recipes(props) {
                 role="tabpanel"
                 aria-labelledby="profile-tab"
               >
-                <form className="container  nav RecipesSearchDiv text-center RecipesOff">
+                <form
+                  className="container  nav RecipesSearchDiv text-center RecipesOff"
+                  input-type="Number"
+                >
                   <div className="row ">
                     <div className="col-4">
                       <input
