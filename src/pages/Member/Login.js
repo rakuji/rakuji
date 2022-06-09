@@ -1,29 +1,26 @@
-import React,{useState, useEffect} from "react";
+import React,{ useState, useEffect} from "react";
 import  { Redirect } from 'react-router-dom'
 import "./css/my-login.css"
 // import "./css/reset.css"
 
-function AuthMessage(props){
-    if( ! props.loginStatus ){
-       <div style={{color:"red"}}>帳號密碼有誤!</div>
-    }
-}
+const sesStorage  = sessionStorage;
 
 function Login() {
-    const [loginStatus, setLoginStatus ] = useState("init")
+    const [loginStatus, setLoginStatus ] = useState(false)
     
     useEffect(()=>{
         const submitBtn = document.querySelector("#submitBtn");
         const userEmail = document.querySelector("#email");
         const userPassword = document.querySelector("#password");
-        const sesStorage  = sessionStorage;
+        const authMessage = document.querySelector("#authMessage");
+        // const sesStorage  = sessionStorage;
 
         submitBtn.addEventListener("click",(e)=>{
             e.preventDefault();
-            if(sesStorage['memail'] == null){ // 若 storage未設置 
-                sesStorage['memail'] = '';    // 先設為空字串
-            }
 
+            // if(sesStorage['memail'] == null){ // 若 storage未設置 
+            //     sesStorage['memail'] = '';    // 先設為空字串
+            // }
             const formData =  new FormData(document.loginForm);
             fetch(`${process.env.REACT_APP_API_URL}/members`,{
                 method:"post",
@@ -34,22 +31,22 @@ function Login() {
                 return response.text();
             }).then(data=>{
                 console.log(data);
-                userEmail.value = "";
-                userPassword.value = "";
-                if (data){
-                    sesStorage['memail'] = userEmail.value;
+                if (data==="true"){
+                    sesStorage['memail'] =  userEmail.value ;        
+                    setLoginStatus(true);
+                }else{
+                    authMessage.innerText = "帳號密碼有誤!"
+                    userPassword.value = "";
                 }
-                setLoginStatus(data);               
-                
+                // console.log(loginStatus);
+                // userEmail.value = "";
             })
 
-            
         })
-    },[])
+    },[loginStatus])
 
-    const sesStorage  = sessionStorage;
     if(sesStorage['memail']){
-        return (<Redirect to='/member/clientCenter'  />)
+        return <Redirect from='/member/login' to='/member/clientCenter'  />
     } else {
         return (
             <body class="my-login-page">
@@ -60,7 +57,7 @@ function Login() {
                                 <div class="brand">
                                     <img src={require("./images/logo/logo_color_login.png")} alt="logo_color_login.png"/>
                                 </div>
-                                <AuthMessage loginStatus={loginStatus}/>
+                                <div id="authMessage" style={{color:"red"}}></div>
                                 <div class="card fat">
                                     <div class="card-body">
                                         
