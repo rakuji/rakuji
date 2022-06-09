@@ -39,7 +39,7 @@ function Newslist() {
       {/*  放breadcrumb margin-top 16px 無法加入  */}
       <div className="tt">
         <Breadcrumb />
-      </div>  
+      </div>
       {/* 動全部card的寬 */}
       <div className="container  col-10  d-flex justify-content-center">
         <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
@@ -137,30 +137,7 @@ function Newslist() {
             );
           })}
 
-        
-
-          {/* 6 */}
-          <div className="col">
-            <div className="card">
-              <img
-                src={require("./image/00005.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h3 className="card-title fs-4">慶祝母親節</h3>
-                <p className="card-text fs-6">2022/12/56 - 2022/12/56</p>
-                <p className="card-content fs-5">
-                  帶媽媽一同慶祝，同桌享有88折優惠!
-                </p>
-                <br></br>
-              </div>
-            </div>
-          </div>
-     
-        
-   
-   {/* 下面div是接頭 */}
+          {/* 下面div是接頭 */}
         </div>
       </div>
 
