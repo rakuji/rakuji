@@ -31,13 +31,16 @@ function Recipes(props) {
   const [KcalMin, setKcalMin] = useState(0);
   const [KcalMax, setKcalMax] = useState(0);
   //----------------------------------------------------------
+ 
   const DP = datas
     .filter((v, i) => {
       if (recipesIndex === 0) return true;
       return v.RecipesClass === recipesArray[recipesIndex];
     })
     .filter((v) => v.Recipes_Name.includes(searchInput))
-    .filter((v) => v.RecipesBox_Kcal >= KcalMin);
+    .filter((v) => v.RecipesBox_Kcal >= KcalMin)
+    .filter((v) => v.RecipesBox_Kcal <= KcalMax+1000);
+  console.log(DP);
 
   useEffect(() => {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
@@ -200,7 +203,7 @@ function Recipes(props) {
                         type="search"
                         aria-label="Search"
                         onChange={(e) => {
-                          setKcalMax(e.target.value);
+                          setKcalMax(e.target.value-1000);
                         }}
                       />
                     </div>
@@ -231,7 +234,7 @@ function Recipes(props) {
                         type="search"
                         aria-label="Search"
                         onChange={(e) => {
-                          setKcalMax(e.target.value);
+                          setKcalMax(e.target.value-1000);
                         }}
                       />
                     </div>
