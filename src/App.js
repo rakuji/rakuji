@@ -22,8 +22,6 @@ import Cart_info from "./pages/Cart/Cart_info";
 // import Cart_order from "./pages/Cart/Cart_order";
 import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes";
-import Recipes_Search from "./pages/Recipes/Recipes_Search";
-
 import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
 
@@ -93,9 +91,6 @@ function App() {
         </Route>
         <Route path="/recipes" exact>
           <Recipes />
-        </Route>
-        <Route path="/recipes/search/=:id" exact>
-          <Recipes_Search />
         </Route>
         <Route path="/recipes/id=:Recipes_ID" exact>
           <Box />

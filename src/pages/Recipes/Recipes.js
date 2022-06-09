@@ -22,23 +22,23 @@ function Recipes(props) {
   useEffect(() => {
     fetchData();
   }, []);
-
   //--------------------搜尋
   const [searchInput, setSearchInput] = useState("");
   //----------------------------------------------------------
   const [recipesIndex, setRecipesIndex] = useState(0);
   const recipesArray = ["全部", "主食", "前菜", "湯品", "飲品", "甜點"];
   //----------------------------------------------------------
-  const [KcalMin, setKcalMin] = useState();
-  const [KcalMax, setKcalMax] = useState();
+  const [KcalMin, setKcalMin] = useState(0);
+  const [KcalMax, setKcalMax] = useState(0);
   //----------------------------------------------------------
   const DP = datas
     .filter((v, i) => {
       if (recipesIndex === 0) return true;
-
       return v.RecipesClass === recipesArray[recipesIndex];
     })
-    .filter((v) => v.Recipes_Name.includes(searchInput));
+    .filter((v) => v.Recipes_Name.includes(searchInput))
+    .filter((v) => v.RecipesBox_Kcal >= KcalMin)
+    .filter((v) => v.RecipesBox_Kcal <= KcalMax);
 
   useEffect(() => {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
@@ -50,6 +50,7 @@ function Recipes(props) {
       $(this).attr("id", "active");
     });
   }, []);
+  // -----------------------------------
 
   return (
     <>
@@ -109,6 +110,7 @@ function Recipes(props) {
                 </button>
               </li>
               <li className="nav-item " role="presentation">
+                {/* <Link to="/recipes/search/"> */}
                 <button
                   className="nav-link RecipesSearchButtonNameRwd "
                   id="profile-tab"
@@ -121,6 +123,7 @@ function Recipes(props) {
                 >
                   卡路里搜尋
                 </button>
+                {/* </Link> */}
               </li>
             </ul>
             <div className="tab-content" id="myTabContent">
@@ -202,17 +205,7 @@ function Recipes(props) {
                     <div className="col-2">
                       <h6 className="RecipesSearchText">大卡</h6>
                     </div>
-                    <div className="col-1">
-                      <Link to={`/recipes/search/=${KcalMin}~${KcalMax}`}>
-                        <button
-                          className=" RecipesSearchButton"
-                          type="button"
-                          id=""
-                        >
-                          搜尋
-                        </button>
-                      </Link>
-                    </div>
+                    <div className="col-1"></div>
                   </div>
                 </form>
 
@@ -240,17 +233,7 @@ function Recipes(props) {
                         }}
                       />
                     </div>
-                    <div className="col-1">
-                      <Link to={`/recipes/search/=${KcalMin}~${KcalMax}`}>
-                        <button
-                          className=" RecipesSearchButton"
-                          type="button"
-                          id=""
-                        >
-                          搜尋
-                        </button>
-                      </Link>
-                    </div>
+                    <div className="col-1"></div>
                   </div>
                 </form>
               </div>
