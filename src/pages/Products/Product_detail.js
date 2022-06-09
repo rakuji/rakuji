@@ -55,6 +55,7 @@ const Product_detail = (props) => {
 
   //取得url productId
   const params = useParams();
+  // console.log(params);
 
   useEffect(() => {
     // 取得json檔
@@ -64,8 +65,6 @@ const Product_detail = (props) => {
       setProduct(item);
     }
   }, [datas]);
-
-  // console.log(params.productId);
 
   //商品數量
   const [count, setCount] = useState(1);
@@ -113,8 +112,16 @@ const Product_detail = (props) => {
   //留言內容
   const [comments, setComments] = useState("");
 
+  //留言內容長度
+  const [commentsLength, setCommentsLength] = useState(0);
+  const maxLength = 200;
+
+  useEffect(() => {
+    setCommentsLength(comments.length);
+  }, [comments]);
+
   //假會員ID
-  const [memberId, setMemberId] = useState(5);
+  const [loginMemberId, setLoginMemberId] = useState(5);
 
   //商品編號
   const product_id = Number(params.productId);
@@ -131,13 +138,13 @@ const Product_detail = (props) => {
         product_id,
         rating,
         comments,
-        memberId,
+        loginMemberId,
       }),
     });
     fetchCommentsData();
   };
 
-  console.log(commentsDatas)
+  console.log(commentsDatas);
   // console.log(add)
 
   return (
@@ -305,6 +312,23 @@ const Product_detail = (props) => {
                     if (clickState == false) {
                       setRating(i + 1);
                       // console.log(i + 1);
+                      switch (i) {
+                        case 0:
+                          setRatingMsg("如果再加四顆星那就更棒了😓");
+                          break;
+                        case 1:
+                          setRatingMsg("如果再加三顆星那就更棒了😌");
+                          break;
+                        case 2:
+                          setRatingMsg("如果再加二顆星那就更棒了😅");
+                          break;
+                        case 3:
+                          setRatingMsg("如果再加一顆星那就更棒了😀");
+                          break;
+                        case 4:
+                          setRatingMsg("感謝親對商品的支持🤑");
+                          break;
+                      }
                     }
                   }}
                   onMouseLeave={() => {
@@ -322,22 +346,33 @@ const Product_detail = (props) => {
             <span id="score">{ratingMsg}</span>
           </div>
 
-          <div className="mb-3">
+          <div>
             <textarea
               className="form-control"
               placeholder="告訴別人你有多喜歡此商品"
               id="exampleFormControlTextarea1"
-              rows="3"
+              rows="5"
+              maxLength={maxLength}
               value={comments}
-              onChange={(e) => setComments(e.target.value)}
+              onChange={(e) => {
+                setComments(e.target.value);
+              }}
             ></textarea>
+            <div className="word_length d-flex justify-content-end">
+              <p>
+                (<span id="font_length"></span>
+                {commentsLength}/{maxLength})
+              </p>
+            </div>
           </div>
 
           <div className="good_comment d-flex mb-4">
             <button
               className="good"
               onClick={() => {
-                setComments(comments + "超讚的出貨速度");
+                if (maxLength - comments.length >= 7) {
+                  setComments(comments + "超讚的出貨速度");
+                }
               }}
             >
               超讚的出貨速度
@@ -345,7 +380,9 @@ const Product_detail = (props) => {
             <button
               className="good"
               onClick={() => {
-                setComments(comments + "超讚的商品品質");
+                if (maxLength - comments.length >= 7) {
+                  setComments(comments + "超讚的商品品質");
+                }
               }}
             >
               超讚的商品品質
@@ -353,7 +390,9 @@ const Product_detail = (props) => {
             <button
               className="good"
               onClick={() => {
-                setComments(comments + "超讚的CP值");
+                if (maxLength - comments.length >= 6) {
+                  setComments(comments + "超讚的CP值");
+                }
               }}
             >
               超讚的CP值
@@ -361,7 +400,9 @@ const Product_detail = (props) => {
             <button
               className="good"
               onClick={() => {
-                setComments(comments + "超讚的服務");
+                if (maxLength - comments.length >= 5) {
+                  setComments(comments + "超讚的服務");
+                }
               }}
             >
               超讚的服務
@@ -372,7 +413,6 @@ const Product_detail = (props) => {
             type="button"
             className="send_comments_btn btn btn-outline-info fw-bold"
             onClick={() => {
-
               if (rating == 0) {
                 Swal.fire({
                   icon: "warning",
@@ -384,40 +424,36 @@ const Product_detail = (props) => {
                   title: "請填寫評論",
                 });
               } else {
-
-
-
                 Swal.fire({
-                  title: '確定要送出評論?',
-                  icon: 'warning',
+                  title: "確定要送出評論?",
+                  icon: "warning",
                   showCancelButton: true,
-                  confirmButtonColor: '#3085d6',
-                  cancelButtonColor: '#d33',
-                  confirmButtonText: '確定',
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "確定",
                   // confirmButtonText: '測試按鈕',
-                  cancelButtonText: '取消',
+                  cancelButtonText: "取消",
                 }).then((result) => {
                   if (result.isConfirmed) {
-                    sendData()
-                    setRating(0)
-                    setRatingMsg("")
-                    setComments("")
+                    sendData();
+                    setRating(0);
+                    setRatingMsg("");
+                    setComments("");
+                    setClickState(false);
 
                     Swal.fire({
-                      icon: 'success',
-                      title: '評論已送出!',
-                    })
+                      icon: "success",
+                      title: "評論已送出!",
+                    });
                   }
-                })
+                });
 
                 // sendData()
                 // setRating(0)
                 // setRatingMsg("")
                 // setComments("")
               }
-            }
-
-            }
+            }}
           >
             送出
           </button>
@@ -427,10 +463,14 @@ const Product_detail = (props) => {
           {commentsDatas.map((v, i) => (
             <Product_comment
               key={i}
+              id={v.id}
+              member_id={v.member_id}
               member_name={v.name}
               contents={v.contents}
               rating={v.rating}
               created_at={v.created_at}
+              fetchCommentsData={fetchCommentsData}
+              loginMemberId={loginMemberId}
             />
           ))}
         </div>

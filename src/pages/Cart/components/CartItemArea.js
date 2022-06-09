@@ -8,7 +8,7 @@ const CartItemArea = () => {
     const { cart, items, plusOne, minusOne, removeItem } = useCart()
 
     return (
-        <table className='table'>
+        <table className={`table ${cart.isEmpty == true ? "d-none" : ""}`}>
             <thead>
                 <tr>
                     <th>商品圖片</th>

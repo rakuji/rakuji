@@ -185,7 +185,7 @@ const Products = (props) => {
   const { addItem } = useCart()
 
 
-
+console.log(DP)
 
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import "./style.css";
 import CartItemArea from "./components/CartItemArea";
 import $ from "jquery";
@@ -13,6 +13,8 @@ import ReactModal from "react-modal";
 import { useCart } from "./utils/useCart";
 
 const Cart = (props) => {
+  const history = useHistory()
+
   const [coupon, setCoupon] = useState(0);
   const [couponPrice, setCouponPrice] = useState(0);
   const [couponMsg, setCouponMsg] = useState("");
@@ -202,50 +204,41 @@ const Cart = (props) => {
                 }, 2500);
               }}
               onEnd={(prize) => {
-
-
-
                 switch (prize.fonts[0].text) {
                   case "折抵100元":
                     Swal.fire({
                       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
                       text: "優惠碼：VIP666",
-
                     });
                     break;
                   case "再接再厲":
                     Swal.fire({
                       title: prize.fonts[0].text,
                       text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
-
                     });
                     break;
                   case "折抵50元":
                     Swal.fire({
                       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
                       text: "優惠碼：HAPPY888",
-
                     });
                     break;
                   case "下來再來":
                     Swal.fire({
                       title: prize.fonts[0].text,
                       text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
-
                     });
                     break;
                   case "折抵30元":
                     Swal.fire({
                       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
                       text: "優惠碼：RAKUJIISGOOD",
-
                     });
                     break;
                   case "銘謝惠顧":
                     Swal.fire({
                       title: prize.fonts[0].text,
                       text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
-
                     });
                     break;
                 }
@@ -260,7 +253,6 @@ const Cart = (props) => {
     );
   }
 
-
   // --------------------------------------------------------------------------
 
   return (
@@ -270,10 +262,19 @@ const Cart = (props) => {
     >
       <h3>購物車</h3>
 
+      <div className={`cart_isempty ${cart.isEmpty == true ? "" : "d-none"}`}>
+        <img src={require("./images/cart.jpg")} alt="" />
+        <h3 className="mb-4">購物車還是空的</h3>
+        <button className="btn btn-outline-info" type="button" onClick={()=>{history.push("/products")}}>去逛逛</button>
+      </div>
 
       <CartItemArea />
 
-      <div className="row justify-content-end">
+      <div
+        className={`row justify-content-end ${
+          cart.isEmpty == true ? "d-none" : ""
+        }`}
+      >
         <div className="col-3 cart_checkarea me-5">
           <form className="input-group mb-3">
             <input
@@ -330,7 +331,10 @@ const Cart = (props) => {
         </div>
       </div>
 
-      <div className="coupon_game" onClick={() => setModalShow(true)}>
+      <div
+        className={`coupon_game ${cart.isEmpty == true ? "d-none" : ""}`}
+        onClick={() => setModalShow(true)}
+      >
         {/* <i class="fa-solid fa-gift"></i> */}
         <img src={require("./images/coupon.png")} alt="" />
       </div>

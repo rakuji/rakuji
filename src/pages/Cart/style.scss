@@ -175,6 +175,27 @@ table {
   }
 }
 
+.cart_isempty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 300px;
+  }
+
+  button {
+    background-color: #58c2dd;
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: #58c2dd;
+    }
+  }
+}
+
 // Cart_info.js & Cart_order.js checkarea
 .checkarea {
   padding: 20px;
