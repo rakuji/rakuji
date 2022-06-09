@@ -24,14 +24,11 @@ import Product_comment from "./components/Product_comment";
 
 //JSON資料
 // import products from './data/products.json'
-import product_comments from "./data/product_comments.json";
+// import product_comments from "./data/product_comments.json";
 
 const Product_detail = (props) => {
   // 從資料庫取得資料
   const [datas, setDatas] = useState([]);
-
-  //註記
-  const [add, setAdd] = useState(0);
 
   const fetchData = async () => {
     const response = await fetch(`${process.env.REACT_APP_API_URL}/products`);
@@ -39,8 +36,11 @@ const Product_detail = (props) => {
     setDatas(results);
     // console.log(results)
   };
+
+  //一進到頁面取得產品資料及評論
   useEffect(() => {
     fetchData();
+    fetchCommentsData();
   }, []);
 
   // 取得:id資料
@@ -78,7 +78,7 @@ const Product_detail = (props) => {
 
   const fetchCommentsData = async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/products/productcomment`
+      `${process.env.REACT_APP_API_URL}/products/productcommentsearch`
     );
     const results = await response.json();
 
@@ -88,9 +88,6 @@ const Product_detail = (props) => {
 
     setCommentsDatas(comments);
   };
-  useEffect(() => {
-    fetchCommentsData();
-  }, [add]);
 
   //score
   const [rating, setRating] = useState(0);
@@ -127,7 +124,7 @@ const Product_detail = (props) => {
     await fetch(`${process.env.REACT_APP_API_URL}/products/productcomment`, {
       method: "POST",
       headers: {
-        Accept: "application/json",
+        // Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -136,11 +133,12 @@ const Product_detail = (props) => {
         comments,
         memberId,
       }),
-    }).then((res) => res.json());
+    });
+    fetchCommentsData();
   };
 
   console.log(commentsDatas)
-  console.log(add)
+  // console.log(add)
 
   return (
     <div className="container-xxl product_detail pb-5">
@@ -373,15 +371,53 @@ const Product_detail = (props) => {
           <button
             type="button"
             className="send_comments_btn btn btn-outline-info fw-bold"
-            onClick={async () => {
-              await sendData()
-              .then(setRating(0))
-              .then(setRatingMsg(""))
-              .then(setComments(""))
-              .then(setAdd(add + 1))
+            onClick={() => {
 
-            
-            }}
+              if (rating == 0) {
+                Swal.fire({
+                  icon: "warning",
+                  title: "請評價此商品",
+                });
+              } else if (comments == 0) {
+                Swal.fire({
+                  icon: "warning",
+                  title: "請填寫評論",
+                });
+              } else {
+
+
+
+                Swal.fire({
+                  title: '確定要送出評論?',
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#3085d6',
+                  cancelButtonColor: '#d33',
+                  confirmButtonText: '確定',
+                  // confirmButtonText: '測試按鈕',
+                  cancelButtonText: '取消',
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    sendData()
+                    setRating(0)
+                    setRatingMsg("")
+                    setComments("")
+
+                    Swal.fire({
+                      icon: 'success',
+                      title: '評論已送出!',
+                    })
+                  }
+                })
+
+                // sendData()
+                // setRating(0)
+                // setRatingMsg("")
+                // setComments("")
+              }
+            }
+
+            }
           >
             送出
           </button>

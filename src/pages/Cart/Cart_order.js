@@ -214,6 +214,8 @@ const Cart_order = () => {
                         </Link> */}
 
                         <button className="next_page my-2 sweet_btn" onClick={() => {
+                            // sendData(); //送出資料
+                            
                             Swal.fire({
                                 title: '確定要送出訂單?',
                                 icon: 'warning',
@@ -235,8 +237,7 @@ const Cart_order = () => {
 
                                     Swal.fire({
                                         icon: 'success',
-                                        title: '訂單已送出!',
-                                        showConfirmButton: false
+                                        title: '訂單已送出!'
                                     })
                                 }
                             })

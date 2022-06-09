@@ -30,6 +30,7 @@ const CartCheckAreaInfo = () => {
                 <p>-${couponPrice}元</p>
             </div>
 
+            <hr />
 
             <div className='my-4'>
                 <p>總計</p>

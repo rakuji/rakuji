@@ -76,7 +76,7 @@ const Cart = (props) => {
   // 使用hooks 解出所需的狀態與函式(自context)
   const { cart, items, plusOne, minusOne, removeItem } = useCart();
 
-  console.log(cart);
+  // console.log(cart.isEmpty)
 
   // --------------------------------------------------------------------------
 
@@ -202,56 +202,53 @@ const Cart = (props) => {
                 }, 2500);
               }}
               onEnd={(prize) => {
-                Swal.fire({
-                  title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                  html:true,
-                  text: i,
-                });
 
-                // switch (prize.fonts[0].text) {
-                //   case "折抵100元":
-                //     Swal.fire({
-                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                //       text:"優惠碼：VIP666",
 
-                //     });
-                //     break;
-                //   case "再接再厲":
-                //     Swal.fire({
-                //       title: prize.fonts[0].text,
-                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                //     });
-                //     break;
-                //   case "折抵50元":
-                //     Swal.fire({
-                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                //       text:"優惠碼：HAPPY888",
+                switch (prize.fonts[0].text) {
+                  case "折抵100元":
+                    Swal.fire({
+                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                      text: "優惠碼：VIP666",
 
-                //     });
-                //     break;
-                //   case "下來再來":
-                //     Swal.fire({
-                //       title: prize.fonts[0].text,
-                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+                    });
+                    break;
+                  case "再接再厲":
+                    Swal.fire({
+                      title: prize.fonts[0].text,
+                      text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                //     });
-                //     break;
-                //   case "折抵30元":
-                //     Swal.fire({
-                //       title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
-                //       text:"優惠碼：RAKUJIISGOOD",
+                    });
+                    break;
+                  case "折抵50元":
+                    Swal.fire({
+                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                      text: "優惠碼：HAPPY888",
 
-                //     });
-                //     break;
-                //   case "銘謝惠顧":
-                //     Swal.fire({
-                //       title: prize.fonts[0].text,
-                //       text:"別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+                    });
+                    break;
+                  case "下來再來":
+                    Swal.fire({
+                      title: prize.fonts[0].text,
+                      text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
 
-                //     });
-                //     break;
-                // }
+                    });
+                    break;
+                  case "折抵30元":
+                    Swal.fire({
+                      title: `恭喜你獲得${prize.fonts[0].text}優惠碼!`,
+                      text: "優惠碼：RAKUJIISGOOD",
+
+                    });
+                    break;
+                  case "銘謝惠顧":
+                    Swal.fire({
+                      title: prize.fonts[0].text,
+                      text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
+
+                    });
+                    break;
+                }
               }}
             />
           </div>
@@ -263,12 +260,8 @@ const Cart = (props) => {
     );
   }
 
-  const i = (
-    <div>
-      <input type="text" />
-      <button>123</button>
-    </div>
-  );
+
+  // --------------------------------------------------------------------------
 
   return (
     <div
@@ -276,6 +269,8 @@ const Cart = (props) => {
       style={{ minHeight: " calc(100vh - 86px - 308px)" }}
     >
       <h3>購物車</h3>
+
+
       <CartItemArea />
 
       <div className="row justify-content-end">
