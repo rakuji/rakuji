@@ -76,7 +76,7 @@ function Recipes(props) {
                         <button
                           key={i}
                           id={i}
-                          className="col container"
+                          className="col container testtest"
                           onClick={() => setRecipesIndex(i)}
                         >
                           {v}
