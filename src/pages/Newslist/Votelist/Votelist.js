@@ -10,7 +10,7 @@ const Votelist = () => {
         <img
           src={require("../image/88.png")}
           width="100%"
-          height="100%"
+          height="80%"
           className="d-block  mx-auto"
           alt="..."
         />

@@ -50,8 +50,8 @@ function Newslist() {
                 src={require("./image/firstpic.png")}
                 className="card-img-top "
                 alt="..."
-                width="180px"
-                height="370px"
+                width="140px"
+                height="430px"
               />
               <br />
               <br />

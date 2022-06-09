@@ -166,7 +166,11 @@ function Cooperationform() {
               required
             />
           </Form.Group>
-          <Button className="bu" variant=" primary , d-block , mx-auto " type="submit">
+          {/* 按下去是否字的顏色不要變成黑色 維持白色 */}
+          <Button 
+          className="bu" 
+          variant=" primary , d-block , mx-auto " 
+          type="submit">
             送出
           </Button>
         </Form>

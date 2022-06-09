@@ -30,9 +30,10 @@
     margin-top:16px
 }
 
+
 body {
     background-size: 1840px ;
-    background-position: 40% 41%;
+    background-position: 40% 60%;
     background-repeat: no-repeat;
     background-image: url('./image/BG.png');
 }
