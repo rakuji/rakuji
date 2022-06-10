@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import "../Newslist/Breadcrumb.css";
+import "./Breadcrumb.css";
 
 class BreadcrumbComponent extends Component {
   render() {

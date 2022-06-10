@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from "react";
 import Breadcrumb from "react-bootstrap/Breadcrumb";
-import "../Newslist/Breadcrumb.css";
+import "./Breadcrumb.css";
 
 function BreadcrumbComponent() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
