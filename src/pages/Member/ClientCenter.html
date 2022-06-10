@@ -27,6 +27,7 @@
         rel="stylesheet">
     <!-- <link rel="stylesheet" href="client.css"> -->
     <link rel="stylesheet" href="./css/client.css">
+    <link rel="stylesheet" href="./css/calender.css">
 </head>
 
 <body>
@@ -60,215 +61,286 @@
                                 <div class="mb-2">
                                     <span class="text-control">日期</span>
                                 </div>
-                                <div class="pt-2">
-                                    <img src="/src/image/account/Date.png" alt="">
-                                    <br>
+
+                                <div class="calendar-container">
+                                    <div class="calendar">
+                                        <div class="front">
+                                            <div class="current-date">
+                                                <h3>Friday 15th</h3>
+                                                <h3>January 2016</h3>
+                                            </div>
+
+                                            <div class="current-month">
+                                                <ul class="week-days">
+                                                    <li>MON</li>
+                                                    <li>TUE</li>
+                                                    <li>WED</li>
+                                                    <li>THU</li>
+                                                    <li>FRI</li>
+                                                    <li>SAT</li>
+                                                    <li>SUN</li>
+                                                </ul>
+
+                                                <div class="weeks">
+                                                    <div class="first">
+                                                        <span class="last-month">28</span>
+                                                        <span class="last-month">29</span>
+                                                        <span class="last-month">30</span>
+                                                        <span class="last-month">31</span>
+                                                        <span>01</span>
+                                                        <span>02</span>
+                                                        <span>03</span>
+                                                    </div>
+
+                                                    <div class="second">
+                                                        <span>04</span>
+                                                        <span>05</span>
+                                                        <span>06</span>
+                                                        <span>07</span>
+                                                        <span>08</span>
+                                                        <span>09</span>
+                                                        <span>10</span>
+                                                    </div>
+
+                                                    <div class="third">
+                                                        <span>11</span>
+                                                        <span>12</span>
+                                                        <span>13</span>
+                                                        <span>14</span>
+                                                        <span class="active">15</span>
+                                                        <span>16</span>
+                                                        <span>17</span>
+                                                    </div>
+
+                                                    <div class="fourth">
+                                                        <span>18</span>
+                                                        <span>19</span>
+                                                        <span>20</span>
+                                                        <span>21</span>
+                                                        <span>22</span>
+                                                        <span>23</span>
+                                                        <span>24</span>
+                                                    </div>
+
+                                                    <div class="fifth">
+                                                        <span>25</span>
+                                                        <span>26</span>
+                                                        <span>27</span>
+                                                        <span>28</span>
+                                                        <span>29</span>
+                                                        <span>30</span>
+                                                        <span>31</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </li>
-                            <li class="list-group-item m-3">
-                                <span class="text-control">您的餐點喜好</span>
-                                <div class="ml-4 pt-2">
-                                    <img src="/src/image/account/A.png" alt="">
-                                    黃金豬排丼飯<br>
-                                    <img src="/src/image/account/B.png" alt="">
-                                    可樂餅<br>
-                                    <img src="/src/image/account/C.png" alt="">
-                                    烤鮭魚蘿蔔味增湯<br>
-                                </div>
-                            </li>
-                        </ul>
+
+
+
                     </div>
+
+                    </li>
+                    <li class="list-group-item m-3">
+                        <span class="text-control">您的餐點喜好</span>
+                        <div class="ml-4 pt-2">
+                            <img src="/src/image/account/A.png" alt="">
+                            黃金豬排丼飯<br>
+                            <img src="/src/image/account/B.png" alt="">
+                            可樂餅<br>
+                            <img src="/src/image/account/C.png" alt="">
+                            烤鮭魚蘿蔔味增湯<br>
+                        </div>
+                    </li>
+                    </ul>
                 </div>
             </div>
+        </div>
 
-            <div class="col-12 col-md-8 ">
-                <div class="card fat">
-                    <div class="card-body">
-                        <!-- tab -->
-                        <div class="container">
-                            <div class="exTab3">
+        <div class="col-12 col-md-8 ">
+            <div class="card fat">
+                <div class="card-body">
+                    <!-- tab -->
+                    <div class="container">
+                        <div class="exTab3">
 
-                                <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link a" id="profile-tab" data-bs-toggle="tab"
-                                            data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                            aria-selected="true">會員個人資料</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link" id="order-tab" data-bs-toggle="tab"
-                                            data-bs-target="#order" type="button" role="tab" aria-controls="order"
-                                            aria-selected="false">訂單交易紀錄</button>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <button class="nav-link active" id="coupon-tab" data-bs-toggle="tab"
-                                            data-bs-target="#coupon" type="button" role="tab" aria-controls="coupon"
-                                            aria-selected="false">優惠資料紀錄</button>
-                                    </li>
-                                </ul>
-                                <div class="tab-content mt-5" id="pills-tabContent">
-                                    <!-- profile -->
-                                    <div class="tab-pane fade show " id="profile" role="tabpanel"
-                                        aria-labelledby="profile-tab" role="tabpanel">
+                            <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link a" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                        aria-selected="true">會員個人資料</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="order-tab" data-bs-toggle="tab" data-bs-target="#order"
+                                        type="button" role="tab" aria-controls="order"
+                                        aria-selected="false">訂單交易紀錄</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="coupon-tab" data-bs-toggle="tab"
+                                        data-bs-target="#coupon" type="button" role="tab" aria-controls="coupon"
+                                        aria-selected="false">優惠資料紀錄</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-5" id="pills-tabContent">
+                                <!-- profile -->
+                                <div class="tab-pane fade show " id="profile" role="tabpanel"
+                                    aria-labelledby="profile-tab" role="tabpanel">
 
-                                        <form method="POST" class="my-login-validation" novalidate="">
+                                    <form method="POST" class="my-login-validation" novalidate="">
 
-                                            <div class="form-group">
-                                                <label for="a">姓名</label>
-                                                <input id="Name" type="text" class="form-control" name="Name"
-                                                    value="吳建凡" disabled>
+                                        <div class="form-group">
+                                            <label for="a">姓名</label>
+                                            <input id="Name" type="text" class="form-control" name="Name" value="吳建凡"
+                                                disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="sex">性別</label>
+                                            <input id="sex" type="text" class="form-control" name="sex" value="男"
+                                                disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="__">職業</label>
+                                            <input id="__" type="text" class="form-control" name="__d" value="工程師"
+                                                disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">出生年月日</label>
+                                            <input id="" type="text" class="form-control" name="" value="1983-03-10"
+                                                disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">居住縣市</label>
+                                            <input id="" type="text" class="form-control" name="" value="彰化縣" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">居住地址</label>
+                                            <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號"
+                                                disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">子嗣</label>
+                                            <input id="" type="text" class="form-control" name="" value="有小孩" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="number">手機號碼</label>
+                                            <input type="tel" class="form-control" id="phone" name="phone"
+                                                value="0912479060" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">修改密碼</label>
+                                            <input type="password" class="form-control" id="password" name="password"
+                                                value="aaaaaaaaaa" disabled><br>
+                                        </div>
+                                        <br>
+                                        <div class="row form-group  g-3">
+                                            <div class="col-sm-6">
+                                                <button type="submit" class="btn btn-block btn-custom ">修改</button>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="sex">性別</label>
-                                                <input id="sex" type="text" class="form-control" name="sex" value="男"
-                                                    disabled>
+                                            <div class="col-sm-6">
+                                                <button type="submit" class="btn btn-block btn-danger">取消</button>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="__">職業</label>
-                                                <input id="__" type="text" class="form-control" name="__d" value="工程師"
-                                                    disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">出生年月日</label>
-                                                <input id="" type="text" class="form-control" name="" value="1983-03-10"
-                                                    disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">居住縣市</label>
-                                                <input id="" type="text" class="form-control" name="" value="彰化縣"
-                                                    disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">居住地址</label>
-                                                <input id="" type="text" class="form-control" name="" value="伸港鄉埤墘一路13號"
-                                                    disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="">子嗣</label>
-                                                <input id="" type="text" class="form-control" name="" value="有小孩"
-                                                    disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="number">手機號碼</label>
-                                                <input type="tel" class="form-control" id="phone" name="phone"
-                                                    value="0912479060" disabled>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="password">修改密碼</label>
-                                                <input type="password" class="form-control" id="password"
-                                                    name="password" value="aaaaaaaaaa" disabled><br>
-                                            </div>
-                                            <br>
-                                            <div class="row form-group  g-3">
-                                                <div class="col-sm-6">
-                                                    <button type="submit" class="btn btn-block btn-custom ">修改</button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- order -->
+                                <div class="tab-pane fade show " id="order" role="tabpanel" aria-labelledby="order-tab">
+                                    <form method="POST" class="my-login-validation " novalidate="">
+
+                                        <table class="table " style="text-align:center">
+                                            <thead class="line">
+                                                <tr class="text-color">
+                                                    <th scope="col b1">訂單編號</th>
+                                                    <th scope="col">商品圖片</th>
+                                                    <th scope="col">商品名稱</th>
+                                                    <th scope="col">金額</th>
+                                                    <th scope="col">運費</th>
+                                                    <!-- <th scope="col">折扣</th> -->
+                                                    <th scope="col">合計</th>
+                                                    <th scope="col">日期</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">001</th>
+                                                    <td><img src="http://picsum.photos/50/50?random=10" alt=""></td>
+                                                    <td>裝蒜牛五花飯<br>文青花魚飯</td>
+                                                    <td>120$x5<br>120$x5</td>
+                                                    <td>0$</td>
+                                                    <!-- <td>-100$</td> -->
+                                                    <td>1200$</td>
+                                                    <td>2022-03-14</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">002</th>
+                                                    <td><img src="" alt=""></td>
+                                                    <td>裝蒜牛五花飯<br>文青花魚飯</td>
+                                                    <td>120$x5<br>120$x5</td>
+                                                    <td>100$</td>
+                                                    <!-- <td>-100$</td> -->
+                                                    <td>1200$</td>
+                                                    <td>2022-03-14</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">003</th>
+                                                    <td><img src="" alt=""></td>
+                                                    <td>裝蒜牛五花飯<br>文青花魚飯</td>
+                                                    <td>120$x5<br>120$x5</td>
+                                                    <td>100$</td>
+                                                    <!-- <td>-100$</td> -->
+                                                    <td>1200$</td>
+                                                    <td>2022-03-14</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </form>
+                                </div>
+
+                                <!-- coupon -->
+                                <div class="tab-pane fade show active" id="coupon" role="tabpanel"
+                                    aria-labelledby="coupon-tab" novalidate="">
+                                    <form method="POST" class="my-login-validation">
+                                        <div class="row">
+
+                                            <h4>未使用</h4>
+
+                                            <div class="card col-12 col-md-5">
+                                                <img src="../../images/account/Rectangle(unused).png"
+                                                    class="card-img-top w-100" alt="coupon">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">生日折扣碼:</h6>
+                                                    <input class="a1 w-100" type="text" value=" HBD520" id="myInput">
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <button type="submit" class="btn btn-block btn-danger">取消</button>
+                                            </div>
+
+                                            <div class="card col-12 col-md-5">
+                                                <img src="../../images/account/Rectangle(unused).png"
+                                                    class="card-img-top w-100" alt="coupon">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">情人節折扣碼:</h6>
+                                                    <input class="a1 w-100" type="text" value="Lover1798" id="myInput">
                                                 </div>
                                             </div>
-                                        </form>
-                                    </div>
 
-                                    <!-- order -->
-                                    <div class="tab-pane fade show " id="order" role="tabpanel"
-                                        aria-labelledby="order-tab">
-                                        <form method="POST" class="my-login-validation " novalidate="">
-
-                                            <table class="table " style="text-align:center">
-                                                <thead class="line">
-                                                    <tr class="text-color">
-                                                        <th scope="col b1">訂單編號</th>
-                                                        <th scope="col">商品圖片</th>
-                                                        <th scope="col">商品名稱</th>
-                                                        <th scope="col">金額</th>
-                                                        <th scope="col">運費</th>
-                                                        <!-- <th scope="col">折扣</th> -->
-                                                        <th scope="col">合計</th>
-                                                        <th scope="col">日期</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">001</th>
-                                                        <td><img src="http://picsum.photos/50/50?random=10" alt=""></td>
-                                                        <td>裝蒜牛五花飯<br>文青花魚飯</td>
-                                                        <td>120$x5<br>120$x5</td>
-                                                        <td>0$</td>
-                                                        <!-- <td>-100$</td> -->
-                                                        <td>1200$</td>
-                                                        <td>2022-03-14</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">002</th>
-                                                        <td><img src="" alt=""></td>
-                                                        <td>裝蒜牛五花飯<br>文青花魚飯</td>
-                                                        <td>120$x5<br>120$x5</td>
-                                                        <td>100$</td>
-                                                        <!-- <td>-100$</td> -->
-                                                        <td>1200$</td>
-                                                        <td>2022-03-14</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">003</th>
-                                                        <td><img src="" alt=""></td>
-                                                        <td>裝蒜牛五花飯<br>文青花魚飯</td>
-                                                        <td>120$x5<br>120$x5</td>
-                                                        <td>100$</td>
-                                                        <!-- <td>-100$</td> -->
-                                                        <td>1200$</td>
-                                                        <td>2022-03-14</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </form>
-                                    </div>
-
-                                    <!-- coupon -->
-                                    <div class="tab-pane fade show active" id="coupon" role="tabpanel"
-                                        aria-labelledby="coupon-tab" novalidate="">
-                                        <form method="POST" class="my-login-validation">
-                                            <div class="row">
-
-                                                <h4>未使用</h4>
-
-                                                <div class="card col-12 col-md-5">
-                                                    <img src="../../images/account/Rectangle(unused).png"
-                                                        class="card-img-top w-100" alt="coupon">
-                                                    <div class="card-body">
-                                                        <h6 class="card-title">生日折扣碼:</h6>
-                                                        <input class="a1 w-100" type="text" value=" HBD520" id="myInput">
-                                                    </div>
-                                                </div>
-
-                                                <div class="card col-12 col-md-5">
-                                                    <img src="../../images/account/Rectangle(unused).png"
-                                                        class="card-img-top w-100" alt="coupon">
-                                                    <div class="card-body">
-                                                        <h6 class="card-title">情人節折扣碼:</h6>
-                                                        <input class="a1 w-100" type="text" value="Lover1798" id="myInput">
-                                                    </div>
-                                                </div>
-
-                                                <div>
-                                                    <hr>
-                                                </div>
-
-                                                <h4>已使用</h4>
-
-                                                <div class="card col-12 col-md-5">
-                                                    <img src="../../images/account/Rectangle(used).png"
-                                                        class="card-img-top w-100" alt="coupon">
-                                                    <div class="card-body">
-                                                        <h6 class="card-title">首購折扣碼:</h6>
-                                                        <input class="a1 w-100" type="text" value=" Frist1001"
-                                                            id="myInput">
-                                                    </div>
-                                                </div>
-
-                                                
+                                            <div>
+                                                <hr>
                                             </div>
-                                        </form>
-                                    </div>
+
+                                            <h4>已使用</h4>
+
+                                            <div class="card col-12 col-md-5">
+                                                <img src="../../images/account/Rectangle(used).png"
+                                                    class="card-img-top w-100" alt="coupon">
+                                                <div class="card-body">
+                                                    <h6 class="card-title">首購折扣碼:</h6>
+                                                    <input class="a1 w-100" type="text" value=" Frist1001" id="myInput">
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -276,6 +348,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 </body>

@@ -144,6 +144,12 @@ span>.hy-link {
 
 .card {
 	border: 0px solid;
+	background: red;
+	width: 250px;
+}
+
+.table {
+	width: 100%;
 }
 
 
@@ -192,3 +198,4 @@ hr {
 		padding: 15px;
 	}
 }
+

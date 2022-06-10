@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import _ from 'lodash'
+import "./css/my-login.css"
+import "./css/reset.css"
+// import "./css/client.css"
+
 
 const myYear = 2022
 const myMonth = 2
@@ -42,28 +46,73 @@ function App() {
 
   return (
     <>
-      <h1>日曆</h1>
-      <h2 id="yearAndMonth">{nowY + '/' + nowM}</h2>
-      <table border="1">
-        <thead id="title">
-          <tr>
-            {weekDayList.map(function (v, i) {
-              return <th key={i}>{v}</th>
-            })}
-          </tr>
-        </thead>
-        <tbody id="data">
-          {daysDisplayArray.map((v, i) => {
-            return (
-              <tr key={i}>
-                {v.map((item, idx) => (
-                  <td key={idx}>{item}</td>
-                ))}
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
+      <div className="col-12 col-md-4">
+        <div className="form-group">
+          <div className='rela'>
+          
+            <div className="card">
+              <div className="m-3 d-flex justify-content-center">
+                <figure className="avatar mx-auto rounded-circle overflow-hidden">
+                  <img className="cover-fit" src="https://picsum.photos/200" alt="" />
+                </figure>
+              </div>
+              <div className="card-body">
+                <div className="justify-content-center text-sm-center">
+                  <p className="card-text">Coupons: 2張</p>
+                </div>
+              </div>
+
+              <ul className="list-group list-group-flush">
+
+                <li className="list-group-item m-3">
+                  <div className="mb-2">
+                    <span>日期</span>
+                  </div>
+                  <div className="">
+                    <h2 id="yearAndMonth" className="text-center fs-3">{nowY + '/' + nowM}</h2>
+                    <div className="table-responsive-md">
+                      <table className="table table-wrapper">
+                        <thead id="title">
+                          <tr>
+                            {weekDayList.map(function (v, i) {
+                              return <th key={i}>{v}</th>
+                            })}
+                          </tr>
+                        </thead>
+                        <tbody id="data" className="table-bordered">
+                          {daysDisplayArray.map((v, i) => {
+                            return (
+                              <tr key={i}>
+                                {v.map((item, idx) => (
+                                  <td key={idx}>{item}</td>
+                                ))}
+                              </tr>
+                            )
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                    <br />
+                  </div>
+                </li>
+
+                <li className="list-group-item m-3">
+                  <span className="text-control">您的餐點喜好</span>
+                  <div className="ml-4 pt-2">
+                    <img src={require('../../images/account/A.png')} alt="bg" />
+                    黃金豬排丼飯<br />
+                    <img src={require('../../images/account/B.png')} alt="" />
+                    可樂餅<br />
+                    <img src={require('../../images/account/C.png')} alt="" />
+                    烤鮭魚蘿蔔味增湯<br />
+                  </div>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

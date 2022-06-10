@@ -23,6 +23,8 @@ import Register from "./pages/Member/Register";
 import ClientCenter from "./pages/Member/ClientCenter";
 import CouponList from "./pages/Member/CouponList";
 import OrderList from "./pages/Member/OrderList";
+import TcCalender from "./pages/Member/TcCalender";
+
 // import TcRegister from "./pages/Member/TcRegister";
 
 
@@ -74,6 +76,9 @@ function App() {
         </Route>
         <Route path="/OrderList" exact>
           <OrderList />
+        </Route>
+        <Route path="/TcCalender" exact>
+          <TcCalender />
         </Route>
         {/* <Route path="/TcRegister" exact>
           <TcRegister />

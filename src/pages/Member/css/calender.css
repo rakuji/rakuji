@@ -1,0 +1,75 @@
+.calendar-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+
+}
+
+.calendar {
+    background: #71c9f1;
+    border-radius: 4px;
+    padding: 10px 0;
+    transition: .9s;
+}
+
+.calendar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Front - Calendar */
+.front {
+    transform: rotateY(0deg);
+}
+
+.current-date {
+    border-bottom: 1px solid #58C2DD;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.current-date h3 {
+    color: #dfebed;
+    font-size: 1.2em;
+    font-weight: 300;
+    padding: 0px 4px;
+}
+
+.week-days {
+    color: #dfebed;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 0px 10px;
+}
+
+.weeks {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px;
+    /* width: 60%; */
+}
+
+.weeks div {
+    display: flex;
+    font-weight: 300;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+
+.last-month {
+    opacity: .3;
+}
+
+
+.weeks span.active {
+    background: #f78536;
+    border-radius: 50%;
+}

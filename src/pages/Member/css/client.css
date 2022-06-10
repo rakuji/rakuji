@@ -9,7 +9,7 @@ body {
 body.my-login-page {
     background-color: #fff;
     /*要喚回白色*/
-    background-image: url(/src/image/BG-signup.png);
+    background-image: url(/src/images/BG-signup.png);
     background-size: 960px auto;
     background-repeat: repeat-y;
     background-position: center;
@@ -147,10 +147,14 @@ figure img {
     width: 250px;
 }
 
+
 /* coupon_css */
+
 .card {
     border: 0px;
+
 }
+
 
 hr {
     margin-bottom: 20px;
