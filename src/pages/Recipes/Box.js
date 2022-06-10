@@ -31,6 +31,8 @@ function Box(post) {
     const results = await response.json();
     console.log(results)
     setDatas(results)  
+
+    
     const response2 = await fetch(
       `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,{
         method:"put",
@@ -67,11 +69,6 @@ function Box(post) {
           let SeveralCopies = RecipesBox_SeveralCopies;
           let aaaa = kcal / SeveralCopies;
           
-          //宣告觀看次數 = 資料庫內的Recipes_Clicks+1
-          let Click = Recipes_Clicks+1;
-          const updateClick = Click;          
-          console.log(Click);
-
           
           return (
             
