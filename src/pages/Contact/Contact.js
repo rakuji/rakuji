@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Form, Col, Row, Container } from "react-bootstrap";
 import "./Contact.css";
-import Axios from "axios";
+import axios from "axios";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -12,7 +12,7 @@ function Contact() {
   const [message, setMessage] = useState("");
 
   const submitForm = () => {
-    Axios.post("http://localhost:3001/submit", {
+    axios.post("http://localhost:3001/contact", {
       name: name,
       email: email,
       select1: select1,

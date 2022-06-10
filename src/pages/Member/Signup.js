@@ -13,7 +13,7 @@ function Signup() {
   const history = useHistory();
   const sendData = async () => {
     try {
-      const response = await fetch("http://localhost:7000/account", {
+      const response = await fetch("http://localhost:3001/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
