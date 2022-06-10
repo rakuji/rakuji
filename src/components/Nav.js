@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import $ from 'jquery'
 
-function Nav() {
-
+function Nav(props) {
+  const {auth} = props
   useEffect(() => {
 
     $("#navclose").hide()
@@ -87,7 +87,7 @@ function Nav() {
             <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
             <Link to ="/member/login">
               <button type="button" className="btn mx-2">
-                登入/註冊
+                {auth ? "登出" : "登入/註冊"}
               </button>
             </Link>
           </div>

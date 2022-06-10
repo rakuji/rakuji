@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
@@ -18,10 +18,12 @@ import Login from "./pages/Member/Login";
 import ClientCenter from "./pages/Member/clientCenter";
 
 function App() {
-
+  // 會員登入用的狀態 auth=true代表登入
+  const [auth, setAuth] = useState(false)
+  // const sesStorage  = sessionStorage;
   return (
     <div className="App">
-      <Nav />
+      <Nav auth={auth}/>
       <Switch>
         <Route path="/" exact>
           <Home />
@@ -45,10 +47,10 @@ function App() {
           <Store />
         </Route>
         <Route path="/member/login" exact>
-          <Login />
+          <Login setAuth={setAuth} auth={auth}/>
         </Route>
         <Route path="/member/clientCenter" exact>
-          <ClientCenter />
+          <ClientCenter auth={auth}/>
         </Route>
       </Switch>
       <Footer />

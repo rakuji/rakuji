@@ -1,57 +1,55 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./css/my-login.css"
 // import "./css/reset.css"
 import _ from 'lodash'
 
 // import { Row } from "bootstrap"s
 
-const myYear = 2022
-const myMonth = 2
+const myYear = ""
+const myMonth = ""
+const sesStorage = sessionStorage
 
 function ClientCenter() {
+    const sesStorage  = sessionStorage;
+    
+    // **********************************************************************************
     // 呈現yearAndMonth
     const now = new Date()
-
     // 要得到今天的西元年使用Date物件的getFullYear()，要得到月份使用getMonth()(注意回傳為 0~11)
     const nowY = myYear ? myYear : now.getFullYear()
-
     // nowM =1-12
     const nowM = myMonth ? myMonth : now.getMonth() + 1 //注意回傳為 0~11
-
     // 呈現標題
     const weekDayList = ['日', '一', '二', '三', '四', '五', '六']
-
     // 本月有幾天
     // (上個月的最後一天是幾號)
     const days = new Date(nowY, nowM, 0).getDate()
-
     // 這個月的第一天是星期幾(0-6) (月份為0-11)
     const firstDay = new Date(nowY, nowM - 1, 1).getDay()
-
     // 本月所有日期的陣列資料
     const daysDataArray = []
-
     // 補前面的空白資料
     for (let i = 0; i < firstDay; i++) {
         daysDataArray.push('')
     }
-
     // 加入本月所有的日期資料
     for (let i = 0; i < days; i++) {
         daysDataArray.push(i + 1)
     }
-
     // 準備要呈現在網頁上
     const daysDisplayArray = _.chunk(daysDataArray, 7)
+    // ************************************************************************
+
     return (
 
         <div className="container">
 
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="#index">首頁</a></li>
-                    <li className="breadcrumb-item"><a href="#index">會員管理</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">會員個人資料</li>
+                    <li className="breadcrumb-item"> <Link to="/">首頁</Link></li>
+                    {/* <li className="breadcrumb-item"><a href="#index">會員管理</a></li> */}
+                    <li className="breadcrumb-item active" aria-current="page">會員中心: {sesStorage['memail']}</li>
                 </ol>
             </nav>
 
@@ -160,24 +158,20 @@ function ClientCenter() {
                                                         disabled />
                                                 </div>
                                                 <div className="form-group">
-                                                    <label htmlFor="__">職業</label>
-                                                    <input id="__" type="text" className="form-control" name="__d" value="工程師"
-                                                        disabled />
+                                                    <label htmlFor="vocation">職業</label>
+                                                    <input id="vocation" type="text" className="form-control" name="vocation" value="工程師" disabled />
                                                 </div>
                                                 <div className="form-group">
-                                                    <label htmlFor="">出生年月日</label>
-                                                    <input id="" type="text" className="form-control" name="" value="1983-03-10"
-                                                        disabled />
+                                                    <label htmlFor="birthday">出生年月日</label>
+                                                    <input id="birthday" type="text" className="form-control" name="birthday" value="1983-03-10" disabled />
                                                 </div>
                                                 <div className="form-group">
-                                                    <label htmlFor="">居住縣市</label>
-                                                    <input id="" type="text" className="form-control" name="" value="彰化縣"
-                                                        disabled />
+                                                    <label htmlFor="city">居住縣市</label>
+                                                    <input id="city" type="text" className="form-control" name="city" value="彰化縣" disabled />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="">居住地址</label>
-                                                    <input id="" type="text" className="form-control" name="" value="伸港鄉埤墘一路13號"
-                                                        disabled />
+                                                    <input id="" type="text" className="form-control" name="" value="伸港鄉埤墘一路13號" disabled />
                                                 </div>
                                                 <div className="form-group">
                                                     <label htmlFor="">子嗣</label>

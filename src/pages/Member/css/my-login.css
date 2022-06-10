@@ -18,7 +18,6 @@ body {
 body.my-login-page {
 	background-color: #fff;
 	/*要喚回白色*/
-	/* background-image: url(../image/BG-signup.png); */
 	background-image: url(../images/BG-signup.png);
 	background-size: 960px auto;
 	background-repeat: repeat-y;
