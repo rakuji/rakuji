@@ -31,7 +31,6 @@ function Box(post) {
     const results = await response.json();
     console.log(results)
     setDatas(results)  
-
     
     const response2 = await fetch(
       `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,{
