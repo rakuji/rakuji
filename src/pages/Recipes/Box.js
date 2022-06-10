@@ -29,8 +29,22 @@ function Box(post) {
       `${process.env.REACT_APP_API_URL}/recipes/box/abcde/${id}`
     );
     const results = await response.json();
-    setDatas(results);
+    console.log(results)
+    setDatas(results)  
+    const response2 = await fetch(
+      `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,{
+        method:"put",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({Recipes_Clicks: results[0].Recipes_Clicks+1})}
+    );
+
+    //{"Recipes_Clicks":15}
+    const results2 = await response2.json();
   };
+  
   useEffect(() => {
     fetchData();
   }, []);
