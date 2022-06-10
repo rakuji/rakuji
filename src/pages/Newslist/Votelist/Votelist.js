@@ -48,7 +48,7 @@ const Votelist = () => {
           </div>
         </div>
       </div>
-
+{/* 抓資料庫 */}
       <div className="container">
         <div className="row row-cols-1 row-cols-md-4 g-4">
           <div className="col_v">
@@ -59,7 +59,7 @@ const Votelist = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">唐揚雞歐姆蛋咖喱飯</h5>
+                <h5 className="card-title">名稱</h5>
                 <br />
                 <button className="card-text fs-6 d-block  mx-auto" alt="...">
                   Like
@@ -67,138 +67,8 @@ const Votelist = () => {
               </div>
             </div>
           </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="col_v">
-            <div className="card">
-              <img src="..." className="card-img-top" alt="..." />
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <br />
-                <button className="card-text fs-6 d-block  mx-auto" alt="...">
-                  Like
-                </button>
-              </div>
-            </div>
-          </div>
+          
+          
           <div className="col_v">
             <div className="card">
               <img src="..." className="card-img-top" alt="..." />
