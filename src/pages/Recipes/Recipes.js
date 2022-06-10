@@ -5,6 +5,9 @@ import "./Recipes.css";
 import "../../components/background.css";
 import $ from "jquery";
 import MyBackTop from "../About/myComponents/MyBackTop";
+import Breadcrumb from "./Breadcrumb";
+
+
 
 function Recipes(props) {
   // 從資料庫取得資料
@@ -60,9 +63,17 @@ function Recipes(props) {
     });
   }, []);
   // -----------------------------------
+    // 用於目前呈現的資料(經過依每頁拆解陣列過)
+    const [studentsDisplay, setStudentsDisplay] = useState([])
+
+    const [pageNow, setPageNow] = useState(1)
+    const [perPage, setPerPage] = useState(8)
+    const [pageTotal, setPageTotal] = useState(0)
 
   return (
     <>
+    <Breadcrumb />
+
       <div className="nav-item container phoneDiv ">
         <div className="row  ">
           <div className="col RecipesLogoDiv ">

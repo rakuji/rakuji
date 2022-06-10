@@ -8,6 +8,8 @@ import Box_Cookingsteps from "./Box_Cookingsteps";
 import Box_CookingstepsPhone from "./Box_CookingstepsPhone";
 import Box_Nutrient from "./Box_Nutrient";
 import Box_NutrientPhone from "./Box_NutrientPhone";
+import Breadcrumb from "./Breadcrumb";
+
 
 function Box() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
@@ -34,6 +36,7 @@ function Box() {
   }, []);
   return (
     <>
+    <Breadcrumb />
       {datas.length > 0 &&
         datas.map((recipes, i) => {
           const {
