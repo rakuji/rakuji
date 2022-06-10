@@ -133,7 +133,7 @@ function Contact() {
         <Row>
           <Col className="d-flex justify-content-center">
             <button
-              type="submit"
+              type="button"
               value="送出"
               className="btn1"
               onClick={submitForm}

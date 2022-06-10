@@ -139,7 +139,7 @@ function Footer() {
             <ul className="nav  row align-items-center">
               <li className="nav-item  ">
                 <div style={{ visibility: "hidden" }}>#</div>
-                <li className="nav-item row align-items-center">
+                <div className="nav-item row align-items-center">
                 <a href="#" className="p-0 col-2">
 
                 </a>
@@ -158,7 +158,7 @@ function Footer() {
                 <a href="#" className="p-0 col-2">
                   
                 </a>
-              </li>
+              </div>
               </li>
 
             </ul>
