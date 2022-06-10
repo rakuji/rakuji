@@ -29,9 +29,16 @@ function Recipes(props) {
   const recipesArray = ["全部", "主食", "前菜", "湯品", "飲品", "甜點"];
   //----------------------------------------------------------
   const [KcalMin, setKcalMin] = useState(0);
-  const [KcalMax, setKcalMax] = useState(0);
+  let [KcalMax, setKcalMax] = useState(0);
   //----------------------------------------------------------
- 
+  const max = 1000;
+  const max2 = 1000;
+  let max3 = 0;
+  const max4 = KcalMax + max;
+  // if (KcalMax <= 0) KcalMax = KcalMax+max;
+  if (max4 === 0) max3 = 1000;
+  // 預設進場 KcalMax+1000 所以會顯示所有列表，可是卡路里搜尋的KcalMax清空為0後KcalMax變成-1000
+  // 所以要清空inpuMAX後KcalMax變成1000
   const DP = datas
     .filter((v, i) => {
       if (recipesIndex === 0) return true;
@@ -39,8 +46,10 @@ function Recipes(props) {
     })
     .filter((v) => v.Recipes_Name.includes(searchInput))
     .filter((v) => v.RecipesBox_Kcal >= KcalMin)
-    .filter((v) => v.RecipesBox_Kcal <= KcalMax+1000);
+    .filter((v) => v.RecipesBox_Kcal <= max4 + max3);
   console.log(DP);
+  console.log(KcalMax);
+  console.log(max4);
 
   useEffect(() => {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
@@ -203,7 +212,7 @@ function Recipes(props) {
                         type="search"
                         aria-label="Search"
                         onChange={(e) => {
-                          setKcalMax(e.target.value-1000);
+                          setKcalMax(e.target.value - max2);
                         }}
                       />
                     </div>
@@ -234,7 +243,7 @@ function Recipes(props) {
                         type="search"
                         aria-label="Search"
                         onChange={(e) => {
-                          setKcalMax(e.target.value-1000);
+                          setKcalMax(e.target.value - max2);
                         }}
                       />
                     </div>
