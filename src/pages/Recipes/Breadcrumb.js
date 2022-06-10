@@ -31,6 +31,8 @@ function BreadcrumbComponent() {
       <Breadcrumb>
         <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
         <Breadcrumb.Item href="/recipes">創意食譜</Breadcrumb.Item>
+        <Breadcrumb.Item ></Breadcrumb.Item>
+
         {datas.length > 0 &&
           datas.map((recipes, i) => {
             const { Recipes_Name } = recipes;
@@ -38,7 +40,7 @@ function BreadcrumbComponent() {
 
             return (
               <div key={i}>
-                <h6 >{`/`+Recipes_Name}</h6>
+                <h6>{Recipes_Name}</h6>
               </div>
             );
           })}

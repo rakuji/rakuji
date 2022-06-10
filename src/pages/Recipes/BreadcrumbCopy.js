@@ -8,7 +8,8 @@ class BreadcrumbComponent extends Component {
       <div class="container col-8">
         <Breadcrumb>
           <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-          <Breadcrumb.Item href="/recipes">創意食譜</Breadcrumb.Item>
+          <Breadcrumb.Item ></Breadcrumb.Item>
+          <h6 >創意食譜</h6>
         </Breadcrumb>
       </div>
     );
