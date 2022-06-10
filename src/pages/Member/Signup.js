@@ -113,7 +113,7 @@ function Signup() {
 
                     <br />
 
-                    <div class="form-group m-0 justify-content-center">
+                    <div class="form-group m-0 text-center">
                       <button
                         type="submit"
                         class="btn btn-block btn-custom"
@@ -131,6 +131,7 @@ function Signup() {
                       {/* 使用Facebook註冊 */}
                       {/* </button> */}
                     </div>
+                    <br /><br />
                     <div class="mt-4 text-center">
                       已經有會員?
                       <Link to="/Login">登入</Link>
