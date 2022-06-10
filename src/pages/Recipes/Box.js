@@ -11,7 +11,7 @@ import Box_NutrientPhone from "./Box_NutrientPhone";
 import Breadcrumb from "./Breadcrumb";
 
 
-function Box() {
+function Box(post) {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
   const url = window.location.href;
   //之後去分割字串把分割後的字串放進陣列中
@@ -34,6 +34,7 @@ function Box() {
   useEffect(() => {
     fetchData();
   }, []);
+
   return (
     <>
     <Breadcrumb />
@@ -45,13 +46,21 @@ function Box() {
             RecipesBox_Time,
             RecipesBox_Kcal,
             RecipesBox_SeveralCopies,
+            Recipes_Clicks,
           } = recipes;
           //宣告熱量 = 資料庫內的RecipesBox_Kcal
           let kcal = RecipesBox_Kcal;
           let SeveralCopies = RecipesBox_SeveralCopies;
           let aaaa = kcal / SeveralCopies;
+          
+          //宣告觀看次數 = 資料庫內的Recipes_Clicks+1
+          let Click = Recipes_Clicks+1;
+          const updateClick = Click;          
+          console.log(Click);
 
+          
           return (
+            
             <div key={i} className="container p-3 mb-2  text-dar ">
               <div className="container row p-3 mb-2  text-dark">
                 <div className="p-3 mb-2 bg-body text-dar RecipesOff">
@@ -59,6 +68,7 @@ function Box() {
                     style={{ padding: "0px 20px", margin: "0px -2px" }}
                     className="fs-1 "
                   >
+                  
                     {Recipes_Name}
                   </h3>
                   <h3

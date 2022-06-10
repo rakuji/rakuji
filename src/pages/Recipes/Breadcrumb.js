@@ -36,7 +36,6 @@ function BreadcrumbComponent() {
         {datas.length > 0 &&
           datas.map((recipes, i) => {
             const { Recipes_Name } = recipes;
-            console.log(Recipes_Name);
 
             return (
               <div key={i}>
