@@ -1,5 +1,5 @@
 .card {
-    max-height:70vh;
+    max-height:80vh;
     margin-top: 14px;
     margin-bottom: 0;
     margin-left: 0;
@@ -26,12 +26,16 @@
     padding-bottom:5px ;
 
 }
+.tt{
+    margin-top:16px
+}
+
 
 body {
     background-size: 1840px ;
-    background-position: 40% 41%;
+    background-position: 40% 35%;
     background-repeat: no-repeat;
-    background-image: url('./BG.png');
+    background-image: url('./image/BG.png');
 }
 
 @media screen and (max-width:576px) {

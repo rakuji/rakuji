@@ -1,25 +1,23 @@
 import React from "react";
-import "./Votelist.css";
+import "../Votelist/Votelist.css";
 
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb";
+import MyBackTop from "../../../components/MyBackTop/MyBackTop";
 
 const Votelist = () => {
   return (
     <main>
         <img
-          src={require("./001.png")}
+          src={require("../image/88.png")}
           width="100%"
-          height="100%"
+          height="80%"
           className="d-block  mx-auto"
           alt="..."
         />
-
-      <Breadcrumb class="container col-8">
-        <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
-        <Breadcrumb.Item href="/Newslist">最新消息</Breadcrumb.Item>
-        {/* 麵包屑製作問題 */}
-        {/* <Breadcrumb.Item active href="/Votelist">選出你的天菜</Breadcrumb.Item> */}
-      </Breadcrumb>
+   <div className="tt">
+        <Breadcrumb />
+      </div>  
+      
       <div className="container">
         <div className="col">
           <div className="card-body">
@@ -30,18 +28,18 @@ const Votelist = () => {
               《料理之王》火熱開打，選手大展身手，做出一道道美味佳餚，滿足視覺、嗅覺、味覺，征服你的感官體驗！看完節目還念念不忘？想成為和選手一樣的料理達人？現在就上網票選節目中你最愛的料理食譜，讓你最愛的料理被大家看見、獲得百萬曝光機會，成為家喻戶曉的全民料理！力挺你心儀的菜色，還有機會抽中全家禮券，快來為你喜歡的美食投票吧!
             </div>
             <br></br>
-            {/* li padding 多出來 */}
+            
             <li className="list-group list-group-flush">
-              <li className="list-group-item fs-5 ">
+              <li className="list-group-item fs-5 p-0 ">
                 【活動辦法】 每投票一次即可獲得一次抽獎資格!
                 每人每天最多可投兩票，投票越多次中獎機會越高！
               </li>
-              <li className="list-group-item fs-5">
+              <li className="list-group-item fs-5 p-0">
                 【活動獎項】 壹獎：Drinkmate氣泡機[市價$2,980元]，共3名。
                 貳獎：全家禮物卡500元，共10名。 參獎：全家禮物卡300元，共10名。
                 普獎：全家禮物卡100元，共100名。
               </li>
-              <li className="list-group-item fs-5 ">
+              <li className="list-group-item fs-5 p-0">
                 【注意事項】
                 活動時間：西元（下同）2022年06月01日15:00起至2022年06月30日12:00止。
                 活動結果公佈：2022年07月18日前於活動頁公佈得獎者。
@@ -56,7 +54,7 @@ const Votelist = () => {
           <div className="col_v">
             <div className="card">
               <img
-                src={require("./main1.png")}
+                src={require("../image/main1.png")}
                 className="card-img-top"
                 alt="..."
               />
@@ -218,9 +216,8 @@ const Votelist = () => {
 
       <br></br>
 
-      <button className="d-block  mx-auto" alt="...">
-        icon回上一頁
-      </button>
+      <MyBackTop/>
+
     </main>
   );
 };

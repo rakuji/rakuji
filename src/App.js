@@ -5,13 +5,17 @@ import "./styles/style.css";
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+// import ScrollToTop from "./components/ScrollToTop";
 
 // pages
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
-import Newslist from "./pages/Newslist/Newslist";
-import Votelist from "./pages/Newslist/Votelist";
-import Cooperationform from "./pages/Newslist/Cooperationform";
+// import Newslist from "./pages/Newslist/Newslist";
+import Newslistback from "./pages/Newslist/Newslistback/Newslistback";
+import NewslistbackAdd from "./pages/Newslist/Newslistback/NewslistbackAdd";
+import NewslistbackEdit from "./pages/Newslist/Newslistback/NewslistbackEdit";
+// import Votelist from "./pages/Newslist/Votelist/Votelist";
+// import Cooperationform from "./pages/Newslist/Cooperationform/Cooperationform";
 import Products from "./pages/Products/Products";
 import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
@@ -24,9 +28,6 @@ import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes";
 import Box from "./pages/Recipes/Box";
 import Store from "./pages/Store/Store";
-
-
-
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
@@ -53,15 +54,24 @@ function App() {
         <Route path="/about" exact>
           <About />
         </Route>
-        <Route path="/newslist" exact>
+        {/* <Route path="/Newslist" exact>
           <Newslist />
+        </Route> */}
+        <Route path="/Newslistback" exact>
+          <Newslistback />
         </Route>
-        <Route path="/newslist/Cooperationform" exact>
+        <Route path="/NewslistbackAdd" exact>
+          <NewslistbackAdd />
+        </Route>
+        <Route path="/NewslistbackEdit" exact>
+          <NewslistbackEdit />
+        </Route>
+        {/* <Route path="/Cooperationform" exact>
           <Cooperationform />
-        </Route>
-        <Route path="/newslist/Votelist" exact>
+        </Route> */}
+        {/* <Route path="/newslist/Votelist" exact>
           <Votelist />
-        </Route>
+        </Route> */}
         <Route path="/products" exact>
           <Products />
         </Route>
