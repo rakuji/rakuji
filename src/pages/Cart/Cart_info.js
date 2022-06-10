@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Stepper, Step } from 'react-form-stepper';
 import CartCheckAreaInfo from './components/CartCheckAreaInfo';
-import { Link } from 'react-router-dom';
+import { Link,useHistory } from 'react-router-dom';
 
 
 const Cart_info = () => {
+    const history = useHistory()
+
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
@@ -214,7 +216,9 @@ const Cart_info = () => {
             //將聯絡資訊打包成一個物件
             let cart_info = { name, phone, email, address }
             localStorage.setItem("cart_info", JSON.stringify(cart_info))
-            window.location.href = `/cart/cart_info/cart_order` //跳轉頁面
+            // window.location.href = `/cart/cart_info/cart_order` //跳轉頁面
+            history.push("/cart/cart_info/cart_order")
+
         }
     }
 
