@@ -424,8 +424,8 @@ function Box() {
                   </div>
                 </div>
 
-                <div className="p-3 mb-2 nav RecipesOn">
-                  <div className="container row ">
+                <div className="p-3 mb-2 nav RecipesOn  ">
+                  <div className="col-12 container ">
                     <div className="text-center ">
                       <h5 className="RecipesText fw-bold RecipesIngredientsText">
                         營養成分
@@ -440,13 +440,7 @@ function Box() {
                   <div className="text-center container ">
                     <h5 className="RecipesText fw-bold RecipesStepText"></h5>
                   </div>
-                  <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/YvwkK_OqYdQ"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
+
                 </div>
                 <div className="p-3 mb-2 text-dar container RecipesOn">
                   <div className="container ">
