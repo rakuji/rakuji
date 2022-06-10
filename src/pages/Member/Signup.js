@@ -3,44 +3,48 @@ import "./css/my-login.css";
 import "./css/reset.css";
 import { Form } from "react-bootstrap";
 import { useState } from "react";
-import { Link,useHistory } from "react-router-dom";
-
+import { Link, useHistory } from "react-router-dom";
 
 function Signup() {
   const [Memail, setMemail] = useState("");
   const [Mpassword, setMpassword] = useState("");
   const [rePassword, setRePassword] = useState("");
-  const a ={Memail:Memail,Mpassword:Mpassword}
-  const history =useHistory()
-  const sendData = async()=>{
+  const a = { Memail: Memail, Mpassword: Mpassword };
+  const history = useHistory();
+  const sendData = async () => {
     try {
-      const response = await fetch('http://localhost:7000/account',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(a)})
-      const results = await response.json()
+      const response = await fetch("http://localhost:7000/account", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(a),
+      });
+      const results = await response.json();
       console.log(results);
-      if(results.ok===false){
-        alert("信箱帳號重複")
-      }else{
-        alert('註冊成功')
-        history.push('/login')
-
+      if (results.ok === false) {
+        alert("信箱帳號重複");
+      } else {
+        alert("註冊成功");
+        history.push("/login");
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   const submit = (e) => {
     if (Memail === "") {
-         alert("請輸入信箱帳號!");
-       } else if (Mpassword === "") {
-         alert("請輸入密碼!");
-       } else if (Mpassword !== rePassword) {
-         alert("兩次密碼輸入不一致!");
-         }
+      alert("請輸入信箱帳號!");
+    } else if (Mpassword === "") {
+      alert("請輸入密碼!");
+    } else if (Mpassword !== rePassword) {
+      alert("兩次密碼輸入不一致!");
+    }
 
-
-    e.preventDefault()
-    sendData()
+    e.preventDefault();
+    sendData();
   };
 
   return (
@@ -52,9 +56,10 @@ function Signup() {
               <div class="brand">
                 <img src={require("../../images/logo/logo_color_login.png")} />
               </div>
+              <br />
               <div class="card fat">
                 <div class="card-body">
-                  <Form noValidate class="my-login-validation" >
+                  <Form class="justify-content-center">
                     <div class="form-group">
                       <label for="email">
                         <span class="star">*</span>輸入註冊信箱{" "}
@@ -70,7 +75,7 @@ function Signup() {
                           setMemail(e.target.value);
                         }}
                       />
-                      <div class="invalid-feedback">電子信已被使用</div>
+                      <br />
                     </div>
                     <div class="form-group">
                       <label for="password">
@@ -87,7 +92,7 @@ function Signup() {
                           setMpassword(e.target.value);
                         }}
                       />
-                      <div class="invalid-feedback"> 密碼已存在 </div>
+                      <br />
                     </div>
                     <div class="form-group">
                       <label for="password">
@@ -104,12 +109,11 @@ function Signup() {
                           setRePassword(e.target.value);
                         }}
                       />
-                      <div class="invalid-feedback"> 密碼不一致 </div>
                     </div>
 
                     <br />
 
-                    <div class="form-group m-0">
+                    <div class="form-group m-0 justify-content-center">
                       <button
                         type="submit"
                         class="btn btn-block btn-custom"
@@ -118,14 +122,14 @@ function Signup() {
                         註冊
                       </button>
                       <br />
-                      <p class="align">其他方式註冊</p>
+                      {/* <p class="align">其他方式註冊</p> */}
 
-                      <button type="submit" class="btn btn-danger btn-block">
-                        使用GOOGLE註冊
-                      </button>
-                      <button type="submit" class="btn btn-primary btn-block">
-                        使用Facebook註冊
-                      </button>
+                      {/* <button type="submit" class="btn btn-danger btn-block"> */}
+                      {/* 使用GOOGLE註冊 */}
+                      {/* </button> */}
+                      {/* <button type="submit" class="btn btn-primary btn-block"> */}
+                      {/* 使用Facebook註冊 */}
+                      {/* </button> */}
                     </div>
                     <div class="mt-4 text-center">
                       已經有會員?
