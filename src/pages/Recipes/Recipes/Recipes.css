@@ -183,7 +183,7 @@
 }
 
 .Boximg {
-    content: url('./image/Maskgroup.png');
+    content: url('../image/Maskgroup.png');
 }
 
 .RecipesPage {
@@ -288,7 +288,7 @@
     }
 
     .BoxRwdimg {
-        content: url('./image/Maskgroup.png');
+        content: url('../image/Maskgroup.png');
     }
 
     .RecipesTimetopbox {

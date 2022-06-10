@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import "./Recipes.css";
-import "../../components/background.css";
+import "../../../components/background.css";
 import $ from "jquery";
-import MyBackTop from "../About/myComponents/MyBackTop";
-import Breadcrumb from "./BreadcrumbCopy";
+import MyBackTop from "../../About/myComponents/MyBackTop";
+import Breadcrumb from "../Breadcrumb/BreadcrumbCopy";
 
 
 
@@ -79,7 +79,7 @@ function Recipes(props) {
           <div className="col RecipesLogoDiv ">
             <img
               className="RecipesLogoauto"
-              src={require("./image/logo.png")}
+              src={require("../image/logo.png")}
               alt="Recipes"
             ></img>
           </div>
@@ -295,7 +295,7 @@ function Recipes(props) {
                   <div className="RecipesSearchBoxCard ">
                     <Link to={`/recipes/id=${v.Recipes_ID}`}>
                       <img
-                        src={require(`./image/${v.Recipes_Picture}`)}
+                        src={require(`../image/${v.Recipes_Picture}`)}
                         className="card-img-top RecipesListImg"
                         alt={v.Recipes_Name}
                       />

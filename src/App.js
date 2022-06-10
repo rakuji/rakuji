@@ -25,8 +25,8 @@ import Cart from "./pages/Cart/Cart";
 import Cart_info from "./pages/Cart/Cart_info";
 // import Cart_order from "./pages/Cart/Cart_order";
 import Cart_confirm from "./pages/Cart/Cart_confirm";
-import Recipes from "./pages/Recipes/Recipes";
-import Box from "./pages/Recipes/Box";
+import Recipes from "./pages/Recipes/Recipes/Recipes";
+import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
 
 //購物車
@@ -34,8 +34,7 @@ import Store from "./pages/Store/Store";
 import { CartProvider } from "./pages/Cart/utils/useCart";
 import { SecondCartProvider } from "./pages/Cart/utils/useSecondCart";
 
-//test
-import Category from "./pages/Recipes/Categorie";
+
 
 function App() {
   const url = window.location.href;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Recipes.css";
-import MyBackTop from "../About/myComponents/MyBackTop";
+import "../Recipes/Recipes.css";
+import MyBackTop from "../../About/myComponents/MyBackTop";
 import Box_Ingredients from "./Box_Ingredients";
 
 function Box() {

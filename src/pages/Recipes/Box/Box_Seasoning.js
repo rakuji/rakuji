@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Recipes.css";
-import MyBackTop from "../About/myComponents/MyBackTop";
+import "../Recipes/Recipes.css";
+import MyBackTop from "../../About/myComponents/MyBackTop";
 import Box_Ingredients from "./Box_Ingredients";
 
 function Box() {
@@ -19,7 +19,7 @@ function Box() {
   const [datas, setDatas] = useState([]);
   const fetchData = async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/recipes/box_Nutrient/abcef/${id}`
+      `${process.env.REACT_APP_API_URL}/recipes/Box_Seasoning/abcef/${id}`
     );
     const results = await response.json();
     setDatas(results);
@@ -32,21 +32,14 @@ function Box() {
       {datas.length > 0 &&
         datas.map((recipes, i) => {
           const {
-            RecipesNutrient_Name,
-            RecipesNutrient_Quantity,
+            RecipesSeasoning_Name,
+            RecipeSseasoning_Quantity,
             Recipes_Picture,
           } = recipes;
           return (
-            <div key={i} className="row col">
-
-              <div className="col-8 fw-bold RecipesNutrientLeftBox">
-                {RecipesNutrient_Name}
-              </div>
-
-              <div className="col-4 fw-bold RecipesNutrientRightBox">
-                {RecipesNutrient_Quantity}
-              </div>
-
+            <div key={i} className="nav RecipesIngredientsBorder  ">
+              <h6 className=" col">{RecipesSeasoning_Name}</h6>
+              <h6>{RecipeSseasoning_Quantity}</h6>
             </div>
           );
         })}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Recipes.css";
-import MyBackTop from "../About/myComponents/MyBackTop";
+import "../Recipes/Recipes.css";
+import MyBackTop from "../../About/myComponents/MyBackTop";
 
 function Box() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」

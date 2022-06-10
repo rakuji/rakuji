@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Recipes.css";
-import MyBackTop from "../About/myComponents/MyBackTop";
+import "../Recipes/Recipes.css";
+import MyBackTop from "../../About/myComponents/MyBackTop";
 import Box_Ingredients from "./Box_Ingredients";
 import Box_Seasoning from "./Box_Seasoning";
 import Box_Cookingsteps from "./Box_Cookingsteps";
 import Box_CookingstepsPhone from "./Box_CookingstepsPhone";
 import Box_Nutrient from "./Box_Nutrient";
 import Box_NutrientPhone from "./Box_NutrientPhone";
-import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 
 function Box(post) {
@@ -131,7 +131,7 @@ function Box(post) {
                     <div className="col-7 avatar ">
                       <img
                         className="container"
-                        src={require(`./image/${Recipes_Picture}`)}
+                        src={require(`../image/${Recipes_Picture}`)}
                         alt=""
                       />
                     </div>
@@ -143,7 +143,7 @@ function Box(post) {
                             <div className="RecipesTimetopbox ">
                               <div className="card RecipesImgKcal RecipesTimetopbox">
                                 <img
-                                  src={require("./image/time.png")}
+                                  src={require("../image/time.png")}
                                   className="card-img-top"
                                   alt="kacl"
                                 />
@@ -181,7 +181,7 @@ function Box(post) {
                             <div className="RecipesTimetopbox ">
                               <div className="card RecipesImgKcal RecipesTimetopbox">
                                 <img
-                                  src={require("./image/kacl.png")}
+                                  src={require("../image/kacl.png")}
                                   className="card-img-top"
                                   alt="kacl"
                                 />
@@ -208,7 +208,7 @@ function Box(post) {
                             <div className="RecipesTimetopbox ">
                               <div className="card RecipesImgKcal RecipesTimetopbox">
                                 <img
-                                  src={require("./image/kacls.png")}
+                                  src={require("../image/kacls.png")}
                                   className="card-img-top"
                                   alt="kacl"
                                 />
@@ -235,7 +235,7 @@ function Box(post) {
                 </div>
                 <Link to="/recipes">
                   <h5 className="RecipesOn  RecipesText">
-                    <img src={require("./image/circle.png")}></img>返回列表
+                    <img src={require("../image/circle.png")}></img>返回列表
                   </h5>
                 </Link>
                 <div className="p-3 mb-2  text-dar RecipesOn">
@@ -248,7 +248,7 @@ function Box(post) {
                     <div className="col- avatar ">
                       <img
                         className="container "
-                        src={require(`./image/${Recipes_Picture}`)}
+                        src={require(`../image/${Recipes_Picture}`)}
                         alt=""
                       />
                     </div>
@@ -278,7 +278,7 @@ function Box(post) {
                             <div className="RecipesTimetopbox ">
                               <div className="card RecipesImgKcal ">
                                 <img
-                                  src={require("./image/time.png")}
+                                  src={require("../image/time.png")}
                                   className="card-img-top"
                                   alt="kacl"
                                 />
@@ -318,7 +318,7 @@ function Box(post) {
                           <div className="RecipesTimetopbox ">
                             <div className="card RecipesImgKcal ">
                               <img
-                                src={require("./image/kacl.png")}
+                                src={require("../image/kacl.png")}
                                 className="card-img-top"
                                 alt="kacl"
                               />
@@ -343,7 +343,7 @@ function Box(post) {
                           <div className="RecipesTimetopbox ">
                             <div className="card RecipesImgKcal ">
                               <img
-                                src={require("./image/kacls.png")}
+                                src={require("../image/kacls.png")}
                                 className="card-img-top"
                                 alt="kacl"
                               />
@@ -482,7 +482,7 @@ function Box(post) {
                     <div className="RecipesSearchBoxCardAll col">
                       <div className="RecipesSearchBoxCard ">
                         <img
-                          src={require("./image/00001.jpg")}
+                          src={require("../image/00001.jpg")}
                           className="card-img-top"
                           alt="日式唐揚炸雞"
                         />
@@ -503,7 +503,7 @@ function Box(post) {
                     <div className="RecipesSearchBoxCardAll col">
                       <div className="RecipesSearchBoxCard ">
                         <img
-                          src={require("./image/00001.jpg")}
+                          src={require("../image/00001.jpg")}
                           className="card-img-top"
                           alt="日式唐揚炸雞"
                         />
@@ -524,7 +524,7 @@ function Box(post) {
                     <div className="RecipesSearchBoxCardAll col">
                       <div className="RecipesSearchBoxCard ">
                         <img
-                          src={require("./image/00001.jpg")}
+                          src={require("../image/00001.jpg")}
                           className="card-img-top"
                           alt="日式唐揚炸雞"
                         />
@@ -545,7 +545,7 @@ function Box(post) {
                     <div className="RecipesSearchBoxCardAll col">
                       <div className="RecipesSearchBoxCard ">
                         <img
-                          src={require("./image/00001.jpg")}
+                          src={require("../image/00001.jpg")}
                           className="card-img-top"
                           alt="日式唐揚炸雞"
                         />
@@ -572,7 +572,7 @@ function Box(post) {
                   <div className="col row ">
                     <div className="col-6 text-center">
                       <img
-                        src={require("./image/00001.jpg")}
+                        src={require("../image/00001.jpg")}
                         className="card-img-top"
                         alt="日式唐揚炸雞"
                       />
@@ -588,7 +588,7 @@ function Box(post) {
                     </div>
                     <div className="col-6 text-center">
                       <img
-                        src={require("./image/00001.jpg")}
+                        src={require("../image/00001.jpg")}
                         className="card-img-top"
                         alt="日式唐揚炸雞"
                       />
