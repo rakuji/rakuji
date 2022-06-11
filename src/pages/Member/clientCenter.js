@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useHistory } from "react-router-dom";
 import "./css/my-login.css"
 // import "./css/reset.css"
 import _ from 'lodash'
@@ -8,11 +8,16 @@ import _ from 'lodash'
 
 const myYear = ""
 const myMonth = ""
-const sesStorage = sessionStorage
+// const sesStorage = sessionStorage
 
-function ClientCenter() {
+function ClientCenter(props) {
+    const { auth } = props;
     const sesStorage  = sessionStorage;
+    const history = useHistory();
     
+    if( !sesStorage['memail'] || !auth){
+        history.push('/member/login');
+    }
     // **********************************************************************************
     // 呈現yearAndMonth
     const now = new Date()
