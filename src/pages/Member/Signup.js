@@ -4,6 +4,8 @@ import "./css/reset.css";
 import { Form } from "react-bootstrap";
 import { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
   const [Memail, setMemail] = useState("");
@@ -24,9 +26,25 @@ function Signup() {
       const results = await response.json();
       console.log(results);
       if (results.ok === false) {
-        alert("信箱帳號重複");
+        toast.error("註冊信箱帳號重複!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       } else {
-        alert("註冊成功");
+        toast.success("註冊成功!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         history.push("/login");
       }
     } catch (error) {
@@ -36,11 +54,35 @@ function Signup() {
 
   const submit = (e) => {
     if (Memail === "") {
-      alert("請輸入信箱帳號!");
+      toast.error("請輸入信箱帳號!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } else if (Mpassword === "") {
-      alert("請輸入密碼!");
+      toast.error("請輸入密碼!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } else if (Mpassword !== rePassword) {
-      alert("兩次密碼輸入不一致!");
+      toast.error("兩次密碼輸入不一致!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
 
     e.preventDefault();
@@ -121,6 +163,17 @@ function Signup() {
                       >
                         註冊
                       </button>
+                      <ToastContainer
+                        position="top-center"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                      />
                       <br />
                       {/* <p class="align">其他方式註冊</p> */}
 
@@ -131,7 +184,8 @@ function Signup() {
                       {/* 使用Facebook註冊 */}
                       {/* </button> */}
                     </div>
-                    <br /><br />
+                    <br />
+                    <br />
                     <div class="mt-4 text-center">
                       已經有會員?
                       <Link to="/Login">登入</Link>

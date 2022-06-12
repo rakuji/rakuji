@@ -3,8 +3,12 @@ import { useState } from "react";
 import { Form, Col, Row, Container } from "react-bootstrap";
 import "./Contact.css";
 import axios from "axios";
+// import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
+  // const history = useHistory();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [select1, setSelect1] = useState("");
@@ -12,19 +16,35 @@ function Contact() {
   const [message, setMessage] = useState("");
 
   const submitForm = () => {
-    axios.post("http://localhost:3001/contact", {
-      name: name,
-      email: email,
-      select1: select1,
-      subject: subject,
-      message: message,
-    }).then(() => {
-      alert("成功發送表單");
-    });
+    axios
+      .post("http://localhost:3001/contact", {
+        name: name,
+        email: email,
+        select1: select1,
+        subject: subject,
+        message: message,
+      })
+      .then(() => {
+        toast.success("成功發送表單!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+        console.log("成功發送表單");
+        
+        // alert("成功發送表單");
+      });
   };
 
   return (
-    <Container id="contentus" className="shadow p-3 mb-5 bg-white rounded d-grid gap-3 my-5 px-5">
+    <Container
+      id="contentus"
+      className="shadow p-3 mb-5 bg-white rounded d-grid gap-3 my-5 px-5"
+    >
       <Form>
         <Row className="justify-content-center">
           <Col>
@@ -140,6 +160,17 @@ function Contact() {
             >
               送出
             </button>
+            <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
           </Col>
         </Row>
       </Form>
