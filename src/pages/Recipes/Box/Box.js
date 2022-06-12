@@ -32,6 +32,7 @@ function Box(post) {
     console.log(results)
     setDatas(results)  
     
+    ///////////////////////修改瀏覽次數///////////////////////////
     const response2 = await fetch(
       `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,{
         method:"put",
@@ -44,6 +45,7 @@ function Box(post) {
 
     //{"Recipes_Clicks":15}
     const results2 = await response2.json();
+    ///////////////////////修改瀏覽次數///////////////////////////
   };
   
   useEffect(() => {
