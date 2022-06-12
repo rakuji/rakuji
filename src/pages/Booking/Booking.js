@@ -118,6 +118,8 @@ const Booking = () => {
 
   // ------------------------------------------------------------------------------------------------------
   const date = new Date();
+  // console.log(new Date(date.setDate(date.getDate()+1)))
+
   const nowtime = moment(date).format("HH:mm");
   // console.log(nowtime > "22:27")
 
@@ -150,8 +152,10 @@ const Booking = () => {
             onChange={(e) => {
               setStoreInput(e.target.value);
               setBookingTimeInput("");
-              if(nowtime > "14:00" && nowDate == startDateformat){
+              if(nowtime > "14:00"&& nowtime < "16:30"&& nowDate == startDateformat){
                 setMealTimeInput("晚上")
+              }else if(nowtime > "20:00" && nowDate == startDateformat){
+                setStartDate(new Date(date.setDate(date.getDate()+1)))
               }
             }}
           >

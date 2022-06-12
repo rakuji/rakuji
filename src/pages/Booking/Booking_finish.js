@@ -26,7 +26,9 @@ const Booking_finish = () => {
   } = bookingData;
 
   const fetchBookingData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/booking/bookingfinish`);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/booking/bookingfinish`
+    );
     const results = await response.json();
     const booking = await results.find((v) => v.id == bookingId);
     // console.log(booking);
@@ -73,9 +75,12 @@ const Booking_finish = () => {
 
       <div className="booking_finish container mt-5">
         <div className="row">
-          <div className="d-flex justify-content-center align-items-center">
-            <i className="fa-solid fa-check me-2 booking_check"></i>
-            <h1 className="mb-0">訂位成功</h1>
+          <div className="d-flex flex-column justify-content-center align-items-center">
+            <div className="d-flex justify-content-center align-items-center mb-4">
+              <i className="fa-solid fa-check me-2 booking_check"></i>
+              <h1 className="mb-0">訂位成功</h1>
+            </div>
+            <h5 className="mb-0">訂位資訊已寄送到您的信箱</h5>
           </div>
 
           <div className="d-flex justify-content-center">
@@ -85,15 +90,17 @@ const Booking_finish = () => {
               <div className="col-6 booking_information">
                 <div>
                   <h3>訂位資訊</h3>
-                  <p>訂位編號:{bookingId}</p>
+                  <p>訂位編號：{bookingId}</p>
 
-                  <p>訂位分店:{store}</p>
-                  <p>用餐人數:{people_adult}位大人，{people_kid}位小孩</p>
-                  <p>用餐日期:{booking_date}</p>
-                  <p>用餐日期:{booking_time}</p>
-                  <p>訂位人姓名:{booking_name}</p>
-                  <p>訂位人電話:{booking_phone}</p>
-                  <p>訂位人Email:{email}</p>
+                  <p>訂位分店：{store}</p>
+                  <p>
+                    用餐人數：{people_adult}位大人，{people_kid}位小孩
+                  </p>
+                  <p>用餐日期：{booking_date}</p>
+                  <p>用餐日期：{booking_time}</p>
+                  <p>訂位人姓名：{booking_name}</p>
+                  <p>訂位人電話：{booking_phone}</p>
+                  <p>訂位人Email：{email}</p>
                   <p>備註:{statue}</p>
 
                   {/* <p>訂位分店:{bookingData.store}</p>

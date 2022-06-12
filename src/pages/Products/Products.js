@@ -196,7 +196,7 @@ console.log(DP)
         <div className="col-10 srarch_bar d-flex justify-content-between">
 
           {/* 價格排序 */}
-          <div
+          <button
             className="price_search d-flex justify-content-center align-items-center"
             // onClick={price_search}
             onClick={() => {
@@ -211,7 +211,7 @@ console.log(DP)
             <div className="p_icon_container">
               {priceSortButton}
             </div>
-          </div>
+          </button>
 
           {/* 產品搜尋 */}
           <form className="d-flex product_search" onSubmit={(e)=>e.preventDefault()}>
