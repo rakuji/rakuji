@@ -144,7 +144,7 @@ const Product_detail = (props) => {
     fetchCommentsData();
   };
 
-  console.log(commentsDatas);
+  // console.log(commentsDatas);
   // console.log(add)
 
   return (

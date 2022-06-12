@@ -280,6 +280,10 @@ table tbody .cart_trush_btn {
   color: #fff;
 }
 
+.required_mark {
+  color: #dc710d;
+}
+
 .ErrorMessage {
   color: #dc3545;
 }
