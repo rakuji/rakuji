@@ -2,7 +2,8 @@ import React from "react";
 import "../Votelist/Votelist.css";
 
 import Breadcrumb from "../Breadcrumb";
-import MyBackTop from "../../../components/MyBackTop/MyBackTop";
+import MyBackTop from "../../About/myComponents/MyBackTop";
+
 
 const Votelist = () => {
   return (

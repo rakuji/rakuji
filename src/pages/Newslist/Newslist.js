@@ -5,8 +5,9 @@ import Breadcrumb from "./Breadcrumb";
 
 import "./Newslist.css";
 // pages
-import Carouselg from "../../components/Carousel/Carouselg";
-import MyBackTop from "../../components/MyBackTop/MyBackTop";
+import Carouselg from "../../components/Carousel/Carousel_g";
+import MyBackTop from "../About/myComponents/MyBackTop";
+
 
 function Newslist() {
   // console.log(NEWSdata);

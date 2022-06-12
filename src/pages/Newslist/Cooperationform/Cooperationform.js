@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 // pages
-import MyBackTop from "../../../components/MyBackTop/MyBackTop";
+import MyBackTop from "../../About/myComponents/MyBackTop";
 
 import "../Cooperationform/Cooperationform.css";
 
