@@ -3,14 +3,14 @@ import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 
 
-const NewslistbackEdit = () => {
+const recipesbackEdit = () => {
   return (
     <Table className="col-12 col-md-10 container">
       <div
         className="col d-flex justify-content-center"
         style={{ fontSize: 22 }}
       >
-        最新消息後台管理系統
+        創意食譜後台管理系統
       </div>
       <div className="col d-flex justify-content-center">
         <Button className="bu" variant="bu" href="/recipesback">
@@ -26,7 +26,7 @@ const NewslistbackEdit = () => {
         <div className="col-lg-">
           <div className="card">
             <div className="card-body">
-              <h5 className="card-title">新增消息</h5>
+              <h5 className="card-title">新增食譜</h5>
               <form name="form1" method="post" novalidate onsubmit="" />
               <div className="mb-3">
                 <label for="name" className="form-label">
@@ -113,4 +113,4 @@ const NewslistbackEdit = () => {
   );
 };
 
-export default NewslistbackEdit;
+export default recipesbackEdit;
