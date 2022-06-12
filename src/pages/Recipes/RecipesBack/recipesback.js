@@ -28,22 +28,22 @@ function Newslistback() {
     fetchNews();
   }, []);
 
-const dele = async (Recipes_ID ) => {
-  const response = await fetch(
-    `${process.env.REACT_APP_API_URL}/recipes/` + Recipes_ID  ,{method: 'delete'}
-  );
-  const data = await response.json();
-  //  刪除畫面上的
-  setNews(News.filter((v, i) => v.Recipes_ID  !==Recipes_ID  ))
- 
+  const dele = async (Recipes_ID) => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/recipes/` + Recipes_ID, { method: 'delete' }
+    );
+    const data = await response.json();
+    //  刪除畫面上的
+    setNews(News.filter((v, i) => v.Recipes_ID !== Recipes_ID))
 
 
-}
+
+  }
 
   return (
 
 
-    <Table className="col-12 col-md-10 container">
+    <div className="col-12 col-md-10 container">
       <div
         className="col d-flex justify-content-center"
         style={{ fontSize: 22 }}
@@ -59,56 +59,56 @@ const dele = async (Recipes_ID ) => {
         </Button>
       </div>
       <div className="card-body">
-      {/* 列表接資料庫資料 */}
-      {News.map((v, i) => {
-        {
-          /* console.log(v)
-            console.log(v.imgid) */
-        }
-        return (
-          <div className="col d-flex justify-content-center">
-            <ta class="table table-striped table-bordered ">
-              <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">標題</th>
-                  <th scope="col">照片</th>
-                  <th scope="col">修改</th>
-                  <th scope="col">刪除</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr key={i}>
-                  <td>{v.Recipes_ID }</td>
-                  <td>{v.Recipes_Name}</td>
-                  <td>
-                    {/* 存取位置要修改 */}
-                    <img
-                      src={require(`../image/${v.Recipes_Picture}`)}
-                      alt=""
-                      width="120px"
-                    />
-                  </td>
-                  <td>
-                    <a href="/NewslistbackEdit">
-                      <i class="fas fa-edit"></i>
-                    </a>
-                  </td>
-                  <td>
-                   
-                      <button className="fas fa-trash-alt" onClick={()=>{dele(v.Recipes_ID )}}></button>
-                   
-                  </td>
-                </tr>
-              </tbody>
-            </ta>
-          </div>
-        );
-      })}
-    </div>
-    
+        {/* 列表接資料庫資料 */}
+
+        <div className="col d-flex justify-content-center">
+          <ta class="table table-striped table-bordered ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">標題</th>
+                <th scope="col">照片</th>
+                <th scope="col">修改</th>
+                <th scope="col">刪除</th>
+              </tr>
+              {News.map((v, i) => {
+
+                return (
+                  <tr key={i}>
+                    <td>{v.Recipes_ID}</td>
+                    <td>{v.Recipes_Name}</td>
+                    <td>
+                      {/* 存取位置要修改 */}
+                      <img
+                        src={require(`../image/${v.Recipes_Picture}`)}
+                        alt=""
+                        width="120px"
+                      />
+                    </td>
+                    <td>
+                      <a href="/NewslistbackEdit">
+                        <i class="fas fa-edit"></i>
+                      </a>
+                    </td>
+                    <td>
+
+                      <button className="fas fa-trash-alt" onClick={() => { dele(v.Recipes_ID) }}></button>
+
+                    </td>
+                  </tr>
+                );
+              })}
+            </thead>
+            <tbody>
+
+            </tbody>
+          </ta>
+        </div>
+
+      </div>
+
       {/* 列表接資料庫資料 end */}
-    </Table>
+    </div>
   );
 }
 
