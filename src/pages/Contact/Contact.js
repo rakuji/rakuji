@@ -3,12 +3,14 @@ import { useState } from "react";
 import { Form, Col, Row, Container } from "react-bootstrap";
 import "./Contact.css";
 import axios from "axios";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
-  // const history = useHistory();
+  
+  const history = useHistory();
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [select1, setSelect1] = useState("");
@@ -35,9 +37,10 @@ function Contact() {
           progress: undefined,
         });
         console.log("成功發送表單");
-        
+        history.push("/");
         // alert("成功發送表單");
       });
+      
   };
 
   return (

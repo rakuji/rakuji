@@ -14,7 +14,9 @@ function Signup() {
   const [Mpassword, setMpassword] = useState("");
   const [rePassword, setRePassword] = useState("");
   const a = { Memail: Memail, Mpassword: Mpassword };
+  
   const history = useHistory();
+  
   const sendData = async () => {
     try {
       const response = await fetch("http://localhost:3001/signup", {
