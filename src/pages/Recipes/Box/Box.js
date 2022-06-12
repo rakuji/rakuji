@@ -138,7 +138,7 @@ function Box(post) {
                       />
                     </div>
 
-                    <div className=" text-center container col-5 row align-items-end">
+                    <div className=" text-center container col row align-items-end">
                       <div className="">
                         <div className="d-flex row row-cols-3">
                           <div className="1">
@@ -201,8 +201,8 @@ function Box(post) {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                              <>{SeveralCopies}人份</>
-                              <br />
+                            <br />
+                              
                               <>{aaaa}大卡</>
                             </div>
                           </div>
@@ -215,6 +215,7 @@ function Box(post) {
                                   alt="kacl"
                                 />
                               </div>
+                              
                               {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
@@ -336,9 +337,9 @@ function Box(post) {
                         </text> */}
                           </div>
                           <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                            <>{SeveralCopies}人份</>
-                            <br />
-                            <>{aaaa}</>
+                            <>{kcal}</>
+                            <h6>大卡</h6>
+                            
                           </div>
                         </div>
                         <div className="col">

@@ -28,7 +28,7 @@ import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes/Recipes";
 import Recipesback from "./pages/Recipes/RecipesBack/recipesback";
 import RecipesbackAdd from "./pages/Recipes/RecipesBack/recipesbackAdd";
-import RecipesbackEdit from "./pages/Recipes/RecipesBack/recipesback";
+import RecipesbackEdit from "./pages/Recipes/RecipesBack/recipesbackEdit";
 import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
 // import Login from "./pages/Member/Login";
@@ -118,7 +118,7 @@ function App() {
         <Route path="/recipesbackAdd" exact>
           <RecipesbackAdd />
         </Route>
-        <Route path="/recipesbackEdit" exact>
+        <Route path="/recipesbackEdit/id=:Recipes_ID" exact>
           <RecipesbackEdit />
         </Route>
         <Route path="/store" exact>

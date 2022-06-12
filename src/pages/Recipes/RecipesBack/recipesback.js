@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import { Link } from "react-router-dom";
+
 
 import "./Newslistback.css";
 
 // pages
 
-function Newslistback() {
+function recipesback() {
   const [News, setNews] = useState([]);
 
   //get假資料
@@ -48,21 +50,21 @@ function Newslistback() {
         className="col d-flex justify-content-center"
         style={{ fontSize: 22 }}
       >
-        最新消息後台管理系統
+        創意食譜後台管理系統
       </div>
       <div className="col d-flex justify-content-center">
         <Button className="bu" variant="bu" href="/recipesback">
-          消息列表
+          食譜列表
         </Button>
         <Button className="bu" variant="" href="/recipesbackAdd">
-          新增消息
+          新增食譜
         </Button>
       </div>
       <div className="card-body">
         {/* 列表接資料庫資料 */}
 
         <div className="col d-flex justify-content-center">
-          <ta class="table table-striped table-bordered ">
+          <div class="table table-striped table-bordered ">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -86,9 +88,12 @@ function Newslistback() {
                       />
                     </td>
                     <td>
-                      <a href="/NewslistbackEdit">
-                        <i class="fas fa-edit"></i>
-                      </a>
+                      <Link to={`/recipesbackEdit/id=${v.Recipes_ID}`}>
+                        <a >
+                          <i class="fas fa-edit"></i>
+                        </a>
+                      </Link>
+
                     </td>
                     <td>
 
@@ -102,14 +107,15 @@ function Newslistback() {
             <tbody>
 
             </tbody>
-          </ta>
+          </div>
         </div>
+
 
       </div>
 
       {/* 列表接資料庫資料 end */}
-    </div>
+    </div >
   );
 }
 
-export default Newslistback;
+export default recipesback;
