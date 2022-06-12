@@ -24,11 +24,11 @@ function Login(props) {
                 method:"post",
                 body:formData
             }).then(response=>{
-                console.log(response);
+                // console.log(response);
                 // 將'response'(Json陣列)轉為'文字'並回傳給'data'
                 return response.text();
             }).then(data=>{
-                console.log(data);
+                // console.log(data);
                 if (data==="true"){
                     sesStorage['memail'] =  userEmail.value ;        
                     setAuth(!auth);
