@@ -172,14 +172,14 @@ const Products = (props) => {
     })
   }, [])
 
-  // useEffect(() => {
-  //   gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
-  //     duration: 1,
-  //     opacity: 0,
-  //     delay: 0,
-  //     stagger: 0.1,
-  //   });
-  // }, [categoryIndex, datas]);
+  useEffect(() => {
+    gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
+      duration: 1,
+      opacity: 0,
+      delay: 0,
+      stagger: 0.1,
+    });
+  }, [categoryIndex, datas]);
 
 
   const { addItem } = useCart()
