@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import $ from "jquery";
+import React, { useState,useEffect } from "react";
 
 import "../About/aboutStore.css";
 import MyBreadcrumb from "../About/myComponents/MyBreadcrumb";
@@ -8,53 +7,75 @@ import MyShopList from "../About/myComponents/MyShopList";
 import MyBackTop from "../About/myComponents/MyBackTop";
 
 const Store = () => {
-  const storeArray = ["北北基", "桃竹苗", "中彰投", "雲嘉南", "高屏"];
+  const [shopsArray, setShopsArray ] = useState([])
+  const [firstArray, setFirstArray ] = useState([])
+  
+  const fetchDatas = async () => {
+      // 找出所有門市列表: fetch回傳JASON陣列(參見rakuji_backend專案:routes/shopLists.js)
+      const responseShops = await fetch("/shopLists");
+      // 將JASON陣列轉成物件陣列(JSAON-->object)
+      const shops = await responseShops.json();
+      // console.log(shops);
+      setShopsArray(shops);
+      // 找出各區域的第一家門市(shop_id最小者)
+      const resFirstShop = await fetch("/shopLists/firstShop");
+      const firstShop = await resFirstShop.json();
+      //  console.log(firstShop);
+      setFirstArray(firstShop);
+  }
 
-  useEffect(() => {
-    $("#storeArray_buttons button:first-child").attr("id", "active");
-  });
+  useEffect(()=>{
+      fetchDatas();
+    },[])
+  //},[shopsArray,firstArray])
 
-  useEffect(() => {
-    $("#storeArray_buttons button").click(function () {
-      $("#storeArray_buttons button").removeAttr("id");
-      $(this).attr("id", "active");
-    });
-  }, []);
   return (
     <>
       {/* 輪播 */}
       <MyCarousel />
       {/* 背景圖 */}
-      <div className="">
+      <div className="bg">
         <div className="container">
           {/* 麵包屑 */}
-          <MyBreadcrumb nav="門市資訊" navlink="/store" location="123" />
+          <MyBreadcrumb nav="門市資訊" navlink="/store"/>
           {/* SHOPS圖片  */}
           <div className="d-flex justify-content-center pageTitleImg">
-            <img
-              src={require("../About/images/pageTitleshops.png")}
-              className="img-fluid"
-              alt="門市資訊"
-            />
+            <img src={require("../About/images/pageTitleshops.png")} className="img-fluid" alt="門市資訊" />
           </div>
           {/* 門市區域按鈕 */}
           <div className="d-flex justify-content-around areaBtns">
-
-            <div className=" container ">
-              <div className="row myBtn2" id="storeArray_buttons">
-                {storeArray.map((v, i) => {
-                  return (
-                    <button key={i} className="col">
-                      {v}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-            
+            { firstArray.map((v,i) => {
+                const {shop_id,area_name} = v;
+                return(
+                  <>
+                  {/* <button type="button" className="btn myBtn" onClick={getScrollElement(shop_id)}>{area_name}</button> */}
+                  <button type="button" className="btn myBtn "><a href={"#"+shop_id}>{area_name}</a></button>
+                  </>
+                )
+            })}
           </div>
+
           {/* 門市資料列 */}
-          <MyShopList branch="高雄左營店" />
+          <div className="shopListGroup">
+          {   shopsArray.map((v,i) => {
+                const {area_name,shop_id,shop_name,shop_address,shop_tel,day_content,night_content,info_detail,info_traffic,info_parking} = v;
+                return (
+                    <MyShopList 
+                      key={shop_id}
+                      shopid={shop_id}
+                      area={area_name}
+                      name={shop_name}
+                      address={shop_address}
+                      tel={shop_tel}
+                      day={day_content}
+                      night={night_content}
+                      detail={info_detail}
+                      traffic={info_traffic}
+                      parking={info_parking}/>    
+                      )
+              })
+          }
+          </div>
           {/* 回最上層 */}
           <MyBackTop />
         </div>

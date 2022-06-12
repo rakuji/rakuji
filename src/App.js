@@ -28,8 +28,8 @@ import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes/Recipes";
 import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
-import Login from "./pages/Member/Login";
-import ClientCenter from "./pages/Member/clientCenter";
+// import Login from "./pages/Member/Login";
+// import ClientCenter from "./pages/Member/clientCenter";
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
@@ -112,12 +112,12 @@ function App() {
         <Route path="/store" exact>
           <Store />
         </Route>
-        <Route path="/member/login" exact>
+        {/* <Route path="/member/login" exact>
           <Login setAuth={setAuth} auth={auth}/>
         </Route>
         <Route path="/member/clientCenter" exact>
           <ClientCenter auth={auth}/>
-        </Route>
+        </Route> */}
       </Switch>
       <Footer />
     </div>
