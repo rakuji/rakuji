@@ -45,7 +45,7 @@ function Signup() {
           draggable: true,
           progress: undefined,
         });
-        history.push("/login");
+        // history.push("/login");
       }
     } catch (error) {
       console.log(error);
