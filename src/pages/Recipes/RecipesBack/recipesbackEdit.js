@@ -14,10 +14,10 @@ const NewslistbackEdit = () => {
       </div>
       <div className="col d-flex justify-content-center">
         <Button className="bu" variant="bu" href="/recipesback">
-          消息列表
+          食譜列表
         </Button>
         <Button className="bu" variant="" href="/recipesbackAdd">
-          新增消息
+          新增食譜
         </Button>
       </div>
 
