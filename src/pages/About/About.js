@@ -3,19 +3,103 @@ import React from "react";
 import "./aboutStore.css";
 import MyBreadcrumb from "./myComponents/MyBreadcrumb";
 import MyCarousel from "./myComponents/MyCarousel";
+import MyBackTop from "../../components/MyBackTop/MyBackTop";
+import { useEffect } from "react";
 
 const About = () => {
+  useEffect(()=>{
+    const selArea = document.querySelector("#select1");
+    const selShop = document.querySelector("#select2 ");
+    const ifrAddress = document.querySelector("#iframe1");
+
+    //IIFE:立即呼叫函式表達式(載入頁面時立即執行)
+    (async function loadData() {
+      // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
+      const responseArea = await fetch("/shopmap/area");
+      // 將JASON陣列轉成物件陣列(JSAON-->object)
+      const areas = await responseArea.json();
+      // 更新selArea
+      renderArea(areas);
+
+      const area_id = selArea.options[selArea.selectedIndex].value;
+      const responseShop = await fetch(`/shopmap/shop?area_id=${area_id}`);
+      const shops = await responseShop.json();
+      renderShop(shops);
+
+      const shop_id = selShop.options[selShop.selectedIndex].value;
+      const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
+      const address = await responseAddress.json();
+      renderAddress(address);
+    })();
+
+    selArea.addEventListener("change", async () => {
+      const area_id = selArea.options[selArea.selectedIndex].value;
+      const responseShop = await fetch(`/shopmap/shop?area_id=${area_id}`);
+      const shops = await responseShop.json();
+      renderShop(shops);
+
+      const shop_id = selShop.options[selShop.selectedIndex].value;
+      const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
+      const address = await responseAddress.json();
+      renderAddress(address);
+    });
+
+    selShop.addEventListener("change", async () => {
+      const shop_id = selShop.options[selShop.selectedIndex].value;
+      const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
+      const address = await responseAddress.json();
+      renderAddress(address);
+    });
+
+    //顯示區域資料:selArea(datas:物件陣列)
+    function renderArea(datas) {
+      datas.forEach((item) => {
+        const { area_id, area_name } = item;
+        //加入選項
+        const opt = new Option(area_name, area_id);
+        selArea.options.add(opt);
+      });
+    }
+
+    //顯示門市的資料:selShop(datas:物件陣列)
+    function renderShop(datas) {
+      //只留selShop中的第一個選項，其他刪除
+      let selShop_len = selShop.length
+      for(let i=1; i<selShop_len; i++){
+        selShop.remove(1);
+      }
+      datas.forEach((item) => {
+        const { shop_id, shop_name } = item;
+        //加入選項
+        const opt = new Option(shop_name, shop_id);
+        selShop.options.add(opt);
+      });
+    }
+
+    // 顯示門市地圖: ifrAddress(datas:物件陣列)
+    function renderAddress(datas) {
+      
+      datas.forEach((item) => {
+        const {shop_address} = item;
+        console.log(shop_address);
+        ifrAddress.src = "https://maps.google.com?output=embed&q=" + shop_address;
+        console.log(ifrAddress.src);
+      });
+    }
+  },[])
+
   return (
-    // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>關於我們</div>
     <>
-      <MyCarousel/>
+      <div>
+        <MyCarousel/>
+      </div>
       <div className="bg">
         <div className="container">
-          <MyBreadcrumb nav="關於我們" navlink="/about" location="123"/>
+          <MyBreadcrumb nav="關於我們" navlink="/about" />
         {/* ABOUT圖片  */}
         <div className="row justify-content-center pageTitleImg">
           <div className="col-4">
-            <img src={require("./images/pageTitleshops.png")} className="img-fluid" alt="關於我們" />
+            <img src={require("./images/pageTitleAbout.png")} className="img-fluid" alt="關於我們" />
           </div>
         </div>
         {/* 樂物語圖片 */}
@@ -78,10 +162,10 @@ const About = () => {
           </p>
           <div className="row">
             <div className="col-12">
-              <img src={require("./images/style-1.png")} className="img-fluid about" alt="" />
+              <img src={require("./images/style-1.png")} className="img-fluid about" alt="style-1.png" />
             </div>
             <div className="col-12">
-              <img src={require("./images/style-2.png")} className="img-fluid about" alt="" />
+              <img src={require("./images/style-2.png")} className="img-fluid about" alt="style-2.png" />
             </div>
           </div>
         </section>
@@ -100,32 +184,25 @@ const About = () => {
             尋找樂時町門市:<br />樂時町已在全台各地擁有多家門市，服務各地喜愛日式家庭料理的人們，歡迎您造訪我們一起享受歡樂時光。
           </p>
           <div className="row mapFrame">
+      
             <div className="col-12 col-md-4 mapQuery">
-              <select className="form-select" aria-label="Default select example">
+              <select id="select1" className="form-select" aria-label="Default select example">
                 <option selected>請先選擇區域</option>
-                <option value="1">北北基</option>
-                <option value="2">桃竹苗</option>
-                <option value="3">中彰投</option>
-                <option value="3">雲嘉南</option>
-                <option value="3">高屏</option>
               </select>
-              <select className="form-select" aria-label="Default select example">
+              <select id="select2" className="form-select" aria-label="Default select example">
                 <option selected>再選擇分店</option>
-                <option value="1">高雄左營店</option>
-                <option value="2">高雄前金店</option>
-                <option value="3">高雄駁二店</option>
-                <option value="3">高雄鳳山店</option>
-                <option value="3">屏東站前店</option>
               </select>
             </div>
             <div className="col-12 col-md-8 mapQuery">
-              <iframe title="高雄左營店"
+              <iframe title="高雄左營店" id="iframe1"
                 src="https://maps.google.com?output=embed&q=高雄市左營區文守路１９６號"
                 frameborder="0"
               ></iframe>
             </div>
+
           </div>
         </section>
+        <MyBackTop/>
         </div>
       </div>
     </>

@@ -1,13 +1,12 @@
 import React from "react";
-import IconBacktop from "../images/icon_backTop.svg"
+import IconBacktop from "./icon_backTop.svg"
 
-
-import "../aboutStore.css";
+import "./MyBackTop.css";
 
 const MyBackTop = () => {
     return(
         <div className="backTop d-flex justify-content-evenly">
-            <img src={IconBacktop} alt="Back Top Icon"/>
+            <img src={IconBacktop}/>
             <div><a href="#top">回最上層</a></div>
         </div>
     );

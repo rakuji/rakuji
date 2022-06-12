@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 
@@ -28,6 +28,8 @@ import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes/Recipes";
 import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
+import Login from "./pages/Member/Login";
+import ClientCenter from "./pages/Member/clientCenter";
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
@@ -41,6 +43,9 @@ function App() {
   const ary1 = url.split("=");
   const id = ary1[1];
   console.log(id);
+    // 會員登入用的狀態 auth=true代表登入
+    const [auth, setAuth] = useState(false)
+    // const sesStorage  = sessionStorage;
   return (
     <div className="App">
       <Nav />
@@ -106,6 +111,12 @@ function App() {
         </Route>
         <Route path="/store" exact>
           <Store />
+        </Route>
+        <Route path="/member/login" exact>
+          <Login setAuth={setAuth} auth={auth}/>
+        </Route>
+        <Route path="/member/clientCenter" exact>
+          <ClientCenter auth={auth}/>
         </Route>
       </Switch>
       <Footer />
