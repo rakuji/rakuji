@@ -16,14 +16,17 @@ const Booking_finish = () => {
     people_kid,
     meal_time,
     booking_time,
-    name,
-    phone,
+    booking_name,
+    booking_phone,
     email,
     statue,
+    store_picture,
+    store_address,
+    store_phone,
   } = bookingData;
 
   const fetchBookingData = async () => {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/booking`);
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/booking/bookingfinish`);
     const results = await response.json();
     const booking = await results.find((v) => v.id == bookingId);
     // console.log(booking);
@@ -46,12 +49,12 @@ const Booking_finish = () => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src={require("./images/carousel/images.jpg")}
+              src={`/img/store/${store_picture}`}
               className="d-block w-100"
               alt="..."
             />
           </div>
-          <div className="carousel-item">
+          {/* <div className="carousel-item">
             <img
               src={require("./images/carousel/images_1.jpg")}
               className="d-block w-100"
@@ -64,7 +67,7 @@ const Booking_finish = () => {
               className="d-block w-100"
               alt="..."
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -88,8 +91,8 @@ const Booking_finish = () => {
                   <p>用餐人數:{people_adult}位大人，{people_kid}位小孩</p>
                   <p>用餐日期:{booking_date}</p>
                   <p>用餐日期:{booking_time}</p>
-                  <p>訂位人姓名:{name}</p>
-                  <p>訂位人電話:{phone}</p>
+                  <p>訂位人姓名:{booking_name}</p>
+                  <p>訂位人電話:{booking_phone}</p>
                   <p>訂位人Email:{email}</p>
                   <p>備註:{statue}</p>
 
@@ -125,7 +128,7 @@ const Booking_finish = () => {
                       <i className="fa-solid fa-house-chimney"></i>
                     </div>
                     <div className="col-11">
-                      <p className="mb-0">高雄左營店</p>
+                      <p className="mb-0">{store}</p>
                     </div>
                   </div>
 
@@ -134,7 +137,7 @@ const Booking_finish = () => {
                       <i className="fa-solid fa-location-dot"></i>
                     </div>
                     <div className="col-11">
-                      <p className="mb-0">高雄市左營區文守路196號</p>
+                      <p className="mb-0">{store_address}</p>
                     </div>
                   </div>
 
@@ -143,7 +146,7 @@ const Booking_finish = () => {
                       <i className="fa-solid fa-phone"></i>
                     </div>
                     <div className="col-11">
-                      <p className="mb-0">07-963-5566</p>
+                      <p className="mb-0">{store_phone}</p>
                     </div>
                   </div>
 
