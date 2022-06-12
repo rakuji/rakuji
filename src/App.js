@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // components
 import Nav from "./components/Nav";
@@ -19,9 +21,9 @@ import Store from "./pages/Store/Store";
 import Contact from "./pages/Contact/Contact";
 import Votelist from "./pages/Newslist/Votelist";
 import Cooperationform from "./pages/Newslist/Cooperationform";
-import Login from "./pages/Member/Login"
-import Signup from "./pages/Member/Signup"
-import Register from "./pages/Member/Register"
+import Login from "./pages/Member/Login";
+import Signup from "./pages/Member/Signup";
+import Register from "./pages/Member/Register";
 
 function App() {
   return (
@@ -68,6 +70,17 @@ function App() {
           <Register />
         </Route>
       </Switch>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Footer />
       {/* <BootstrapDatePicker />   */}
     </div>

@@ -8,6 +8,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
+
+  
   const [Memail, setMemail] = useState("");
   const [Mpassword, setMpassword] = useState("");
   const [rePassword, setRePassword] = useState("");
@@ -26,7 +28,7 @@ function Signup() {
       const results = await response.json();
       console.log(results);
       if (results.ok === false) {
-        toast.error("註冊信箱帳號重複!", {
+        toast.error("信箱重複或是你根本沒填!", {
           position: "top-center",
           autoClose: 5000,
           hideProgressBar: false,
@@ -45,7 +47,7 @@ function Signup() {
           draggable: true,
           progress: undefined,
         });
-        // history.push("/login");
+        history.push("/login");
       }
     } catch (error) {
       console.log(error);
@@ -53,17 +55,18 @@ function Signup() {
   };
 
   const submit = (e) => {
-    if (Memail === "") {
-      toast.error("請輸入信箱帳號!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-    } else if (Mpassword === "") {
+    // if (Memail === "") {
+    //   toast.error("請輸入信箱帳號!", {
+    //     position: "top-center",
+    //     autoClose: 5000,
+    //     hideProgressBar: false,
+    //     closeOnClick: true,
+    //     pauseOnHover: true,
+    //     draggable: true,
+    //     progress: undefined,
+    //   });
+    // } else 
+    if (Mpassword === "") {
       toast.error("請輸入密碼!", {
         position: "top-center",
         autoClose: 5000,
