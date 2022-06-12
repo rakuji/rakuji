@@ -51,10 +51,10 @@ function Newslistback() {
         最新消息後台管理系統
       </div>
       <div className="col d-flex justify-content-center">
-        <Button className="bu" variant="bu" href="/Newslistback">
+        <Button className="bu" variant="bu" href="/recipesback">
           消息列表
         </Button>
-        <Button className="bu" variant="" href="/NewslistbackAdd">
+        <Button className="bu" variant="" href="/recipesbackAdd">
           新增消息
         </Button>
       </div>
