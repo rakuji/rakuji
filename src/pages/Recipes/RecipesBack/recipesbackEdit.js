@@ -80,6 +80,7 @@ const recipesbackEdit = () => {
           {/* 列表接資料庫資料 */}
           {News.length > 0 &&
             News.map((recipes, i) => {
+              const submit = (e) => {};
               const {
                 Recipes_Name,
                 Recipes_Picture,
@@ -180,7 +181,7 @@ const recipesbackEdit = () => {
                             <button
                               type="submit"
                               className="btn bu-primary bu"
-                              variant="bu"
+                              onClick={submit}
                             >
                               完成編輯
                             </button>

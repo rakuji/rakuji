@@ -11,7 +11,7 @@ import Box_NutrientPhone from "./Box_NutrientPhone";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 
-function Box(post) {
+function Box() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
   const url = window.location.href;
   //之後去分割字串把分割後的字串放進陣列中
