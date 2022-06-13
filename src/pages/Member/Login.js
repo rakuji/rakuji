@@ -51,6 +51,7 @@ function Login(props) {
         alert(`謝謝您的光臨:${sesStorage['memail']}`)
         // 清除sessionStorage & set auth = false
         sesStorage.removeItem("memail");
+        sesStorage.removeItem("mid");
         setAuth(!auth);
     }
     return (
