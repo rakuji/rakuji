@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link,useHistory } from "react-router-dom";
-// import $ from 'jquery';
+import $ from 'jquery';
 import "./css/my-login.css"
 // import "./css/reset.css"
 import _ from 'lodash'
@@ -15,26 +15,54 @@ function ClientCenter(props) {
     const { auth } = props;
     const sesStorage  = sessionStorage;
     const history = useHistory();
-    // const [editable, setEditable] = useState(false);
     const [memberInfo, setMemberInfo] = useState([]);
     
-    // console.log(sesStorage['memail']);
     if( !sesStorage['memail'] || !auth){
-    // if( !sesStorage['memail'] ){
         history.push('/member/login');
     }
 
-    // 向 localhost:3001/members/email 請求會員資料(by query string 'memail')
-    const fetchDatas = async () => {
+    // 向 localhost:3001/members/email 請求會員相關資料(by query string 'memail')
+    const fetchDatas = async ()=> {
+         // 1) 請求會員基本資料:
         const resMemberData = await fetch(`${process.env.REACT_APP_API_URL}/members/email?memail=${sesStorage['memail']}`);
         const memberData = await resMemberData.json();
         // console.log(memberData);
         setMemberInfo(memberData);
-    }
-
-    const handleSubmit = () => {
         
     }
+
+
+   
+
+    useEffect(()=>{
+        $("#submitMemberInfo").click((e) => {
+            e.preventDefault();
+            // console.log("Click修改鈕");
+            const form = document.getElementById('formMemberInfo');
+            console.log(form);
+            const formData =  new FormData(form);
+            console.log(formData);
+      
+            fetch(`${process.env.REACT_APP_API_URL}/members/email?memail=${sesStorage['memail']}`,{
+                method:"put",
+                body:formData
+            }).then(response=>{
+                // console.log(response);
+                // 將'response'(Json陣列)轉為'物件'並回傳給'data'
+                return response.json();
+            }).then(data=>{
+                // console.log(data);
+                if (data.ok){
+                    alert(`${sesStorage['memail']} 資料修改成功!`)
+                  //  fetchDatas();  
+                } else {
+                    alert(`${sesStorage['memail']} 資料修改失敗!`);
+                }
+            })
+        })
+    },[])
+    
+    
 
     useEffect(()=>{
         fetchDatas();      
@@ -172,14 +200,15 @@ function ClientCenter(props) {
                                         <div className="tab-pane fade show active" id="profile" role="tabpanel"
                                             aria-labelledby="profile-tab">
 
-                                            <form method="POST" className="my-login-validation" noValidate="">
+                                            <form id="formMemberInfo" name="formMemberInfo" className="my-login-validation" noValidate="">
+                                           
                                             {   memberInfo.map((v,i)=>{
                                                     const {Mname,Msex,Mvocation,Mbirthday,Mcity,Maddress,Mchild,Mphone,Mpassword} = v;
                                                     return(
                                                         <>
                                                             <div className="form-group">
                                                             <label htmlFor="a">姓名</label>
-                                                            <input id="Name" type="text" className="form-control minfo" name="Name" defaultValue={Mname} />
+                                                            <input id="name" type="text" className="form-control minfo" name="name" defaultValue={Mname} />
                                                             </div>
                                                             <div className="form-group">
                                                                 <label htmlFor="sex">性別</label>
@@ -220,7 +249,8 @@ function ClientCenter(props) {
                                                 <br />
                                                 <div className="row form-group  g-3">
                                                     <div className="col-sm-6">
-                                                        <button type="submit" className="btn btn-block btn-custom " onClick={handleSubmit}>修改</button>
+                                                        <button type="submit" id="submitMemberInfo" className="btn btn-block btn-custom">修改</button>
+                                                        
                                                     </div>
                                                     <div className="col-sm-6">
                                                         <button type="reset" className="btn btn-block btn-danger" >取消</button>
@@ -240,11 +270,10 @@ function ClientCenter(props) {
                                                         <thead className="line">
                                                             <tr className="text-color">
                                                                 <th scope="col b1">訂單編號</th>
-                                                                <th scope="col">商品圖片</th>
+                                                                {/* <th scope="col">商品圖片</th> */}
                                                                 <th scope="col">商品名稱</th>
                                                                 <th scope="col">金額</th>
-                                                                <th scope="col">運費</th>
-
+                                                                <th scope="col">數量</th>
                                                                 <th scope="col">合計</th>
                                                                 <th scope="col">日期</th>
                                                             </tr>
@@ -252,33 +281,23 @@ function ClientCenter(props) {
                                                         <tbody>
                                                             <tr>
                                                                 <th scope="row">001</th>
-                                                                <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td>
+                                                                {/* <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td> */}
                                                                 <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                                <td>120$x5<br />120$x5</td>
-                                                                <td>0$</td>
-
-                                                                <td>1200$</td>
-                                                                <td>2022-03-14</td>
+                                                                <td>$330<br />$319</td>
+                                                                <td>1<br />1</td>
+                                                                <td>$649</td>
+                                                                <td>2021-03-14</td>
                                                             </tr>
                                                             <tr>
-                                                                <th scope="row">002</th>
-                                                                <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td>
-                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                                <td>120$x5<br />120$x5</td>
-                                                                <td>100$</td>
-
-                                                                <td>1200$</td>
-                                                                <td>2022-03-14</td>
+                                                                <th scope="row">001</th>
+                                                                {/* <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td> */}
+                                                                <td>漢堡排<br />唐揚雞歐姆蛋咖哩飯</td>
+                                                                <td>$250<br />$199</td>
+                                                                <td>1<br />1</td>
+                                                                <td>$449</td>
+                                                                <td>2021-9-14</td>
                                                             </tr>
-                                                            <tr>
-                                                                <th scope="row">003</th>
-                                                                <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td>
-                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                                <td>120$x5<br />120$x5</td>
-                                                                <td>100$</td>
-                                                                <td>1200$</td>
-                                                                <td>2022-03-14</td>
-                                                            </tr>
+                                                            
                                                         </tbody>
                                                     </table>
                                                 </div>

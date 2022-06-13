@@ -12,7 +12,7 @@ function Login(props) {
     
     useEffect(()=>{
         const submitBtn = document.querySelector("#submitBtn");
-        const userEmail = document.querySelector("#email");
+        // const userEmail = document.querySelector("#email");
         const userPassword = document.querySelector("#password");
         const authMessage = document.querySelector("#authMessage");
 
@@ -24,13 +24,14 @@ function Login(props) {
                 method:"post",
                 body:formData
             }).then(response=>{
-                // console.log(response);
-                // 將'response'(Json陣列)轉為'文字'並回傳給'data'
-                return response.text();
+                console.log(response);
+                // 將'response'(Json陣列)轉為'物件'並回傳給'data'
+                return response.json();
             }).then(data=>{
-                // console.log(data);
-                if (data==="true"){
-                    sesStorage['memail'] =  userEmail.value ;        
+                console.log(data);
+                if (data.ok){
+                    sesStorage['memail'] =  data.memail ;        
+                    sesStorage['mid'] =  data.mid ;        
                     setAuth(!auth);
                       // 呈現歡迎訊息
                     alert(`你好，歡迎:${sesStorage['memail']}`)
