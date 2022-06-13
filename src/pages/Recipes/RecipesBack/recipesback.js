@@ -70,6 +70,8 @@ function recipesback() {
                 <th scope="col">#</th>
                 <th scope="col">標題</th>
                 <th scope="col">照片</th>
+                <th scope="col">瀏覽次數</th>
+                <th scope="col">熱量</th>
                 <th scope="col">修改</th>
                 <th scope="col">刪除</th>
               </tr>
@@ -79,6 +81,7 @@ function recipesback() {
                   <tr key={i}>
                     <td>{v.Recipes_ID}</td>
                     <td>{v.Recipes_Name}</td>
+
                     <td>
                       {/* 存取位置要修改 */}
                       <img
@@ -87,6 +90,8 @@ function recipesback() {
                         width="120px"
                       />
                     </td>
+                    <td>{v.Recipes_Clicks}</td>
+                    <td>{v.RecipesBox_Kcal}大卡</td>
                     <td>
                       <Link to={`/recipesbackEdit/id=${v.Recipes_ID}`}>
                         <a >

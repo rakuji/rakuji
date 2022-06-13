@@ -10,7 +10,6 @@ import Box_Nutrient from "./Box_Nutrient";
 import Box_NutrientPhone from "./Box_NutrientPhone";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
-
 function Box() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
   const url = window.location.href;
@@ -29,32 +28,34 @@ function Box() {
       `${process.env.REACT_APP_API_URL}/recipes/box/abcde/${id}`
     );
     const results = await response.json();
-    console.log(results)
-    setDatas(results)  
-    
+    console.log(results);
+    setDatas(results);
+
     ///////////////////////修改瀏覽次數///////////////////////////
     const response2 = await fetch(
-      `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,{
-        method:"put",
+      `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,
+      {
+        method: "put",
         headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
-        body:JSON.stringify({Recipes_Clicks: results[0].Recipes_Clicks+1})}
+        body: JSON.stringify({ Recipes_Clicks: results[0].Recipes_Clicks + 1 }),
+      }
     );
 
     //{"Recipes_Clicks":15}
     const results2 = await response2.json();
     ///////////////////////修改瀏覽次數///////////////////////////
   };
-  
+
   useEffect(() => {
     fetchData();
   }, []);
 
   return (
     <>
-    <Breadcrumb />
+      <Breadcrumb />
       {datas.length > 0 &&
         datas.map((recipes, i) => {
           const {
@@ -69,10 +70,8 @@ function Box() {
           let kcal = RecipesBox_Kcal;
           let SeveralCopies = RecipesBox_SeveralCopies;
           let aaaa = kcal / SeveralCopies;
-          
-          
+
           return (
-            
             <div key={i} className="container p-3 mb-2  text-dar ">
               <div className="container row p-3 mb-2  text-dark">
                 <div className="p-3 mb-2 bg-body text-dar RecipesOff">
@@ -80,7 +79,6 @@ function Box() {
                     style={{ padding: "0px 20px", margin: "0px -2px" }}
                     className="fs-1 "
                   >
-                  
                     {Recipes_Name}
                   </h3>
                   <h3
@@ -201,8 +199,8 @@ function Box() {
                         </svg> */}
                             </div>
                             <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                            <br />
-                              
+                              <>1人</>
+                              <br />
                               <>{aaaa}大卡</>
                             </div>
                           </div>
@@ -215,7 +213,7 @@ function Box() {
                                   alt="kacl"
                                 />
                               </div>
-                              
+
                               {/* <svg width="100%" height="70">
                           <circle
                             className="RecipesTimeSvg"
@@ -276,7 +274,7 @@ function Box() {
                     </h3>
                     <div className="d-flex text-center container">
                       <div className="row row-cols-3">
-                        <div className="col">
+                        <div className="col-4">
                           <div>
                             <div className="RecipesTimetopbox ">
                               <div className="card RecipesImgKcal ">
@@ -317,7 +315,7 @@ function Box() {
                           </div>
                         </div>
 
-                        <div className="col ">
+                        <div className="col-4 ">
                           <div className="RecipesTimetopbox ">
                             <div className="card RecipesImgKcal ">
                               <img
@@ -337,12 +335,11 @@ function Box() {
                         </text> */}
                           </div>
                           <div className="bg-body RecipesTimebottombox rounded-bottom border-2 ">
-                            <>{kcal}</>
-                            <h6>大卡</h6>
-                            
+                            <h6>1人</h6>
+                            <>{aaaa}</>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-4">
                           <div className="RecipesTimetopbox ">
                             <div className="card RecipesImgKcal ">
                               <img
@@ -445,8 +442,8 @@ function Box() {
                       營養成分
                     </h5>
                   </div>
-                  <div className="row nav container  ">                    
-                      <Box_Nutrient />                   
+                  <div className="row nav container  ">
+                    <Box_Nutrient />
                   </div>
                 </div>
 
@@ -458,7 +455,7 @@ function Box() {
                       </h5>
                     </div>
                     <div className="  container  ">
-                    <Box_NutrientPhone />
+                      <Box_NutrientPhone />
                     </div>
                   </div>
                 </div>
@@ -466,7 +463,6 @@ function Box() {
                   <div className="text-center container ">
                     <h5 className="RecipesText fw-bold RecipesStepText"></h5>
                   </div>
-
                 </div>
                 <div className="p-3 mb-2 text-dar container RecipesOn">
                   <div className="container ">
@@ -474,9 +470,7 @@ function Box() {
                       <h5 className="RecipesText fw-bold RecipesIngredientsText"></h5>
                     </div>
                   </div>
-                  <div className="row">
-
-                  </div>
+                  <div className="row"></div>
                 </div>
                 <div className="p-3 mb-2  text-dar container row RecipesOff">
                   <div>推薦店內菜單</div>

@@ -1,7 +1,7 @@
 import Button from "react-bootstrap/Button";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import axios from "axios";
-
+import { Form } from "react-bootstrap";
 import "./Newslistback.css";
 
 function NewslistbackAdd() {
@@ -12,26 +12,26 @@ function NewslistbackAdd() {
   const [content, setcontent] = useState("");
 
   // 上傳檔案
-  const [selectedFile, setSelectedFile] = useState()
-  const [isFilePicked, setIsFilePicked] = useState(false)
+  const [selectedFile, setSelectedFile] = useState();
+  const [isFilePicked, setIsFilePicked] = useState(false);
   const changeHandler = (event) => {
-    setSelectedFile(event.target.files[0])
-    setIsFilePicked(true)
-  }
-
-
-  const submitForm = () => {
-    axios.post("http://localhost:3001/latest_news", {
-      name: name,
-      imgid:imgid,
-      timestart: timestart,
-      timeend: timeend,
-      content: content,
-    }).then(() => {
-      alert("成功新增消息");
-    });
+    setSelectedFile(event.target.files[0]);
+    setIsFilePicked(true);
   };
 
+  const submitForm = () => {
+    axios
+      .post("http://localhost:3001/latest_news", {
+        name: name,
+        imgid: imgid,
+        timestart: timestart,
+        timeend: timeend,
+        content: content,
+      })
+      .then(() => {
+        alert("成功新增消息");
+      });
+  };
 
   // const NewslistbackAdd = () => {
   return (
@@ -57,7 +57,6 @@ function NewslistbackAdd() {
           <div className="col-12 col-md-10">
             <div className="row">
               <div className="col-lg-12">
-
                 <h5 className="card-title">新增消息</h5>
                 <form name="form1" method="post" novalidate onsubmit="" />
                 <div className="mb-3">
@@ -89,26 +88,17 @@ function NewslistbackAdd() {
                       id="myimg"
                       width="355px"
                       height="200px"
-
-                    />
-                    <br />
-                      <button type="button" onclick="imgid.click()">選擇照片</button>
-
-                    <br />
-                    </form>
-                  {/* 選擇照片 */}
-                    <form name="avatar_form" onsubmit="return false;" style={{display:"none"}}>
-                    <input
-                      type="file"
-                      id="imgid"
-                      name="imgid"
-                      accept="image/jpeg,image/png"
-                      onChange={(event) => {
-                        setimgid(event.target.value);
-
-                      }}
                     />
                   </form>
+                  {/* 選擇照片 */}
+                  <Form>
+                    <Form.Group controlId="formFile" className="mb-3">
+                      <Form.Label>上傳照片</Form.Label>
+                      <Form.Control type="file"   onChange={(event) => {
+                        setimgid(event.target.value);
+                      }}/>
+                    </Form.Group>
+                  </Form>
                   {/* 選擇照片 */}
 
                   <div className="mb-3">
@@ -122,9 +112,7 @@ function NewslistbackAdd() {
                       name="timestart"
                       onChange={(event) => {
                         settimestart(event.target.value);
-
                       }}
-
                     />
                     <div className="form-text"></div>
                     <div className="mb-3">
@@ -138,7 +126,6 @@ function NewslistbackAdd() {
                         name="timeend"
                         onChange={(event) => {
                           settimeend(event.target.value);
-
                         }}
                       />
                       <div className="form-text"></div>
@@ -155,7 +142,6 @@ function NewslistbackAdd() {
                         rows="3"
                         onChange={(event) => {
                           setcontent(event.target.value);
-
                         }}
                       ></textarea>
                       <div className="form-text"></div>
@@ -164,14 +150,12 @@ function NewslistbackAdd() {
                         className="btn bu-primary bu"
                         variant="bu"
                         onClick={submitForm}
-
                       >
                         新增
                       </button>
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

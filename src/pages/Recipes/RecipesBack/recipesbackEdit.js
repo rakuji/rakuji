@@ -87,7 +87,7 @@ const recipesbackEdit = () => {
                 RecipesBox_Time,
                 RecipesBox_Kcal,
                 RecipesBox_SeveralCopies,
-                Recipes_Clicks,
+                RecipesClass,
               } = recipes;
               return (
                 <div key={i} className="col-12 col-md-10 ">
@@ -118,6 +118,45 @@ const recipesbackEdit = () => {
                           id="name"
                           name="name"
                           defaultValue={RecipesBox_Kcal}
+                        ></input>
+                        <div className="form-text"></div>
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="name" className="form-label">
+                          *烹飪時間
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          defaultValue={RecipesBox_Time}
+                        ></input>
+                        <div className="form-text"></div>
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="name" className="form-label">
+                          *食譜幾人份
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          defaultValue={RecipesBox_SeveralCopies}
+                        ></input>
+                        <div className="form-text"></div>
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="name" className="form-label">
+                          *食譜類別
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          defaultValue={RecipesClass}
                         ></input>
                         <div className="form-text"></div>
                       </div>
