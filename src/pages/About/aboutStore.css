@@ -1,0 +1,160 @@
+.bg {
+  /* background-image: url("./images/BG.png"); */
+  /* background-repeat: no-repeat; */
+  max-width: 1440px;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.areaBtns {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  position: sticky;
+  top: 191px;
+  background-color: white;
+}
+.backTop {
+  width: 130px;
+  margin: 2em auto;
+}
+.backTop div {
+  color: #58c2dd;
+  display: inline-block;
+}
+.backTop img {
+  width: 20px;
+}
+.mybread {
+  position: sticky;
+  top: 0;
+  font-size: 1em;
+  background-color: white;
+}
+
+.carousel {
+  height: 300px;
+  overflow: hidden;
+}
+
+.form-select.my {
+  width: 75%;
+  height: 35px;
+  border: 1px solid #58c2dd;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+iframe {
+  width: 100%;
+  height: 400px;
+}
+img.my {
+  object-fit: cover;
+}
+img.about {
+  margin: 5px 0;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.mapFrame {
+  border: 1px solid #58c2dd;
+  border-radius: 5px;
+  margin: 0;
+}
+.mapQuery {
+  padding: 0;
+  align-content: space-evenly;
+  display: flex;
+  flex-wrap: wrap;
+}
+.myBtn {
+  width: 130px;
+  height: 44px;
+  border: 1px solid #4b9ad5;
+  border-radius: 50px;
+  background-color: white;
+  color: #4b9ad5;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.shopList {
+  padding-bottom: 1em;
+  border-bottom: #cac9c9 1px solid;
+}
+
+/* .shopListGroup {
+    position:sticky;
+    top: 251px;
+  } */
+
+p.about {
+  font-size: 20px;
+}
+
+.cardTitle {
+  font-size: 20px;
+  color: #dc710d;
+}
+.cardBody {
+  font-size: 1em;
+}
+
+.row.my {
+  margin: 1em 0;
+  width: 100%;
+}
+
+.pageTitleImg {
+  margin-bottom: 2em;
+  position: sticky;
+  top: 56px;
+  background-color: white;
+}
+section {
+  margin-bottom: 2em;
+}
+
+@media screen and (max-width: 992px) {
+  .carousel {
+    height: 150px;
+  }
+  .myBtn {
+    height: 30px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .myBtn {
+    height: 24px;
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .carousel {
+    display: none;
+  }
+  .mybread {
+    display: none;
+  }
+  .myBtn {
+    height: 24px;
+    font-size: 8px;
+  }
+  p.about {
+    font-size: 16px;
+  }
+  .areaBtns {
+    position:sticky;
+    top:135px;
+  }
+  .pageTitleImg {
+    position:sticky;
+    top: 0;
+  }
+}
