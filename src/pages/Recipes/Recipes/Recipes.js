@@ -6,6 +6,7 @@ import "../../../components/background.css";
 import $ from "jquery";
 import MyBackTop from "../../About/myComponents/MyBackTop";
 import Breadcrumb from "../Breadcrumb/BreadcrumbCopy";
+import Carouselg from "../../../components/Carousel/Carousel_g";
 
 
 
@@ -72,7 +73,10 @@ function Recipes(props) {
 
   return (
     <>
-    <Breadcrumb />
+         <Carouselg />
+      <div className="tt">
+        <Breadcrumb />
+      </div>
 
       <div className="nav-item container phoneDiv ">
         <div className="row  ">

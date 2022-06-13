@@ -5,7 +5,7 @@ import "./Breadcrumb.css";
 class BreadcrumbComponent extends Component {
   render() {
     return (
-      <div className="container col-8">
+      <div className="container col-8" id="break">
         <Breadcrumb>
           <Breadcrumb.Item href="/">首頁</Breadcrumb.Item>
           <Breadcrumb.Item ></Breadcrumb.Item>
