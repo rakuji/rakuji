@@ -9,7 +9,7 @@ import "../aboutStore.css";
 const MyShopList = (props) => {
     const [modalShow, setModalShow] = useState(false);
     return (
-    <div className="row shopList" id={props.shopid}>
+    <div className="row my shopList" id={props.shopid}>
         {/* 門市卡片 */}
         <div className="col-12 col-md-6 ">
             <h3 className="cardTitle my-3">{props.name}</h3>
@@ -23,13 +23,13 @@ const MyShopList = (props) => {
         </div>
         {/* 門市按鈕 */}
         <div className="col-12 col-md-6 ">
-            <div className="row">
+            <div className="row my">
                 <div className="col d-flex justify-content-around">
                     <button type="button" className="btn myBtn "><Link to="/booking">線上訂位</Link></button>
                     <button type="button" className="btn myBtn "><Link to="/products">線上訂餐</Link></button>
                 </div>
             </div>
-            <div className="row">
+            <div className="row my">
                 <div className="col d-flex justify-content-around">
                 <button type="button" className="btn myBtn" onClick={() => setModalShow(true)}>其他資訊</button>
                 <button type="button" className="btn myBtn "><a href={"https://maps.google.com/?q="+ props.address } target="_blank" rel="noreferrer">GoogleMap</a></button>
