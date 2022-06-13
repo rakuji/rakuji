@@ -1,12 +1,41 @@
-import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import Table from "react-bootstrap/Table";
+import React, { useState } from "react";
+import axios from "axios";
+import { Form } from "react-bootstrap";
 
 
 import "./Newslistback.css";
 
-const recipesbackAdd = () => {
- 
+function recipesbackAdd(){
+  const [Recipes_Name, setRecipes_Name] = useState("");
+  const [Recipes_Picture, setRecipes_Picture] = useState("");
+  const [RecipesBox_Kcal, setRecipesBox_Kcal] = useState("");
+  const [RecipesBox_Time, setRecipesBox_Time] = useState("");
+  const [RecipesBox_SeveralCopies, setRecipesBox_SeveralCopies] = useState("");
+  const [RecipesClass, setRecipesClass] = useState("");
+
+    // 上傳檔案
+    const [selectedFile, setSelectedFile] = useState();
+    const [isFilePicked, setIsFilePicked] = useState(false);
+    const changeHandler = (event) => {
+      setSelectedFile(event.target.files[0]);
+      setIsFilePicked(true);
+    };
+
+    const submitForm = () => {
+      axios
+        .post("http://localhost:3001/recipesbackAdd", {
+          Recipes_Name: Recipes_Name,
+          Recipes_Picture: Recipes_Name,
+          RecipesBox_Kcal: Recipes_Name,
+          RecipesBox_Time: Recipes_Name,
+          RecipesBox_SeveralCopies: Recipes_Name,
+          RecipesClass: Recipes_Name,
+        })
+        .then(() => {
+          alert("成功新增食譜");
+        });
+    };
 
   return (
     <div className="container">
