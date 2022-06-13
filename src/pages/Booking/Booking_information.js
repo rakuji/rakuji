@@ -10,9 +10,9 @@ const Booking_information = () => {
 
   const history = useHistory();
 
-  //假會員ID
-  const loginMemberId = localStorage.getItem("memberId");
-  // console.log(typeof loginMemberId);
+  //會員ID
+  const mid = sessionStorage.getItem("mid");
+  // console.log(mid);
 
   const {
     storeInput,
@@ -43,7 +43,7 @@ const Booking_information = () => {
       `${process.env.REACT_APP_API_URL}/booking/member`
     );
     const results = await response.json();
-    const member = results.find((v) => v.id == loginMemberId);
+    const member = results.find((v) => v.MID == mid);
     setMemberData(member);
   };
   // console.log(memberData);
@@ -53,8 +53,16 @@ const Booking_information = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("");
 
-  let booking_info = { name, phone, email, status };
-  localStorage.setItem("booking_info", JSON.stringify(booking_info));
+  //留言內容長度
+  const [statusLength, setStatusLength] = useState(0);
+  const maxLength = 200;
+
+  useEffect(() => {
+    setStatusLength(status.length);
+  }, [status]);
+
+  // let booking_info = { name, phone, email, status };
+  // localStorage.setItem("booking_info", JSON.stringify(booking_info));
 
   const [bookingid, setBookingId] = useState();
   localStorage.setItem("bookingId", bookingid); //將訂位編號存到localstorage
@@ -68,7 +76,7 @@ const Booking_information = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        loginMemberId,
+        mid,
         startDateformat,
         storeInput,
         peopleAdultInput,
@@ -274,6 +282,7 @@ const Booking_information = () => {
       }).then(async (result) => {
         if (result.isConfirmed) {
           await fetchData();
+          localStorage.removeItem("booking_time_info"); //清除訂位時段資訊
           history.push("/booking/booking_information/booking_finish");
 
           Swal.fire({
@@ -285,6 +294,21 @@ const Booking_information = () => {
     }
   }
 
+  //-------------------------------------------------------------------
+  const [sameMemberInfoData, setSameMemberInfoData] = useState(false);
+  function sameMemberInfo() {
+    if (sameMemberInfoData == false) {
+      setSameMemberInfoData(true);
+      setName(memberData.Mname);
+      setPhone(memberData.Mphone);
+      setEmail(memberData.Memail);
+    } else {
+      setSameMemberInfoData(false);
+      setName("");
+      setPhone("");
+      setEmail("");
+    }
+  }
   //-------------------------------------------------------------------
 
   return (
@@ -389,14 +413,17 @@ const Booking_information = () => {
               name="status"
               id="status"
               cols="30"
-              rows="3"
+              rows="5"
+              maxLength={maxLength}
               className="form-control"
+              placeholder="有任何需求請在此處填寫(限200字)"
               onChange={(e) => setStatus(e.target.value)}
             ></textarea>
 
             <div className="word_length d-flex justify-content-end">
               <p>
-                (<span id="font_length"></span>/400)
+                (<span id="font_length"></span>
+                {statusLength}/{maxLength})
               </p>
             </div>
           </div>
@@ -407,11 +434,7 @@ const Booking_information = () => {
               type="checkbox"
               value=""
               id="flexCheckDefault"
-              onChange={() => {
-                setName(memberData.name);
-                setPhone(memberData.phone);
-                setEmail(memberData.email);
-              }}
+              onChange={sameMemberInfo}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
               同會員資料
@@ -420,10 +443,7 @@ const Booking_information = () => {
 
           <div className="d-flex flex-column">
             {/* <Link to="/booking/booking_information/booking_finish"> */}
-            <button
-              className="next_page my-3"
-              onClick={checkform}
-            >
+            <button className="next_page my-3" onClick={checkform}>
               確認訂位
             </button>
             {/* </Link> */}

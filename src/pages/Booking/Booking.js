@@ -9,11 +9,11 @@ import withReactContent from "sweetalert2-react-content";
 import moment from "moment";
 import BookingTimeButton from "./components/BookingTimeButton";
 
-const Booking = () => {
+const Booking = ({ auth }) => {
   const history = useHistory();
 
   //假會員ID
-  localStorage.setItem("memberId", 5);
+  // localStorage.setItem("memberId", 5);
 
   //一進到頁面取得分店資訊
   useEffect(() => {
@@ -152,10 +152,14 @@ const Booking = () => {
             onChange={(e) => {
               setStoreInput(e.target.value);
               setBookingTimeInput("");
-              if(nowtime > "14:00"&& nowtime < "16:30"&& nowDate == startDateformat){
-                setMealTimeInput("晚上")
-              }else if(nowtime > "20:00" && nowDate == startDateformat){
-                setStartDate(new Date(date.setDate(date.getDate()+1)))
+              if (
+                nowtime > "14:00" &&
+                nowtime < "16:30" &&
+                nowDate == startDateformat
+              ) {
+                setMealTimeInput("晚上");
+              } else if (nowtime > "20:00" && nowDate == startDateformat) {
+                setStartDate(new Date(date.setDate(date.getDate() + 1)));
               }
             }}
           >
@@ -225,10 +229,8 @@ const Booking = () => {
                 aria-label="Default select example"
                 value={mealTimeInput}
                 onChange={(e) => {
-                  
                   setMealTimeInput(e.target.value);
                   setBookingTimeInput("");
-                  
                 }}
               >
                 <option value="中午">中午</option>
@@ -303,18 +305,32 @@ const Booking = () => {
         <button
           className="next_page my-4"
           onClick={() => {
-            if (storeInput == "") {
-              Swal.fire({
-                icon: "warning",
-                title: "請選擇分店",
-              });
-            } else if (bookingTimeInput == "") {
-              Swal.fire({
-                icon: "warning",
-                title: "請選擇訂位時段",
-              });
+            if (auth) {
+              if (storeInput == "") {
+                Swal.fire({
+                  icon: "warning",
+                  title: "請選擇分店",
+                });
+              } else if (bookingTimeInput == "") {
+                Swal.fire({
+                  icon: "warning",
+                  title: "請選擇訂位時段",
+                });
+              } else {
+                history.push("/booking/booking_information");
+              }
             } else {
-              history.push("/booking/booking_information");
+              Swal.fire({
+                icon: "warning",
+                title: "請先登入會員",
+                showCancelButton: true,
+                confirmButtonText: "登入",
+                cancelButtonText: "取消",
+              }).then(async (result) => {
+                if (result.isConfirmed) {
+                  history.push("/member/login");
+                }
+              });
             }
           }}
         >

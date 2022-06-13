@@ -1,45 +1,40 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./style.css";
-import $ from 'jquery'
-import { useCart } from "../pages/Cart/utils/useCart"
+import $ from "jquery";
+import { useCart } from "../pages/Cart/utils/useCart";
+import Swal from "sweetalert2";
 
 function Nav(props) {
-  const { auth } = props
-  const { cart } = useCart()
+  const { auth } = props;
+  const { cart } = useCart();
 
-
+  const history = useHistory();
   // console.log(cart.totalItems)
 
   useEffect(() => {
-
     if (cart.totalItems == 0) {
-      $(".cart_totalItems").hide()
-
+      $(".cart_totalItems").hide();
     } else {
-      $(".cart_totalItems").show()
+      $(".cart_totalItems").show();
     }
-  }, [cart])
-
+  }, [cart]);
 
   useEffect(() => {
+    $("#navclose").hide();
 
-    $("#navclose").hide()
-
-    var myCollapsible = document.getElementById('navbarSupportedContent')
-    myCollapsible.addEventListener('hide.bs.collapse', function () {
+    var myCollapsible = document.getElementById("navbarSupportedContent");
+    myCollapsible.addEventListener("hide.bs.collapse", function () {
       $("#navclose").hide();
       $("#navopen").show();
-    })
+    });
 
-    var myCollapsible = document.getElementById('navbarSupportedContent')
-    myCollapsible.addEventListener('show.bs.collapse', function () {
+    var myCollapsible = document.getElementById("navbarSupportedContent");
+    myCollapsible.addEventListener("show.bs.collapse", function () {
       $("#navclose").show();
       $("#navopen").hide();
-    })
-
-  }, [])
-
+    });
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -64,7 +59,6 @@ function Nav(props) {
           {/* <span className="navbar-toggler-icon"></span> */}
           <i id="navopen" className="fa-solid fa-bars"></i>
           <i id="navclose" className="fa-regular fa-circle-xmark"></i>
-
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -101,27 +95,44 @@ function Nav(props) {
           </ul>
           {/* 按鈕區 */}
           <div>
-            <Link to="/cart">
-
-              <div className="position-relative d-inline me-2">
-
-                <span className="iconify" data-icon="eva:shopping-cart-outline"></span>
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart_totalItems">
-                  {cart.totalItems}
-                </span>
-
-              </div>
-
-            </Link>
+            <div
+              className="position-relative d-inline me-2"
+              style={{"cursor":"pointer"}}
+              onClick={() => {
+                if (auth) {
+                  history.push("/cart");
+                } else {
+                  Swal.fire({
+                    icon: "warning",
+                    title: "請先登入會員",
+                    showCancelButton: true,
+                    confirmButtonText: "登入",
+                    cancelButtonText: "取消",
+                  }).then(async (result) => {
+                    if (result.isConfirmed) {
+                      history.push("/member/login");
+                    }
+                  });
+                }
+              }}
+            >
+              <span
+                className="iconify"
+                data-icon="eva:shopping-cart-outline"
+              ></span>
+              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart_totalItems">
+                {cart.totalItems}
+              </span>
+            </div>
             <Link to="/member/login">
               <button type="button" className="btn mx-2">
                 {auth ? "登出" : "登入/註冊"}
-              </button >
+              </button>
             </Link>
-          </div >
-        </div >
-      </div >
-    </nav >
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }
 

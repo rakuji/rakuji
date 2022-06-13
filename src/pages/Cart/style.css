@@ -81,29 +81,29 @@
   color: black;
 }
 
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
+table.cart_table tbody,
+table.cart_table td,
+table.cart_table tfoot,
+table.cart_table th,
+table.cart_table thead,
+table.cart_table tr {
   border-style: none;
   text-align: center;
 }
 
-table thead {
+table.cart_table thead {
   border-bottom: 2px solid rgba(0, 0, 0, 0.125);
 }
 
-table tbody {
+table.cart_table tbody {
   border-bottom: 2px solid rgba(0, 0, 0, 0.125);
 }
 
-table tbody .cart_items td {
+table.cart_table tbody .cart_items td {
   vertical-align: middle;
 }
 
-table tbody .img_container {
+table.cart_table tbody .img_container {
   border: 1px solid #fff;
   width: 75px;
   height: 75px;
@@ -112,14 +112,14 @@ table tbody .img_container {
   margin: 0 auto;
 }
 
-table tbody .img_container img {
+table.cart_table tbody .img_container img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-table tbody .cart_trush_btn {
+table.cart_table tbody .cart_trush_btn {
   cursor: pointer;
 }
 
@@ -286,15 +286,6 @@ table tbody .cart_trush_btn {
 
 .ErrorMessage {
   color: #dc3545;
-}
-
-.swal2-container a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.swal2-container a:hover {
-  color: #fff;
 }
 
 .cart_confirm p,

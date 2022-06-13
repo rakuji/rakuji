@@ -11,6 +11,28 @@ const Cart_info = () => {
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
 
+  //會員ID
+
+  const mid = sessionStorage.getItem("mid");
+  // console.log(mid);
+
+  //--------------------------------------------------------------------------------
+  useEffect(() => {
+    fetchMemberData();
+  }, []);
+
+  // 從資料庫取得會員資訊
+  const [memberData, setMemberData] = useState([]);
+
+  const fetchMemberData = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/booking/member`
+    );
+    const results = await response.json();
+    const member = results.find((v) => v.MID == mid);
+    setMemberData(member);
+  };
+  // console.log(memberData);
   //--------------------------------------------------------------------------------
 
   // 姓名欄位錯誤訊息狀態
@@ -226,7 +248,6 @@ const Cart_info = () => {
       }, 800);
     }
 
-
     if (isPass === true) {
       //將聯絡資訊打包成一個物件
       let cart_info = { name, phone, email, address };
@@ -238,37 +259,21 @@ const Cart_info = () => {
 
   //--------------------------------------------------------------------------------
 
-  function gogogo() {
-    setName("王陽明");
-    setPhone("0912345678");
-    setEmail("test123@gmail.com");
-    setAddress("高雄市前金區中正二路87號");
-
-    // if (name != "") {
-    //     setName("")
-    // } else {
-    //     setName("王陽明")
-    // }
-
-    // if (phone != "") {
-    //     setPhone("")
-    // } else {
-
-    //     setPhone("0912345678")
-    // }
-
-    // if (email != "") {
-    //     setEmail("")
-    // } else {
-
-    //     setEmail("test123@gmail.com")
-    // }
-
-    // if (address != "") {
-    //     setAddress("")
-    // } else {
-    //     setAddress("高雄市前金區中正二路87號")
-    // }
+  const [sameMemberInfoData, setSameMemberInfoData] = useState(false);
+  function sameMemberInfo() {
+    if (sameMemberInfoData == false) {
+      setSameMemberInfoData(true);
+      setName(memberData.Mname);
+      setPhone(memberData.Mphone);
+      setEmail(memberData.Memail);
+      setAddress(memberData.Maddress);
+    } else {
+      setSameMemberInfoData(false);
+      setName("");
+      setPhone("");
+      setEmail("");
+      setAddress("");
+    }
   }
 
   //--------------------------------------------------------------------------------
@@ -353,10 +358,10 @@ const Cart_info = () => {
               type="checkbox"
               value=""
               id="flexCheckDefault"
-              onChange={gogogo}
+              onChange={sameMemberInfo}
             />
             <label className="form-check-label" htmlFor="flexCheckDefault">
-              一鍵填寫
+              同會員資料
             </label>
           </div>
         </div>

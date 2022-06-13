@@ -52,18 +52,19 @@
 }
 
 // Cart.js
-
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
-  border-style: none;
-  text-align: center;
+table.cart_table {
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
+    border-style: none;
+    text-align: center;
+  }
 }
 
-table {
+table.cart_table {
   thead {
     border-bottom: 2px solid rgba(0, 0, 0, 0.125);
   }
@@ -239,7 +240,7 @@ table {
 }
 
 // Cart_info.js
-.required_mark{
+.required_mark {
   color: #dc710d;
 }
 
@@ -247,19 +248,17 @@ table {
   color: #dc3545;
 }
 
-
-
 // Cart_order.js
 
-.swal2-container {
-  a {
-    color: #fff;
-    text-decoration: none;
-    &:hover {
-      color: #fff;
-    }
-  }
-}
+// .swal2-container {
+//   a {
+//     color: #fff;
+//     text-decoration: none;
+//     &:hover {
+//       color: #fff;
+//     }
+//   }
+// }
 
 // Cart_confirm.js
 

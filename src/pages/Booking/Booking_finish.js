@@ -101,7 +101,7 @@ const Booking_finish = () => {
                   <p>訂位人姓名：{booking_name}</p>
                   <p>訂位人電話：{booking_phone}</p>
                   <p>訂位人Email：{email}</p>
-                  <p>備註:{statue}</p>
+                  <p>備註：{statue}</p>
 
                   {/* <p>訂位分店:{bookingData.store}</p>
                   <p>

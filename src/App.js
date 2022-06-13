@@ -53,10 +53,10 @@ function App() {
                 <Newslist />
               </Route>
               <Route path="/products" exact>
-                <Products />
+                <Products auth={auth}/>
               </Route>
               <Route path="/products/product_detail/:productId" exact>
-                <Product_detail />
+                <Product_detail auth={auth}/>
               </Route>
               <Route path="/cart" exact>
                 <Cart />
@@ -71,7 +71,7 @@ function App() {
                 <Cart_confirm />
               </Route>
               <Route path="/booking" exact>
-                <Booking />
+                <Booking auth={auth}/>
               </Route>
               <Route path="/booking/booking_information" exact>
                 <Booking_information />

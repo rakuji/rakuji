@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { GlassMagnifier } from "react-image-magnifiers";
 import { useCart } from "../Cart/utils/useCart";
 import { Modal, Button } from "react-bootstrap";
@@ -27,6 +27,10 @@ import Product_comment from "./components/Product_comment";
 // import product_comments from "./data/product_comments.json";
 
 const Product_detail = (props) => {
+  const { auth } = props;
+
+  const history = useHistory();
+
   // 從資料庫取得資料
   const [datas, setDatas] = useState([]);
 
@@ -120,8 +124,15 @@ const Product_detail = (props) => {
     setCommentsLength(comments.length);
   }, [comments]);
 
-  //假會員ID
-  const [loginMemberId, setLoginMemberId] = useState(6);
+  //會員ID
+  const [loginMemberId, setLoginMemberId] = useState(null);
+  const mid = sessionStorage.getItem("mid");
+  useEffect(() => {
+    if (mid != null) {
+      setLoginMemberId(mid);
+    }
+  }, [mid]);
+  console.log(loginMemberId);
 
   //商品編號
   const product_id = Number(params.productId);
@@ -203,22 +214,36 @@ const Product_detail = (props) => {
               className="btn btn-outline-primary d-none d-md-block ms-1 rounded fw-bold border-2 add_cart ms-3"
               type="button"
               onClick={() => {
-                console.log(product);
-                // 商品原本無數量屬性(quantity)，要先加上
-                const item = { ...product, quantity: count };
-                console.log(item);
-                // 注意: 重覆加入會自動+1產品數量
-                addItem(item);
-                // 呈現跳出對話盒
-                // showModal(product.name)
-                Swal.fire({
-                  icon: "success",
-                  title: "商品已加入購物車",
-                  timer: 1500,
-                  timerProgressBar: true,
-                  showCancelButton: false, // There won't be any cancel button
-                  showConfirmButton: false, // There won't be any confirm button
-                });
+                if (auth) {
+                  console.log(product);
+                  // 商品原本無數量屬性(quantity)，要先加上
+                  const item = { ...product, quantity: count };
+                  console.log(item);
+                  // 注意: 重覆加入會自動+1產品數量
+                  addItem(item);
+                  // 呈現跳出對話盒
+                  // showModal(product.name)
+                  Swal.fire({
+                    icon: "success",
+                    title: "商品已加入購物車",
+                    timer: 1500,
+                    timerProgressBar: true,
+                    showCancelButton: false, // There won't be any cancel button
+                    showConfirmButton: false, // There won't be any confirm button
+                  });
+                } else {
+                  Swal.fire({
+                    icon: "warning",
+                    title: "請先登入會員",
+                    showCancelButton: true,
+                    confirmButtonText: "登入",
+                    cancelButtonText: "取消",
+                  }).then(async (result) => {
+                    if (result.isConfirmed) {
+                      history.push("/member/login");
+                    }
+                  });
+                }
               }}
             >
               加入購物車
@@ -413,45 +438,54 @@ const Product_detail = (props) => {
             type="button"
             className="send_comments_btn btn btn-outline-info fw-bold"
             onClick={() => {
-              if (rating == 0) {
-                Swal.fire({
-                  icon: "warning",
-                  title: "請評價此商品",
-                });
-              } else if (comments == 0) {
-                Swal.fire({
-                  icon: "warning",
-                  title: "請填寫評論",
-                });
+              if (auth) {
+                if (rating == 0) {
+                  Swal.fire({
+                    icon: "warning",
+                    title: "請評價此商品",
+                  });
+                } else if (comments == 0) {
+                  Swal.fire({
+                    icon: "warning",
+                    title: "請填寫評論",
+                  });
+                } else {
+                  Swal.fire({
+                    title: "確定要送出評論?",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "確定",
+                    // confirmButtonText: '測試按鈕',
+                    cancelButtonText: "取消",
+                  }).then((result) => {
+                    if (result.isConfirmed) {
+                      sendData();
+                      setRating(0);
+                      setRatingMsg("");
+                      setComments("");
+                      setClickState(false);
+
+                      Swal.fire({
+                        icon: "success",
+                        title: "評論已送出!",
+                      });
+                    }
+                  });
+                }
               } else {
                 Swal.fire({
-                  title: "確定要送出評論?",
                   icon: "warning",
+                  title: "請先登入會員",
                   showCancelButton: true,
-                  confirmButtonColor: "#3085d6",
-                  cancelButtonColor: "#d33",
-                  confirmButtonText: "確定",
-                  // confirmButtonText: '測試按鈕',
+                  confirmButtonText: "登入",
                   cancelButtonText: "取消",
-                }).then((result) => {
+                }).then(async (result) => {
                   if (result.isConfirmed) {
-                    sendData();
-                    setRating(0);
-                    setRatingMsg("");
-                    setComments("");
-                    setClickState(false);
-
-                    Swal.fire({
-                      icon: "success",
-                      title: "評論已送出!",
-                    });
+                    history.push("/member/login");
                   }
                 });
-
-                // sendData()
-                // setRating(0)
-                // setRatingMsg("")
-                // setComments("")
               }
             }}
           >
