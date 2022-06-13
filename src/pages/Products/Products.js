@@ -35,6 +35,7 @@ const Products = (props) => {
   //--------------------篩選類別----------------------------------------------------------
   // 選單列狀態
   const [categoryIndex, setCatetoryIndex] = useState(0)
+  const [categoryValue, setCategoryValue] = useState("全部商品")
 
 
   const category = [
@@ -93,25 +94,25 @@ const Products = (props) => {
     return v.category === category[categoryIndex]
   }).filter((v) => v.name.includes(searchInput))
 
-  
+
   let priceSortButton;
   if (priceBtnState == 0) {
     priceSortButton = <i className="fa-solid fa-filter-circle-dollar"></i>
-    DP.sort((a,b)=>{
+    DP.sort((a, b) => {
       //編號由小到大(預設)
-    return a.id - b.id;
+      return a.id - b.id;
     })
   } else if (priceBtnState == 1) {
     priceSortButton = <i className="fa-solid fa-arrow-down"></i>
-    DP.sort((a,b)=>{
+    DP.sort((a, b) => {
       //價格由小到大
-    return a.price - b.price;
+      return a.price - b.price;
     })
   } else if (priceBtnState == 2) {
     priceSortButton = <i className="fa-solid fa-arrow-up"></i>
-    DP.sort((a,b)=>{
+    DP.sort((a, b) => {
       //價格由大到小
-    return b.price - a.price;
+      return b.price - a.price;
     })
   }
 
@@ -160,40 +161,55 @@ const Products = (props) => {
   //   ).style.transform = `rotate(${deg}deg)`;
   // };
 
-  useEffect(() => {
-    $(`#category_buttons button[id=${categoryIndex}]`).attr("id", "active")
-  })
+  // useEffect(() => {
+  //   $(`#category_buttons button[id=${categoryIndex}]`).attr("id", "active")
+  // })
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    $("#category_buttons button").click(function () {
-      $("#category_buttons button").removeAttr("id")
-      $(this).attr("id", "active")
-    })
-  }, [])
+  //   $("#category_buttons button").click(function () {
+  //     $("#category_buttons button").removeAttr("id")
+  //     $(this).attr("id", "active")
+  //   })
+  // }, [])
 
-  useEffect(() => {
-    gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
-      duration: 1,
-      opacity: 0,
-      delay: 0,
-      stagger: 0.1,
-    });
-  }, [categoryIndex, datas]);
+  // useEffect(() => {
+  //   gsap.timeline({ onComplete: () => gsap.set(".product_card", { clearProps: true }) }).from(".product_card", {
+  //     duration: 1,
+  //     opacity: 0,
+  //     delay: 0,
+  //     stagger: 0.1,
+  //   });
+  // }, [categoryIndex, datas]);
 
 
   const { addItem } = useCart()
 
 
-console.log(DP)
+  // console.log(DP)
 
 
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>餐點列表</div>
-    <div className="container">
+    <div className="container-sm container-lg">
+
+      <div className="product_category_aside_mobile" id="category_buttons">
+        {category.map((v, i) => {
+          return (
+            <button key={i} id={categoryValue == category[i] ? "active" : ""} className="product_category me-2" onClick={() => {
+              setCatetoryIndex(i)
+              setCategoryValue(v)
+            }}>
+              {v}
+            </button>
+          );
+        })}
+      </div>
+
+
       <div className="row mb-3">
-        <div className="col-2"></div>
-        <div className="col-10 srarch_bar d-flex justify-content-between">
+        <div className="col-sm-2"></div>
+        <div className="col-12 col-md-10 srarch_bar d-flex justify-content-between">
 
           {/* 價格排序 */}
           <button
@@ -207,14 +223,14 @@ console.log(DP)
               }
             }}
           >
-            <p className="mb-0">價錢</p>
+            <p className="mb-0 text-nowrap">價錢</p>
             <div className="p_icon_container">
               {priceSortButton}
             </div>
           </button>
 
           {/* 產品搜尋 */}
-          <form className="d-flex product_search" onSubmit={(e)=>e.preventDefault()}>
+          <form className="d-flex product_search" onSubmit={(e) => e.preventDefault()}>
             <input
               className="form-control"
               type="search"
@@ -233,11 +249,14 @@ console.log(DP)
       <div className="row">
 
         {/* 商品類別 */}
-        <div className="col-2 product_category_aside">
+        <div className=" col-md-2 product_category_aside">
           <div className="sticky-top" id="category_buttons">
             {category.map((v, i) => {
               return (
-                <button key={i} id={i} className="product_category" onClick={() => setCatetoryIndex(i)}>
+                <button key={i} id={categoryValue == category[i] ? "active" : ""} className="product_category" onClick={() => {
+                  setCatetoryIndex(i);
+                  setCategoryValue(v)
+                }}>
                   {v}
                 </button>
               );
@@ -246,10 +265,10 @@ console.log(DP)
         </div>
 
         {/* 商品卡片 */}
-        <div className="col-10 products">
+        <div className="col-md-10 products">
           {DP.map((v, i) => {
             return (
-              <div key={i} className="product_container">
+              <div key={i} className="product_container col-6 col-md-4 col-lg-3">
                 <Link to={`/products/product_detail/${v.id}`}>
                   <div className="product_card">
                     <div className="imageContainer mb-2">

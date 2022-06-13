@@ -262,7 +262,7 @@ const Cart = (props) => {
     >
       <h3>購物車</h3>
 
-      <div className={`cart_isempty ${cart.isEmpty == true ? "" : "d-none"}`}>
+      <div className={`mb-5 cart_isempty ${cart.isEmpty == true ? "" : "d-none"}`}>
         <img src={require("./images/cart.jpg")} alt="" />
         <h3 className="mb-4">購物車還是空的</h3>
         <button className="btn btn-outline-info" type="button" onClick={()=>{history.push("/products")}}>去逛逛</button>

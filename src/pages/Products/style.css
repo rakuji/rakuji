@@ -9,6 +9,7 @@
   color: #58c2dd;
   padding: 0.35rem 0.55rem;
   cursor: pointer;
+  outline: none;
 }
 
 .srarch_bar .price_search .p_icon_container {
@@ -63,6 +64,12 @@
           flex-direction: column;
 }
 
+@media (max-width: 768px) {
+  .product_category_aside {
+    display: none;
+  }
+}
+
 .product_category_aside button {
   border: 1px solid #58c2dd;
   border-radius: 100px;
@@ -75,6 +82,44 @@
 .product_category_aside button#active {
   background-color: #58c2dd;
   color: #fff;
+  outline: transparent;
+}
+
+.product_category_aside_mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.product_category_aside_mobile ::-webkit-scrollbar {
+  display: none;
+  /* Chrome Safari */
+}
+
+@media (min-width: 768px) {
+  .product_category_aside_mobile {
+    display: none;
+  }
+}
+
+.product_category_aside_mobile button {
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.product_category_aside_mobile button#active {
+  background-color: #58c2dd;
+  color: #fff;
+  outline: transparent;
 }
 
 .products {
@@ -94,7 +139,6 @@
 }
 
 .products .product_container {
-  width: 25%;
   padding: 0 10px 20px 10px;
 }
 
