@@ -126,7 +126,9 @@ function Footer() {
                 </a>
               </li>
               <li className="nav-item col-4">
+
                 <a href="/Contact" className="p-0">
+
                   聯絡我們
                 </a>
               </li>
@@ -139,7 +141,11 @@ function Footer() {
             <ul className="nav  row align-items-center">
               <li className="nav-item  ">
                 <div style={{ visibility: "hidden" }}>#</div>
+
                 <div className="nav-item row align-items-center">
+
+               
+
                 <a href="#" className="p-0 col-2">
 
                 </a>
@@ -158,7 +164,10 @@ function Footer() {
                 <a href="#" className="p-0 col-2">
                   
                 </a>
+
               </div>
+
+
               </li>
 
             </ul>
