@@ -20,7 +20,7 @@ const recipesbackEdit = () => {
   //取得id值
 
   const id = ary1[1];
-  console.log(id);
+  // console.log(id);
 
   const [News, setNews] = useState([]);
 
@@ -28,16 +28,30 @@ const recipesbackEdit = () => {
   const fetchNews = async () => {
     //向遠端伺服器get資料
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/recipes/${id}`
+      `${process.env.REACT_APP_API_URL}/recipes/recipesbackEdit/${id}`
     );
     const data = await response.json();
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setNews(data);
-    console.log(data);
-    
+    // console.log(data); ///////////////////////修改瀏覽次數///////////////////////////
+    const response2 = await fetch(
+      `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,
+      {
+        method: "put",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ Recipes_Clicks: data[0].Recipes_Clicks }),
+      }
+    );
+
+    //{"Recipes_Clicks":15}
+    const results2 = await response2.json();
+    ///////////////////////修改瀏覽次數///////////////////////////
   };
-  console.log(News);
+  // console.log(News);
   // didMount - 載入資料的時間點
   useEffect(() => {
     // 向伺服器要求get資料
@@ -131,6 +145,7 @@ const recipesbackEdit = () => {
                             accept="image/jpeg,image/png"
                           />
                         </form>
+
                         {/* 選擇照片 */}
 
                         <div className="mb-3">

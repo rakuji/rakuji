@@ -16,7 +16,6 @@ const RecipesbackEditSeasoning = () => {
   //取得id值
 
   const id = ary1[1];
-  console.log(id);
 
   const [News, setNews] = useState([]);
 
@@ -30,9 +29,9 @@ const RecipesbackEditSeasoning = () => {
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setNews(data);
-    console.log(data);
+    // console.log(data);
   };
-  console.log(News);
+  // console.log(News);
   // didMount - 載入資料的時間點
   useEffect(() => {
     // 向伺服器要求get資料

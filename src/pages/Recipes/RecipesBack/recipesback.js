@@ -23,7 +23,7 @@ function recipesback() {
     setNews(data);
   };
 
-  console.log(News);
+  // console.log(News);
   // didMount - 載入資料的時間點
   useEffect(() => {
     // 向伺服器要求get資料
