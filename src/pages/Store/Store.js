@@ -12,13 +12,13 @@ const Store = () => {
   
   const fetchDatas = async () => {
       // 找出所有門市列表: fetch回傳JASON陣列(參見rakuji_backend專案:routes/shopLists.js)
-      const responseShops = await fetch("/shopLists");
+      const responseShops = await fetch(`${process.env.REACT_APP_API_URL}/shopLists`);
       // 將JASON陣列轉成物件陣列(JSAON-->object)
       const shops = await responseShops.json();
       // console.log(shops);
       setShopsArray(shops);
       // 找出各區域的第一家門市(shop_id最小者)
-      const resFirstShop = await fetch("/shopLists/firstShop");
+      const resFirstShop = await fetch(`${process.env.REACT_APP_API_URL}/shopLists/firstShop`);
       const firstShop = await resFirstShop.json();
       //  console.log(firstShop);
       setFirstArray(firstShop);
