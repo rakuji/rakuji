@@ -36,14 +36,14 @@ const recipesbackEdit = () => {
     setNews(data);
     // console.log(data); ///////////////////////修改瀏覽次數///////////////////////////
     const response2 = await fetch(
-      `${process.env.REACT_APP_API_URL}/recipes/box/${id}`,
+      `${process.env.REACT_APP_API_URL}/recipes/recipesbackEdit/${id}`,
       {
         method: "put",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ Recipes_Clicks: data[0].Recipes_Clicks }),
+        body: JSON.stringify({ RecipesBox_Kcal: data[0].RecipesBox_Kcal }),
       }
     );
 

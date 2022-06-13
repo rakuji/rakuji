@@ -24,7 +24,7 @@ function recipesbackAdd(){
 
     const submitForm = () => {
       axios
-        .post("http://localhost:3001/recipesbackAdd", {
+        .post("${process.env.REACT_APP_API_URL}/recipesbackAdd/new/", {
           Recipes_Name: Recipes_Name,
           Recipes_Picture: Recipes_Name,
           RecipesBox_Kcal: Recipes_Name,
