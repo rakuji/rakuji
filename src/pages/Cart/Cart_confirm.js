@@ -87,7 +87,7 @@ const Cart_confirm = () => {
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>訂單摘要</Accordion.Header>
                     <Accordion.Body>
-                        <table className='table'>
+                        <table className='table cart_table'>
                             <thead>
                                 <tr>
                                     <th>商品圖片</th>
