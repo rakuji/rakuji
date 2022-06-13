@@ -21,11 +21,18 @@
    
 }
 
+.icon82{
+    
+}
 
 .bu{
   
     background-color: #58c2dd;
   color: #fff;
+  }
+  .bu hover{
+    background-color: #58c2dd;
+    color:blue#fff;
   }
   /* <div className="col_v">
   <div className="card">

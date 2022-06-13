@@ -49,9 +49,215 @@ const Votelist = () => {
           </div>
         </div>
       </div>
-      {/* 假資料寫死 選手1號 */}
+      {/* 假資料寫死  */}
       <div className="container">
         <div className="row row-cols-1 row-cols-md-4 g-4">
+          {/*  選手5號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-004文青花魚飯.png")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  文青花魚飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:82次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  選手6號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-006裝蒜牛五花飯.png")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  裝蒜牛五花飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:97次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  選手7號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-007熔岩唐揚雞飯.png")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  熔岩唐揚雞飯
+                </h5>
+                <div className="card-title-center d-flex justify-content-evenly">
+                <h5 className="fs-6"> 
+                  喜歡:371次 
+                </h5>
+               
+                </div>
+                {/* 喜歡改成紅色  + icon靠右 */}
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit" active>
+                  Like
+                </Button>
+                
+              </div>
+            </div>
+          </div>
+          {/*  選手8號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-008寶島燒豚飯.png")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  寶島燒豚飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:62次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  選手9號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-009月見海鮮丼.jpg")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  月見海鮮丼
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:131次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  選手10號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-010炊飯.jpg")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  炊飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:63次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  選手11號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-011蛋包飯.jpg")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  蛋包飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:120次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  選手12號 */}
+          <div className="col_v">
+            <div className="card">
+              <img
+                src={require("../Votelist/image/MB-012漢堡排.jpg")}
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  漢堡排
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:42次 
+                </h5>
+                <Button
+                  className="bu"
+                  variant=" primary , d-block , mx-auto "
+                  type="submit"
+                >
+                  Like
+                </Button>
+              </div>
+            </div>
+          </div>
+          {/*  */}
+          {/* 選手1號 */}
           <div className="col_v">
             <div className="card">
               <img
@@ -60,8 +266,12 @@ const Votelist = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">黃金豬排丼飯</h5>
-                <br />
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  黃金豬排丼飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:231次 
+                </h5>
                 <Button
                   className="bu"
                   variant=" primary , d-block , mx-auto "
@@ -83,8 +293,12 @@ const Votelist = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">唐揚雞歐姆蛋咖喱飯</h5>
-                <br />
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  唐揚雞歐姆蛋咖喱飯
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:69次 
+                </h5>
                 <Button
                   className="bu"
                   variant=" primary , d-block , mx-auto "
@@ -104,8 +318,12 @@ const Votelist = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">天婦羅丼</h5>
-                <br />
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  天婦羅丼
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:95次 
+                </h5>
                 <Button
                   className="bu"
                   variant=" primary , d-block , mx-auto "
@@ -116,28 +334,8 @@ const Votelist = () => {
               </div>
             </div>
           </div>
+
           {/*  選手4號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-004文青花魚飯.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">文青花魚飯</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手5號 */}
           <div className="col_v">
             <div className="card">
               <img
@@ -146,155 +344,12 @@ const Votelist = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">親子丼</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手6號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-006裝蒜牛五花飯.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">裝蒜牛五花飯</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手7號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-007熔岩唐揚雞飯.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">熔岩唐揚雞飯</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手8號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-008寶島燒豚飯.png")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">寶島燒豚飯</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手9號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-009月見海鮮丼.jpg")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">月見海鮮丼</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手10號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-010炊飯.jpg")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">炊飯</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手11號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-011蛋包飯.jpg")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">蛋包飯</h5>
-                <br />
-                <Button
-                  className="bu"
-                  variant=" primary , d-block , mx-auto "
-                  type="submit"
-                >
-                  Like
-                </Button>
-              </div>
-            </div>
-          </div>
-          {/*  選手12號 */}
-          <div className="col_v">
-            <div className="card">
-              <img
-                src={require("../Votelist/image/MB-012漢堡排.jpg")}
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title">漢堡排</h5>
-                <br />
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  親子丼
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:116次 
+                </h5>
                 <Button
                   className="bu"
                   variant=" primary , d-block , mx-auto "
@@ -314,8 +369,12 @@ const Votelist = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">明太子義大利麵</h5>
-                <br />
+                <h5 className="card-title-center d-flex justify-content-evenly">
+                  明太子義大利麵
+                </h5>
+                <h5 className="card-title-center d-flex justify-content-evenly fs-6">
+                  喜歡:74次 
+                </h5>
                 <Button
                   className="bu"
                   variant=" primary , d-block , mx-auto "
@@ -326,12 +385,11 @@ const Votelist = () => {
               </div>
             </div>
           </div>
-        
+
           {/*  end */}
         </div>
       </div>
 
-      <br></br>
 
       <MyBackTop />
     </main>
