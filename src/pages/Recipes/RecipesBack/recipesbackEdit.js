@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
+import RecipesbackEditSeasoning from "./RecipesbackEditSeasoning";
+import RecipesbackEditNutrient from "./RecipesbackEditNutrient";
+import RecipesbackEditCookingsteps from "./RecipesbackEditCookingsteps";
+import RecipesbackEditIngredients from "./RecipesbackEditIngredients";
 
 import "./Newslistback.css";
 
 const recipesbackEdit = () => {
-    //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
-    const url = window.location.href;
-    //之後去分割字串把分割後的字串放進陣列中
-    const ary1 = url.split("=");
-    //此時ary1裡的內容為：
-    // console.log(ary1);
-    //ary1[0] = "http://localhost:3000/recipes/id"，ary2[1] = '1'
-  
-    //取得id值
+  //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
+  const url = window.location.href;
+  //之後去分割字串把分割後的字串放進陣列中
+  const ary1 = url.split("=");
+  //此時ary1裡的內容為：
+  // console.log(ary1);
+  //ary1[0] = "http://localhost:3000/recipes/id"，ary2[1] = '1'
 
-    const id = ary1[1];
+  //取得id值
+
+  const id = ary1[1];
   console.log(id);
 
   const [News, setNews] = useState([]);
@@ -30,8 +34,9 @@ const recipesbackEdit = () => {
     // 載入資料後設定到狀態中
     // 設定到狀態後，因改變狀態會觸發updating生命周期，然後重新render一次
     setNews(data);
+    console.log(data);
+    
   };
-
   console.log(News);
   // didMount - 載入資料的時間點
   useEffect(() => {
@@ -59,106 +64,119 @@ const recipesbackEdit = () => {
           </div>
 
           {/* 列表接資料庫資料 */}
-          {News.map((v, i) => {
-
-            return (
-              <div key={i} className="col-12 col-md-10">
-                <div className="row">
-                  <div className="col-lg-12">
-
-                    <h5 className="card-title">編輯食譜</h5>
-                    <form name="form1" method="post" novalidate onsubmit="" />
-                    <div className="mb-3">
-                      <label for="name" className="form-label">
-                        *標題
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="name"
-                        name="name"
-                        value={v.Recipes_Name}
-                        
-                      />
-                      <div className="form-text"></div>
-                    </div>
-                    <div className="mb-3">
-                      <label for="" className="form-label">
-                        *照片
-                      </label>
-                      {/* 選擇照片 */}
-                      <form name="avatar_form" onsubmit="return false;">
-                        <input type="hidden" id="pic" name="pic" />
-                        <br />
-                        <img
-                          src={require(`../image/${v.Recipes_Picture}`)}
-                          alt=""
-                          id="myimg"
-                          width="355px"
-                          height="200px"
-                        />
-                        <br />
-                        <br />
-
-                        <input
-                          type="file"
-                          id="imgid"
-                          name="imgid"
-                          accept="image/jpeg,image/png"
-                        />
-                      </form>
-                      {/* 選擇照片 */}
-
+          {News.length > 0 &&
+            News.map((recipes, i) => {
+              const {
+                Recipes_Name,
+                Recipes_Picture,
+                RecipesBox_Time,
+                RecipesBox_Kcal,
+                RecipesBox_SeveralCopies,
+                Recipes_Clicks,
+              } = recipes;
+              return (
+                <div key={i} className="col-12 col-md-10 ">
+                  <div className="row">
+                    <div className="col-lg-12">
+                      <h5 className="card-title">編輯食譜</h5>
+                      <form name="form1" method="post" />
                       <div className="mb-3">
-                        <label for="timestart" className="form-label">
-                          *開始時間
+                        <label htmlFor="name" className="form-label">
+                          *標題
                         </label>
                         <input
-                          type="date"
+                          type="text"
                           className="form-control"
-                          id="timestart"
-                          name="timestart"
+                          id="Recipes_Name"
+                          name="Recipes_Name"
+                          defaultValue={Recipes_Name}
                         />
                         <div className="form-text"></div>
-                        <div className="mb-3">
-                          <label for="timeend" className="form-label">
-                            *結束時間
+                      </div>
+                      <div className="mb-3">
+                        <label htmlFor="name" className="form-label">
+                          *熱量
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="name"
+                          name="name"
+                          defaultValue={RecipesBox_Kcal}
+                        ></input>
+                        <div className="form-text"></div>
+                      </div>
+                      <div className="mb-3">
+                        {/* 選擇照片 */}
+                        <form name="avatar_form">
+                          <label htmlFor="" className="form-label fs-4">
+                            *照片
                           </label>
-                          <input
-                            type="date"
-                            className="form-control"
-                            id="timeend"
-                            name="timeend"
+                          <input type="hidden" id="pic" name="pic" />
+                          <br />
+                          <img
+                            src={require(`../image/${Recipes_Picture}`)}
+                            alt=""
+                            id="myimg"
+                            width="355px"
+                            height="200px"
                           />
-                          <div className="form-text"></div>
-                        </div>
+                          <br />
+                          <br />
+
+                          <input
+                            type="file"
+                            id="imgid"
+                            name="imgid"
+                            accept="image/jpeg,image/png"
+                          />
+                        </form>
+                        {/* 選擇照片 */}
+
                         <div className="mb-3">
-                          <label for="content" className="form-label">
-                            *內容
-                          </label>
-                          <textarea
-                            className="form-control"
-                            name="content"
-                            id="content"
-                            cols="30"
-                            rows="3"
-                          ></textarea>
-                          <div className="form-text"></div>
-                          <button
-                            type="submit"
-                            className="btn bu-primary bu"
-                            variant="bu"
-                          >
-                            完成編輯
-                          </button>
+                          <div className="mb-3">
+                            <div className="text-center container ">
+                              <h5 className="RecipesText fw-bold RecipesStepText">
+                                食材
+                              </h5>
+                            </div>
+                            <RecipesbackEditIngredients />
+                            <div className="text-center container ">
+                              <h5 className="RecipesText fw-bold RecipesStepText">
+                                調味料
+                              </h5>
+                            </div>
+
+                            <RecipesbackEditSeasoning />
+                            <div className="text-center container ">
+                              <h5 className="RecipesText fw-bold RecipesStepText">
+                                營養成分
+                              </h5>
+                            </div>
+                            <RecipesbackEditNutrient />
+                            <div className="text-center container">
+                              <h5 className="RecipesText fw-bold RecipesStepText">
+                                料理步驟
+                              </h5>
+                            </div>
+                            <RecipesbackEditCookingsteps />
+
+                            <div className="form-text"></div>
+                            <button
+                              type="submit"
+                              className="btn bu-primary bu"
+                              variant="bu"
+                            >
+                              完成編輯
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
-              </div>);
-          })}
+              );
+            })}
 
           {/* 列表接資料庫資料 end */}
         </div>
