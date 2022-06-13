@@ -19,7 +19,7 @@ import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
 
-import Login from "./pages/Member/Login";
+
 import ClientCenter from "./pages/Member/clientCenter";
 import Contact from "./pages/Contact/Contact";
 import Votelist from "./pages/Newslist/Votelist";
