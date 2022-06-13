@@ -4,21 +4,22 @@ import "./style.css";
 import $ from 'jquery'
 import { useCart } from "../pages/Cart/utils/useCart"
 
-function Nav() {
+function Nav(props) {
+  const { auth } = props
   const { cart } = useCart()
 
- 
+
   // console.log(cart.totalItems)
 
-  useEffect(()=>{
+  useEffect(() => {
 
-    if(cart.totalItems == 0){
+    if (cart.totalItems == 0) {
       $(".cart_totalItems").hide()
-    
-    }else{
+
+    } else {
       $(".cart_totalItems").show()
     }
-  },[cart])
+  }, [cart])
 
 
   useEffect(() => {
@@ -112,15 +113,15 @@ function Nav() {
               </div>
 
             </Link>
-
-            <button type="button" className="btn mx-2">
-              登入/註冊
-
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+            <Link to="/member/login">
+              <button type="button" className="btn mx-2">
+                {auth ? "登出" : "登入/註冊"}
+              </button >
+            </Link>
+          </div >
+        </div >
+      </div >
+    </nav >
   );
 }
 

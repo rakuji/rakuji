@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 import ScrollToTop from "./components/ScrollToTop";
@@ -16,6 +16,8 @@ import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
+import Login from "./pages/Member/Login";
+import ClientCenter from "./pages/Member/clientCenter";
 import Booking_information from "./pages/Booking/Booking_information";
 import Booking_finish from "./pages/Booking/Booking_finish";
 import Cart from "./pages/Cart/Cart";
@@ -29,13 +31,15 @@ import { CartProvider } from './pages/Cart/utils/useCart'
 import { SecondCartProvider } from './pages/Cart/utils/useSecondCart'
 
 function App() {
-
+  // 會員登入用的狀態 auth=true代表登入
+  const [auth, setAuth] = useState(false)
+  // const sesStorage  = sessionStorage;
   return (
 
     <SecondCartProvider localStorageKey="secondCart">
       <CartProvider>
         <div className="App">
-          <Nav />
+          <Nav auth={auth} />
 
           <ScrollToTop>
             <Switch>
@@ -80,6 +84,12 @@ function App() {
               </Route>
               <Route path="/store" exact>
                 <Store />
+              </Route>
+              <Route path="/member/login" exact>
+                <Login setAuth={setAuth} auth={auth} />
+              </Route>
+              <Route path="/member/clientCenter" exact>
+                <ClientCenter auth={auth} />
               </Route>
             </Switch>
           </ScrollToTop>
