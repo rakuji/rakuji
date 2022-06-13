@@ -121,7 +121,7 @@ const Product_detail = (props) => {
   }, [comments]);
 
   //假會員ID
-  const [loginMemberId, setLoginMemberId] = useState(5);
+  const [loginMemberId, setLoginMemberId] = useState(6);
 
   //商品編號
   const product_id = Number(params.productId);
@@ -465,7 +465,7 @@ const Product_detail = (props) => {
               key={i}
               id={v.id}
               member_id={v.member_id}
-              member_name={v.name}
+              member_name={v.Mname}
               contents={v.contents}
               rating={v.rating}
               created_at={v.created_at}
