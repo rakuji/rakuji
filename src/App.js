@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 import ScrollToTop from "./components/ScrollToTop";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // components
 import Nav from "./components/Nav";
@@ -24,6 +27,8 @@ import Cart from "./pages/Cart/Cart";
 import Cart_info from "./pages/Cart/Cart_info";
 import Cart_order from "./pages/Cart/Cart_order";
 import Cart_confirm from "./pages/Cart/Cart_confirm";
+import Signup from "./pages/Member/Signup";
+import Contact from "./pages/Contact/Contact";
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
@@ -91,8 +96,25 @@ function App() {
               <Route path="/member/clientCenter" exact>
                 <ClientCenter auth={auth} />
               </Route>
+              <Route path="/contact" exact>
+          <Contact />
+        </Route>
+        <Route path="/Signup" exact>
+          <Signup />
+        </Route>
             </Switch>
           </ScrollToTop>
+          <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
           <Footer />
         </div>
       </CartProvider>

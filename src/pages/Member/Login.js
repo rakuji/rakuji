@@ -110,7 +110,7 @@ function Login(props) {
                                             </button>
                                         </div>
                                         <div class="mt-4 text-center">
-                                            還沒有會員? <a href="register.html">註冊</a>
+                                            還沒有會員? <a href="/Signup">註冊</a>
                                         </div>
                                     </form>
                                 </div>
