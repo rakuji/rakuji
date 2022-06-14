@@ -9,7 +9,6 @@ import "react-toastify/dist/ReactToastify.css";
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import ScrollToTop from "./components/ScrollToTop";
 
 // pages
 import Home from "./pages/Home/Home";
