@@ -48,6 +48,12 @@ nav #navclose {
   transition: 5s;
 }
 
+.testNav {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
 
 
 /* footer css */

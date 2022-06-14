@@ -22,7 +22,11 @@ import Cooperationform from "./pages/Newslist/Cooperationform/Cooperationform";
 import Products from "./pages/Products/Products";
 import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
-import Recipes from "./pages/Recipes/Recipes";
+import Recipes from "./pages/Recipes/Recipes/Recipes";
+// import Recipesback from "./pages/Recipes/RecipesBack/recipesback";
+// import RecipesbackAdd from "./pages/Recipes/RecipesBack/recipesbackAdd";
+// import RecipesbackEdit from "./pages/Recipes/RecipesBack/recipesbackEdit";
+import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
 import Login from "./pages/Member/Login";
 import ClientCenter from "./pages/Member/clientCenter";
@@ -37,15 +41,17 @@ import Contact from "./pages/Contact/Contact";
 
 //購物車
 // 匯入 Cart 要用的 ContextProvider
-import { CartProvider } from './pages/Cart/utils/useCart'
-import { SecondCartProvider } from './pages/Cart/utils/useSecondCart'
+import { CartProvider } from "./pages/Cart/utils/useCart";
+import { SecondCartProvider } from "./pages/Cart/utils/useSecondCart";
 
 function App() {
+  const url = window.location.href;
+  const ary1 = url.split("=");
+  const id = ary1[1];
   // 會員登入用的狀態 auth=true代表登入
-  const [auth, setAuth] = useState(false)
+  const [auth, setAuth] = useState(false);
   // const sesStorage  = sessionStorage;
   return (
-
     <SecondCartProvider localStorageKey="secondCart">
       <CartProvider>
         <div className="App">
@@ -59,30 +65,30 @@ function App() {
               <Route path="/about" exact>
                 <About />
               </Route>
-             
+
               <Route path="/Newslist" exact>
-            <Newslist />
-          </Route>
-          <Route path="/Newslistback" exact>
-            <Newslistback />
-          </Route>
-          <Route path="/NewslistbackAdd" exact>
-            <NewslistbackAdd />
-          </Route>
-          <Route path="/NewslistbackEdit" exact>
-            <NewslistbackEdit />
-          </Route>
-          <Route path="/Cooperationform" exact>
-            <Cooperationform />
-          </Route>
-          <Route path="/Votelist" exact>
-            <Votelist />
-          </Route>
+                <Newslist />
+              </Route>
+              <Route path="/Newslistback" exact>
+                <Newslistback />
+              </Route>
+              <Route path="/NewslistbackAdd" exact>
+                <NewslistbackAdd />
+              </Route>
+              <Route path="/NewslistbackEdit" exact>
+                <NewslistbackEdit />
+              </Route>
+              <Route path="/Cooperationform" exact>
+                <Cooperationform />
+              </Route>
+              <Route path="/Votelist" exact>
+                <Votelist />
+              </Route>
               <Route path="/products" exact>
-                <Products auth={auth}/>
+                <Products auth={auth} />
               </Route>
               <Route path="/products/product_detail/:productId" exact>
-                <Product_detail auth={auth}/>
+                <Product_detail auth={auth} />
               </Route>
               <Route path="/cart" exact>
                 <Cart />
@@ -97,7 +103,7 @@ function App() {
                 <Cart_confirm />
               </Route>
               <Route path="/booking" exact>
-                <Booking auth={auth}/>
+                <Booking auth={auth} />
               </Route>
               <Route path="/booking/booking_information" exact>
                 <Booking_information />
@@ -108,6 +114,18 @@ function App() {
               <Route path="/recipes" exact>
                 <Recipes />
               </Route>
+              <Route path="/recipes/id=:Recipes_ID" exact>
+                <Box />
+              </Route>
+              {/* <Route path="/recipesback" exact>
+                <Recipesback />
+              </Route>
+              <Route path="/recipesbackAdd" exact>
+                <RecipesbackAdd />
+              </Route>
+              <Route path="/recipesbackEdit/id=:Recipes_ID" exact>
+                <RecipesbackEdit />
+              </Route> */}
               <Route path="/store" exact>
                 <Store />
               </Route>
@@ -118,30 +136,28 @@ function App() {
                 <ClientCenter auth={auth} />
               </Route>
               <Route path="/contact" exact>
-          <Contact />
-        </Route>
-        <Route path="/Signup" exact>
-          <Signup />
-        </Route>
+                <Contact />
+              </Route>
+              <Route path="/Signup" exact>
+                <Signup />
+              </Route>
             </Switch>
           </ScrollToTop>
           <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
           <Footer />
         </div>
       </CartProvider>
     </SecondCartProvider>
-
-
   );
 }
 
