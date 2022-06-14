@@ -1,43 +1,87 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import $ from "jquery";
 import "./style.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import moment from "moment";
+import BookingTimeButton from "./components/BookingTimeButton";
 
-const Booking = () => {
-  // 中午時段用餐時間
-  const booking_time_noon = [
-    "10:30",
-    "11:00",
-    "11:30",
-    "12:00",
-    "12:30",
-    "13:00",
-    "13:30",
-    "14:00",
-  ];
+const Booking = ({ auth }) => {
+  const history = useHistory();
 
-  // 晚上時段用餐時間
-  const booking_time_night = [
-    "16:30",
-    "17:00",
-    "17:30",
-    "18:00",
-    "18:30",
-    "19:00",
-    "19:30",
-    "20:00",
-  ];
+  //假會員ID
+  // localStorage.setItem("memberId", 5);
+
+  //一進到頁面取得分店資訊
+  useEffect(() => {
+    fetchStoreData();
+    fetchMealTimeData();
+  }, []);
 
   // 分店
-  const store = [
-    "高雄左營店",
-    "高雄前金店",
-    "高雄駁二店",
-    "高雄鳳山店",
-    "屏東站前店",
-  ];
+  const [storeInput, setStoreInput] = useState("");
+  // console.log(storeInput);
+
+  // 大人
+  const [peopleAdultInput, setPeopleAdultInput] = useState("1");
+  // console.log(peopleAdultInput)
+
+  // 小孩
+  const [peopleKidInput, setPeopleKidInput] = useState("0");
+  // console.log(peopleKidInput)
+
+  // react-datepicker
+  const [startDate, setStartDate] = useState(new Date());
+  // console.log(startDate)
+  const startDateformat = moment(startDate).format("YYYY/MM/DD");
+  //  console.log(startDateformat)
+
+  // 時段
+  const [mealTimeInput, setMealTimeInput] = useState("中午");
+  // console.log(mealTimeInput);
+
+  // 訂位時段
+  const [bookingTimeInput, setBookingTimeInput] = useState("");
+  // console.log(bookingTimeInput);
+
+  //時段狀態
+  const [defaultValue, setDefaultValue] = useState("");
+
+  //將訂位資訊打包成一個物件
+  let booking_time_info = {
+    storeInput,
+    peopleAdultInput,
+    peopleKidInput,
+    startDateformat,
+    mealTimeInput,
+    bookingTimeInput,
+  };
+  localStorage.setItem("booking_time_info", JSON.stringify(booking_time_info));
+
+  // 從資料庫取得分店資訊
+  const [storeData, setStoreData] = useState([]);
+
+  const fetchStoreData = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/booking/store`
+    );
+    const results = await response.json();
+    setStoreData(results);
+  };
+
+  // 從資料庫取得時段
+  const [bookingTime, setBookingTime] = useState([]);
+
+  const fetchMealTimeData = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URL}/booking/mealtime`
+    );
+    const results = await response.json();
+    setBookingTime(results);
+  };
 
   // ------------------------------------------------------------------------------------------------------
   // 用餐人數
@@ -57,6 +101,8 @@ const Booking = () => {
       t_peoples.push(i);
     }
     setTotalPeoplesKid(t_peoples);
+    setPeopleAdultInput(e.target.value);
+    setBookingTimeInput("");
   };
 
   const selectHandlerKid = (e) => {
@@ -66,12 +112,30 @@ const Booking = () => {
       t_peoples.push(i);
     }
     setTotalPeoplesAdult(t_peoples);
+    setPeopleKidInput(e.target.value);
+    setBookingTimeInput("");
   };
 
   // ------------------------------------------------------------------------------------------------------
+  const date = new Date();
+  // console.log(new Date(date.setDate(date.getDate()+1)))
 
-  // react-datepicker
-  const [startDate, setStartDate] = useState(new Date());
+  const nowtime = moment(date).format("HH:mm");
+  // console.log(nowtime > "22:27")
+
+  const nowDate = moment(date).format("YYYY/MM/DD");
+  // console.log(nowDate);
+  // console.log(startDateformat)
+
+  // console.log(startDateformat > nowDate);
+
+  // -------------------------------------------------------------------------
+
+  // ------------------------------------------------------------------------------------------------------
+
+  // ------------------------------------------------------------------------------------------------------
+
+  // ------------------------------------------------------------------------------------------------------
 
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>線上訂位</div>
@@ -82,10 +146,30 @@ const Booking = () => {
       <div className="row mb-3">
         <div className="col-6">
           <label htmlFor="">分店</label>
-          <select className="form-select" aria-label="Default select example">
-            <option>請選擇分店</option>
-            {store.map((v, i) => {
-              return <option key={i} value={v}>{v}</option>;
+          <select
+            className="form-select"
+            aria-label="Default select example"
+            onChange={(e) => {
+              setStoreInput(e.target.value);
+              setBookingTimeInput("");
+              if (
+                nowtime > "14:00" &&
+                nowtime < "16:30" &&
+                nowDate == startDateformat
+              ) {
+                setMealTimeInput("晚上");
+              } else if (nowtime > "20:00" && nowDate == startDateformat) {
+                setStartDate(new Date(date.setDate(date.getDate() + 1)));
+              }
+            }}
+          >
+            <option value="">請選擇分店</option>
+            {storeData.map((v, i) => {
+              return (
+                <option key={i} value={v.name}>
+                  {v.name}
+                </option>
+              );
             })}
           </select>
         </div>
@@ -127,8 +211,13 @@ const Booking = () => {
                 className="form-select"
                 selected={startDate}
                 dateFormat="yyyy/MM/dd"
-                minDate={startDate}
-                onChange={(date) => setStartDate(date)}
+                minDate={new Date()}
+                onChange={(date) => {
+                  setStartDate(date);
+                  setBookingTimeInput("");
+
+                  setMealTimeInput("中午");
+                }}
               />
               {/* <input className='form-select' type="date" name="" id="booking_date" max="2022-05-18"/> */}
             </div>
@@ -138,10 +227,14 @@ const Booking = () => {
                 id="mystuff"
                 className="form-select"
                 aria-label="Default select example"
+                value={mealTimeInput}
+                onChange={(e) => {
+                  setMealTimeInput(e.target.value);
+                  setBookingTimeInput("");
+                }}
               >
-                <option>請選擇時段</option>
-                <option value="opt1">中午</option>
-                <option value="opt2">晚上</option>
+                <option value="中午">中午</option>
+                <option value="晚上">晚上</option>
               </select>
             </div>
           </div>
@@ -155,17 +248,29 @@ const Booking = () => {
         <hr className="my-3" />
         {/* <div id="msgbox"></div> */}
         <div className="booking-time">
-
-          {booking_time_noon.map((d, i) => {
-            return (
-              <div key={i} className="button_container">
-                <button>{d}</button>
-              </div>)
-          })}
-
-
+          {bookingTime
+            .filter((v) => v.booking_time === mealTimeInput)
+            .map((v, i) => {
+              if (storeInput != "") {
+                return (
+                  <BookingTimeButton
+                    key={i}
+                    time={v.time}
+                    storeInput={storeInput}
+                    startDateformat={startDateformat}
+                    bookingTimeInput={bookingTimeInput}
+                    mealTimeInput={mealTimeInput}
+                    setBookingTimeInput={setBookingTimeInput}
+                    peopleAdultInput={peopleAdultInput}
+                    peopleKidInput={peopleKidInput}
+                    nowtime={nowtime}
+                    nowDate={nowDate}
+                  />
+                );
+              }
+            })}
         </div>
-        <hr className="my-3"/>
+        <hr className="my-3" />
       </div>
       <div className="booking-instruction">
         <p>【線上訂位說明】</p>
@@ -196,9 +301,42 @@ const Booking = () => {
         </ol>
       </div>
       <div className="d-flex justify-content-center">
-        <Link to="/booking/booking_information">
-          <button className="next_page my-4">下一步</button>
-        </Link>
+        {/* <Link to="/booking/booking_information"> */}
+        <button
+          className="next_page my-4"
+          onClick={() => {
+            if (auth) {
+              if (storeInput == "") {
+                Swal.fire({
+                  icon: "warning",
+                  title: "請選擇分店",
+                });
+              } else if (bookingTimeInput == "") {
+                Swal.fire({
+                  icon: "warning",
+                  title: "請選擇訂位時段",
+                });
+              } else {
+                history.push("/booking/booking_information");
+              }
+            } else {
+              Swal.fire({
+                icon: "warning",
+                title: "請先登入會員",
+                showCancelButton: true,
+                confirmButtonText: "登入",
+                cancelButtonText: "取消",
+              }).then(async (result) => {
+                if (result.isConfirmed) {
+                  history.push("/member/login");
+                }
+              });
+            }
+          }}
+        >
+          下一步
+        </button>
+        {/* </Link> */}
       </div>
     </div>
   );

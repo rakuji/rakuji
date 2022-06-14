@@ -1,23 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import { Stepper, Step } from 'react-form-stepper';
 import { Accordion } from 'react-bootstrap';
 import { useCart } from './utils/useCart';
 import CartCheckAreaInfo from './components/CartCheckAreaInfo';
+import moment from 'moment';
 
 const Cart_confirm = () => {
 
     // 使用hooks 解出所需的狀態與函式(自context)
-    const { cart, items } = useCart()
-    console.log(items)
+    const { cart, items, clearCart } = useCart()
+    // console.log(items)
 
-    // discount
-    const [discount, setDiscount] = useState(600)
+    //取出訂單編號
+    const orderid = localStorage.getItem("orderid")
+    console.log(orderid)
+    
+    // 從資料庫取得資料
+    const [orderDatas, setOrderDatas] = useState({})
+    const [orderDetailDatas, setOrderDetailDatas] = useState([])
 
-    //deliveryfee 
-    const [deliveryfee, setDeliveryfee] = useState(100)
+    // -------------------------測試區--------------------------------------------------
 
- 
+    // console.log(orderDatas)
+    // const order_info = orderDatas.find((v, i) => v.sid == orderid) //訂單聯絡資訊
+    // console.log(order_info)
+    // console.log(order_info?.sid)
+
+    // console.log(orderDetailDatas)
+    // const order_items = orderDetailDatas.filter((v, i) => v.order_id == orderid) //訂單商品明細
+    // console.log(order_items)
+
+    // --------------------------------------------------------------------------------
+
+
+
+
+    //查詢訂單聯絡資訊
+    const fetchOrderData = async () => {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/cart/order`);
+        const results = await response.json();
+        const order_info =await results.find((v, i) => v.sid == orderid) //訂單聯絡資訊
+        setOrderDatas(order_info);
+    }
+
+    //查詢訂單商品明細
+    const fetchOrderDetailData = async () => {
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/cart/orderdetail`);
+        const results = await response.json();
+        const order_items = results.filter((v, i) => v.order_id == orderid) //訂單商品明細
+        setOrderDetailDatas(order_items);
+    }
+
+    useEffect(() => {
+        clearCart(); //清除購物車
+        fetchOrderData();
+        fetchOrderDetailData();
+    }, [])
 
 
 
@@ -30,13 +69,16 @@ const Cart_confirm = () => {
 
             </Stepper>
 
-            <div className="row mb-3 order_success">
-                <div className='d-flex justify-content-center align-items-center my-3'>
+            <div className="row order_success">
+                <div className='d-flex justify-content-center align-items-center my-2'>
                     <i className="fa-solid fa-check me-2"></i>
                     <h3>訂購成功</h3>
                 </div>
-                <div className='d-flex justify-content-center'>
-                    <p>訂單編號:001</p>
+                <div className='d-flex justify-content-center my-2'>
+                    <p>餐點將於10～15分鐘外送到府，敬請耐心等候，感謝您的購買!</p>
+                </div>
+                <div className='mb-2 ms-1'>
+                    <p>訂單編號:{orderid}</p>
                 </div>
             </div>
 
@@ -57,7 +99,7 @@ const Cart_confirm = () => {
                             </thead>
 
                             <tbody>
-                                {items.map((v, i) => {
+                                {orderDetailDatas.map((v, i) => {
 
                                     return (
                                         <tr key={i} className='cart_items'>
@@ -73,7 +115,7 @@ const Cart_confirm = () => {
                                             <td>{v.name}</td>
                                             <td>${v.price}</td>
                                             <td>{v.quantity}</td>
-                                            <td>${v.itemTotal}</td>
+                                            <td>${v.price * v.quantity}</td>
                                         </tr>)
                                 })}
                             </tbody>
@@ -91,25 +133,25 @@ const Cart_confirm = () => {
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂單日期:</p>
-                        <p>2022/05/30</p>
+                        <p>{moment(orderDatas.created_at).format("YYYY-MM-DD kk:mm:ss")}</p>
                     </div>
 
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人姓名:</p>
-                        {/* <p>{name}</p> */}
+                        <p>{orderDatas.name}</p>
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人電話:</p>
-                        {/* <p>{phone}</p> */}
+                        <p>{orderDatas.phone}</p>
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>訂購人信箱:</p>
-                        {/* <p>{email}</p> */}
+                        <p>{orderDatas.email}</p>
 
                     </div>
                     <div className='mb-3 d-flex justify-content-between'>
                         <p>外送地址:</p>
-                        {/* <p>{address}</p> */}
+                        <p>{orderDatas.address}</p>
 
                     </div>
 
@@ -119,9 +161,26 @@ const Cart_confirm = () => {
                 {/* check_area */}
                 <div className="col-6">
 
-                    <div className='checkarea'>
+                    <div className='checkarea mt-5'>
 
-                        <CartCheckAreaInfo />
+                        {/* <CartCheckAreaInfo cartTotal={order_info.cartTotal} couponPrice={order_info.couponPrice} cartTotalPrice={order_info.cartTotalPrice}/> */}
+
+                        <div className='my-4'>
+                            <p>小計</p>
+                            <p>${orderDatas.cartTotal}元</p>
+                        </div>
+
+                        <div className='my-4'>
+                            <p>優惠折扣</p>
+                            <p>-${orderDatas.couponPrice}元</p>
+                        </div>
+
+
+                        <div className='my-4'>
+                            <p>總計</p>
+                            <p>${orderDatas.cartTotalPrice}元</p>
+                        </div>
+
                     </div>
 
 

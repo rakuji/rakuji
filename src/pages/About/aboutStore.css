@@ -35,7 +35,7 @@ a:hover {
   background-color: white;
 }
 
-.carousel {
+#mycar {
   height: 300px;
   overflow: hidden;
 }
@@ -97,11 +97,11 @@ p.about {
   font-size: 20px;
 }
 
-.cardTitle {
-  font-size: 20px;
+.cardTitle.my {
+  font-size: 1.5em;
   color: #dc710d;
 }
-.cardBody {
+.cardBody.my {
   font-size: 1em;
 }
 

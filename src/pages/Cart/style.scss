@@ -1,3 +1,29 @@
+.shake {
+  animation: shake 800ms ease-in-out;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(+2px, 0, 0);
+  }
+  30%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(+4px, 0, 0);
+  }
+  50% {
+    transform: translate3d(-4px, 0, 0);
+  }
+}
+
 // react-bootstrap Accordion css
 .accordion-button {
   background-color: #58c2dd;
@@ -26,18 +52,19 @@
 }
 
 // Cart.js
-
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
-  border-style: none;
-  text-align: center;
+table.cart_table {
+  tbody,
+  td,
+  tfoot,
+  th,
+  thead,
+  tr {
+    border-style: none;
+    text-align: center;
+  }
 }
 
-table {
+table.cart_table {
   thead {
     border-bottom: 2px solid rgba(0, 0, 0, 0.125);
   }
@@ -61,6 +88,8 @@ table {
 
       img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
@@ -79,11 +108,11 @@ table {
     input {
       border-color: #58c2dd;
     }
-    button{
+    button {
       border-color: #58c2dd;
       color: #58c2dd;
 
-      &:hover{
+      &:hover {
         background-color: #58c2dd;
         color: #fff;
       }
@@ -98,6 +127,12 @@ table {
   .price {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .cart_total_price {
+      color: #dc3545;
+      font-size: 1.5rem;
+    }
   }
 
   .go_check {
@@ -114,6 +149,54 @@ table {
   }
 }
 
+.LuckyWheelFont {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.coupon_game {
+  // width: 60px;
+  // height: 60px;
+  // border-radius: 50%;
+  // background-color: #e2d0ad;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  right: 3vw;
+  bottom: 15vh;
+  cursor: pointer;
+
+  img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+.cart_isempty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 300px;
+  }
+
+  button {
+    background-color: #58c2dd;
+    color: #fff;
+
+    &:hover {
+      background-color: #fff;
+      color: #58c2dd;
+    }
+  }
+}
+
 // Cart_info.js & Cart_order.js checkarea
 .checkarea {
   padding: 20px;
@@ -126,6 +209,12 @@ table {
   div {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .cart_total_price {
+      color: #dc3545;
+      font-size: 1.5rem;
+    }
   }
 
   button {
@@ -151,8 +240,25 @@ table {
 }
 
 // Cart_info.js
+.required_mark {
+  color: #dc710d;
+}
+
+.ErrorMessage {
+  color: #dc3545;
+}
 
 // Cart_order.js
+
+// .swal2-container {
+//   a {
+//     color: #fff;
+//     text-decoration: none;
+//     &:hover {
+//       color: #fff;
+//     }
+//   }
+// }
 
 // Cart_confirm.js
 

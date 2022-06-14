@@ -1,10 +1,51 @@
+.newsbackground {
+  background-size: 1840px ;
+  background-position: 40% 5%;
+  background-repeat: no-repeat;
+  background-image: url('../image/BG.png');
+}
 
+@media screen and (max-width:576px) {
+
+
+  .newsbackground{
+      background-image: none;
+  }
+}
 .col_v{
     padding-left:14px ;
     padding-right:14px ;
     padding-top:5px ;
     padding-bottom:5px ;
 
+
+}
+.bor{
+    border-bottom: 0px dashed #58C2DD;
+    max-width: 400px;
+    max-height: 100px;
+   
+}
+
+.card-img-top5 {
+    border-bottom: 0px dashed #58C2DD;
+    max-width: 400px;
+    max-height: 250px;
+   
 }
 
 
+.bu{
+  
+    background-color: #58c2dd;
+  color: #fff;
+  }
+  .bu hover{
+    background-color: #58c2dd;
+    color:blue#fff;
+  }
+  /* <div className="col_v">
+  <div className="card">
+    <img
+      src={require("../Votelist/image/MB-002唐揚雞歐姆蛋咖喱飯.jpeg")}
+      className="card-img-top" */

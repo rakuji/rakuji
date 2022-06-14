@@ -12,7 +12,7 @@ function Login(props) {
     
     useEffect(()=>{
         const submitBtn = document.querySelector("#submitBtn");
-        const userEmail = document.querySelector("#email");
+        // const userEmail = document.querySelector("#email");
         const userPassword = document.querySelector("#password");
         const authMessage = document.querySelector("#authMessage");
 
@@ -25,12 +25,13 @@ function Login(props) {
                 body:formData
             }).then(response=>{
                 console.log(response);
-                // 將'response'(Json陣列)轉為'文字'並回傳給'data'
-                return response.text();
+                // 將'response'(Json陣列)轉為'物件'並回傳給'data'
+                return response.json();
             }).then(data=>{
                 console.log(data);
-                if (data==="true"){
-                    sesStorage['memail'] =  userEmail.value ;        
+                if (data.ok){
+                    sesStorage['memail'] =  data.memail ;        
+                    sesStorage['mid'] =  data.mid ;        
                     setAuth(!auth);
                       // 呈現歡迎訊息
                     alert(`你好，歡迎:${sesStorage['memail']}`)
@@ -46,10 +47,12 @@ function Login(props) {
     },[auth])
 
     if(sesStorage['memail'] && auth){
+    // if(sesStorage['memail'] ){
         // 呈現謝謝訊息
-        alert(`謝謝您的光臨:${sesStorage['memail']}`)
-        // 清除sessionStorage & set auth = false
+        alert(`謝謝您的光臨: ${sesStorage['memail']}`)
+        // 清除sessionStorage([memail] & [mid]); set auth = false
         sesStorage.removeItem("memail");
+        sesStorage.removeItem("mid");
         setAuth(!auth);
     }
     return (
@@ -66,7 +69,7 @@ function Login(props) {
                                 <div class="card-body">
                                     
                                     <form class="my-login-validation" encType="multipart/form-data" name="loginForm">
-                                        <div class="form-group">
+                                        <div class="form-group mb-3">
                                             <label for="email">會員帳號</label>
                                             <input id="email" type="email" class="form-control" name="email"  required autofocus />
                                             <div class="invalid-feedback" id="emailStatus">
@@ -74,7 +77,7 @@ function Login(props) {
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-3">
                                             <label for="password">會員密碼
                                                 <a href="forgot.html" class="float-right">
                                                     忘記密碼?
@@ -96,7 +99,7 @@ function Login(props) {
                                         <div class="form-group m-0">
                                             <button type="submit" class="btn btn-block btn-custom" id="submitBtn">
                                                 登入
-                                            </button><br />
+                                            </button><br /><br />
                                             <p class="align">其他方式登入</p>
 
                                             <button type="submit" class="btn btn-danger btn-block">
@@ -107,7 +110,7 @@ function Login(props) {
                                             </button>
                                         </div>
                                         <div class="mt-4 text-center">
-                                            還沒有會員? <a href="register.html">註冊</a>
+                                            還沒有會員? <a href="/Signup">註冊</a>
                                         </div>
                                     </form>
                                 </div>

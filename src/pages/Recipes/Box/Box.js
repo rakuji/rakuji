@@ -55,7 +55,9 @@ function Box() {
 
   return (
     <>
-      <Breadcrumb />
+      <div className="tt">
+        <Breadcrumb />
+      </div>
       {datas.length > 0 &&
         datas.map((recipes, i) => {
           const {
@@ -128,7 +130,7 @@ function Box() {
                   </div>
                   {/* ----------------------------------------------------------------------- */}
                   <div className="d-flex ">
-                    <div className="col-7 avatar ">
+                    <div className="col-7 imgtest ">
                       <img
                         className="container"
                         src={require(`../image/${Recipes_Picture}`)}
@@ -246,7 +248,7 @@ function Box() {
                   ></div>
                   {/* ----------------------------------------------------------------------- */}
                   <div className="">
-                    <div className="col- avatar ">
+                    <div className="col- imgtest ">
                       <img
                         className="container "
                         src={require(`../image/${Recipes_Picture}`)}

@@ -1,3 +1,62 @@
+.shake {
+  -webkit-animation: shake 800ms ease-in-out;
+          animation: shake 800ms ease-in-out;
+}
+
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+}
+
 .accordion-button {
   background-color: #58c2dd;
   color: #fff;
@@ -22,29 +81,29 @@
   color: black;
 }
 
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr {
+table.cart_table tbody,
+table.cart_table td,
+table.cart_table tfoot,
+table.cart_table th,
+table.cart_table thead,
+table.cart_table tr {
   border-style: none;
   text-align: center;
 }
 
-table thead {
+table.cart_table thead {
   border-bottom: 2px solid rgba(0, 0, 0, 0.125);
 }
 
-table tbody {
+table.cart_table tbody {
   border-bottom: 2px solid rgba(0, 0, 0, 0.125);
 }
 
-table tbody .cart_items td {
+table.cart_table tbody .cart_items td {
   vertical-align: middle;
 }
 
-table tbody .img_container {
+table.cart_table tbody .img_container {
   border: 1px solid #fff;
   width: 75px;
   height: 75px;
@@ -53,11 +112,14 @@ table tbody .img_container {
   margin: 0 auto;
 }
 
-table tbody .img_container img {
+table.cart_table tbody .img_container img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-table tbody .cart_trush_btn {
+table.cart_table tbody .cart_trush_btn {
   cursor: pointer;
 }
 
@@ -95,6 +157,14 @@ table tbody .cart_trush_btn {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart_checkarea .price .cart_total_price {
+  color: #dc3545;
+  font-size: 1.5rem;
 }
 
 .cart_checkarea .go_check {
@@ -106,6 +176,63 @@ table tbody .cart_trush_btn {
   height: 50px;
   margin-bottom: 20px;
   background-color: #58c2dd;
+}
+
+.LuckyWheelFont {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.coupon_game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 3vw;
+  bottom: 15vh;
+  cursor: pointer;
+}
+
+.coupon_game img {
+  width: 150px;
+  height: 150px;
+}
+
+.cart_isempty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cart_isempty img {
+  width: 300px;
+}
+
+.cart_isempty button {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.cart_isempty button:hover {
+  background-color: #fff;
+  color: #58c2dd;
 }
 
 .checkarea {
@@ -124,6 +251,14 @@ table tbody .cart_trush_btn {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkarea div .cart_total_price {
+  color: #dc3545;
+  font-size: 1.5rem;
 }
 
 .checkarea button {
@@ -143,6 +278,14 @@ table tbody .cart_trush_btn {
 .checkarea button.next_page {
   background-color: #58c2dd;
   color: #fff;
+}
+
+.required_mark {
+  color: #dc710d;
+}
+
+.ErrorMessage {
+  color: #dc3545;
 }
 
 .cart_confirm p,

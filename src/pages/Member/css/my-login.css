@@ -1,4 +1,4 @@
-* {
+/* * {
 	margin: 0;
 	padding: 0;
 
@@ -8,7 +8,7 @@
 html,
 body {
 	height: 100%;
-}
+} */
 
 /* body{
 	box-sizing: border-box;
@@ -75,7 +75,7 @@ body.my-login-page {
 
 .my-login-page .btn.btn-block {
 	padding: 12px 10px;
-	width:100%;
+	width: 100%;
 }
 
 .my-login-page .footer {

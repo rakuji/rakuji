@@ -67,7 +67,7 @@ const dele = async (sid) => {
         }
         return (
           <div className="col d-flex justify-content-center">
-            <ta class="table table-striped table-bordered ">
+            <ta className="table table-striped table-bordered ">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -99,7 +99,7 @@ const dele = async (sid) => {
                   <td>{v.content}</td>
                   <td>
                     <a href="/NewslistbackEdit">
-                      <i class="fas fa-edit"></i>
+                      <i className="fas fa-edit"></i>
                     </a>
                   </td>
                   <td>

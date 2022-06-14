@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import "./Recipes.css";
-import "../../../components/background.css";
+import "../../Newslist/Breadcrumb.css";
+// import "../../../components/background.css";
 import $ from "jquery";
 import MyBackTop from "../../About/myComponents/MyBackTop";
 import Breadcrumb from "../Breadcrumb/BreadcrumbCopy";
 import Carouselg from "../../../components/Carousel/Carousel_g";
+
 
 
 
@@ -78,7 +80,7 @@ function Recipes(props) {
         <Breadcrumb />
       </div>
 
-      <div className="nav-item container phoneDiv ">
+      <div className="nav-item container phoneDiv newsbackground">
         <div className="row  ">
           <div className="col RecipesLogoDiv ">
             <img

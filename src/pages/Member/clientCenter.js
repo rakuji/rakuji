@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link,useHistory } from "react-router-dom";
+import $ from 'jquery';
 import "./css/my-login.css"
 // import "./css/reset.css"
 import _ from 'lodash'
@@ -14,10 +15,59 @@ function ClientCenter(props) {
     const { auth } = props;
     const sesStorage  = sessionStorage;
     const history = useHistory();
+    const [memberInfo, setMemberInfo] = useState([]);
     
     if( !sesStorage['memail'] || !auth){
         history.push('/member/login');
     }
+
+    // 向 localhost:3001/members/email 請求會員相關資料(by query string 'memail')
+    const fetchDatas = async ()=> {
+         // 1) 請求會員基本資料:
+        const resMemberData = await fetch(`${process.env.REACT_APP_API_URL}/members/email?memail=${sesStorage['memail']}`);
+        const memberData = await resMemberData.json();
+        // console.log(memberData);
+        setMemberInfo(memberData);
+        
+    }
+
+
+   
+
+    useEffect(()=>{
+        $("#submitMemberInfo").click((e) => {
+            e.preventDefault();
+            // console.log("Click修改鈕");
+            const form = document.getElementById('formMemberInfo');
+            console.log(form);
+            const formData =  new FormData(form);
+            console.log(formData);
+      
+            fetch(`${process.env.REACT_APP_API_URL}/members/email?memail=${sesStorage['memail']}`,{
+                method:"put",
+                body:formData
+            }).then(response=>{
+                // console.log(response);
+                // 將'response'(Json陣列)轉為'物件'並回傳給'data'
+                return response.json();
+            }).then(data=>{
+                // console.log(data);
+                if (data.ok){
+                    alert(`${sesStorage['memail']} 資料修改成功!`)
+                    fetchDatas();  
+                } else {
+                    alert(`${sesStorage['memail']} 資料修改失敗!`);
+                }
+            })
+        })
+    },[])
+    
+    
+
+    useEffect(()=>{
+        fetchDatas();      
+    },[])
+
     // **********************************************************************************
     // 呈現yearAndMonth
     const now = new Date()
@@ -130,9 +180,9 @@ function ClientCenter(props) {
 
                                     <ul className="nav nav-pills justify-content-center" id="myTab" role="tablist">
                                         <li className="nav-item" role="presentation">
-                                            <button className="nav-link a" id="profile-tab" data-bs-toggle="tab"
+                                            <button className="nav-link active" id="profile-tab" data-bs-toggle="tab"
                                                 data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
-                                                aria-selected="true">會員個人資料</button>
+                                                aria-selected="true" >會員個人資料</button>
                                         </li>
                                         <li className="nav-item" role="presentation">
                                             <button className="nav-link" id="order-tab" data-bs-toggle="tab"
@@ -140,68 +190,73 @@ function ClientCenter(props) {
                                                 aria-selected="false">訂單交易紀錄</button>
                                         </li>
                                         <li className="nav-item" role="presentation">
-                                            <button className="nav-link active" id="coupon-tab" data-bs-toggle="tab"
+                                            <button className="nav-link " id="coupon-tab" data-bs-toggle="tab"
                                                 data-bs-target="#coupon" type="button" role="tab" aria-controls="coupon"
                                                 aria-selected="false">優惠資料紀錄</button>
                                         </li>
                                     </ul>
                                     <div className="tab-content mt-5" id="pills-tabContent">
                                         {/* <!-- profile --> */}
-                                        <div className="tab-pane fade show " id="profile" role="tabpanel"
+                                        <div className="tab-pane fade show active" id="profile" role="tabpanel"
                                             aria-labelledby="profile-tab">
 
-                                            <form method="POST" className="my-login-validation" noValidate="">
-
-                                                <div className="form-group">
-                                                    <label htmlFor="a">姓名</label>
-                                                    <input id="Name" type="text" className="form-control" name="Name"
-                                                        value="吳建凡" disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="sex">性別</label>
-                                                    <input id="sex" type="text" className="form-control" name="sex" value="男"
-                                                        disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="vocation">職業</label>
-                                                    <input id="vocation" type="text" className="form-control" name="vocation" value="工程師" disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="birthday">出生年月日</label>
-                                                    <input id="birthday" type="text" className="form-control" name="birthday" value="1983-03-10" disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="city">居住縣市</label>
-                                                    <input id="city" type="text" className="form-control" name="city" value="彰化縣" disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="">居住地址</label>
-                                                    <input id="" type="text" className="form-control" name="" value="伸港鄉埤墘一路13號" disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="">子嗣</label>
-                                                    <input id="" type="text" className="form-control" name="" value="有小孩"
-                                                        disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="number">手機號碼</label>
-                                                    <input type="tel" className="form-control" id="phone" name="phone"
-                                                        value="0912479060" disabled />
-                                                </div>
-                                                <div className="form-group">
-                                                    <label htmlFor="password">修改密碼</label>
-                                                    <input type="password" className="form-control" id="password"
-                                                        name="password" value="aaaaaaaaaa" disabled /><br />
-                                                </div>
+                                            <form id="formMemberInfo" name="formMemberInfo" className="my-login-validation" noValidate="">
+                                           
+                                            {   memberInfo.map((v,i)=>{
+                                                    const {Mname,Msex,Mvocation,Mbirthday,Mcity,Maddress,Mchild,Mphone,Mpassword} = v;
+                                                    return(
+                                                        <>
+                                                            <div className="form-group mb-2">
+                                                            <label htmlFor="a">姓名</label>
+                                                            <input id="name" type="text" className="form-control minfo" name="name" defaultValue={Mname} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="sex">性別</label>
+                                                                <input id="sex" type="text" className="form-control minfo" name="sex" defaultValue={Msex} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="vocation">職業</label>
+                                                                <input id="vocation" type="text" className="form-control minfo" name="vocation" defaultValue={Mvocation} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="birthday">出生年月日</label>
+                                                                <input id="birthday" type="text" className="form-control minfo" name="birthday" defaultValue={Mbirthday.substring(0,10)} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="city">居住縣市</label>
+                                                                <input id="city" type="text" className="form-control minfo" name="city" defaultValue={Mcity} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="address">居住地址</label>
+                                                                <input id="address" type="text" className="form-control minfo" name="address" defaultValue={Maddress} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="child">子嗣</label>
+                                                                <input id="child" type="text" className="form-control minfo" name="child" defaultValue={Mchild} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="phone">手機號碼</label>
+                                                                <input id="phone" type="text" className="form-control minfo" name="phone" defaultValue={Mphone} />
+                                                            </div>
+                                                            <div className="form-group mb-2">
+                                                                <label htmlFor="password">修改密碼</label>
+                                                                <input type="password" className="form-control minfo" id="password"  name="password" defaultValue={Mpassword} /><br />
+                                                            </div>
+                                                        </>
+                                                    )
+                                            })}
+                                                
                                                 <br />
                                                 <div className="row form-group  g-3">
                                                     <div className="col-sm-6">
-                                                        <button type="submit" className="btn btn-block btn-custom ">修改</button>
+                                                        <button type="submit" id="submitMemberInfo" className="btn btn-block btn-custom">修改</button>
+                                                        
                                                     </div>
                                                     <div className="col-sm-6">
-                                                        <button type="submit" className="btn btn-block btn-danger">取消</button>
+                                                        <button type="reset" className="btn btn-block btn-danger" >取消</button>
                                                     </div>
                                                 </div>
+                                            
                                             </form>
                                         </div>
 
@@ -215,11 +270,10 @@ function ClientCenter(props) {
                                                         <thead className="line">
                                                             <tr className="text-color">
                                                                 <th scope="col b1">訂單編號</th>
-                                                                <th scope="col">商品圖片</th>
+                                                                {/* <th scope="col">商品圖片</th> */}
                                                                 <th scope="col">商品名稱</th>
                                                                 <th scope="col">金額</th>
-                                                                <th scope="col">運費</th>
-
+                                                                <th scope="col">數量</th>
                                                                 <th scope="col">合計</th>
                                                                 <th scope="col">日期</th>
                                                             </tr>
@@ -227,33 +281,23 @@ function ClientCenter(props) {
                                                         <tbody>
                                                             <tr>
                                                                 <th scope="row">001</th>
-                                                                <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td>
+                                                                {/* <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td> */}
                                                                 <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                                <td>120$x5<br />120$x5</td>
-                                                                <td>0$</td>
-
-                                                                <td>1200$</td>
-                                                                <td>2022-03-14</td>
+                                                                <td>$330<br />$319</td>
+                                                                <td>1<br />1</td>
+                                                                <td>$649</td>
+                                                                <td>2021-03-14</td>
                                                             </tr>
                                                             <tr>
-                                                                <th scope="row">002</th>
-                                                                <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td>
-                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                                <td>120$x5<br />120$x5</td>
-                                                                <td>100$</td>
-
-                                                                <td>1200$</td>
-                                                                <td>2022-03-14</td>
+                                                                <th scope="row">001</th>
+                                                                {/* <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td> */}
+                                                                <td>漢堡排<br />唐揚雞歐姆蛋咖哩飯</td>
+                                                                <td>$250<br />$199</td>
+                                                                <td>1<br />1</td>
+                                                                <td>$449</td>
+                                                                <td>2021-9-14</td>
                                                             </tr>
-                                                            <tr>
-                                                                <th scope="row">003</th>
-                                                                <td><img src={require("http://picsum.photos/50/50?random=10")} alt="" /></td>
-                                                                <td>裝蒜牛五花飯<br />文青花魚飯</td>
-                                                                <td>120$x5<br />120$x5</td>
-                                                                <td>100$</td>
-                                                                <td>1200$</td>
-                                                                <td>2022-03-14</td>
-                                                            </tr>
+                                                            
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -261,7 +305,7 @@ function ClientCenter(props) {
                                         </div>
 
                                         {/* <!-- coupon --> */}
-                                        <div className="tab-pane fade show active" id="coupon" role="tabpanel"
+                                        <div className="tab-pane fade show " id="coupon" role="tabpanel"
                                             aria-labelledby="coupon-tab" noValidate="">
                                             <form method="POST" className="my-login-validation">
                                                 <div className="row">
@@ -273,7 +317,7 @@ function ClientCenter(props) {
                                                             className="card-img-top w-100" alt="coupon" />
                                                         <div className="card-body">
                                                             <h6 className="card-title">生日折扣碼:</h6>
-                                                            <input className="a1 w-100" type="text" value=" HBD520" id="myInput" />
+                                                            <input className="a1 w-100" type="text" value=" HBD520" id="myInput1" />
                                                         </div>
                                                     </div>
 
@@ -282,7 +326,7 @@ function ClientCenter(props) {
                                                             className="card-img-top w-100" alt="coupon" />
                                                         <div className="card-body">
                                                             <h6 className="card-title">情人節折扣碼:</h6>
-                                                            <input className="a1 w-100" type="text" value="Lover1798" id="myInput" />
+                                                            <input className="a1 w-100" type="text" value="Lover1798" id="myInput2" />
                                                         </div>
                                                     </div>
 
@@ -299,7 +343,7 @@ function ClientCenter(props) {
                                                         <div className="card-body">
                                                             <h6 className="card-title">首購折扣碼:</h6>
                                                             <input className="a1 w-100" type="text" value=" Frist1001"
-                                                                id="myInput" />
+                                                                id="myInput3" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -313,8 +357,6 @@ function ClientCenter(props) {
                 </div>
             </div>
         </div>
-
-
     )
 };
 
