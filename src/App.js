@@ -23,9 +23,9 @@ import Products from "./pages/Products/Products";
 import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes/Recipes";
-// import Recipesback from "./pages/Recipes/RecipesBack/recipesback";
-// import RecipesbackAdd from "./pages/Recipes/RecipesBack/recipesbackAdd";
-// import RecipesbackEdit from "./pages/Recipes/RecipesBack/recipesbackEdit";
+import Recipesback from "./pages/Recipes/RecipesBack/Recipesback";
+import RecipesbackAdd from "./pages/Recipes/RecipesBack/RecipesbackAdd";
+import RecipesbackEdit from "./pages/Recipes/RecipesBack/RecipesbackEdit";
 import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
 import Login from "./pages/Member/Login";
@@ -117,7 +117,7 @@ function App() {
               <Route path="/recipes/id=:Recipes_ID" exact>
                 <Box />
               </Route>
-              {/* <Route path="/recipesback" exact>
+              <Route path="/recipesback" exact>
                 <Recipesback />
               </Route>
               <Route path="/recipesbackAdd" exact>
@@ -125,7 +125,7 @@ function App() {
               </Route>
               <Route path="/recipesbackEdit/id=:Recipes_ID" exact>
                 <RecipesbackEdit />
-              </Route> */}
+              </Route>
               <Route path="/store" exact>
                 <Store />
               </Route>
