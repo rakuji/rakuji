@@ -26,9 +26,9 @@ import Cart_info from "./pages/Cart/Cart_info";
 // import Cart_order from "./pages/Cart/Cart_order";
 import Cart_confirm from "./pages/Cart/Cart_confirm";
 import Recipes from "./pages/Recipes/Recipes/Recipes";
-import Recipesback from "./pages/Recipes/RecipesBack/recipesback";
-import RecipesbackAdd from "./pages/Recipes/RecipesBack/recipesbackAdd";
-import RecipesbackEdit from "./pages/Recipes/RecipesBack/recipesbackEdit";
+// import Recipesback from "./pages/Recipes/RecipesBack/recipesback";
+// import RecipesbackAdd from "./pages/Recipes/RecipesBack/recipesbackAdd";
+// import RecipesbackEdit from "./pages/Recipes/RecipesBack/recipesbackEdit";
 import Box from "./pages/Recipes/Box/Box";
 import Store from "./pages/Store/Store";
 // import Login from "./pages/Member/Login";
@@ -43,7 +43,7 @@ function App() {
   const url = window.location.href;
   const ary1 = url.split("=");
   const id = ary1[1];
-  // console.log(id);
+  console.log(id);
   // 會員登入用的狀態 auth=true代表登入
   const [auth, setAuth] = useState(false);
   // const sesStorage  = sessionStorage;
@@ -110,7 +110,7 @@ function App() {
         <Route path="/recipes/id=:Recipes_ID" exact>
           <Box />
         </Route>
-        <Route path="/recipesback" exact>
+        {/* <Route path="/recipesback" exact>
           <Recipesback />
         </Route>
         <Route path="/recipesbackAdd" exact>
@@ -118,7 +118,7 @@ function App() {
         </Route>
         <Route path="/recipesbackEdit/id=:Recipes_ID" exact>
           <RecipesbackEdit />
-        </Route>
+        </Route> */}
         <Route path="/store" exact>
           <Store />
         </Route>
