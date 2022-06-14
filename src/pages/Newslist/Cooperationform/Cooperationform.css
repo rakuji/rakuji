@@ -13,23 +13,24 @@
   }
 }
 
-.block{
+.cooperationform_block{
     background: #FFFFFF;
 box-shadow: 0px 4px 72px -15px rgba(0, 0, 0, 0.25);
 border-radius: 20px;
 
 }
-.client {
+.cooperationform_client {
    color: #58C2DD;
    margin-bottom: 0px;
 
 }
 /* 注意這行 */
-input.group{ 
+/* input.group{ 
     border:1px solid red
-  }
+  } */
 
-.container .sixyellow {margin-bottom:20px ;
+.container .sixyellow {
+  margin-bottom:20px ;
 }
 
 /* .form.control.validated{

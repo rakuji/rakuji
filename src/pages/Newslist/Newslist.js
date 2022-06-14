@@ -73,7 +73,7 @@ function Newslist() {
               <div className="card-body">
                 <h3 className="card-title fs-4">票選料理之王</h3>
                 <p className="card-text fs-6">2022/06/06 - 2022/06/26</p>
-                <p className="card-content fs-5">
+                <p className="card-content-t fs-5">
                   選出你的料理天菜，投票抽大獎!
                 </p>
 
@@ -98,7 +98,7 @@ function Newslist() {
               <div className="card-body">
                 <h3 className="card-title fs-4">異業合作</h3>
                 <p className="card-text fs-6">2022/01/01 - 2022/12/31</p>
-                <p className="card-content fs-5">
+                <p className="card-content-t fs-5">
                   歡迎將您的想法填入表單，將與您聯繫!!
                 </p>
                 {/* 手機版及縮小會跑版 */}
@@ -129,7 +129,7 @@ function Newslist() {
                     <p className="card-text fs-6">
                       {v.timestart}- {v.timeend}
                     </p>
-                    <p className="card-content fs-5">{v.content}</p>
+                    <p className="card-content-t fs-5">{v.content}</p>
                   </div>
                 </div>
               </div>
