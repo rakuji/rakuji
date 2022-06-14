@@ -46,7 +46,7 @@ function Footer() {
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <a href="/Contact" className="p-0">
                   聯絡我們
                 </a>
               </li>
@@ -126,7 +126,7 @@ function Footer() {
                 </a>
               </li>
               <li className="nav-item col-4">
-                <a href="#" className="p-0">
+                <a href="/Contact" className="p-0">
                   聯絡我們
                 </a>
               </li>
@@ -139,7 +139,7 @@ function Footer() {
             <ul className="nav  row align-items-center">
               <li className="nav-item  ">
                 <div style={{ visibility: "hidden" }}>#</div>
-                <li className="nav-item row align-items-center">
+                <div className="nav-item row align-items-center">
                 <a href="#" className="p-0 col-2">
 
                 </a>
@@ -156,9 +156,9 @@ function Footer() {
                   <i className="fa-brands fa-youtube"></i>
                 </a>
                 <a href="#" className="p-0 col-2">
-                  
                 </a>
-              </li>
+              </div>
+
               </li>
 
             </ul>

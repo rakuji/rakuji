@@ -1,0 +1,35 @@
+ <Row>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                          <Form.Label><span class="star">*</span>輸入註冊信箱</Form.Label>
+                          <Form.Control
+                            type="email"
+                            placeholder=""
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row>
+                        <Form.Group
+                          className="mb-3"
+                          controlId="formBasicPassword"
+                        >
+                          <Form.Label><span class="star">*</span>輸入註冊密碼</Form.Label>
+                          <Form.Control
+                            type="password"
+                            placeholder=""
+                          />
+                        </Form.Group>
+                      </Row>
+                      <Row>
+                        <Form.Group
+                          className="mb-3"
+                          controlId="formBasicPassword"
+                        >
+                          <Form.Label ><span class="star">*</span>再次輸入密碼</Form.Label>
+                          <Form.Control
+                            type="password"
+                            placeholder=""
+                            name="confirmPassword"
+                          />
+                        </Form.Group>
+                      </Row>
+                      <BootstrapDatePicker />

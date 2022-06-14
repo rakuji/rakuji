@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>order-center</title>
+    <!-- bootstrap -->
+    <!-- 4.3.1 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- 5.0.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" type="text/css" href="./css/my-login.css"> -->
+    <!-- <link rel="stylesheet" href="./css/flex.css"> -->
+    <!-- css reset -->
+    <link rel="stylesheet" href="/src/pages/client/css/reset.css">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@500;700&family=Potta+One&family=Yuji+Mai&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="client.css"> -->
+    <link rel="stylesheet" href="./css/client.css">
+</head>
+
+<body class="my-login-page">
+    <header>header</header>
+
+    <main>
+        <!-- aside -->
+        <aside class="m-3">
+            <div class="form-group ">
+                <!-- <div class="pic-dox"></div> -->
+                <div class="card " style="width: 18rem;">
+
+                    <div class="m-3 pl-5">
+
+                        <div class="circle box ">
+
+                            <!-- <figure class="circle"> -->
+                            <img src="/src/image/account/account-1.jpg" class=" p-control" alt="...">
+                            <!-- </figure> -->
+                        </div>
+
+                    </div>
+
+                    <div class="card-body ">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <div class="justify-content-center text-sm-center m-3">
+                            <p class="card-text">Coupons: 2張</p>
+                        </div>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item m-3">
+                            <div class="mb-2">
+                                <span class="text-control ">日期</span>
+                            </div>
+                            <div class=" pt-2">
+                                <img src="/src/image/account/Date.png" alt="">
+                                <br>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item m-3">
+                            <span class="text-control">您的餐點喜好</span>
+                            <div class="ml-4 pt-2">
+                                <img src="/src/image/account/A.png" alt="">
+                                黃金豬排丼飯<br>
+                                <img src="/src/image/account/B.png" alt="">
+                                可樂餅<br>
+                                <img src="/src/image/account/C.png" alt="">
+                                烤鮭魚蘿蔔味增湯<br>
+                            </div>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- <input type="file" id="pic" class="" name="pic" value="" required autofocus> -->
+            </div>
+        </aside>
+        <article>
+            <div class="card fat">
+                <div class="card-body">
+                    <!-- <div class="tag_page">tag_page</div> -->
+                    <!-- tab -->
+                    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">會員個人資料</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="order-tab" data-bs-toggle="tab" data-bs-target="#order"
+                                type="button" role="tab" aria-controls="order" aria-selected="true">訂單交易紀錄</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="coupon-tab" data-bs-toggle="tab" data-bs-target="#coupon"
+                                type="button" role="tab" aria-controls="coupon" aria-selected="false">優惠資料紀錄</button>
+                        </li>
+                    </ul>
+
+                    <!-- 
+                        <nav class="nav nav-pills flex-column flex-sm-row">
+                        <a class="flex-sm-fill text-sm-center nav-link" aria-current="page" href="./ClientCenter.html"
+                            target="_self">會員個人資料</a>
+                        <a class="flex-sm-fill text-sm-center nav-link active" href="./OrderList.html"
+                            target="_self">訂單交易紀錄</a>
+                        <a class="flex-sm-fill text-sm-center nav-link  " href="./CouponList.html"
+                            target="_self">優惠資料紀錄</a>
+                    </nav> 
+                -->
+
+                    <br>
+
+                    <!-- 表單 -->
+                    <form method="POST" class="my-login-validation" id="order" aria-labelledby="order-tab"
+                        novalidate="">
+
+
+                        <figure class="list-1">
+                            <img src="/src/image/account/list-1.png" alt="">
+                        </figure>
+                        <ul class="list-group">
+                            <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">A fourth item</li>
+                            <li class="list-group-item">And a fifth one</li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+
+            </div>
+        </article>
+    </main>
+    <footer>footer</footer>
+</body>
+
+</html>
