@@ -50,7 +50,7 @@ function Newslist() {
             <div className="cardphoto1">
               <img
                 src={require("./image/firstpic.png")}
-                className="card-img-top "
+                className="card-img"
                 alt="..."
                 width="140px"
                 height="430px"
@@ -66,7 +66,7 @@ function Newslist() {
               <a href="/Votelist">
                 <img
                   src={require("./image/33.jpg")}
-                  className="card-img-top"
+                  className="card-img"
                   alt="..."
                 />
               </a>
@@ -91,7 +91,7 @@ function Newslist() {
               <a href="/Cooperationform">
                 <img
                   src={require("./image/00010.png")}
-                  className="card-img-top"
+                  className="card-img"
                   alt="..."
                 />
               </a>
@@ -118,7 +118,7 @@ function Newslist() {
                   {/* 抓照片  */}
                   <img
                     src={`http://localhost/project_rakuji/imgs/${v.imgid}`}
-                    className="card-img-top"
+                    className="card-img"
                     alt=""
                   ></img>
                   <div className="card-body">

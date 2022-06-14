@@ -54,7 +54,7 @@ function ClientCenter(props) {
                 // console.log(data);
                 if (data.ok){
                     alert(`${sesStorage['memail']} 資料修改成功!`)
-                  //  fetchDatas();  
+                    fetchDatas();  
                 } else {
                     alert(`${sesStorage['memail']} 資料修改失敗!`);
                 }
@@ -206,39 +206,39 @@ function ClientCenter(props) {
                                                     const {Mname,Msex,Mvocation,Mbirthday,Mcity,Maddress,Mchild,Mphone,Mpassword} = v;
                                                     return(
                                                         <>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                             <label htmlFor="a">姓名</label>
                                                             <input id="name" type="text" className="form-control minfo" name="name" defaultValue={Mname} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="sex">性別</label>
                                                                 <input id="sex" type="text" className="form-control minfo" name="sex" defaultValue={Msex} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="vocation">職業</label>
                                                                 <input id="vocation" type="text" className="form-control minfo" name="vocation" defaultValue={Mvocation} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="birthday">出生年月日</label>
                                                                 <input id="birthday" type="text" className="form-control minfo" name="birthday" defaultValue={Mbirthday.substring(0,10)} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="city">居住縣市</label>
                                                                 <input id="city" type="text" className="form-control minfo" name="city" defaultValue={Mcity} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="address">居住地址</label>
                                                                 <input id="address" type="text" className="form-control minfo" name="address" defaultValue={Maddress} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="child">子嗣</label>
                                                                 <input id="child" type="text" className="form-control minfo" name="child" defaultValue={Mchild} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="phone">手機號碼</label>
                                                                 <input id="phone" type="text" className="form-control minfo" name="phone" defaultValue={Mphone} />
                                                             </div>
-                                                            <div className="form-group">
+                                                            <div className="form-group mb-2">
                                                                 <label htmlFor="password">修改密碼</label>
                                                                 <input type="password" className="form-control minfo" id="password"  name="password" defaultValue={Mpassword} /><br />
                                                             </div>

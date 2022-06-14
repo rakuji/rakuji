@@ -59,7 +59,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-004文青花魚飯.png")}
-                className="card-img-top"
+                            className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -84,7 +84,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-006裝蒜牛五花飯.png")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -109,7 +109,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-007熔岩唐揚雞飯.png")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -138,7 +138,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-008寶島燒豚飯.png")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -163,7 +163,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-009月見海鮮丼.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -188,7 +188,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-010炊飯.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -213,7 +213,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-011蛋包飯.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -238,7 +238,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-012漢堡排.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -264,7 +264,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-001黃金豬排丼飯.jpeg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -291,7 +291,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-002唐揚雞歐姆蛋咖喱飯.jpeg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -316,7 +316,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-003天婦羅丼.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -342,7 +342,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-005親子丼.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
@@ -367,7 +367,7 @@ const Votelist = () => {
             <div className="card">
               <img
                 src={require("../Votelist/image/MB-013明太子義大利麵.jpg")}
-                className="card-img-top"
+                className="card-img-top5"
                 alt="..."
               />
               <div className="card-body">
