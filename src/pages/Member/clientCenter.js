@@ -54,7 +54,7 @@ function ClientCenter(props) {
                 // console.log(data);
                 if (data.ok){
                     alert(`${sesStorage['memail']} 資料修改成功!`)
-                  //  fetchDatas();  
+                    fetchDatas();  
                 } else {
                     alert(`${sesStorage['memail']} 資料修改失敗!`);
                 }
