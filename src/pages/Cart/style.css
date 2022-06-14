@@ -1,0 +1,314 @@
+.shake {
+  -webkit-animation: shake 800ms ease-in-out;
+          animation: shake 800ms ease-in-out;
+}
+
+@-webkit-keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0);
+  }
+}
+
+.accordion-button {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #ffffff;
+}
+
+.accordion-button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #ffffff;
+}
+
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.StepperContainer-0-2-1 a {
+  text-decoration: none;
+  color: black;
+}
+
+table.cart_table tbody,
+table.cart_table td,
+table.cart_table tfoot,
+table.cart_table th,
+table.cart_table thead,
+table.cart_table tr {
+  border-style: none;
+  text-align: center;
+}
+
+table.cart_table thead {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+table.cart_table tbody {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+table.cart_table tbody .cart_items td {
+  vertical-align: middle;
+}
+
+table.cart_table tbody .img_container {
+  border: 1px solid #fff;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+table.cart_table tbody .img_container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+table.cart_table tbody .cart_trush_btn {
+  cursor: pointer;
+}
+
+.cart_checkarea p {
+  margin-bottom: 0;
+}
+
+.cart_checkarea form input {
+  border-color: #58c2dd;
+}
+
+.cart_checkarea form button {
+  border-color: #58c2dd;
+  color: #58c2dd;
+}
+
+.cart_checkarea form button:hover {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.cart_checkarea .quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cart_checkarea .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart_checkarea .price .cart_total_price {
+  color: #dc3545;
+  font-size: 1.5rem;
+}
+
+.cart_checkarea .go_check {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #58c2dd;
+}
+
+.LuckyWheelFont {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.coupon_game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  right: 3vw;
+  bottom: 15vh;
+  cursor: pointer;
+}
+
+.coupon_game img {
+  width: 150px;
+  height: 150px;
+}
+
+.cart_isempty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.cart_isempty img {
+  width: 300px;
+}
+
+.cart_isempty button {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.cart_isempty button:hover {
+  background-color: #fff;
+  color: #58c2dd;
+}
+
+.checkarea {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.checkarea p {
+  margin-bottom: 0;
+}
+
+.checkarea div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.checkarea div .cart_total_price {
+  color: #dc3545;
+  font-size: 1.5rem;
+}
+
+.checkarea button {
+  text-decoration: none;
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 100%;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.checkarea button.last_page {
+  background-color: transparent;
+  color: #58c2dd;
+}
+
+.checkarea button.next_page {
+  background-color: #58c2dd;
+  color: #fff;
+}
+
+.required_mark {
+  color: #dc710d;
+}
+
+.ErrorMessage {
+  color: #dc3545;
+}
+
+.cart_confirm p,
+.cart_confirm h3 {
+  margin-bottom: 0;
+}
+
+.cart_confirm .order_success i {
+  font-size: 2rem;
+}
+
+.cart_confirm .accordion button {
+  background-color: #58c2dd;
+}
+
+.cart_confirm .cart_confirm_btn {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #58c2dd;
+  border-radius: 100px;
+  width: 200px;
+  height: 50px;
+  margin-bottom: 20px;
+  background-color: #58c2dd;
+}
+/*# sourceMappingURL=style.css.map */
