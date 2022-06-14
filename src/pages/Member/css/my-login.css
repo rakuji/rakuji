@@ -5,9 +5,7 @@
 }
 
 
-
 html,
-
 body {
 	height: 100%;
 } */
@@ -20,9 +18,7 @@ body {
 body.my-login-page {
 	background-color: #fff;
 	/*要喚回白色*/
-
 	background-image: url(../images/BG-signup.png);
-
 	background-size: 960px auto;
 	background-repeat: repeat-y;
 	background-position: center;
@@ -80,7 +76,6 @@ body.my-login-page {
 .my-login-page .btn.btn-block {
 	padding: 12px 10px;
 	width:100%;
-
 }
 
 .my-login-page .footer {
@@ -105,7 +100,6 @@ body.my-login-page {
 	text-align: center;
 	color: #a9a9a9;
 	font-size: 1em;
-
 }
 
 .star {
@@ -136,7 +130,6 @@ span>.hy-link {
 .avatar {
 	width: 160px;
 	height: 160px;
-
 	background-image: url(../images/account/account-1.jpg);
 	background-size: 300px;
 	background-position-x: -20px;
@@ -144,8 +137,6 @@ span>.hy-link {
 	border-radius: 50%;
 	color: #fff
 }
-
-
 
 @media screen and (max-width: 425px) {
 	.my-login-page .card-wrapper {
@@ -162,6 +153,4 @@ span>.hy-link {
 	.my-login-page .card.fat .card-body {
 		padding: 15px;
 	}
-
 }
-

@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import "./styles/style.css";
 import ScrollToTop from "./components/ScrollToTop";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 // components
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-// import BootstrapDatePicker from "./components/BootstrapDatePicker";
 
 // pages
 import Home from "./pages/Home/Home";
@@ -20,6 +16,7 @@ import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
 import Recipes from "./pages/Recipes/Recipes";
 import Store from "./pages/Store/Store";
+import Login from "./pages/Member/Login";
 import ClientCenter from "./pages/Member/clientCenter";
 import Booking_information from "./pages/Booking/Booking_information";
 import Booking_finish from "./pages/Booking/Booking_finish";
@@ -27,12 +24,7 @@ import Cart from "./pages/Cart/Cart";
 import Cart_info from "./pages/Cart/Cart_info";
 import Cart_order from "./pages/Cart/Cart_order";
 import Cart_confirm from "./pages/Cart/Cart_confirm";
-import Contact from "./pages/Contact/Contact";
-import Votelist from "./pages/Newslist/Votelist";
-import Cooperationform from "./pages/Newslist/Cooperationform";
-import Login from "./pages/Member/Login";
-import Signup from "./pages/Member/Signup";
-import Register from "./pages/Member/Register";
+
 //購物車
 // 匯入 Cart 要用的 ContextProvider
 import { CartProvider } from './pages/Cart/utils/useCart'
@@ -93,12 +85,6 @@ function App() {
               <Route path="/store" exact>
                 <Store />
               </Route>
-              <Route path="/contact" exact>
-          <Contact />
-        </Route>
-        <Route path="/Signup" exact>
-          <Signup />
-        </Route>
               <Route path="/member/login" exact>
                 <Login setAuth={setAuth} auth={auth} />
               </Route>
@@ -107,24 +93,10 @@ function App() {
               </Route>
             </Switch>
           </ScrollToTop>
-          <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
           <Footer />
         </div>
       </CartProvider>
     </SecondCartProvider>
-
-
-
 
 
   );
