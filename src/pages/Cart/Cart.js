@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link,useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./style.css";
 import CartItemArea from "./components/CartItemArea";
 import $ from "jquery";
@@ -13,7 +13,7 @@ import ReactModal from "react-modal";
 import { useCart } from "./utils/useCart";
 
 const Cart = (props) => {
-  const history = useHistory()
+  const history = useHistory();
 
   const [coupon, setCoupon] = useState(0);
   const [couponPrice, setCouponPrice] = useState(0);
@@ -204,6 +204,7 @@ const Cart = (props) => {
                 }, 2500);
               }}
               onEnd={(prize) => {
+                console.log(prize)
                 switch (prize.fonts[0].text) {
                   case "折抵100元":
                     Swal.fire({
@@ -223,7 +224,7 @@ const Cart = (props) => {
                       text: "優惠碼：HAPPY888",
                     });
                     break;
-                  case "下來再來":
+                  case "下次再來":
                     Swal.fire({
                       title: prize.fonts[0].text,
                       text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
@@ -241,6 +242,8 @@ const Cart = (props) => {
                       text: "別難過，給你安慰獎，優惠碼：SEEYOUAGAIN",
                     });
                     break;
+                  default:
+                    console.log(prize.fonts[0].text)
                 }
               }}
             />
@@ -262,10 +265,20 @@ const Cart = (props) => {
     >
       <h3>購物車</h3>
 
-      <div className={`mb-5 cart_isempty ${cart.isEmpty == true ? "" : "d-none"}`}>
+      <div
+        className={`mb-5 cart_isempty ${cart.isEmpty == true ? "" : "d-none"}`}
+      >
         <img src={require("./images/cart.jpg")} alt="" />
         <h3 className="mb-4">購物車還是空的</h3>
-        <button className="btn btn-outline-info" type="button" onClick={()=>{history.push("/products")}}>去逛逛</button>
+        <button
+          className="btn btn-outline-info"
+          type="button"
+          onClick={() => {
+            history.push("/products");
+          }}
+        >
+          去逛逛
+        </button>
       </div>
 
       <CartItemArea />
