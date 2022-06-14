@@ -12,13 +12,13 @@ const Store = () => {
   
   const fetchDatas = async () => {
       // 找出所有門市列表: fetch回傳JASON陣列(參見rakuji_backend專案:routes/shopLists.js)
-      const responseShops = await fetch(`${process.env.REACT_APP_API_URL}/shopLists`);
+      const responseShops = await fetch("/shopLists");
       // 將JASON陣列轉成物件陣列(JSAON-->object)
       const shops = await responseShops.json();
       // console.log(shops);
       setShopsArray(shops);
       // 找出各區域的第一家門市(shop_id最小者)
-      const resFirstShop = await fetch(`${process.env.REACT_APP_API_URL}/shopLists/firstShop`);
+      const resFirstShop = await fetch("/shopLists/firstShop");
       const firstShop = await resFirstShop.json();
       //  console.log(firstShop);
       setFirstArray(firstShop);
@@ -40,7 +40,7 @@ const Store = () => {
           <MyBreadcrumb nav="門市資訊" navlink="/store"/>
           {/* SHOPS圖片  */}
           <div className="d-flex justify-content-center pageTitleImg">
-            <img src={require("../About/images/pageTitleshops.png")} className="img-fluid my" alt="門市資訊" />
+            <img src={require("../About/images/pageTitleshops.png")} className="img-fluid" alt="門市資訊" />
           </div>
           {/* 門市區域按鈕 */}
           <div className="d-flex justify-content-around areaBtns">
