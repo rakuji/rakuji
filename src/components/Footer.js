@@ -47,7 +47,7 @@ function Footer() {
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="/#" className="p-0">
+                <a href="/Contact" className="p-0">
                   聯絡我們
                 </a>
               </li>
