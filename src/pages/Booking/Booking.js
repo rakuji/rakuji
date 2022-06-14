@@ -154,12 +154,13 @@ const Booking = ({ auth }) => {
               setBookingTimeInput("");
               if (
                 nowtime > "14:00" &&
-                nowtime < "16:30" &&
-                nowDate == startDateformat
+                nowtime < "20:00" &&
+                nowDate === startDateformat
               ) {
                 setMealTimeInput("晚上");
-              } else if (nowtime > "20:00" && nowDate == startDateformat) {
+              } else if (nowtime >= "20:00" && nowDate === startDateformat) {
                 setStartDate(new Date(date.setDate(date.getDate() + 1)));
+                setMealTimeInput("中午");
               }
             }}
           >
@@ -251,7 +252,7 @@ const Booking = ({ auth }) => {
           {bookingTime
             .filter((v) => v.booking_time === mealTimeInput)
             .map((v, i) => {
-              if (storeInput != "") {
+              if (storeInput !== "") {
                 return (
                   <BookingTimeButton
                     key={i}
@@ -306,12 +307,12 @@ const Booking = ({ auth }) => {
           className="next_page my-4"
           onClick={() => {
             if (auth) {
-              if (storeInput == "") {
+              if (storeInput === "") {
                 Swal.fire({
                   icon: "warning",
                   title: "請選擇分店",
                 });
-              } else if (bookingTimeInput == "") {
+              } else if (bookingTimeInput === "") {
                 Swal.fire({
                   icon: "warning",
                   title: "請選擇訂位時段",
