@@ -3,6 +3,7 @@ import "./style.css";
 
 function Footer() {
   return (
+    <>
     <footer>
       <div className="container py-5 aaaa">
         <div className="row">
@@ -36,22 +37,22 @@ function Footer() {
                 <div style={{ visibility: "hidden" }}>#</div>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   加入會員
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   人才招募
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="/Contact" className="p-0">
+                <a href="/#" className="p-0">
                   聯絡我們
                 </a>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   隱私權聲明
                 </a>
               </li>
@@ -73,16 +74,16 @@ function Footer() {
                 <span>追蹤我們</span>
               </li>
               <li className="nav-item mb-2">
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   <i className="fa-brands fa-facebook"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   <i className="fa-brands fa-instagram"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   <i className="fa-brands fa-line"></i>
                 </a>
-                <a href="#" className="p-0">
+                <a href="/#" className="p-0">
                   <i className="fa-brands fa-youtube"></i>
                 </a>
               </li>
@@ -170,6 +171,7 @@ function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }
 
