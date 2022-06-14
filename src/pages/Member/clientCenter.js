@@ -220,7 +220,7 @@ function ClientCenter(props) {
                                                             </div>
                                                             <div className="form-group mb-2">
                                                                 <label htmlFor="birthday">出生年月日</label>
-                                                                <input id="birthday" type="text" className="form-control minfo" name="birthday" defaultValue={Mbirthday.substring(0,10)} />
+                                                                <input id="birthday" type="text" className="form-control minfo" name="birthday" defaultValue={Mbirthday} />
                                                             </div>
                                                             <div className="form-group mb-2">
                                                                 <label htmlFor="city">居住縣市</label>
