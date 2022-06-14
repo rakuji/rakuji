@@ -101,18 +101,19 @@ function Contact() {
         <Row>
           <Col>
             <Form.Select
-              type="select"
-              id="select"
-              name="select"
+              type="select1"
+              id="select1"
+              name="select1"
               value={select1}
               placeholder=""
               onChange={(event) => {
                 setSelect1(event.target.value);
               }}
             >
-              <option value="一般消費建議">一般消費建議</option>
-              <option value="餐點回饋">餐點回饋</option>
-              <option value="客訴">客訴</option>
+              <option value="用餐回饋選項">用餐回饋選項</option>
+              <option value="1.一般消費建議">1.一般消費建議</option>
+              <option value="2.餐點回饋">2.餐點回饋</option>
+              <option value="3.客訴">3.客訴</option>
             </Form.Select>
           </Col>
         </Row>
