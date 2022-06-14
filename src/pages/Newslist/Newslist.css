@@ -8,15 +8,24 @@
 
 }
 /* 最新消息 的圖片 */
-.card1{
+.cardphoto1{
     margin-top: 35px;
     border-style: none;
+   
   
 }    
+.cardphoto2{
+    margin-top: 15px;
+    border-style: solid;
+    border-width:0.5mm;
+    border-color:rgb(211, 211, 211);
+    border-radius:10px;
+
+}
 .card-content{
     margin-top: 0;
     margin-bottom: 0px;
-    
+        
 
 }
 .col{

@@ -45,7 +45,7 @@ function Newslist() {
         <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
           {/* 1  最新消息照片*/}
           <div className="col">
-            <div className="card1">
+            <div className="cardphoto1">
               <img
                 src={require("./image/firstpic.png")}
                 className="card-img-top "
@@ -60,7 +60,7 @@ function Newslist() {
           </div>
           {/* 2 餐點投票 */}
           <div className="col">
-            <div className="card">
+            <div className="cardphoto2">
               <a href="/Votelist">
                 <img
                   src={require("./image/33.jpg")}
@@ -83,9 +83,9 @@ function Newslist() {
             </div>
           </div>
 
-          {/* 3 異業合作 */}
+          {/* 3 異業合作 待修改 */}
           <div className="col">
-            <div className="card">
+            <div className="cardphoto2">
               <a href="/Cooperationform">
                 <img
                   src={require("./image/00010.png")}
@@ -109,10 +109,7 @@ function Newslist() {
 
           {/* 開始接資料庫資料 */}
           {News.map((v, i) => {
-            {
-              /* console.log(v)
-            console.log(v.imgid) */
-            }
+     
             return (
               <div className="col" key={i}>
                 <div className="card ">
