@@ -14,6 +14,11 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Newslist from "./pages/Newslist/Newslist";
+import Newslistback from "./pages/Newslist/Newslistback/Newslistback";
+import NewslistbackAdd from "./pages/Newslist/Newslistback/NewslistbackAdd";
+import NewslistbackEdit from "./pages/Newslist/Newslistback/NewslistbackEdit";
+import Votelist from "./pages/Newslist/Votelist/Votelist";
+import Cooperationform from "./pages/Newslist/Cooperationform/Cooperationform";
 import Products from "./pages/Products/Products";
 import Product_detail from "./pages/Products/Product_detail";
 import Booking from "./pages/Booking/Booking";
@@ -54,9 +59,25 @@ function App() {
               <Route path="/about" exact>
                 <About />
               </Route>
-              <Route path="/newslist" exact>
-                <Newslist />
-              </Route>
+             
+              <Route path="/Newslist" exact>
+            <Newslist />
+          </Route>
+          <Route path="/Newslistback" exact>
+            <Newslistback />
+          </Route>
+          <Route path="/NewslistbackAdd" exact>
+            <NewslistbackAdd />
+          </Route>
+          <Route path="/NewslistbackEdit" exact>
+            <NewslistbackEdit />
+          </Route>
+          <Route path="/Cooperationform" exact>
+            <Cooperationform />
+          </Route>
+          <Route path="/Votelist" exact>
+            <Votelist />
+          </Route>
               <Route path="/products" exact>
                 <Products auth={auth}/>
               </Route>

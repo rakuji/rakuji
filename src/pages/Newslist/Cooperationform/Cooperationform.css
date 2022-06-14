@@ -1,0 +1,52 @@
+.newsbackground {
+  background-size: 1840px ;
+  background-position: 40% 2%;
+  background-repeat: no-repeat;
+  background-image: url('../image/BG.png');
+}
+
+@media screen and (max-width:576px) {
+
+
+  .newsbackground{
+      background-image: none;
+  }
+}
+
+.cooperationform_block{
+    background: #FFFFFF;
+box-shadow: 0px 4px 72px -15px rgba(0, 0, 0, 0.25);
+border-radius: 20px;
+
+}
+.cooperationform_client {
+   color: #58C2DD;
+   margin-bottom: 0px;
+
+}
+/* 注意這行 */
+/* input.group{ 
+    border:1px solid red
+  } */
+
+.container .sixyellow {
+  margin-bottom:20px ;
+}
+
+/* .form.control.validated{
+  background-image: none;
+} */
+.bu{
+  
+  background-color: #58c2dd;
+color: #fff;
+}
+/* .button:not(.collapsed) {
+  color: #ffffff;
+} */
+/* 
+.button:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #ffffff;
+} */
