@@ -99,7 +99,7 @@ const About = () => {
         {/* ABOUT圖片  */}
         <div className="row my justify-content-center pageTitleImg my">
           <div className="col-4">
-            <img src={require("./images/pageTitleshops.png")} className="img-fluid" alt="關於我們" />
+            <img src={require("./images/pageTitleAbout.png")} className="img-fluid" alt="關於我們" />
           </div>
         </div>
         {/* 樂物語圖片 */}
