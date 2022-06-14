@@ -1,10 +1,13 @@
-.card {
+.card66{
     max-height:80vh;
     margin-top: 14px;
     margin-bottom: 0;
     margin-left: 0;
     margin-right: 0;
-
+    border-style: solid;
+    border-width:0.5mm;
+    border-color:rgb(211, 211, 211);
+    border-radius:10px;
 
 }
 /* 最新消息 的圖片 */
@@ -25,10 +28,10 @@
 .card-content{
     margin-top: 0;
     margin-bottom: 0px;
-        
+
 
 }
-.col{
+.col.totle{
     padding-left:14px ;
     padding-right:14px ;
     padding-top:5px ;
@@ -40,9 +43,9 @@
 }
 
 
-body {
+.newsbackground {
     background-size: 1840px ;
-    background-position: 40% 35%;
+    background-position: 40% 50%;
     background-repeat: no-repeat;
     background-image: url('./image/BG.png');
 }
@@ -50,7 +53,7 @@ body {
 @media screen and (max-width:576px) {
 
 
-    body {
+    .newsbackground{
         background-image: none;
     }
 }

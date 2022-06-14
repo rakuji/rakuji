@@ -1,4 +1,17 @@
+.newsbackground {
+  background-size: 1840px ;
+  background-position: 40% 5%;
+  background-repeat: no-repeat;
+  background-image: url('../image/BG.png');
+}
 
+@media screen and (max-width:576px) {
+
+
+  .newsbackground{
+      background-image: none;
+  }
+}
 .col_v{
     padding-left:14px ;
     padding-right:14px ;

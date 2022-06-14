@@ -24,7 +24,7 @@ function Cooperationform() {
     setValidated(true);
   };
   return (
-    <>
+    <main >
       <img
         src={require("../image/002.png")}
         width="100%"
@@ -34,9 +34,9 @@ function Cooperationform() {
       />
 
       {/* 麵包屑製作問題 */}
-
+<div className="newsbackground">
       <div className="tt">
-        <Breadcrumb />
+        <Breadcrumb  />
       </div>      
         <div className="container">
         <div className="col"></div>
@@ -179,7 +179,8 @@ function Cooperationform() {
 
         <br></br>
       </div>
-    </>
+      </div>
+    </main>
   );
 }
 

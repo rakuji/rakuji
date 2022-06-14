@@ -15,10 +15,12 @@ const Votelist = () => {
         className="d-block  mx-auto"
         alt="..."
       />
+            <div className="newsbackground">
+
       <div className="tt">
         <Breadcrumb />
       </div>
-
+      
       <div className="container">
         <div className="col">
           <div className="card-body">
@@ -392,6 +394,7 @@ const Votelist = () => {
 
 
       <MyBackTop />
+      </div>
     </main>
   );
 };

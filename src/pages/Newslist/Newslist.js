@@ -33,10 +33,12 @@ function Newslist() {
 
   // console.log(date.toLocaleDateString(v.timestart)- (v.timeend))
   return (
-    <main>
+    <main >
       <Carouselg />
 
       {/*  放breadcrumb margin-top 16px 無法加入  */}
+      <div className="newsbackground">
+
       <div className="tt">
         <Breadcrumb />
       </div>
@@ -44,7 +46,7 @@ function Newslist() {
       <div className="container  col-10  d-flex justify-content-center">
         <div id="list" className="row row-cols-1 row-cols-md-3 g-6 col-12">
           {/* 1  最新消息照片*/}
-          <div className="col">
+          <div className="col totle">
             <div className="cardphoto1">
               <img
                 src={require("./image/firstpic.png")}
@@ -59,7 +61,7 @@ function Newslist() {
             {/*測試是否抓的到照片 <img src="http://localhost/project_rakuji/imgs/4b07d654503a3d3b98e2721adaaada1516c3fed8.png" /> */}
           </div>
           {/* 2 餐點投票 */}
-          <div className="col">
+          <div className="col totle">
             <div className="cardphoto2">
               <a href="/Votelist">
                 <img
@@ -84,7 +86,7 @@ function Newslist() {
           </div>
 
           {/* 3 異業合作 待修改 */}
-          <div className="col">
+          <div className="col totle">
             <div className="cardphoto2">
               <a href="/Cooperationform">
                 <img
@@ -111,8 +113,8 @@ function Newslist() {
           {News.map((v, i) => {
      
             return (
-              <div className="col" key={i}>
-                <div className="card ">
+              <div className="col totle" key={i}>
+                <div className="card66">
                   {/* 抓照片  */}
                   <img
                     src={`http://localhost/project_rakuji/imgs/${v.imgid}`}
@@ -140,6 +142,8 @@ function Newslist() {
 
       <br></br>
       <MyBackTop />
+      </div>
+          
     </main>
   );
 }
