@@ -37,9 +37,6 @@ function recipesback() {
     const data = await response.json();
     //  刪除畫面上的
     setNews(News.filter((v, i) => v.Recipes_ID !== Recipes_ID))
-
-
-
   }
 
   return (
