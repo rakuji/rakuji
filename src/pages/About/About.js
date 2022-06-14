@@ -15,38 +15,38 @@ const About = () => {
     //IIFE:立即呼叫函式表達式(載入頁面時立即執行)
     (async function loadData() {
       // fetch回傳JASON陣列(參見參見rakuji_backend專案:routes/shopMap.js)
-      const responseArea = await fetch(`${process.env.REACT_APP_API_URL}/shopmap/area`);
+      const responseArea = await fetch("/shopmap/area");
       // 將JASON陣列轉成物件陣列(JSAON-->object)
       const areas = await responseArea.json();
       // 更新selArea
       renderArea(areas);
 
       const area_id = selArea.options[selArea.selectedIndex].value;
-      const responseShop = await fetch(`${process.env.REACT_APP_API_URL}/shopmap/shop?area_id=${area_id}`);
+      const responseShop = await fetch(`/shopmap/shop?area_id=${area_id}`);
       const shops = await responseShop.json();
       renderShop(shops);
 
       const shop_id = selShop.options[selShop.selectedIndex].value;
-      const responseAddress = await fetch(`${process.env.REACT_APP_API_URL}/shopmap/address?shop_id=${shop_id}`);
+      const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
       const address = await responseAddress.json();
       renderAddress(address);
     })();
 
     selArea.addEventListener("change", async () => {
       const area_id = selArea.options[selArea.selectedIndex].value;
-      const responseShop = await fetch(`${process.env.REACT_APP_API_URL}/shopmap/shop?area_id=${area_id}`);
+      const responseShop = await fetch(`/shopmap/shop?area_id=${area_id}`);
       const shops = await responseShop.json();
       renderShop(shops);
 
       const shop_id = selShop.options[selShop.selectedIndex].value;
-      const responseAddress = await fetch(`${process.env.REACT_APP_API_URL}/shopmap/address?shop_id=${shop_id}`);
+      const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
       const address = await responseAddress.json();
       renderAddress(address);
     });
 
     selShop.addEventListener("change", async () => {
       const shop_id = selShop.options[selShop.selectedIndex].value;
-      const responseAddress = await fetch(`${process.env.REACT_APP_API_URL}/shopmap/address?shop_id=${shop_id}`);
+      const responseAddress = await fetch(`/shopmap/address?shop_id=${shop_id}`);
       const address = await responseAddress.json();
       renderAddress(address);
     });
