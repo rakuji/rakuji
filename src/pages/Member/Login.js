@@ -49,9 +49,10 @@ function Login(props) {
     },[auth])
 
     if(sesStorage['memail'] && auth){
+    // if(sesStorage['memail'] ){
         // 呈現謝謝訊息
-        alert(`謝謝您的光臨:${sesStorage['memail']}`)
-        // 清除sessionStorage & set auth = false
+        alert(`謝謝您的光臨: ${sesStorage['memail']}`)
+        // 清除sessionStorage([memail] & [mid]); set auth = false
         sesStorage.removeItem("memail");
         sesStorage.removeItem("mid");
         setAuth(!auth);
@@ -70,7 +71,7 @@ function Login(props) {
                                 <div class="card-body">
                                     
                                     <form class="my-login-validation" encType="multipart/form-data" name="loginForm">
-                                        <div class="form-group">
+                                        <div class="form-group mb-3">
                                             <label for="email">會員帳號</label>
                                             <input id="email" type="email" class="form-control" name="email"  required autofocus />
                                             <div class="invalid-feedback" id="emailStatus">
@@ -78,7 +79,7 @@ function Login(props) {
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group mb-3">
                                             <label for="password">會員密碼
                                                 <a href="forgot.html" class="float-right">
                                                     忘記密碼?
@@ -100,7 +101,7 @@ function Login(props) {
                                         <div class="form-group m-0">
                                             <button type="submit" class="btn btn-block btn-custom" id="submitBtn">
                                                 登入
-                                            </button><br />
+                                            </button><br /><br />
                                             <p class="align">其他方式登入</p>
 
                                             <button type="submit" class="btn btn-danger btn-block">

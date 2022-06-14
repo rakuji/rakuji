@@ -35,7 +35,7 @@ a:hover {
   background-color: white;
 }
 
-.carousel {
+#mycar {
   height: 300px;
   overflow: hidden;
 }
