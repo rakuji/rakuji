@@ -97,7 +97,7 @@ function Nav(props) {
           <div>
             <div
               className="position-relative d-inline me-2"
-              style={{"cursor":"pointer"}}
+              style={{ cursor: "pointer" }}
               onClick={() => {
                 if (auth) {
                   history.push("/cart");
