@@ -257,7 +257,7 @@ const Cart = (props) => {
 
   return (
     <div
-      className="container"
+      className="container mt-5"
       style={{ minHeight: " calc(100vh - 86px - 308px)" }}
     >
       <h3>購物車</h3>

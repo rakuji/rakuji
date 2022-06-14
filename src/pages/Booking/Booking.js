@@ -139,7 +139,7 @@ const Booking = ({ auth }) => {
 
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>線上訂位</div>
-    <div className="container booking">
+    <div className="container booking mt-5">
       <div className="row">
         <h3>線上訂位</h3>
       </div>

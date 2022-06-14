@@ -312,7 +312,7 @@ const Booking_information = () => {
   //-------------------------------------------------------------------
 
   return (
-    <div className="container mb-5">
+    <div className="container mb-5 mt-5">
       <div className="row">
         <h3>確認訂位與填寫聯絡資訊</h3>
       </div>
