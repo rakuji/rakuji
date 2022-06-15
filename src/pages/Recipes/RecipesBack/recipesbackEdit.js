@@ -8,7 +8,7 @@ import RecipesbackEditIngredients from "./RecipesbackEditIngredients";
 
 import "./Newslistback.css";
 
-const recipesbackEdit = () => {
+const RecipesbackEdit = () => {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
   const url = window.location.href;
   //之後去分割字串把分割後的字串放進陣列中
@@ -241,4 +241,4 @@ const recipesbackEdit = () => {
     </div>
   );
 };
-export default recipesbackEdit;
+export default RecipesbackEdit;

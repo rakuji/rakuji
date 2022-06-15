@@ -139,7 +139,7 @@ const Booking = ({ auth }) => {
 
   return (
     // <div style={{ minHeight: " calc(100vh - 86px - 308px)" }}>線上訂位</div>
-    <div className="container booking">
+    <div className="container booking mt-5">
       <div className="row">
         <h3>線上訂位</h3>
       </div>
@@ -154,12 +154,13 @@ const Booking = ({ auth }) => {
               setBookingTimeInput("");
               if (
                 nowtime > "14:00" &&
-                nowtime < "16:30" &&
-                nowDate == startDateformat
+                nowtime < "20:00" &&
+                nowDate === startDateformat
               ) {
                 setMealTimeInput("晚上");
-              } else if (nowtime > "20:00" && nowDate == startDateformat) {
+              } else if (nowtime >= "20:00" && nowDate === startDateformat) {
                 setStartDate(new Date(date.setDate(date.getDate() + 1)));
+                setMealTimeInput("中午");
               }
             }}
           >
@@ -251,7 +252,7 @@ const Booking = ({ auth }) => {
           {bookingTime
             .filter((v) => v.booking_time === mealTimeInput)
             .map((v, i) => {
-              if (storeInput != "") {
+              if (storeInput !== "") {
                 return (
                   <BookingTimeButton
                     key={i}
@@ -276,15 +277,15 @@ const Booking = ({ auth }) => {
         <p>【線上訂位說明】</p>
         <ol>
           <li>
-            網路預約訂位以八人以內為限，訂位隔日起 ~
-            一個月內；八人以上訂位或包場需求，僅接受電話預約。
+            網路預約訂位以八人以內為限，八人以上訂位或包場需求，僅接受電話預約。
           </li>
           <li>
-            用餐當日訂位保留時間為10分鐘，請準時入席，逾時將取消訂位。座位將依餐廳當日訂位排定且無法指定座位，亦不接受現場臨時增加人數；若要變更人數，請於用餐前一日21:30前與餐廳聯繫，若需增加人數，視現場訂位狀況決定，敬請見諒。
+            用餐當日訂位保留時間為10分鐘，請準時入席，逾時將取消訂位。座位將依餐廳當日訂位排定且無法指定座位，亦不接受現場臨時增加人數；若要變更人數，請於用餐前一日20:30前與餐廳聯繫，若需增加人數，視現場訂位狀況決定，敬請見諒。
             <br />
             <br />
-            ★午餐時段11:00-14:30(最後點餐時間14:00)、晚餐時段17:30~21:30(最後點餐時間
-            20:30)，各餐期結束後會進行環境的清潔，還請配合離場。
+            ★午餐時段10:30-14:30(最後點餐時間14:00)、晚餐時段16:30~20:30(最後點餐時間
+            20:00)，各餐期結束後會進行環境的清潔，還請配合離場。
+            <br />
             <br />
             ★若需取消或更改訂位，請提前告知。
             <br />
@@ -292,7 +293,7 @@ const Booking = ({ auth }) => {
             ★如逾時取消訂位欲候補座位，再視現場訂位狀況而定。
             <br />
             <br />
-            ★網路訂位是否成功，可至「訂位紀錄」進行查詢。
+            ★目前僅開放高雄左營店、高雄前金店、高雄駁二店、高雄鳳山店、屏東站前店線上訂位，如需預訂其他分店，請來電洽詢。
             <br />
             <br />
             ★網路訂位成功者，如未到場且未於線上或電話通知取消訂位，視同「訂位未到且未提前通知取消」，「訂位未到且未提前通知取消」次數達到三次，系統將取消您的網路訂位資格，造成不便敬請見諒。
@@ -306,12 +307,12 @@ const Booking = ({ auth }) => {
           className="next_page my-4"
           onClick={() => {
             if (auth) {
-              if (storeInput == "") {
+              if (storeInput === "") {
                 Swal.fire({
                   icon: "warning",
                   title: "請選擇分店",
                 });
-              } else if (bookingTimeInput == "") {
+              } else if (bookingTimeInput === "") {
                 Swal.fire({
                   icon: "warning",
                   title: "請選擇訂位時段",

@@ -8,7 +8,7 @@ import "./Newslistback.css";
 
 // pages
 
-function recipesback() {
+function Recipesback() {
   const [News, setNews] = useState([]);
 
   //get假資料
@@ -120,4 +120,4 @@ function recipesback() {
   );
 }
 
-export default recipesback;
+export default Recipesback;

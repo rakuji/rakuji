@@ -5,7 +5,7 @@ import { Form } from "react-bootstrap";
 
 import "./Newslistback.css";
 
-function recipesbackAdd() {
+function RecipesbackAdd() {
   const [Recipes_Name, setRecipes_Name] = useState("");
   const [Recipes_Picture, setRecipes_Picture] = useState("");
   const [RecipesBox_Kcal, setRecipesBox_Kcal] = useState("");
@@ -245,4 +245,4 @@ function recipesbackAdd() {
     </div>
   );
 }
-export default recipesbackAdd;
+export default RecipesbackAdd;

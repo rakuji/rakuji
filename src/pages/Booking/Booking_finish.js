@@ -97,7 +97,7 @@ const Booking_finish = () => {
                     用餐人數：{people_adult}位大人，{people_kid}位小孩
                   </p>
                   <p>用餐日期：{booking_date}</p>
-                  <p>用餐日期：{booking_time}</p>
+                  <p>訂位時間：{booking_time}</p>
                   <p>訂位人姓名：{booking_name}</p>
                   <p>訂位人電話：{booking_phone}</p>
                   <p>訂位人Email：{email}</p>
