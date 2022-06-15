@@ -296,6 +296,7 @@ function Recipes(props) {
 
           <div className="col-10 RecipesBoxCardAll">
             {DP.map((v, i) => {
+              console.log(v.Recipes_ID)
               return (
                 <div key={i} className="RecipesSearchBoxCardAll ">
                   <div className="RecipesSearchBoxCard ">
