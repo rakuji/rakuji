@@ -8,7 +8,10 @@ import Box_Cookingsteps from "./Box_Cookingsteps";
 import Box_CookingstepsPhone from "./Box_CookingstepsPhone";
 import Box_Nutrient from "./Box_Nutrient";
 import Box_NutrientPhone from "./Box_NutrientPhone";
+import Box_Products from "./Box_Products";
+import Box_ProductsPhone from "./Box_ProductsPhone";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
+
 
 function Box() {
   //先取得網址字串，假設此頁網址為「http://localhost:3000/recipes/id=1」
@@ -478,90 +481,7 @@ function Box() {
                   <div>推薦店內菜單</div>
 
                   <div className=" col row">
-                    <div className="RecipesSearchBoxCardAll col">
-                      <div className="RecipesSearchBoxCard ">
-                        <img
-                          src={require("../image/00001.jpg")}
-                          className="card-img-top"
-                          alt="日式唐揚炸雞"
-                        />
-                        <div className="card-body">
-                          <p className="card-text h6">
-                            <img className="Boximg" />
-                            日式唐揚炸雞
-                          </p>
-                          <p className="card-text h6">瀏覽次數:65,535次</p>
-                          <Link to="/recipes/box">
-                            <button className=" RecipesLookButton" id="">
-                              查看
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="RecipesSearchBoxCardAll col">
-                      <div className="RecipesSearchBoxCard ">
-                        <img
-                          src={require("../image/00001.jpg")}
-                          className="card-img-top"
-                          alt="日式唐揚炸雞"
-                        />
-                        <div className="card-body">
-                          <p className="card-text h6">
-                            <img className="Boximg" />
-                            日式唐揚炸雞
-                          </p>
-                          <p className="card-text h6">瀏覽次數:65,535次</p>
-                          <Link to="/recipes/box">
-                            <button className=" RecipesLookButton" id="">
-                              查看
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="RecipesSearchBoxCardAll col">
-                      <div className="RecipesSearchBoxCard ">
-                        <img
-                          src={require("../image/00001.jpg")}
-                          className="card-img-top"
-                          alt="日式唐揚炸雞"
-                        />
-                        <div className="card-body">
-                          <p className="card-text h6">
-                            <img className="Boximg" />
-                            日式唐揚炸雞
-                          </p>
-                          <p className="card-text h6">瀏覽次數:65,535次</p>
-                          <Link to="/recipes/box">
-                            <button className=" RecipesLookButton" id="">
-                              查看
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="RecipesSearchBoxCardAll col">
-                      <div className="RecipesSearchBoxCard ">
-                        <img
-                          src={require("../image/00001.jpg")}
-                          className="card-img-top"
-                          alt="日式唐揚炸雞"
-                        />
-                        <div className="card-body">
-                          <p className="card-text h6">
-                            <img className="Boximg" />
-                            日式唐揚炸雞
-                          </p>
-                          <p className="card-text h6">瀏覽次數:65,535次</p>
-                          <Link to="/recipes/box">
-                            <button className=" RecipesLookButton" id="">
-                              查看
-                            </button>
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
+                    <Box_Products />
                   </div>
                 </div>
 
@@ -569,38 +489,7 @@ function Box() {
                   <div>推薦店內菜單</div>
 
                   <div className="col row ">
-                    <div className="col-6 text-center">
-                      <img
-                        src={require("../image/00001.jpg")}
-                        className="card-img-top"
-                        alt="日式唐揚炸雞"
-                      />
-                      <p className="card-text h6 ">日式唐揚炸雞</p>
-                      <p className="card-text h6 ">NT150</p>
-                      <div className="">
-                        <Link to="/recipes/box">
-                          <button className=" RecipesLookButton2" id="">
-                            購買
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="col-6 text-center">
-                      <img
-                        src={require("../image/00001.jpg")}
-                        className="card-img-top"
-                        alt="日式唐揚炸雞"
-                      />
-                      <p className="card-text h6 ">日式唐揚炸雞</p>
-                      <p className="card-text h6 ">NT150</p>
-                      <div className="">
-                        <Link to="/recipes/box">
-                          <button className=" RecipesLookButton2" id="">
-                            購買
-                          </button>
-                        </Link>
-                      </div>
-                    </div>
+                    <Box_ProductsPhone />
                   </div>
                 </div>
               </div>
