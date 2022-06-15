@@ -117,7 +117,7 @@ function Newslist() {
                 <div className="card66">
                   {/* 抓照片  */}
                   <img
-                    src={`http://localhost/project_rakuji/imgs/${v.imgid}`}
+                    src={`${process.env.REACT_APP_API_URL}/project_rakuji/imgs/${v.imgid}`}
                     className="card-img"
                     alt=""
                   ></img>
