@@ -9,9 +9,6 @@ import MyBackTop from "../../About/myComponents/MyBackTop";
 import Breadcrumb from "../Breadcrumb/BreadcrumbCopy";
 import Carouselg from "../../../components/Carousel/Carousel_g";
 
-
-
-
 function Recipes(props) {
   // 從資料庫取得資料
   const [datas, setDatas] = useState([]);
@@ -32,7 +29,7 @@ function Recipes(props) {
   const [searchInput, setSearchInput] = useState("");
   //----------------------------------------------------------
   const [recipesIndex, setRecipesIndex] = useState(0);
-  const recipesArray = ["全部", "主食", "前菜", "湯品", "飲品", "甜點"];
+  const recipesArray = ["全部", "主食", "主菜", "前菜", "湯品", "飲品", "甜點"];
   //----------------------------------------------------------
   const [KcalMin, setKcalMin] = useState(0);
   let [KcalMax, setKcalMax] = useState(0);
@@ -66,16 +63,16 @@ function Recipes(props) {
     });
   }, []);
   // -----------------------------------
-    // 用於目前呈現的資料(經過依每頁拆解陣列過)
-    const [studentsDisplay, setStudentsDisplay] = useState([])
+  // 用於目前呈現的資料(經過依每頁拆解陣列過)
+  const [studentsDisplay, setStudentsDisplay] = useState([]);
 
-    const [pageNow, setPageNow] = useState(1)
-    const [perPage, setPerPage] = useState(8)
-    const [pageTotal, setPageTotal] = useState(0)
+  const [pageNow, setPageNow] = useState(1);
+  const [perPage, setPerPage] = useState(8);
+  const [pageTotal, setPageTotal] = useState(0);
 
   return (
     <>
-         <Carouselg />
+      <Carouselg />
       <div className="tt">
         <Breadcrumb />
       </div>
