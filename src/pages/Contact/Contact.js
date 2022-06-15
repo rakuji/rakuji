@@ -19,7 +19,7 @@ function Contact() {
 
   const submitForm = () => {
     axios
-      .post("http://localhost:3001/contact", {
+      .post(`${process.env.REACT_APP_API_URL}/contact`, {
         name: name,
         email: email,
         select1: select1,
