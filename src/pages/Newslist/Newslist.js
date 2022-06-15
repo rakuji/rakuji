@@ -117,7 +117,8 @@ function Newslist() {
                 <div className="card66">
                   {/* 抓照片  */}
                   <img
-                    src={`${process.env.PHP_APP_API_URL}/project_rakuji/imgs/${v.imgid}`}
+                    // src={require(`${process.env.PHP_APP_API_URL}/project_rakuji/imgs/${v.imgid}`)}
+                    src={`http://172.18.103.62/project_rakuji/imgs/${v.imgid}`}
                     className="card-img"
                     alt=""
                   ></img>
