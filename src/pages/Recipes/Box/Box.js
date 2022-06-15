@@ -11,6 +11,20 @@ import Box_NutrientPhone from "./Box_NutrientPhone";
 import Box_Products from "./Box_Products";
 import Box_ProductsPhone from "./Box_ProductsPhone";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  LineShareButton,
+  TwitterShareButton,
+  FacebookMessengerShareButton,
+} from "react-share";
+import {
+  EmailIcon,
+  FacebookIcon,
+  LineIcon,
+  TwitterIcon,
+  FacebookMessengerIcon,
+} from "react-share";
 
 
 function Box() {
@@ -94,42 +108,49 @@ function Box() {
                     }}
                     className="fs-2  "
                   >
+                  
                     {kcal}大卡
                   </h3>
                   <div
                     style={{ padding: "20px" }}
                     className="d-flex flex-row text-center "
                   >
-                    <div className=" " style={{ margin: "-10px 0px" }}>
-                      <ul className="nav flex ">
-                        <li className=" ">
-                          <a href="#" className="p-0">
-                            <i
-                              style={{ padding: "5px" }}
-                              className="fa-brands fa-facebook "
-                            ></i>
-                          </a>
-                          <a href="#" className="p-0">
-                            <i
-                              style={{ padding: "5px", color: "red" }}
-                              className="fa-brands fa-instagram recipesIg"
-                            ></i>
-                          </a>
-                          <a href="#" className="p-0">
-                            <i
-                              style={{ padding: "5px", color: "green" }}
-                              className="fa-brands fa-line recipesLine"
-                            ></i>
-                          </a>
-                          <a href="#" className="p-0">
-                            <i
-                              style={{ padding: "5px", color: "red" }}
-                              className="fa-brands fa-youtube recipesYoutube"
-                            ></i>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
+            <FacebookShareButton
+              url={"https://github.com/rakuji/rakuji"}
+              quote={"CampersTribe - World is yours to explore"}
+              className="me-1"
+            >
+              <FacebookIcon size={30} round />
+            </FacebookShareButton>
+
+            <FacebookMessengerShareButton
+              url={"https://github.com/rakuji/rakuji"}
+              appId={"382498665271383"}
+              className="me-1"
+            >
+              <FacebookMessengerIcon size={30} round />
+            </FacebookMessengerShareButton>
+
+            <LineShareButton
+              url={"https://github.com/rakuji/rakuji"}
+              className="me-1"
+            >
+              <LineIcon size={30} round />
+            </LineShareButton>
+
+            <EmailShareButton
+              url={"https://github.com/rakuji/rakuji"}
+              className="me-1"
+            >
+              <EmailIcon size={30} round />
+            </EmailShareButton>
+
+            <TwitterShareButton
+              url={"https://github.com/rakuji/rakuji"}
+              className="me-1"
+            >
+              <TwitterIcon size={30} round />
+            </TwitterShareButton>
                   </div>
                   {/* ----------------------------------------------------------------------- */}
                   <div className="d-flex ">
