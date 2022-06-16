@@ -41,6 +41,9 @@ function Box_Products() {
     $(`#recipesArray_buttons button[id=${recipesIndex}]`).attr("id", "active");
   });
   console.log(recipesIndex);
+  const elem = document.getElementById("RecipesClass");
+  // const ary1 = url.split("=");
+  console.log(elem);
 
   useEffect(() => {
     $("#recipesArray_buttons button").click(function () {
@@ -51,11 +54,11 @@ function Box_Products() {
 
   return (
     <>
-      <div className="RecipesSearchBoxCardAll col row RecipesOff ">
+      <div className="RecipesSearchBoxCardAll  col row  RecipesOff container">
         {DP.map((v, i) => {
           return (
-            <div key={i} className="RecipesSearchBoxCardAll col-3 testProducts ">
-              <div className="RecipesSearchBoxCard ">
+            <div key={i} className="RecipesSearchBoxCardAll col-3  container ">
+              <div className="RecipesSearchBoxCard  " id="recipesArray_buttons">
                 <Link to={`/products/product_detail/${v.id}`}>
                   <img
                     src={`/img/products/${v.picture}`}
@@ -64,10 +67,11 @@ function Box_Products() {
                   />
 
                   <div className="card-body ">
-                    <img className="Boximg " />{v.name}
+                    <img className="Boximg " />
+                    {v.name}
                     <button className=" RecipesLookButton" id="">
-                          我有興趣
-                        </button>
+                      我有興趣
+                    </button>
                   </div>
                 </Link>
               </div>
