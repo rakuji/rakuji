@@ -4,6 +4,11 @@
 
 }
 
+.testProducts:hover {
+    border: solid 1px #58C2DD;
+    transition-delay: 0.1s;
+}
+
 .RecipesIngredientsText {
     border-bottom: 2px dashed #58C2DD;
 

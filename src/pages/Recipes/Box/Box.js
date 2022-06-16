@@ -88,7 +88,7 @@ function Box() {
           //宣告熱量 = 資料庫內的RecipesBox_Kcal
           let kcal = RecipesBox_Kcal;
           let SeveralCopies = RecipesBox_SeveralCopies;
-          let aaaa = kcal / SeveralCopies;
+          let aaaa = Math.round(kcal / SeveralCopies);
 
           return (
             <div key={i} className="container p-3 mb-2  text-dar ">
